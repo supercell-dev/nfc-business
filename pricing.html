@@ -3,47 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | NFC Solutions</title>
+    <title>NFC Card Collection | Pricing</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
-        .pricing-card:hover { transform: translateY(-5px); transition: 0.3s; }
-        .card-preview { width: 100%; height: 160px; border-radius: 12px; object-fit: cover; margin-bottom: 1.5rem; background: #e2e8f0; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f1f5f9; color: #1e293b; }
+        
+        /* 3D Perspective Container */
+        .pricing-grid { perspective: 1500px; }
+        
+        /* 3D Card Base */
+        .card-3d-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 20px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* Hover Effect: Tilt and Lift */
+        .pricing-card:hover .card-3d-wrapper {
+            transform: rotateY(15deg) rotateX(10deg) translateY(-10px);
+            box-shadow: -20px 30px 50px rgba(0,0,0,0.15);
+        }
+
+        /* Glossy Shine Overlay */
+        .card-3d-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -150%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+            z-index: 5;
+        }
+        .pricing-card:hover .card-3d-wrapper::before {
+            left: 150%;
+        }
+
+        /* Specific Card Styles */
+        .bg-lite { background: #ffffff; border: 1px solid #e2e8f0; }
+        .bg-pro { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
+        .bg-premium { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+
+        .logo-text { font-weight: 900; letter-spacing: -1px; }
     </style>
 </head>
-<body class="py-12 px-6">
+<body class="py-20 px-6">
+
     <div class="max-w-6xl mx-auto">
-        <a href="index.html" class="text-blue-600 font-medium mb-8 inline-block">← Back to Home</a>
-        <h1 class="text-4xl font-bold text-center mb-16 text-slate-900">Our NFC Collection</h1>
+        <header class="text-center mb-20">
+            <a href="index.html" class="text-blue-600 font-bold mb-4 inline-flex items-center gap-2 hover:gap-4 transition-all">
+                <span>←</span> Back to Home
+            </a>
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 mt-4 tracking-tight">Our NFC Collection</h1>
+            <p class="text-slate-500 mt-4">Premium hardware. Instant digital connection.</p>
+        </header>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-3xl border border-slate-200 pricing-card shadow-sm">
-                <img src="https://img.freepik.com/free-photo/view-white-business-card_23-2148934149.jpg" alt="Lite Card" class="card-preview">
-                <h3 class="text-xl font-bold mb-2">Lite Card</h3>
-                <p class="text-2xl font-black mb-6">80 DH</p>
-                <a href="https://wa.me/212693000093?text=Order%20Lite%20Card" class="block text-center py-3 bg-slate-100 rounded-xl font-bold">Order Lite</a>
+        <div class="grid md:grid-cols-3 gap-12 pricing-grid">
+            
+            <div class="pricing-card group">
+                <div class="card-3d-wrapper bg-lite mb-8">
+                    <div class="text-slate-200 text-6xl opacity-20">📶</div>
+                    <div class="absolute bottom-6 left-6 h-3 w-24 bg-slate-100 rounded"></div>
+                </div>
+                <div class="px-2">
+                    <h3 class="text-xl font-bold text-slate-800">Lite Card</h3>
+                    <p class="text-slate-500 text-sm mb-4">Pure simplicity. Professional look.</p>
+                    <div class="text-3xl font-black text-slate-900 mb-6">80 <span class="text-sm font-medium">DH</span></div>
+                    <a href="https://wa.me/212693000093?text=Hello!%20I%20want%20to%20order%20the%20Lite%20Card%20(80%20DH)" 
+                       class="block w-full py-4 text-center bg-white border-2 border-slate-200 rounded-2xl font-bold hover:bg-slate-50 transition">Order Lite</a>
+                </div>
             </div>
 
-            <div class="bg-white p-6 rounded-3xl border-2 border-blue-600 pricing-card shadow-xl relative">
-                <div class="absolute -top-3 right-6 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase">Supertap Edition</div>
-                <div class="card-preview flex items-center justify-center bg-blue-50">
-                    <span class="text-blue-600 font-bold text-lg">SUPERTAP LOGO</span>
+            <div class="pricing-card group">
+                <div class="card-3d-wrapper bg-pro mb-8 shadow-blue-500/20 shadow-2xl">
+                    <div class="text-white logo-text text-3xl italic tracking-tighter">SUPERTAP</div>
+                    <div class="absolute top-4 right-6 text-white/30 text-xs font-bold tracking-widest uppercase">Pro Edition</div>
+                    <div class="absolute bottom-6 right-6 text-white/50 text-2xl">📶</div>
                 </div>
-                <h3 class="text-xl font-bold mb-2 text-blue-600">Pro Card</h3>
-                <p class="text-2xl font-black mb-6">150 DH</p>
-                <a href="https://wa.me/212693000093?text=Order%20Supertap%20Pro%20Card" class="block text-center py-3 bg-blue-600 text-white rounded-xl font-bold">Order Pro</a>
+                <div class="px-2">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="text-xl font-bold text-blue-600">Supertap Pro</h3>
+                        <span class="bg-blue-100 text-blue-600 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">Popular</span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">Custom branding for your identity.</p>
+                    <div class="text-3xl font-black text-blue-600 mb-6">150 <span class="text-sm font-medium text-slate-400">DH</span></div>
+                    <a href="https://wa.me/212693000093?text=Hello!%20I%20want%20to%20order%20the%20Supertap%20Pro%20Card%20(150%20DH)" 
+                       class="block w-full py-4 text-center bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Order Pro</a>
+                </div>
             </div>
 
-            <div class="bg-slate-900 p-6 rounded-3xl pricing-card text-white shadow-xl">
-                <div class="card-preview flex items-center justify-center bg-slate-800 border border-slate-700">
-                    <span class="text-slate-400 italic">Custom Design Applied</span>
+            <div class="pricing-card group text-white">
+                <div class="card-3d-wrapper bg-premium mb-8 border border-slate-700">
+                    <div class="w-16 h-16 border-2 border-slate-700 rounded-full flex items-center justify-center">
+                        <span class="text-[8px] text-slate-500 font-bold uppercase tracking-widest">Logo Here</span>
+                    </div>
+                    <div class="absolute bottom-6 left-6 text-slate-600 text-xs">CUSTOM DESIGN</div>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Premium Card</h3>
-                <p class="text-2xl font-black mb-6">250 DH</p>
-                <a href="https://wa.me/212693000093?text=Order%20Premium%20Custom%20Card" class="block text-center py-3 bg-white text-slate-900 rounded-xl font-bold">Order Premium</a>
+                <div class="px-2">
+                    <h3 class="text-xl font-bold text-slate-900">Premium Matte</h3>
+                    <p class="text-slate-500 text-sm mb-4">Elite materials. VIP features.</p>
+                    <div class="text-3xl font-black text-slate-900 mb-6">250 <span class="text-sm font-medium text-slate-400">DH</span></div>
+                    <a href="https://wa.me/212693000093?text=Hello!%20I%20want%20to%20order%20the%20Premium%20Matte%20Card%20(250%20DH)" 
+                       class="block w-full py-4 text-center bg-slate-900 text-white rounded-2xl font-bold hover:bg-slate-800 transition shadow-lg shadow-slate-300">Order Premium</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-32 text-center border-t border-slate-200 pt-16">
+            <p class="text-sm text-slate-400 font-medium uppercase tracking-widest">Safe Payment & Local Delivery</p>
+            <div class="flex justify-center gap-12 mt-8 grayscale opacity-50">
+                <span class="font-bold text-lg italic">Casablanca</span>
+                <span class="font-bold text-lg italic">Marrakech</span>
+                <span class="font-bold text-lg italic">Rabat</span>
+                <span class="font-bold text-lg italic">Tanger</span>
             </div>
         </div>
     </div>
+
 </body>
 </html>
