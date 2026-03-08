@@ -1,0 +1,15 @@
+{
+  "name": "SuperTap Casablanca",
+  "short_name": "SuperTap",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/575/575445.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
