@@ -3,178 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperTap Mini Series | Casablanca NFC</title>
+    <title>SuperTap Mini Series | Midnight Edition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #1e293b; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background-color: #020617; color: #f8fafc; scroll-behavior: smooth; }
+        .glass-nav { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .supertap-logo { font-weight: 900; letter-spacing: -1.5px; font-style: italic; background: linear-gradient(to right, #60a5fa, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* 3D Scene for Mini Objects */
         .mini-scene { perspective: 1000px; width: 100%; height: 200px; display: flex; justify-content: center; align-items: center; margin-bottom: 2rem; }
+        .mini-wrapper { position: relative; transform-style: preserve-3d; transition: transform 0.1s ease-out; cursor: pointer; }
         
-        .mini-wrapper {
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.1s ease-out;
-            cursor: pointer;
-        }
-
-        /* Small Rectangular Tag Shape */
-        .tag-small {
-            width: 110px; height: 65px;
-            border-radius: 12px;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        /* Round Coin Shape */
-        .coin-round {
-            width: 90px; height: 90px;
-            border-radius: 50%;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        .logo-small { font-weight: 900; font-style: italic; font-size: 11px; color: #2563eb; letter-spacing: -0.5px; }
+        /* Updated Hardware Shapes (Non-Stickers) */
+        .tag-small { width: 110px; height: 65px; border-radius: 12px; background: #1e293b; border: 1px solid #334155; box-shadow: 0 10px 40px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
+        .coin-round { width: 90px; height: 90px; border-radius: 50%; background: #1e293b; border: 1px solid #3b82f6; box-shadow: 0 10px 40px rgba(37, 99, 235, 0.2); display: flex; align-items: center; justify-content: center; }
         
-        .shine-effect {
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: inherit;
-            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.6) 0%, transparent 70%);
-            pointer-events: none; opacity: 0; transition: opacity 0.3s;
-        }
-        .mini-wrapper:hover .shine-effect { opacity: 1; }
-
-        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
-        .supertap-logo { font-weight: 900; letter-spacing: -1.5px; font-style: italic; }
+        .shine { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: inherit; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; opacity: 0; transition: opacity 0.3s; }
+        .mini-wrapper:hover .shine { opacity: 1; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <nav class="sticky top-0 z-50 glass-nav border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl supertap-logo text-blue-600 uppercase">SuperTap</a>
-            <div class="space-x-8 text-sm font-black uppercase tracking-widest hidden md:flex items-center">
-                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-                <a href="pricing.html" class="hover:text-blue-600 transition">NFC Cards</a>
-                <span class="text-blue-600 border-b-2 border-blue-600">Mini Series</span>
-            </div>
-            <div class="md:hidden">
-                <a href="pricing.html" class="text-slate-900 font-bold text-xs uppercase">Cards</a>
+    <nav class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl supertap-logo uppercase">SuperTap</a>
+            <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center text-slate-400">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="pricing.html" class="hover:text-white transition">NFC Cards</a>
+                <span class="text-blue-500">Mini Series</span>
             </div>
         </div>
     </nav>
 
-    <main class="py-16 px-6 flex-grow">
+    <main class="py-20 px-6 flex-grow">
         <div class="max-w-5xl mx-auto">
-            <header class="text-center mb-16">
-                <span class="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">Compact & Affordable</span>
-                <h1 class="text-5xl font-black text-slate-900 tracking-tighter italic uppercase mt-2">The Mini Series</h1>
-                <p class="text-slate-500 mt-2 font-medium">The essential NFC tags for your phone and accessories.</p>
+            <header class="text-center mb-20">
+                <h1 class="text-5xl font-black text-white tracking-tighter italic uppercase">The Mini Series</h1>
+                <p class="text-slate-400 mt-4 max-w-xl mx-auto font-medium">Professional NFC hardware. Solid, durable, and designed for instant connectivity.</p>
             </header>
 
             <div class="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
-                
                 <div class="text-center" onmousemove="handleTilt(event, this)" onmouseleave="handleReset(this)">
                     <div class="mini-scene">
                         <div class="mini-wrapper">
                             <div class="tag-small">
-                                <div class="shine-effect"></div>
-                                <span class="logo-small uppercase">SuperTap</span>
+                                <div class="shine"></div>
+                                <span class="text-[10px] font-black text-slate-400 uppercase italic">SuperTap</span>
                             </div>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold uppercase italic tracking-tight mb-2">Small Tag</h3>
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">Discrete adhesive sticker.<br>Works on any flat surface.</p>
-                    <div class="text-3xl font-black text-slate-900 mb-8 italic">30 DH</div>
-                    <a href="https://wa.me/212693000093?text=Order%20Small%20Tag%20(30DH)" class="block w-full py-4 text-center bg-white border-2 border-slate-200 rounded-2xl font-bold hover:bg-slate-50 transition">Order Small Tag</a>
+                    <h3 class="text-2xl font-bold uppercase italic text-white mb-2">Small Tag</h3>
+                    <p class="text-slate-500 text-sm mb-6">Ultra-slim hardware tag. <br>Designed for permanent phone attachment.</p>
+                    <div class="text-3xl font-black text-white mb-8 italic">30 DH</div>
+                    <a href="https://wa.me/212693000093?text=Order%20Small%20Tag" class="block w-full py-4 bg-slate-800 border border-slate-700 rounded-2xl font-bold hover:bg-slate-700 transition">Order Tag</a>
                 </div>
 
                 <div class="text-center" onmousemove="handleTilt(event, this)" onmouseleave="handleReset(this)">
                     <div class="mini-scene">
                         <div class="mini-wrapper">
-                            <div class="coin-round border-blue-200">
-                                <div class="shine-effect"></div>
-                                <span class="logo-small text-blue-600 uppercase">SuperTap</span>
+                            <div class="coin-round">
+                                <div class="shine"></div>
+                                <span class="text-[10px] font-black text-blue-500 uppercase italic">SuperTap</span>
                             </div>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold uppercase italic tracking-tight mb-2 text-blue-600">Round Coin</h3>
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">Premium epoxy finish.<br>Waterproof and extra durable.</p>
-                    <div class="text-3xl font-black text-blue-600 mb-8 italic">35 DH</div>
-                    <a href="https://wa.me/212693000093?text=Order%20Round%20Coin%20(35DH)" class="block w-full py-4 text-center bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-100">Order Round Coin</a>
+                    <h3 class="text-2xl font-bold uppercase italic text-blue-500 mb-2">Round Coin</h3>
+                    <p class="text-slate-500 text-sm mb-6">Premium Epoxy Coin. <br>Waterproof hardware for long-term use.</p>
+                    <div class="text-3xl font-black text-blue-500 mb-8 italic">35 DH</div>
+                    <a href="https://wa.me/212693000093?text=Order%20Round%20Coin" class="block w-full py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">Order Coin</a>
                 </div>
-
             </div>
 
-            <section class="mt-32 max-w-3xl mx-auto">
-                <h2 class="text-2xl font-black text-slate-900 uppercase italic tracking-tighter mb-10 text-center">Mini Series FAQ</h2>
-                
+            <section class="mt-40 max-w-3xl mx-auto">
+                <h2 class="text-2xl font-black text-white uppercase italic tracking-tighter mb-12 text-center">Hardware FAQ</h2>
                 <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
-                        <h4 class="font-bold text-slate-900 mb-2 italic">Do they work with all phones?</h4>
-                        <p class="text-sm text-slate-500">Yes! They work with almost all modern iPhones (7 and newer) and most Android devices. For older phones, use the QR backup on your profile.</p>
+                    <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-[32px]">
+                        <h4 class="font-bold text-white mb-2 italic uppercase text-sm">Are these stickers?</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed font-light">No. These are professional NFC hardware tags and coins made of durable materials. They are designed to be much stronger and last longer than simple paper or plastic stickers.</p>
                     </div>
-
-                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
-                        <h4 class="font-bold text-slate-900 mb-2 italic">Where should I stick my Mini Tag?</h4>
-                        <p class="text-sm text-slate-500">For iPhones, place the tag at the **bottom** of the phone. For Androids, the center or bottom is best. Avoid covering the internal NFC sensor.</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
-                        <h4 class="font-bold text-slate-900 mb-2 italic">Can I change the link later?</h4>
-                        <p class="text-sm text-slate-500">Absolutely. Your tag links to your digital profile. You can update your social links or website anytime without needing a new tag.</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
-                        <h4 class="font-bold text-slate-900 mb-2 italic">Is delivery available in Casablanca?</h4>
-                        <p class="text-sm text-slate-500">Yes, we provide fast local delivery across Casablanca. Contact us on WhatsApp for quick processing.</p>
+                    <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-[32px]">
+                        <h4 class="font-bold text-white mb-2 italic uppercase text-sm">How do they attach?</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed font-light">They come with a high-strength 3M industrial adhesive backing. Once attached to your phone or case, they stay firmly in place.</p>
                     </div>
                 </div>
             </section>
         </div>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-16 px-6 text-center">
-        <div class="max-w-5xl mx-auto">
-            <p class="text-2xl supertap-logo text-slate-900 mb-2 uppercase">SuperTap</p>
-            <p class="text-[10px] text-slate-400 mb-12 font-black tracking-widest uppercase italic">Casablanca's #1 NFC Provider</p>
-            <div class="flex justify-center gap-10">
-                 <a href="https://wa.me/212693000093" class="text-slate-900 hover:text-blue-600 transition font-black uppercase text-xs tracking-widest">WhatsApp</a>
-                 <a href="#" class="text-slate-900 hover:text-blue-600 transition font-black uppercase text-xs tracking-widest">TikTok</a>
-            </div>
-        </div>
+    <footer class="py-16 text-center border-t border-slate-900">
+        <p class="text-[10px] text-slate-600 font-black uppercase tracking-[0.5em] italic">SuperTap Casablanca</p>
     </footer>
 
     <script>
         function handleTilt(e, container) {
             const wrapper = container.querySelector('.mini-wrapper');
-            const shine = container.querySelector('.shine-effect');
             const rect = container.getBoundingClientRect();
-            
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (centerY - y) / 6;
-            const rotateY = (x - centerX) / 6;
-            
+            const rotateX = ((rect.height/2) - (e.clientY - rect.top)) / 6;
+            const rotateY = ((e.clientX - rect.left) - (rect.width/2)) / 6;
             wrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            
-            if (shine) {
-                shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.6) 0%, transparent 70%)`;
-            }
         }
-
         function handleReset(container) {
-            const wrapper = container.querySelector('.mini-wrapper');
-            wrapper.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            container.querySelector('.mini-wrapper').style.transform = `rotateX(0deg) rotateY(0deg)`;
         }
     </script>
 </body>
