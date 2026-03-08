@@ -3,62 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFC Solutions | Smart Business Cards</title>
+    <title>NFC Tech Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body { background-color: #0f172a; color: white; font-family: 'Inter', sans-serif; }
         .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .nfc-gradient { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); }
+        .btn-hover:hover { transform: translateY(-2px); transition: all 0.2s ease; }
     </style>
 </head>
-<body class="flex flex-col items-center p-6">
+<body class="flex flex-col items-center p-6 min-h-screen">
 
-    <div class="w-full max-w-md text-center mb-8">
-        <div class="nfc-gradient w-20 h-20 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
-             <span class="text-3xl font-bold text-white">NFC</span>
+    <div class="w-full max-w-md text-center mt-8 mb-10">
+        <div class="nfc-gradient w-24 h-24 rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-2xl shadow-blue-500/20">
+             <span class="text-4xl font-black text-white">NFC</span>
         </div>
-        <h1 class="text-2xl font-bold tracking-tight">Digital Presence, Instantly.</h1>
-        <p class="text-slate-400 mt-2">Tap to connect, share, and grow.</p>
+        <h1 class="text-3xl font-bold tracking-tight">Smart Connections</h1>
+        <p class="text-slate-400 mt-2">Custom NFC Programming & Design</p>
     </div>
 
     <div class="w-full max-w-md space-y-4">
         
-        <a href="#" class="glass block p-4 rounded-xl flex items-center hover:scale-105 transition-transform">
-            <div class="bg-blue-500/20 p-3 rounded-lg mr-4">📇</div>
-            <div>
-                <h3 class="font-semibold text-blue-400">Save Contact</h3>
-                <p class="text-xs text-slate-400">Add my info to your phone immediately.</p>
+        <a href="https://wa.me/2126XXXXXXXX" target="_blank" class="glass btn-hover block p-5 rounded-2xl flex items-center border-l-4 border-green-500">
+            <div class="bg-green-500/20 p-3 rounded-xl mr-4 text-2xl">💬</div>
+            <div class="flex-1">
+                <h3 class="font-bold text-green-400">WhatsApp Me</h3>
+                <p class="text-xs text-slate-400 font-medium italic">Instant support & orders</p>
             </div>
+            <span class="text-slate-500 text-xl">→</span>
         </a>
 
-        <a href="#instructions" class="glass block p-4 rounded-xl flex items-center hover:scale-105 transition-transform">
-            <div class="bg-purple-500/20 p-3 rounded-lg mr-4">📖</div>
-            <div>
-                <h3 class="font-semibold text-purple-400">User Instructions</h3>
-                <p class="text-xs text-slate-400">How to use your new NFC card.</p>
+        <a href="contact.vcf" download class="glass btn-hover block p-5 rounded-2xl flex items-center border-l-4 border-blue-500">
+            <div class="bg-blue-500/20 p-3 rounded-xl mr-4 text-2xl">👤</div>
+            <div class="flex-1">
+                <h3 class="font-bold text-blue-400">Save Contact</h3>
+                <p class="text-xs text-slate-400 font-medium italic">Add to your phone address book</p>
             </div>
+            <span class="text-slate-500 text-xl">→</span>
         </a>
 
-        <a href="#" class="glass block p-4 rounded-xl flex items-center hover:scale-105 transition-transform">
-            <div class="bg-pink-500/20 p-3 rounded-lg mr-4">🎬</div>
-            <div>
-                <h3 class="font-semibold text-pink-400">View My Work</h3>
-                <p class="text-xs text-slate-400">Latest video edits and projects.</p>
+        <a href="#" class="glass btn-hover block p-5 rounded-2xl flex items-center border-l-4 border-pink-500">
+            <div class="bg-pink-500/20 p-3 rounded-xl mr-4 text-2xl">🎬</div>
+            <div class="flex-1">
+                <h3 class="font-bold text-pink-400">Latest Edits</h3>
+                <p class="text-xs text-slate-400 font-medium italic">Check out my recent work</p>
             </div>
+            <span class="text-slate-500 text-xl">→</span>
         </a>
+
     </div>
 
-    <div id="instructions" class="w-full max-w-md mt-12 p-6 glass rounded-2xl">
-        <h2 class="text-xl font-bold mb-4">Quick Start Guide</h2>
-        <ul class="space-y-4 text-sm text-slate-300">
-            <li class="flex items-start"><span class="text-blue-400 font-bold mr-2">1.</span> For iPhones, tap the top back of the phone against the card.</li>
-            <li class="flex items-start"><span class="text-blue-400 font-bold mr-2">2.</span> For Android, ensure NFC is ON in settings and tap the center-back.</li>
-            <li class="flex items-start"><span class="text-blue-400 font-bold mr-2">3.</span> No app is required to read our programmed cards!</li>
-        </ul>
+    <div id="instructions" class="w-full max-w-md mt-10 p-6 glass rounded-3xl border border-blue-500/20">
+        <h2 class="text-lg font-bold mb-4 flex items-center">
+            <span class="mr-2">📖</span> How to use your card
+        </h2>
+        <div class="space-y-4">
+            <div class="flex gap-3">
+                <span class="text-blue-500 font-bold">01.</span>
+                <p class="text-sm text-slate-300"><span class="text-white font-semibold">iPhone:</span> Tap the top-back of your phone against the card.</p>
+            </div>
+            <div class="flex gap-3">
+                <span class="text-blue-500 font-bold">02.</span>
+                <p class="text-sm text-slate-300"><span class="text-white font-semibold">Android:</span> Tap the center-back (ensure NFC is ON in settings).</p>
+            </div>
+            <div class="flex gap-3">
+                <span class="text-blue-500 font-bold">03.</span>
+                <p class="text-sm text-slate-300">Wait for the notification to pop up and tap it to open this site!</p>
+            </div>
+        </div>
     </div>
 
-    <footer class="mt-12 text-slate-500 text-xs italic">
-        Powered by High-Tech NFC Solutions
+    <footer class="mt-auto py-10 text-slate-600 text-xs tracking-widest uppercase">
+        © 2026 NFC Solutions Casablanca
     </footer>
 
 </body>
