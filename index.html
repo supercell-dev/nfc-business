@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC Solutions | Smart Business Cards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: white; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .nfc-gradient { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); }
+    </style>
+</head>
+<body class="flex flex-col items-center p-6">
+
+    <div class="w-full max-w-md text-center mb-8">
+        <div class="nfc-gradient w-20 h-20 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
+             <span class="text-3xl font-bold text-white">NFC</span>
+        </div>
+        <h1 class="text-2xl font-bold tracking-tight">Digital Presence, Instantly.</h1>
+        <p class="text-slate-400 mt-2">Tap to connect, share, and grow.</p>
+    </div>
+
+    <div class="w-full max-w-md space-y-4">
+        
+        <a href="#" class="glass block p-4 rounded-xl flex items-center hover:scale-105 transition-transform">
+            <div class="bg-blue-500/20 p-3 rounded-lg mr-4">📇</div>
+            <div>
+                <h3 class="font-semibold text-blue-400">Save Contact</h3>
+                <p class="text-xs text-slate-400">Add my info to your phone immediately.</p>
+            </div>
+        </a>
+
+        <a href="#instructions" class="glass block p-4 rounded-xl flex items-center hover:scale-105 transition-transform">
+            <div class="bg-purple-500/20 p-3 rounded-lg mr-4">📖</div>
+            <div>
+                <h3 class="font-semibold text-purple-400">User Instructions</h3>
+                <p class="text-xs text-slate-400">How to use your new NFC card.</p>
+            </div>
+        </a>
+
+        <a href="#" class="glass block p-4 rounded-xl flex items-center hover:scale-105 transition-transform">
+            <div class="bg-pink-500/20 p-3 rounded-lg mr-4">🎬</div>
+            <div>
+                <h3 class="font-semibold text-pink-400">View My Work</h3>
+                <p class="text-xs text-slate-400">Latest video edits and projects.</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="instructions" class="w-full max-w-md mt-12 p-6 glass rounded-2xl">
+        <h2 class="text-xl font-bold mb-4">Quick Start Guide</h2>
+        <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start"><span class="text-blue-400 font-bold mr-2">1.</span> For iPhones, tap the top back of the phone against the card.</li>
+            <li class="flex items-start"><span class="text-blue-400 font-bold mr-2">2.</span> For Android, ensure NFC is ON in settings and tap the center-back.</li>
+            <li class="flex items-start"><span class="text-blue-400 font-bold mr-2">3.</span> No app is required to read our programmed cards!</li>
+        </ul>
+    </div>
+
+    <footer class="mt-12 text-slate-500 text-xs italic">
+        Powered by High-Tech NFC Solutions
+    </footer>
+
+</body>
+</html>
