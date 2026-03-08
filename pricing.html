@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | NFC Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
+        .pricing-card:hover { transform: translateY(-5px); transition: 0.3s; }
+        .card-preview { width: 100%; height: 160px; border-radius: 12px; object-fit: cover; margin-bottom: 1.5rem; background: #e2e8f0; }
+    </style>
+</head>
+<body class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+        <a href="index.html" class="text-blue-600 font-medium mb-8 inline-block">← Back to Home</a>
+        <h1 class="text-4xl font-bold text-center mb-16 text-slate-900">Our NFC Collection</h1>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 pricing-card shadow-sm">
+                <img src="https://img.freepik.com/free-photo/view-white-business-card_23-2148934149.jpg" alt="Lite Card" class="card-preview">
+                <h3 class="text-xl font-bold mb-2">Lite Card</h3>
+                <p class="text-2xl font-black mb-6">80 DH</p>
+                <a href="https://wa.me/212693000093?text=Order%20Lite%20Card" class="block text-center py-3 bg-slate-100 rounded-xl font-bold">Order Lite</a>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border-2 border-blue-600 pricing-card shadow-xl relative">
+                <div class="absolute -top-3 right-6 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase">Supertap Edition</div>
+                <div class="card-preview flex items-center justify-center bg-blue-50">
+                    <span class="text-blue-600 font-bold text-lg">SUPERTAP LOGO</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-blue-600">Pro Card</h3>
+                <p class="text-2xl font-black mb-6">150 DH</p>
+                <a href="https://wa.me/212693000093?text=Order%20Supertap%20Pro%20Card" class="block text-center py-3 bg-blue-600 text-white rounded-xl font-bold">Order Pro</a>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-3xl pricing-card text-white shadow-xl">
+                <div class="card-preview flex items-center justify-center bg-slate-800 border border-slate-700">
+                    <span class="text-slate-400 italic">Custom Design Applied</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Premium Card</h3>
+                <p class="text-2xl font-black mb-6">250 DH</p>
+                <a href="https://wa.me/212693000093?text=Order%20Premium%20Custom%20Card" class="block text-center py-3 bg-white text-slate-900 rounded-xl font-bold">Order Premium</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
