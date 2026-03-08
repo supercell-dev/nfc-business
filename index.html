@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFC Solutions | Smart Business Cards</title>
+    <title>NFC Solutions | Casablanca</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #1e293b; scroll-behavior: smooth; }
         .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .pricing-card:hover { transform: translateY(-10px); transition: all 0.3s ease; }
         .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
     </style>
 </head>
@@ -20,88 +19,50 @@
             <span class="text-xl font-bold tracking-tighter text-blue-600 uppercase">NFC Solutions</span>
             <div class="space-x-6 text-sm font-medium hidden md:block">
                 <a href="#how" class="hover:text-blue-600 transition">How it works</a>
-                <a href="#pricing" class="hover:text-blue-600 transition">Pricing</a>
-                <a href="https://wa.me/212693000093" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-200">Order Now</a>
+                <a href="pricing.html" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-center">View Pricing</a>
+            </div>
+            <div class="md:hidden">
+                <a href="pricing.html" class="text-xs bg-blue-600 text-white px-4 py-2 rounded-full font-bold">Pricing</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white py-24 px-6 text-center">
+    <header class="hero-gradient text-white py-32 px-6 text-center">
         <div class="max-w-3xl mx-auto">
             <h1 class="text-5xl font-extrabold mb-6 leading-tight tracking-tight">Connect with a single tap.</h1>
-            <p class="text-slate-400 text-lg mb-10">The most advanced digital business card for professionals in Casablanca.</p>
+            <p class="text-slate-400 text-lg mb-10">Premium digital business cards for the next generation of professionals in Morocco.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#pricing" class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-700 transition">View Pricing</a>
+                <a href="pricing.html" class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-xl shadow-blue-500/20">Get Started Now</a>
                 <a href="#how" class="border border-slate-700 px-10 py-4 rounded-xl font-bold hover:bg-white/10 transition">How it Works</a>
             </div>
         </div>
     </header>
 
     <section id="how" class="py-24 bg-white">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-16">Three Simple Steps</h2>
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Digital Networking Made Simple</h2>
+                <p class="text-slate-500 mt-4 text-lg">No app required. Just tap and go.</p>
+            </div>
+
             <div class="grid md:grid-cols-3 gap-12">
-                <div>
-                    <div class="text-4xl mb-4">🤳</div>
-                    <h3 class="font-bold text-lg mb-2">1. Tap</h3>
-                    <p class="text-slate-500 text-sm">Tap the card against any modern smartphone.</p>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl">🤳</div>
+                    <h3 class="font-bold text-xl mb-3">Tap</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Touch your NFC card to the back of any modern smartphone.</p>
                 </div>
-                <div>
-                    <div class="text-4xl mb-4">⚡</div>
-                    <h3 class="font-bold text-lg mb-2">2. Connect</h3>
-                    <p class="text-slate-500 text-sm">Your custom profile opens instantly in their browser.</p>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl">⚡</div>
+                    <h3 class="font-bold text-xl mb-3">Connect</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Your digital profile, portfolio, and social links appear instantly.</p>
                 </div>
-                <div>
-                    <div class="text-4xl mb-4">💾</div>
-                    <h3 class="font-bold text-lg mb-2">3. Save</h3>
-                    <p class="text-slate-500 text-sm">They save your contact info with one single click.</p>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl">💾</div>
+                    <h3 class="font-bold text-xl mb-3">Save</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Contacts can save your info directly to their phone with one click.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="max-w-6xl mx-auto py-24 px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-900">Choose Your Plan</h2>
-            <p class="text-slate-500 mt-2">Get your card today. No monthly subscriptions.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 pricing-card shadow-sm text-center">
-                <h3 class="text-lg font-bold text-slate-700 mb-4 text-left">Lite Card</h3>
-                <div class="text-4xl font-black mb-4 text-left text-slate-900">80 <span class="text-sm font-medium text-slate-400 uppercase">DH</span></div>
-                <ul class="text-slate-500 text-sm space-y-4 mb-8 text-left border-t border-slate-100 pt-6">
-                    <li>✓ White PVC Card</li>
-                    <li>✓ One Social Media Link</li>
-                    <li>✓ Standard Setup</li>
-                </ul>
-                <a href="https://wa.me/212693000093?text=Hello!%20I%20want%20to%20order%20the%20Lite%20Card%20(80%20DH)" 
-                   class="block w-full py-4 bg-slate-50 text-slate-900 rounded-2xl font-bold hover:bg-slate-200 transition">Order Lite</a>
-            </div>
-
-            <div class="bg-white p-8 rounded-3xl border-2 border-blue-600 pricing-card shadow-xl text-center relative">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Best Choice</div>
-                <h3 class="text-lg font-bold text-slate-700 mb-4 text-left">Pro Card</h3>
-                <div class="text-4xl font-black mb-4 text-blue-600 text-left">150 <span class="text-sm font-medium text-slate-400 uppercase">DH</span></div>
-                <ul class="text-slate-700 text-sm space-y-4 mb-8 font-medium text-left border-t border-slate-100 pt-6">
-                    <li>✓ Fully Custom Design</li>
-                    <li>✓ Professional Contact Card (.VCF)</li>
-                    <li>✓ Multiple Link Integration</li>
-                </ul>
-                <a href="https://wa.me/212693000093?text=Hello!%20I%20want%20to%20order%20the%20Pro%20Card%20(150%20DH)" 
-                   class="block w-full py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Order Pro</a>
-            </div>
-
-            <div class="bg-slate-900 p-8 rounded-3xl pricing-card shadow-sm text-center text-white">
-                <h3 class="text-lg font-bold mb-4 text-left text-slate-300">Premium Card</h3>
-                <div class="text-4xl font-black mb-4 text-left">250 <span class="text-sm font-medium text-slate-500 uppercase">DH</span></div>
-                <ul class="text-slate-400 text-sm space-y-4 mb-8 text-left border-t border-slate-800 pt-6">
-                    <li>✓ Premium Matte Finish</li>
-                    <li>✓ Full Business Branding</li>
-                    <li>✓ 24h Priority Shipping</li>
-                </ul>
-                <a href="https://wa.me/212693000093?text=Hello!%20I%20want%20to%20order%20the%20Premium%20Card%20(250%20DH)" 
-                   class="block w-full py-4 bg-white text-slate-900 rounded-2xl font-bold hover:bg-slate-100 transition">Order Premium</a>
             </div>
         </div>
     </section>
