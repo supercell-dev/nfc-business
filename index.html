@@ -10,26 +10,24 @@
         body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #1e293b; scroll-behavior: smooth; }
         .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
         .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .legal-modal { background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); }
     </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 
     <nav class="sticky top-0 z-50 glass-nav border-b border-slate-200">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-xl font-bold tracking-tighter text-blue-600 uppercase">NFC Solutions</span>
             <div class="space-x-6 text-sm font-medium hidden md:block">
                 <a href="#how" class="hover:text-blue-600 transition">How it works</a>
-                <a href="pricing.html" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-center">View Pricing</a>
-            </div>
-            <div class="md:hidden">
-                <a href="pricing.html" class="text-xs bg-blue-600 text-white px-4 py-2 rounded-full font-bold">Pricing</a>
+                <a href="pricing.html" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-200">View Pricing</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-gradient text-white py-32 px-6 text-center">
         <div class="max-w-3xl mx-auto">
-            <h1 class="text-5xl font-extrabold mb-6 leading-tight tracking-tight">Connect with a single tap.</h1>
+            <h1 class="text-5xl font-extrabold mb-6 leading-tight tracking-tight text-white">Connect with a single tap.</h1>
             <p class="text-slate-400 text-lg mb-10">Premium digital business cards for the next generation of professionals in Morocco.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="pricing.html" class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-xl shadow-blue-500/20">Get Started Now</a>
@@ -44,33 +42,67 @@
                 <h2 class="text-3xl font-bold text-slate-900">Digital Networking Made Simple</h2>
                 <p class="text-slate-500 mt-4 text-lg">No app required. Just tap and go.</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-12">
                 <div class="text-center">
                     <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl">🤳</div>
                     <h3 class="font-bold text-xl mb-3">Tap</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Touch your NFC card to the back of any modern smartphone.</p>
+                    <p class="text-slate-500 text-sm">Touch your NFC card to the back of any modern smartphone.</p>
                 </div>
-
                 <div class="text-center">
                     <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl">⚡</div>
                     <h3 class="font-bold text-xl mb-3">Connect</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Your digital profile, portfolio, and social links appear instantly.</p>
+                    <p class="text-slate-500 text-sm">Your digital profile and social links appear instantly.</p>
                 </div>
-
                 <div class="text-center">
                     <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl">💾</div>
                     <h3 class="font-bold text-xl mb-3">Save</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Contacts can save your info directly to their phone with one click.</p>
+                    <p class="text-slate-500 text-sm">Contacts can save your info with one single click.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-50 border-t border-slate-200 py-16 px-6 text-center">
+    <section class="bg-slate-50 py-20 border-t border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6 tracking-tight">We are here to help.</h2>
+                <p class="text-slate-600 mb-8">Have questions about programming your card or custom designs? Reach out to us on WhatsApp during our business hours.</p>
+                <a href="https://wa.me/212693000093" class="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-600 transition shadow-lg shadow-green-200">
+                    <span>Chat on WhatsApp</span>
+                </a>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="text-blue-600">🕒</span> Business Hours (Casablanca)
+                </h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between border-b pb-2 border-slate-100">
+                        <span class="text-slate-500">Mon - Fri</span>
+                        <span class="font-semibold text-slate-900">10:00 AM - 07:00 PM</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2 border-slate-100">
+                        <span class="text-slate-500">Saturday</span>
+                        <span class="font-semibold text-slate-900">10:00 AM - 04:00 PM</span>
+                    </div>
+                    <div class="flex justify-between text-red-500 font-medium pt-2">
+                        <span>Sunday</span>
+                        <span>Closed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-200 py-12 px-6 text-center mt-auto">
         <div class="max-w-5xl mx-auto">
             <p class="text-slate-900 font-bold mb-2 uppercase tracking-tighter">NFC Solutions Casablanca</p>
-            <p class="text-sm text-slate-500 mb-8">Fast delivery across Morocco.</p>
+            <p class="text-xs text-slate-400 mb-6 italic">Delivery across Morocco • Fast Encoding</p>
+            
+            <div class="flex justify-center gap-6 text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-8">
+                <button onclick="openLegal('terms')" class="hover:text-blue-600 transition underline underline-offset-4">Terms</button>
+                <button onclick="openLegal('privacy')" class="hover:text-blue-600 transition underline underline-offset-4">Privacy</button>
+            </div>
+
             <div class="flex justify-center gap-8">
                  <a href="https://wa.me/212693000093" class="text-slate-400 hover:text-blue-600 transition font-medium">WhatsApp</a>
                  <a href="#" class="text-slate-400 hover:text-blue-600 transition font-medium">TikTok</a>
@@ -78,5 +110,43 @@
         </div>
     </footer>
 
+    <div id="legalModal" class="fixed inset-0 legal-modal z-[100] hidden flex items-center justify-center p-6">
+        <div class="bg-white w-full max-w-2xl rounded-3xl p-8 relative max-h-[80vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeLegal()" class="absolute top-4 right-4 text-slate-400 text-xl font-bold p-2 hover:text-slate-900">✕</button>
+            <div id="legalContent" class="text-sm text-left leading-relaxed">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        const legalData = {
+            terms: `
+                <h2 class="text-2xl font-bold mb-6 text-slate-900">Terms of Service</h2>
+                <div class="space-y-4 text-slate-600">
+                    <p><strong>1. Services:</strong> NFC Solutions Casablanca provides custom-programmed NFC hardware and digital profile hosting.</p>
+                    <p><strong>2. Customization:</strong> Clients are responsible for providing correct links. Once a card is encoded, information cannot be physically changed on the chip itself (unless re-written by us).</p>
+                    <p><strong>3. Refunds:</strong> No refunds are issued for custom-branded or programmed cards unless the chip hardware is non-functional upon delivery.</p>
+                </div>
+            `,
+            privacy: `
+                <h2 class="text-2xl font-bold mb-6 text-slate-900">Privacy Policy</h2>
+                <div class="space-y-4 text-slate-600">
+                    <p><strong>Data Privacy:</strong> We respect your data. Your contact details are used solely for the purpose of fulfilling your order and creating your digital business card.</p>
+                    <p><strong>Storage:</strong> We do not store sensitive personal information on our servers beyond what is required to maintain your digital profile link.</p>
+                    <p><strong>Protection:</strong> Your data is never shared with third-party marketing agencies.</p>
+                </div>
+            `
+        };
+
+        function openLegal(type) {
+            document.getElementById('legalContent').innerHTML = legalData[type];
+            document.getElementById('legalModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Stop scrolling behind modal
+        }
+        function closeLegal() {
+            document.getElementById('legalModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+    </script>
 </body>
 </html>
