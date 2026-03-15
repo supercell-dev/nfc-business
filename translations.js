@@ -12,7 +12,7 @@ const translations = {
         "hero-title": "One Tap. <br> <span class='text-blue-600'>Infinite</span> Links.",
         "hero-desc": "The future of networking in Morocco. Share your digital world instantly with a physical tap.",
         "visit-store": "Visit Store",
-        "our-services": "Our Services",
+        "nav-services": "Services",
         "edu-title": "The Power of <br> <span class='text-blue-600'>NFC</span> Technology",
         "edu-p1": "<strong>Near Field Communication (NFC)</strong> is the invisible bridge between your physical card and your digital world. It allows smartphones within 4cm to instantly read your profile without needing any apps, QR codes, or physical contact.",
         "edu-p2": "At SuperTap, we embed industrial-grade NFC chips into premium hardware. Whether it's in your wallet or on your phone, one tap instantly shares your social media, business info, or contact card with anyone you meet.",
@@ -112,7 +112,25 @@ const translations = {
         "attach-go": "ATTACH-AND-GO CONVENIENCE",
         "waterproof": "WATERPROOF HARDWARE",
         "inspired-title": "Inspired yet?",
-        "inspired-desc": "Start your lifetime journey with SuperTap today."
+        "inspired-desc": "Start your lifetime journey with SuperTap today.",
+        "feat-sharing-title": "Instant Sharing",
+        "feat-sharing-desc": "No apps needed. Simply tap your card against any smartphone to share your social links or contact card.",
+        "feat-elite-title": "Elite Branding",
+        "feat-elite-desc": "From matte black Elite cards to high-durability hardware coins, our products are crafted for Moroccan professionals.",
+        "feat-casa-title": "Casablanca Local",
+        "feat-casa-desc": "Fast local delivery and 24/7 support via WhatsApp. We ensure your digital profile is set up perfectly.",
+        "header-services": "<span class='text-blue-600'>Services</span>",
+        "header-store": "<span class='text-blue-600'>Store</span>",
+        "ultra-portable": "Ultra-portable design",
+        "minimalist-footprint": "Minimalist footprint",
+        "hover-rotate": "Hover to rotate",
+        "no-custom-engraving-lite": "No custom engraving available.",
+        "one-link-limit": "Only 1 quick link button.",
+        "small-tag-title": "Small Tag | SuperTap",
+        "round-tag-title": "Round Tag | SuperTap",
+        "white-pvc": "Standard White PVC Hardware",
+        "matte-finish": "Premium Matte Finish",
+        "metal-hardware": "Industrial Grade Metal Hardware"
     },
     fr: {
         dir: 'ltr',
@@ -126,7 +144,7 @@ const translations = {
         "hero-title": "Un Clic. <br> <span class='text-blue-600'>Liens</span> Infinis.",
         "hero-desc": "L'avenir du réseautage au Maroc. Partagez votre monde numérique instantanément avec une touche physique.",
         "visit-store": "Boutique",
-        "our-services": "Nos Services",
+        "nav-services": "Services",
         "edu-title": "La Puissance de la <br> <span class='text-blue-600'>Technologie NFC</span>",
         "edu-p1": "<strong>Le Near Field Communication (NFC)</strong> est le pont invisible entre votre carte physique et votre monde numérique. Il permet aux smartphones situés à moins de 4 cm de lire votre profil sans application ni code QR.",
         "edu-p2": "Chez SuperTap, nous intégrons des puces NFC industrielles dans du matériel haut de gamme. Une seule pression suffit pour partager vos réseaux sociaux ou votre carte de contact.",
@@ -226,7 +244,25 @@ const translations = {
         "attach-go": "CONCEPTION PRÊTE À L'EMPLOI",
         "waterproof": "MATÉRIEL IMPERMÉABLE",
         "inspired-title": "Inspiré ?",
-        "inspired-desc": "Commencez votre voyage à vie avec SuperTap dès aujourd'hui."
+        "inspired-desc": "Commencez votre voyage à vie avec SuperTap dès aujourd'hui.",
+        "feat-sharing-title": "Partage Instantané",
+        "feat-sharing-desc": "Aucune application requise. Touchez simplement votre carte contre n'importe quel smartphone pour partager vos liens.",
+        "feat-elite-title": "Marque Élite",
+        "feat-elite-desc": "Des cartes Elite noir mat au matériel haute durabilité, nos produits sont conçus pour les professionnels marocains.",
+        "feat-casa-title": "Local à Casablanca",
+        "feat-casa-desc": "Livraison locale rapide et assistance WhatsApp 24/7. Nous veillons à ce que votre profil soit parfait.",
+        "header-services": "<span class='text-blue-600'>Services</span>",
+        "header-store": "<span class='text-blue-600'>Boutique</span>",
+        "ultra-portable": "Design ultra-portable",
+        "minimalist-footprint": "Empreinte minimaliste",
+        "hover-rotate": "Survolez pour pivoter",
+        "no-custom-engraving-lite": "Pas de gravure personnalisée.",
+        "one-link-limit": "Un seul bouton de lien rapide.",
+        "small-tag-title": "Petit Tag | SuperTap",
+        "round-tag-title": "Tag Rond | SuperTap",
+        "white-pvc": "Matériel PVC blanc standard",
+        "matte-finish": "Finition mate de qualité supérieure",
+        "metal-hardware": "Matériel métallique de qualité industrielle"
     },
     ar: {
         dir: 'rtl',
@@ -340,7 +376,25 @@ const translations = {
         "attach-go": "راحة تامة في الاستخدام",
         "waterproof": "أجهزة مقاومة للماء",
         "inspired-title": "هل أنت مستعد؟",
-        "inspired-desc": "ابدأ رحلتك مدى الحياة مع سبر تاب اليوم."
+        "inspired-desc": "ابدأ رحلتك مدى الحياة مع سبر تاب اليوم.",
+        "feat-sharing-title": "مشاركة فورية",
+        "feat-sharing-desc": "لا حاجة لتطبيقات. ما عليك سوى لمس بطاقتك بأي هاتف ذكي لمشاركة روابطك الاجتماعية.",
+        "feat-elite-title": "علامة تجارية متميزة",
+        "feat-elite-desc": "من بطاقات إيليت السوداء المطفية إلى الأجهزة المتينة، صُنعت منتجاتنا للمحترفين المغاربة.",
+        "feat-casa-title": "محلي في الدار البيضاء",
+        "feat-casa-desc": "توصيل محلي سريع ودعم عبر الواتساب على مدار الساعة. نضمن إعداد ملفك الشخصي بشكل مثالي.",
+        "header-services": "خدماتنا <span class='text-blue-600'></span>",
+        "header-store": "المتجر <span class='text-blue-600'></span>",
+        "ultra-portable": "تصميم فائق المحمولية",
+        "minimalist-footprint": "صغير الحجم",
+        "hover-rotate": "مرر للتدوير",
+        "no-custom-engraving-lite": "لا يتوفر نقش مخصص.",
+        "one-link-limit": "زر رابط سريع واحد فقط.",
+        "small-tag-title": "تاغ صغير | سبر تاب",
+        "round-tag-title": "تاغ دائري | سبر تاب",
+        "white-pvc": "أجهزة PVC بيضاء قياسية",
+        "matte-finish": "طلاء مت بصيغة ممتازة",
+        "metal-hardware": "أجهزة معدنية من الدرجة الصناعية"
     }
 };
 
@@ -375,10 +429,14 @@ window.setLanguage = function(lang) {
         const key = el.getAttribute('data-i18n');
         if (translation[key]) {
             el.innerHTML = translation[key];
+            // If it's a link with no content, it might need the key name if specifically requested
+            // but usually we want the translation string which might contain HTML
         } else {
             console.warn('Missing translation key:', key, 'for language:', lang);
         }
     });
+
+    // Handle SVG and images if needed (not here yet)
 
     // Handle direction-specific classes
     if (translation.dir === 'rtl') {
