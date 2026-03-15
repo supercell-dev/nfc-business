@@ -75,9 +75,9 @@ const translations = {
         "nfc-digital-cards": "NFC Digital Cards",
         "mini-hardware": "Mini Hardware",
         "small-tag": "Small Tag",
-        "small-tag-desc": "Industrial hardware for phone attachment.",
-        "round-coin": "Round Coin",
-        "round-coin-desc": "Epoxy waterproof hardware.",
+        "small-tag-desc": "Durable hardware for keychains.",
+        "round-coin": "Round Tag",
+        "round-coin-desc": "Epoxy adhesive hardware.",
         "casablanca-support-title": "Casablanca Support",
         "casablanca-support-p": "We are local. Based in Casablanca, we provide 24/7 WhatsApp support to help you set up your profile, customize your design, or troubleshoot any issues. Local delivery, local people.",
         "delivery-casablanca": "SAME-DAY CASABLANCA DELIVERY",
@@ -130,7 +130,9 @@ const translations = {
         "round-tag-title": "Round Tag | SuperTap",
         "white-pvc": "Standard White PVC Hardware",
         "matte-finish": "Premium Matte Finish",
-        "metal-hardware": "Industrial Grade Metal Hardware"
+        "metal-hardware": "Industrial Grade Metal Hardware",
+        "adhesive-backing": "Adhesive Backing",
+        "durable-hardware": "Durable Hardware"
     },
     fr: {
         dir: 'ltr',
@@ -207,9 +209,9 @@ const translations = {
         "nfc-digital-cards": "Cartes Numériques NFC",
         "mini-hardware": "Matériel Mini",
         "small-tag": "Petit Tag",
-        "small-tag-desc": "Matériel industriel pour fixation sur téléphone.",
-        "round-coin": "Pièce Ronde",
-        "round-coin-desc": "Matériel imperméable en époxy.",
+        "small-tag-desc": "Clé matérielle durable pour porte-clés.",
+        "round-coin": "Tag Rond",
+        "round-coin-desc": "Matériel adhésif en époxy.",
         "casablanca-support-title": "Support Casablanca",
         "casablanca-support-p": "Nous sommes locaux. Basés à Casablanca, nous offrons un support WhatsApp 24/7 pour vous aider à configurer votre profil ou personnaliser votre design. Livraison locale, équipe locale.",
         "delivery-casablanca": "LIVRAISON LE JOUR MÊME À CASABLANCA",
@@ -262,7 +264,9 @@ const translations = {
         "round-tag-title": "Tag Rond | SuperTap",
         "white-pvc": "Matériel PVC blanc standard",
         "matte-finish": "Finition mate de qualité supérieure",
-        "metal-hardware": "Matériel métallique de qualité industrielle"
+        "metal-hardware": "Matériel métallique de qualité industrielle",
+        "adhesive-backing": "Support adhésif",
+        "durable-hardware": "Matériel Durable"
     },
     ar: {
         dir: 'rtl',
@@ -338,10 +342,10 @@ const translations = {
         "store-desc": "ارتقِ بشبكة علاقاتك مع مجموعتنا المتميزة من الأجهزة.",
         "nfc-digital-cards": "بطاقات NFC الرقمية",
         "mini-hardware": "أجهزة صغيرة",
-        "small-tag": "تاج صغير",
-        "small-tag-desc": "جهاز صناعي للربط بالهاتف.",
-        "round-coin": "عملة مستديرة",
-        "round-coin-desc": "جهاز إيبوكسي مقاوم للماء.",
+        "small-tag": "تاغ صغير",
+        "small-tag-desc": "أجهزة متينة لسلسلة المفاتيح.",
+        "round-coin": "تاغ دائري",
+        "round-coin-desc": "أجهزة لاصقة من الإيبوكسي.",
         "casablanca-support-title": "دعم الدار البيضاء",
         "casablanca-support-p": "نحن محليون. مقرنا في الدار البيضاء، نقدم دعماً عبر الواتساب على مدار الساعة لمساعدتك في إعداد ملفك الشخصي أو تخصيص تصميمك. توصيل محلي، طاقم محلي.",
         "delivery-casablanca": "توصيل في نفس اليوم بالدار البيضاء",
@@ -394,7 +398,9 @@ const translations = {
         "round-tag-title": "تاغ دائري | سبر تاب",
         "white-pvc": "أجهزة PVC بيضاء قياسية",
         "matte-finish": "طلاء مت بصيغة ممتازة",
-        "metal-hardware": "أجهزة معدنية من الدرجة الصناعية"
+        "metal-hardware": "أجهزة معدنية من الدرجة الصناعية",
+        "adhesive-backing": "ظهر لاصق",
+        "durable-hardware": "أجهزة متينة"
     }
 };
 
