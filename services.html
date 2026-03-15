@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperTap Services | Card for Life</title>
+    <title data-i18n="nav-services">Services | SuperTap</title>
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
         rel="stylesheet">
@@ -79,7 +80,10 @@
 
     <nav class="sticky top-0 z-50 glass-nav">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl supertap-logo uppercase">SuperTap</a>
+            <a href="index.html" class="text-2xl supertap-logo uppercase flex items-center gap-2">
+                <img src="icon.svg" class="w-8 h-8" alt="Logo">
+                SuperTap
+            </a>
 
             <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
                 <a href="index.html" class="hover:text-blue-400 transition" data-i18n="nav-home">Home</a>
@@ -98,19 +102,15 @@
                 <button onclick="setLanguage('en')" class="text-[14px]">🇺🇸</button>
                 <button onclick="setLanguage('fr')" class="text-[14px]">🇫🇷</button>
                 <button onclick="setLanguage('ar')" class="text-[14px]">🇲🇦</button>
-                <a href="store.html" class="text-[10px] font-black uppercase text-blue-400" data-i18n="nav-store">Store</a>
+                <a href="services.html" class="text-[10px] font-black uppercase text-blue-400" data-i18n="nav-services">Services</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-mesh pt-32 pb-24 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-none tracking-tighter uppercase italic">
-                Our <span class="text-blue-600" data-i18n="services-title">Services</span>
-            </h1>
-            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed" data-i18n="services-desc">
-                We're not just selling cards; we're building a sustainable digital future for professionals in Morocco.
-            </p>
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-none tracking-tighter uppercase italic" data-i18n="header-services"></h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed" data-i18n="services-desc"></p>
         </div>
     </header>
 
@@ -228,6 +228,15 @@
         </div>
     </footer>
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registered!', reg))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
 </body>
 
 </html>
