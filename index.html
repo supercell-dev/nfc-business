@@ -76,6 +76,14 @@
             backdrop-filter: blur(5px);
         }
     </style>
+    <script src="translations.js" defer></script>
+    <script>
+        // Stub to handle clicks before main script loads
+        window.setLanguage = window.setLanguage || function(lang) {
+            console.log('Queuing language change to:', lang);
+            window._pendingLang = lang;
+        };
+    </script>
 </head>
 
 <body class="flex flex-col min-h-screen">
@@ -114,8 +122,8 @@
             <div
                 class="w-16 h-16 bg-blue-600 rounded-2xl mx-auto mb-6 flex items-center justify-center text-3xl shadow-lg shadow-blue-500/20">
                 📱</div>
-            <h2 class="text-2xl font-black mb-4 italic uppercase tracking-tighter text-white">Install SuperTap</h2>
-            <p class="text-slate-400 text-sm mb-8 leading-relaxed font-light">
+            <h2 class="text-2xl font-black mb-4 italic uppercase tracking-tighter text-white" data-i18n="install-title">Install SuperTap</h2>
+            <p class="text-slate-400 text-sm mb-8 leading-relaxed font-light" data-i18n="install-desc">
                 Add to your home screen for instant access:<br><br>
                 <strong>iPhone:</strong> Tap <span class="text-blue-400">"Share"</span> then <span
                     class="text-blue-400">"Add to Home Screen"</span>.<br><br>
@@ -123,7 +131,7 @@
                     class="text-blue-400">"Install App"</span>.
             </p>
             <button onclick="closeModal()"
-                class="w-full py-4 bg-slate-800 text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-slate-700 transition">Close</button>
+                class="w-full py-4 bg-slate-800 text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-slate-700 transition" data-i18n="close-btn">Close</button>
         </div>
     </div>
 
@@ -204,12 +212,11 @@
         <div
             class="max-w-5xl mx-auto btn-primary rounded-[40px] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-blue-500/20">
             <div class="relative z-10">
-                <h2 class="text-4xl md:text-5xl font-black mb-6 uppercase italic tracking-tighter text-white">Ready to
-                    upgrade?</h2>
-                <p class="text-blue-100 mb-10 text-lg opacity-80 max-w-xl mx-auto">Join the most advanced networkers in
+                <h2 class="text-4xl md:text-5xl font-black mb-6 uppercase italic tracking-tighter text-white" data-i18n="ready-upgrade">Ready to upgrade?</h2>
+                <p class="text-blue-100 mb-10 text-lg opacity-80 max-w-xl mx-auto" data-i18n="upgrade-desc">Join the most advanced networkers in
                     Casablanca. Get your custom card today.</p>
                 <a href="https://wa.me/212693000093"
-                    class="inline-block bg-white text-blue-600 px-12 py-5 rounded-2xl font-black uppercase tracking-widest hover:scale-105 transition shadow-xl">Order
+                    class="inline-block bg-white text-blue-600 px-12 py-5 rounded-2xl font-black uppercase tracking-widest hover:scale-105 transition shadow-xl" data-i18n="order-whatsapp">Order
                     via WhatsApp</a>
             </div>
             <div class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
@@ -224,24 +231,22 @@
 
             <div
                 class="flex justify-center flex-wrap gap-8 md:gap-12 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-12">
-                <a href="store.html" class="hover:text-blue-500 transition">Store</a>
-                <a href="services.html" class="hover:text-blue-500 transition">Services</a>
+                <a href="store.html" class="hover:text-blue-500 transition" data-i18n="nav-store">Store</a>
+                <a href="services.html" class="hover:text-blue-500 transition" data-i18n="nav-services">Services</a>
                 <a href="https://wa.me/212693000093" class="hover:text-blue-500 transition">WhatsApp</a>
                 <a href="#" class="hover:text-blue-500 transition text-slate-700">TikTok</a>
             </div>
 
             <div
                 class="flex justify-center gap-6 text-[9px] text-slate-600 font-bold uppercase tracking-widest border-t border-slate-900/50 pt-10">
-                <a href="privacy.html" class="hover:text-slate-400 transition">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-slate-400 transition">Terms of Service</a>
+                <a href="privacy.html" class="hover:text-slate-400 transition" data-i18n="nav-privacy">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-slate-400 transition" data-i18n="nav-terms">Terms of Service</a>
             </div>
 
             <p class="mt-8 text-[8px] text-slate-800 font-bold uppercase tracking-widest" data-i18n="footer-copy">© 2026 SuperTap Morocco. All
                 Rights Reserved.</p>
         </div>
     </footer>
-
-    <script src="translations.js"></script>
     <script>
         function openModal() { document.getElementById('appModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('appModal').style.display = 'none'; }
