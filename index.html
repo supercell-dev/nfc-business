@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperTap | Premium NFC Solutions Casablanca</title>
+    <title data-i18n="nav-home">Home | SuperTap Casablanca</title>
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
     <link rel="manifest" href="manifest.json">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
@@ -90,11 +91,14 @@
 
     <nav class="sticky top-0 z-50 glass-nav">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl supertap-logo uppercase">SuperTap</a>
+            <a href="index.html" class="text-2xl supertap-logo uppercase flex items-center gap-2">
+                <img src="icon.svg" class="w-8 h-8" alt="Logo">
+                SuperTap
+            </a>
 
             <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
-                <a href="index.html" class="hover:text-blue-400 transition" data-i18n="nav-home">Home</a>
-                <a href="store.html" class="hover:text-blue-400 transition text-blue-400" data-i18n="nav-store">Store</a>
+                <a href="index.html" class="hover:text-blue-400 transition text-blue-400" data-i18n="nav-home">Home</a>
+                <a href="store.html" class="hover:text-blue-400 transition" data-i18n="nav-store">Store</a>
                 <a href="services.html" class="hover:text-blue-400 transition" data-i18n="nav-services">Services</a>
                 <div class="flex items-center gap-3 ml-4 border-l border-white/10 pl-6">
                     <button onclick="setLanguage('en')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇺🇸</button>
@@ -142,15 +146,13 @@
                     Casablanca</span>
             </div>
             <h1 class="text-6xl md:text-8xl font-black mb-8 leading-none tracking-tighter uppercase italic" data-i18n="hero-title">
-                One Tap. <br> <span class="text-blue-600">Infinite</span> Links.
             </h1>
             <p class="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed" data-i18n="hero-desc">
-                The future of networking in Morocco. Share your digital world instantly with a physical tap.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-5">
-                <a href="store.html" class="btn-primary px-12 py-5 rounded-2xl font-bold text-lg text-white" data-i18n="visit-store">Visit Store</a>
+                <a href="store.html" class="btn-primary px-12 py-5 rounded-2xl font-bold text-lg text-white" data-i18n="nav-store"></a>
                 <a href="services.html"
-                    class="bg-slate-800/50 backdrop-blur border border-slate-700 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-slate-800 transition" data-i18n="our-services">Our Services</a>
+                    class="bg-slate-800/50 backdrop-blur border border-slate-700 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-slate-800 transition" data-i18n="nav-services"></a>
             </div>
         </div>
     </header>
@@ -160,11 +162,10 @@
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div class="relative z-10">
                 <h2 class="text-4xl md:text-5xl font-black mb-8 leading-none tracking-tighter uppercase italic text-white" data-i18n="edu-title">
-                    The Power of <br> <span class="text-blue-600">NFC</span> Technology
                 </h2>
                 <div class="space-y-6 text-slate-400 leading-relaxed font-light">
-                    <p data-i18n="edu-p1"><strong>Near Field Communication (NFC)</strong> is the invisible bridge between your physical card and your digital world. It allows smartphones within 4cm to instantly read your profile without needing any apps, QR codes, or physical contact.</p>
-                    <p data-i18n="edu-p2">At SuperTap, we embed industrial-grade NFC chips into premium hardware. Whether it's in your wallet or on your phone, one tap instantly shares your social media, business info, or contact card with anyone you meet.</p>
+                    <p data-i18n="edu-p1"></p>
+                    <p data-i18n="edu-p2"></p>
                 </div>
             </div>
             <div class="relative">
@@ -184,25 +185,22 @@
                     <div
                         class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 text-blue-500 text-2xl">
                         ⚡</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase italic">Instant Sharing</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">No apps needed. Simply tap your card against any
-                        smartphone to share your social links or contact card.</p>
+                    <h3 class="text-xl font-bold mb-4 uppercase italic" data-i18n="feat-sharing-title"></h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat-sharing-desc"></p>
                 </div>
                 <div class="card-feature p-10 rounded-[32px]">
                     <div
                         class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 text-blue-500 text-2xl">
                         🎩</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase italic">Elite Branding</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">From matte black Elite cards to high-durability
-                        hardware coins, our products are crafted for Moroccan professionals.</p>
+                    <h3 class="text-xl font-bold mb-4 uppercase italic" data-i18n="feat-elite-title"></h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat-elite-desc"></p>
                 </div>
                 <div class="card-feature p-10 rounded-[32px]">
                     <div
                         class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 text-blue-500 text-2xl">
                         🇲🇦</div>
-                    <h3 class="text-xl font-bold mb-4 uppercase italic">Casablanca Local</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Fast local delivery and 24/7 support via WhatsApp.
-                        We ensure your digital profile is set up perfectly.</p>
+                    <h3 class="text-xl font-bold mb-4 uppercase italic" data-i18n="feat-casa-title"></h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat-casa-desc"></p>
                 </div>
             </div>
         </div>
@@ -225,7 +223,10 @@
 
     <footer class="py-20 px-6 border-t border-slate-900 bg-[#020617]">
         <div class="max-w-6xl mx-auto text-center">
-            <span class="text-3xl supertap-logo uppercase mb-4 inline-block">SuperTap</span>
+            <span class="text-3xl supertap-logo uppercase mb-4 flex items-center justify-center gap-3">
+                <img src="icon.svg" class="w-10 h-10" alt="Logo">
+                SuperTap
+            </span>
             <p class="text-slate-500 text-xs font-black uppercase tracking-[0.4em] italic mb-12">Casablanca Digital Hub
             </p>
 
@@ -250,6 +251,16 @@
     <script>
         function openModal() { document.getElementById('appModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('appModal').style.display = 'none'; }
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registered!', reg))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
     </script>
 </body>
 
