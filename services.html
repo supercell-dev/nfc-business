@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperTap Services | Card for Life</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+
+        .hero-mesh {
+            background-color: #020617;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(29, 78, 216, 0.1) 0, transparent 50%);
+        }
+
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        .supertap-logo {
+            font-weight: 900;
+            letter-spacing: -2px;
+            font-style: italic;
+            background: linear-gradient(to right, #60a5fa, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-right: 8px;
+            display: inline-block;
+        }
+
+        .feature-card {
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(37, 99, 235, 0.4);
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .glow-blue {
+            box-shadow: 0 0 50px -10px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl supertap-logo uppercase">SuperTap</a>
+
+            <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="store.html" class="hover:text-blue-400 transition">Store</a>
+                <span class="text-blue-400">Services</span>
+                <a href="https://wa.me/212693000093"
+                    class="btn-primary text-white px-7 py-2.5 rounded-full shadow-lg font-bold">Order Now</a>
+            </div>
+
+            <div class="md:hidden flex gap-4">
+                <a href="index.html" class="text-[10px] font-black uppercase">Home</a>
+                <a href="store.html" class="text-[10px] font-black uppercase text-blue-400">Store</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-mesh pt-32 pb-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-none tracking-tighter uppercase italic">
+                Our <span class="text-blue-600">Services</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                We're not just selling cards; we're building a sustainable digital future for professionals in Morocco.
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow py-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+            
+            <!-- Card for Life -->
+            <div class="feature-card p-12 rounded-[40px] glow-blue">
+                <div class="text-4xl mb-8">💳</div>
+                <h2 class="text-3xl font-black mb-6 uppercase italic tracking-tighter">Card for Life</h2>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    Stop ordering business cards. Our premium NFC hardware is built to last a lifetime. Made from high-durability PVC, Matte Metal, or Epoxy, your SuperTap card is the last networking tool you'll ever need.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                        ECO-FRIENDLY & SUSTAINABLE
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                        INDUSTRIAL GRADE HARDWARE
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile for Life -->
+            <div class="feature-card p-12 rounded-[40px]">
+                <div class="text-4xl mb-8">📱</div>
+                <h2 class="text-3xl font-black mb-6 uppercase italic tracking-tighter">Profile for Life</h2>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    Your digital identity evolves, and so should your card. Update your social links, phone number, or business offerings instantly through our dashboard. No reprinting, no waste, no hassle.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                        INSTANT CLOUD UPDATES
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                        NO SUBSCRIPTION FEES*
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elite Support -->
+            <div class="feature-card p-12 rounded-[40px]">
+                <div class="text-4xl mb-8">🇲🇦</div>
+                <h2 class="text-3xl font-black mb-6 uppercase italic tracking-tighter">Casablanca Support</h2>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    We are local. Based in Casablanca, we provide 24/7 WhatsApp support to help you set up your profile, customize your design, or troubleshoot any issues. Local delivery, local people.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                        SAME-DAY CASABLANCA DELIVERY
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                        PHONECALL & WHATSAPP ASSISTANCE
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Mini Hardware -->
+            <div class="feature-card p-12 rounded-[40px] border-blue-600/20 bg-blue-600/5">
+                <div class="text-4xl mb-8">⚡</div>
+                <h2 class="text-3xl font-black mb-6 uppercase italic tracking-tighter text-blue-500">Fast Connectivity</h2>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    Our Mini Series (Tags & Coins) offers the same lifetime connectivity in a smaller form factor. Perfect for attaching to your phone, laptop, or office desk. One tap is all it takes to share your world.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-500">
+                        <span class="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
+                        ATTACH-AND-GO CONVENIENCE
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-500">
+                        <span class="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
+                        WATERPROOF HARDWARE
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="py-24 px-6 border-t border-slate-900">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-black mb-8 uppercase italic tracking-tighter">Inspired yet?</h2>
+            <p class="text-slate-400 mb-12">Start your lifetime journey with SuperTap today.</p>
+            <a href="store.html" class="btn-primary text-white px-12 py-5 rounded-[24px] font-black uppercase tracking-widest text-lg">Visit the Store</a>
+        </div>
+    </section>
+
+    <footer class="py-20 px-6 border-t border-slate-900 bg-[#020617]">
+        <div class="max-w-6xl mx-auto text-center">
+            <span class="text-3xl supertap-logo uppercase mb-4 inline-block">SuperTap</span>
+            <p class="text-slate-500 text-xs font-black uppercase tracking-[0.4em] italic mb-12">Casablanca Digital Hub
+            </p>
+
+            <div
+                class="flex justify-center flex-wrap gap-8 md:gap-12 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-12">
+                <a href="store.html" class="hover:text-blue-500 transition">Store</a>
+                <span class="text-blue-500">Services</span>
+                <a href="https://wa.me/212693000093" class="hover:text-blue-500 transition">WhatsApp</a>
+            </div>
+
+            <div
+                class="flex justify-center gap-6 text-[9px] text-slate-600 font-bold uppercase tracking-widest border-t border-slate-900/50 pt-10">
+                <a href="privacy.html" class="hover:text-slate-400 transition">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-slate-400 transition">Terms of Service</a>
+            </div>
+
+            <p class="mt-8 text-[8px] text-slate-800 font-bold uppercase tracking-widest">© 2026 SuperTap Morocco. All
+                Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
