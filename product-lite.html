@@ -106,6 +106,12 @@
             transition: all 0.3s ease;
         }
     </style>
+    <script src="translations.js" defer></script>
+    <script>
+        window.setLanguage = window.setLanguage || function(lang) {
+            window._pendingLang = lang;
+        };
+    </script>
 </head>
 
 <body class="flex flex-col min-h-screen">
@@ -114,9 +120,21 @@
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="index.html" class="text-2xl supertap-logo uppercase">SuperTap</a>
             <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
-                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-                <a href="store.html" class="hover:text-blue-400 transition">Store</a>
-                <a href="services.html" class="hover:text-blue-400 transition">Services</a>
+                <a href="index.html" class="hover:text-blue-400 transition" data-i18n="nav-home">Home</a>
+                <a href="store.html" class="hover:text-blue-400 transition" data-i18n="nav-store">Store</a>
+                <a href="services.html" class="hover:text-blue-400 transition" data-i18n="nav-services">Services</a>
+                <div class="flex items-center gap-3 ml-4 border-l border-white/10 pl-6">
+                    <button onclick="setLanguage('en')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇺🇸</button>
+                    <button onclick="setLanguage('fr')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇫🇷</button>
+                    <button onclick="setLanguage('ar')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇲🇦</button>
+                </div>
+            </div>
+
+            <div class="md:hidden flex gap-3 items-center">
+                <button onclick="setLanguage('en')" class="text-[14px]">🇺🇸</button>
+                <button onclick="setLanguage('fr')" class="text-[14px]">🇫🇷</button>
+                <button onclick="setLanguage('ar')" class="text-[14px]">🇲🇦</button>
+                <a href="store.html" class="text-[10px] font-black uppercase text-blue-400" data-i18n="nav-store">Store</a>
             </div>
         </div>
     </nav>
@@ -125,8 +143,8 @@
         <!-- 3D Preview Column -->
         <div class="text-center">
             <div class="mb-12">
-                <h1 class="text-5xl font-black italic uppercase tracking-tighter mb-4">Lite Edition</h1>
-                <p class="text-slate-400 uppercase tracking-widest text-xs font-bold">Standard White PVC Hardware</p>
+                <h1 class="text-5xl font-black italic uppercase tracking-tighter mb-4" data-i18n="lite-title">Lite Edition</h1>
+                <p class="text-slate-400 uppercase tracking-widest text-xs font-bold" data-i18n="white-pvc">Standard White PVC Hardware</p>
             </div>
 
             <div class="card-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)" onclick="flip()">
@@ -145,43 +163,43 @@
             
             <p class="text-slate-500 text-[10px] mt-8 uppercase font-bold tracking-widest">Click to flip • Hover to rotate</p>
             <div class="mt-12 text-3xl font-black italic">80 DH</div>
-            <a href="https://wa.me/212693000093?text=Order%20Lite" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-blue-500/20">Buy Now</a>
+            <a href="https://wa.me/212693000093?text=Order%20Lite" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-blue-500/20 text-white" data-i18n="buy-now">Buy Now</a>
         </div>
 
         <!-- Features Column -->
         <div class="space-y-12">
             <div>
-                <h2 class="text-2xl font-black uppercase italic mb-6 text-blue-500">The Advantages</h2>
+                <h2 class="text-2xl font-black uppercase italic mb-6 text-blue-500" data-i18n="advantages">The Advantages</h2>
                 <ul class="space-y-4">
                     <li class="flex items-start gap-4">
                         <span class="text-green-500 font-bold">✓</span>
-                        <p class="text-slate-300 text-sm"><strong class="text-white block">One Tap Sharing</strong> Share your social world instantly without any apps.</p>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block" data-i18n="one-tap">One Tap Sharing</strong> Share your social world instantly without any apps.</p>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-green-500 font-bold">✓</span>
-                        <p class="text-slate-300 text-sm"><strong class="text-white block">Professional PVC</strong> High-quality white finish that looks clean in any wallet.</p>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block" data-i18n="pvc-finish">Professional PVC Finish</strong> <span data-i18n="pvc-finish-desc">High-quality white finish that looks clean in any wallet.</span></p>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-green-500 font-bold">✓</span>
-                        <p class="text-slate-300 text-sm"><strong class="text-white block">Cloud-Base Profile</strong> Update your basic info through your digital profile.</p>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block" data-i18n="cloud-profile">Cloud-Base Profile</strong> <span data-i18n="cloud-profile-desc">Update your basic info through your digital profile.</span></p>
                     </li>
                 </ul>
             </div>
 
             <div class="pt-8 border-t border-slate-800">
-                <h2 class="text-2xl font-black uppercase italic mb-6 text-red-500">The Limitations</h2>
+                <h2 class="text-2xl font-black uppercase italic mb-6 text-red-500" data-i18n="limitations">The Limitations</h2>
                 <ul class="space-y-4">
                     <li class="flex items-start gap-4">
                         <span class="text-red-500 font-bold">✕</span>
-                        <p class="text-slate-400 text-sm"><strong class="text-slate-300 block italic uppercase text-[10px]">No PDF Files</strong> Lite users cannot host or share PDF documents on their profile.</p>
+                        <p class="text-slate-400 text-sm"><strong class="text-slate-300 block italic uppercase text-[10px]" data-i18n="pdf-support">No PDF Files</strong> Lite users cannot host or share PDF documents on their profile.</p>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-red-500 font-bold">✕</span>
-                        <p class="text-slate-400 text-sm"><strong class="text-slate-300 block italic uppercase text-[10px]">No Professional Theme</strong> Access to the exclusive business-designed theme is locked.</p>
+                        <p class="text-slate-400 text-sm"><strong class="text-slate-300 block italic uppercase text-[10px]" data-i18n="pro-theme">No Professional Theme</strong> Access to the exclusive business-designed theme is locked.</p>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-red-500 font-bold">✕</span>
-                        <p class="text-slate-400 text-sm"><strong class="text-slate-300 block italic uppercase text-[10px]">1 Quick Link Button</strong> You are limited to only one featured quick action button.</p>
+                        <p class="text-slate-400 text-sm"><strong class="text-slate-300 block italic uppercase text-[10px]" data-i18n="quick-links">1 Quick Link Button</strong> You are limited to only one featured quick action button.</p>
                     </li>
                 </ul>
             </div>
