@@ -37,9 +37,11 @@
         }
 
         .tag-3d-wrapper {
-            width: 100%;
-            height: 100%;
-            position: relative;
+            width: 200px;
+            height: 280px;
+            position: absolute;
+            left: 50px;
+            top: 10px;
             transform-style: preserve-3d;
             transition: transform 0.1s ease-out;
             cursor: grab;
@@ -54,10 +56,10 @@
 
         .tag-front, .tag-back {
             position: absolute;
-            width: 200px;
-            height: 280px;
-            left: 50px;
-            top: 10px;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
             background: #1e293b;
             border-radius: 20px;
             backface-visibility: hidden;
@@ -65,7 +67,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
 
         .tag-front {
@@ -84,13 +86,13 @@
             backface-visibility: hidden;
         }
 
-        .side-left, .side-right { width: 20px; height: 280px; }
-        .side-top, .side-bottom { width: 200px; height: 20px; }
+        .side-left, .side-right { width: 20px; height: 100%; }
+        .side-top, .side-bottom { width: 100%; height: 20px; }
 
-        .side-left { transform: rotateY(-90deg) translateZ(50px); left: 40px; top: 10px; }
-        .side-right { transform: rotateY(90deg) translateZ(150px); left: 40px; top: 10px; }
-        .side-top { transform: rotateX(90deg) translateZ(10px); left: 50px; top: 0; }
-        .side-bottom { transform: rotateX(-90deg) translateZ(270px); left: 50px; top: 0; }
+        .side-left { transform: rotateY(-90deg) translateZ(10px); left: -10px; top: 0; }
+        .side-right { transform: rotateY(90deg) translateZ(190px); left: -10px; top: 0; }
+        .side-top { transform: rotateX(90deg) translateZ(10px); left: 0; top: -10px; }
+        .side-bottom { transform: rotateX(-90deg) translateZ(270px); left: 0; top: -10px; }
 
 
         [data-i18n] { min-height: 1em; }
@@ -144,7 +146,7 @@
             </div>
             
             <p class="text-slate-500 text-[10px] mt-8 uppercase font-bold tracking-widest" data-i18n="hover-rotate">Hover to rotate</p>
-            <div class="mt-12 text-3xl font-black italic">50 DH</div>
+            <div class="mt-12 text-3xl font-black italic"><span data-i18n="price-small">50</span> <span data-i18n="currency">DH</span></div>
             <a href="https://wa.me/212693000093?text=Order%20Small%20Tag" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-blue-500/20 text-white" data-i18n="buy-now"></a>
         </div>
 
@@ -155,15 +157,15 @@
                 <ul class="space-y-4 text-slate-300">
                     <li class="flex items-start gap-4">
                         <span class="text-green-500 font-bold">✓</span>
-                        <p class="text-sm"><strong class="text-white block" data-i18n="ultra-portable">Ultra-portable design</strong> Pocket-sized hardware that goes anywhere.</p>
+                        <p class="text-sm"><strong class="text-white block" data-i18n="ultra-portable"></strong> <span data-i18n="feat-portable-desc"></span></p>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-green-500 font-bold">✓</span>
-                        <p class="text-sm"><strong class="text-white block" data-i18n="one-tap">One Tap Sharing</strong> Share your profile instantly with any phone.</p>
+                        <p class="text-sm"><strong class="text-white block" data-i18n="one-tap"></strong> <span data-i18n="feat-sharing-p"></span></p>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-green-500 font-bold">✓</span>
-                        <p class="text-sm"><strong class="text-white block" data-i18n="durable-hardware">Durable Hardware</strong> Rugged design for daily use.</p>
+                        <p class="text-sm"><strong class="text-white block" data-i18n="durable-hardware"></strong> <span data-i18n="feat-durable-desc"></span></p>
                     </li>
                 </ul>
             </div>
@@ -187,7 +189,7 @@
     <footer class="py-10 text-center border-t border-slate-900 mt-20">
         <a href="index.html" class="text-xl supertap-logo uppercase opacity-50 flex items-center justify-center gap-2">
             <img src="icon.svg" class="w-6 h-6" alt="Logo">
-            SuperTap
+            <span data-i18n="supertap">SuperTap</span>
         </a>
     </footer>
 
