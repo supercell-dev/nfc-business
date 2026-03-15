@@ -116,6 +116,12 @@
             100% { border-color: #1e293b; }
         }
     </style>
+    <script src="translations.js" defer></script>
+    <script>
+        window.setLanguage = window.setLanguage || function(lang) {
+            window._pendingLang = lang;
+        };
+    </script>
 </head>
 
 <body class="flex flex-col min-h-screen">
@@ -124,9 +130,21 @@
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="index.html" class="text-2xl supertap-logo uppercase">SuperTap</a>
             <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
-                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-                <a href="store.html" class="hover:text-blue-400 transition">Store</a>
-                <a href="services.html" class="hover:text-blue-400 transition">Services</a>
+                <a href="index.html" class="hover:text-blue-400 transition" data-i18n="nav-home">Home</a>
+                <a href="store.html" class="hover:text-blue-400 transition" data-i18n="nav-store">Store</a>
+                <a href="services.html" class="hover:text-blue-400 transition" data-i18n="nav-services">Services</a>
+                <div class="flex items-center gap-3 ml-4 border-l border-white/10 pl-6">
+                    <button onclick="setLanguage('en')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇺🇸</button>
+                    <button onclick="setLanguage('fr')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇫🇷</button>
+                    <button onclick="setLanguage('ar')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇲🇦</button>
+                </div>
+            </div>
+
+            <div class="md:hidden flex gap-3 items-center">
+                <button onclick="setLanguage('en')" class="text-[14px]">🇺🇸</button>
+                <button onclick="setLanguage('fr')" class="text-[14px]">🇫🇷</button>
+                <button onclick="setLanguage('ar')" class="text-[14px]">🇲🇦</button>
+                <a href="store.html" class="text-[10px] font-black uppercase text-blue-400" data-i18n="nav-store">Store</a>
             </div>
         </div>
     </nav>
@@ -135,8 +153,8 @@
         <!-- 3D Preview Column -->
         <div class="text-center">
             <div class="mb-12">
-                <h1 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter mb-4">Elite Edition</h1>
-                <p class="text-blue-500 uppercase tracking-[0.4em] text-xs font-black">Deep Matte Black • Custom Engraved</p>
+                <h1 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter mb-4" data-i18n="elite-title">Elite Edition</h1>
+                <p class="text-blue-500 uppercase tracking-[0.4em] text-xs font-black" data-i18n="elite-hardware">Deep Matte Black • Custom Engraved</p>
             </div>
 
             <div class="card-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)" onclick="flip()">
@@ -165,38 +183,38 @@
         <!-- Features Column -->
         <div class="space-y-12">
             <div class="feature-card-item">
-                <h2 class="text-3xl font-black uppercase italic mb-8 text-white border-b border-blue-600/30 pb-4">Ultimate Power</h2>
+                <h2 class="text-3xl font-black uppercase italic mb-8 text-white border-b border-blue-600/30 pb-4" data-i18n="advantages">Ultimate Power</h2>
                 <ul class="space-y-6">
                     <li class="flex items-start gap-4">
                         <div class="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
                             <span class="text-blue-500 text-xl">🛡️</span>
                         </div>
-                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1">5 Quick Link Buttons</strong> Maximum networking efficiency. Link everything from WhatsApp to your Menu.</p>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1" data-i18n="quick-links">5 Quick Link Buttons</strong> Maximum networking efficiency. Link everything from WhatsApp to your Menu.</p>
                     </li>
                     <li class="flex items-start gap-4">
                         <div class="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
                             <span class="text-blue-500 text-xl">📊</span>
                         </div>
-                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1">Elite PDF & Professional Theme</strong> All Pro features included with the highest priority support.</p>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1" data-i18n="pro-theme">Elite PDF & Professional Theme</strong> All Pro features included with the highest priority support.</p>
                     </li>
                     <li class="flex items-start gap-4">
                         <div class="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
                             <span class="text-blue-500 text-xl">✨</span>
                         </div>
-                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1">Animated Themes</strong> Access exclusive, high-impact animated backgrounds for your profile.</p>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1" data-i18n="animated-themes">Animated Themes</strong> <span data-i18n="animated-themes-desc">Access exclusive, high-impact animated backgrounds for your profile.</span></p>
                     </li>
                     <li class="flex items-start gap-4">
                         <div class="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
                             <span class="text-blue-500 text-xl">🎬</span>
                         </div>
-                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1">12 Custom Animations</strong> Apply 12 unique entrance animations to your profile elements (works on all themes except Professional).</p>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1" data-i18n="custom-animations">12 Custom Animations</strong> <span data-i18n="custom-animations-desc">Apply 12 unique entrance animations to your profile elements (works on all themes except Professional).</span></p>
                     </li>
                 </ul>
             </div>
 
             <div class="p-8 rounded-[32px] bg-blue-600/5 border border-blue-500/10">
-                <h2 class="text-sm font-black uppercase italic mb-4 text-blue-400 tracking-widest">Total Customization</h2>
-                <p class="text-slate-400 text-xs italic leading-relaxed">
+                <h2 class="text-sm font-black uppercase italic mb-4 text-blue-400 tracking-widest" data-i18n="total-customization">Total Customization</h2>
+                <p class="text-slate-400 text-xs italic leading-relaxed" data-i18n="elite-custom-desc">
                     The Elite card is for those who accept no compromises. From the physical deep-matte finish to the 12 digital animations, every aspect is designed to leave an unforgettable impression.
                 </p>
             </div>
