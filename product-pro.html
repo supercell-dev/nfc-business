@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperTap Pro | 3D Preview</title>
+    <title data-i18n="pro-title">Pro Edition | SuperTap</title>
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
         rel="stylesheet">
@@ -118,7 +119,10 @@
 
     <nav class="sticky top-0 z-50 glass-nav">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl supertap-logo uppercase">SuperTap</a>
+            <a href="index.html" class="text-2xl supertap-logo uppercase flex items-center gap-2">
+                <img src="icon.svg" class="w-8 h-8" alt="Logo">
+                SuperTap
+            </a>
             <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
                 <a href="index.html" class="hover:text-blue-400 transition" data-i18n="nav-home">Home</a>
                 <a href="store.html" class="hover:text-blue-400 transition" data-i18n="nav-store">Store</a>
@@ -208,6 +212,15 @@
         <span class="text-xl supertap-logo uppercase opacity-50">SuperTap</span>
     </footer>
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registered!', reg))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
     <script>
         function handleMove(e, container) {
             const wrapper = container.querySelector('.card-3d-wrapper');
