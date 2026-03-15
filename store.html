@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperTap Store | Premium NFC Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+
+        .hero-mesh {
+            background-color: #020617;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(29, 78, 216, 0.1) 0, transparent 50%);
+        }
+
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        .card-product {
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-product:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(37, 99, 235, 0.4);
+            transform: translateY(-10px);
+        }
+
+        .supertap-logo {
+            font-weight: 900;
+            letter-spacing: -2px;
+            font-style: italic;
+            background: linear-gradient(to right, #60a5fa, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-right: 8px;
+            display: inline-block;
+        }
+
+        .price-badge {
+            background: rgba(37, 99, 235, 0.1);
+            color: #60a5fa;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl supertap-logo uppercase">SuperTap</a>
+
+            <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <span class="text-blue-400">Store</span>
+                <a href="pricing.html" class="hover:text-blue-400 transition">NFC Cards</a>
+                <a href="mini.html" class="hover:text-blue-400 transition">Mini Series</a>
+                <a href="https://wa.me/212693000093"
+                    class="btn-primary text-white px-7 py-2.5 rounded-full shadow-lg font-bold">Order Now</a>
+            </div>
+
+            <div class="md:hidden flex gap-4">
+                <a href="index.html" class="text-[10px] font-black uppercase">Home</a>
+                <a href="pricing.html" class="text-[10px] font-black uppercase">Cards</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-mesh pt-24 pb-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-none tracking-tighter uppercase italic">
+                The <span class="text-blue-600">Store</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                Elevate your networking with our premium hardware lineup.
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-20 w-full">
+        <!-- NFC Cards Section -->
+        <div class="mb-24">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-2xl font-black uppercase italic tracking-widest text-slate-500">NFC Digital Cards</h2>
+                <div class="h-px bg-slate-800 flex-grow"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Lite -->
+                <div class="card-product p-8 rounded-[32px] flex flex-col">
+                    <div class="w-full aspect-[1.6/1] bg-slate-100 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-3xl font-black italic opacity-20 uppercase text-slate-900">SuperTap</span>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 uppercase">Lite Edition</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">Essential white branding. Professional and clean.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="price-badge px-4 py-1 rounded-full text-sm font-bold">80 DH</span>
+                        <a href="https://wa.me/212693000093?text=Order%20Lite" class="text-blue-500 font-bold uppercase text-xs hover:underline">Order</a>
+                    </div>
+                </div>
+                <!-- Pro -->
+                <div class="card-product p-8 rounded-[32px] flex flex-col border-blue-500/20">
+                    <div class="w-full aspect-[1.6/1] bg-slate-800 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-3xl font-black italic text-blue-500 uppercase">SuperTap</span>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/10 to-transparent"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 uppercase text-blue-500">Pro Edition</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">Midnight Blue branding with high-speed response.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="price-badge px-4 py-1 rounded-full text-sm font-bold">150 DH</span>
+                        <a href="https://wa.me/212693000093?text=Order%20Pro" class="btn-primary text-white px-6 py-2 rounded-xl text-xs font-bold uppercase">Buy Now</a>
+                    </div>
+                </div>
+                <!-- Elite -->
+                <div class="card-product p-8 rounded-[32px] flex flex-col">
+                    <div class="w-full aspect-[1.6/1] bg-[#0f172a] rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden border border-slate-800">
+                         <div class="w-10 h-10 border border-slate-700 rounded-full flex items-center justify-center">
+                            <span class="text-[5px] text-slate-500 font-bold uppercase text-center">LOGO</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 uppercase">Elite Matte</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">Deep matte black with fully custom engraving.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="price-badge px-4 py-1 rounded-full text-sm font-bold">250 DH</span>
+                        <a href="https://wa.me/212693000093?text=Order%20Elite" class="text-blue-500 font-bold uppercase text-xs hover:underline">Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mini Series Section -->
+        <div>
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-2xl font-black uppercase italic tracking-widest text-slate-500">Mini Hardware</h2>
+                <div class="h-px bg-slate-800 flex-grow"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Tag -->
+                <div class="card-product p-8 rounded-[32px] flex items-center gap-8">
+                    <div class="w-32 h-20 bg-slate-800 rounded-xl flex items-center justify-center shrink-0 border border-slate-700">
+                        <span class="text-[8px] font-black text-slate-500 uppercase italic">SuperTap</span>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold mb-1 uppercase">Small Tag</h3>
+                        <p class="text-slate-500 text-xs mb-4">Industrial hardware for phone attachment.</p>
+                        <div class="flex items-center gap-4">
+                            <span class="text-lg font-black italic">30 DH</span>
+                            <a href="https://wa.me/212693000093?text=Order%20Tag" class="text-blue-500 font-bold uppercase text-[10px] hover:underline">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Coin -->
+                <div class="card-product p-8 rounded-[32px] flex items-center gap-8">
+                    <div class="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center shrink-0 border border-blue-500/30">
+                        <span class="text-[8px] font-black text-blue-500 uppercase italic">SuperTap</span>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold mb-1 uppercase text-blue-500">Round Coin</h3>
+                        <p class="text-slate-500 text-xs mb-4">Epoxy waterproof hardware.</p>
+                        <div class="flex items-center gap-4">
+                            <span class="text-lg font-black italic text-blue-500">35 DH</span>
+                            <a href="https://wa.me/212693000093?text=Order%20Coin" class="text-blue-500 font-bold uppercase text-[10px] hover:underline">Buy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-20 px-6 border-t border-slate-900 bg-[#020617]">
+        <div class="max-w-6xl mx-auto text-center">
+            <span class="text-3xl supertap-logo uppercase mb-4 inline-block">SuperTap</span>
+            <p class="text-slate-500 text-xs font-black uppercase tracking-[0.4em] italic mb-12">Casablanca Digital Hub
+            </p>
+
+            <div
+                class="flex justify-center flex-wrap gap-8 md:gap-12 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-12">
+                <span class="text-blue-500">Store</span>
+                <a href="pricing.html" class="hover:text-blue-500 transition">NFC Cards</a>
+                <a href="mini.html" class="hover:text-blue-500 transition">Mini Series</a>
+                <a href="https://wa.me/212693000093" class="hover:text-blue-500 transition">WhatsApp</a>
+            </div>
+
+            <div
+                class="flex justify-center gap-6 text-[9px] text-slate-600 font-bold uppercase tracking-widest border-t border-slate-900/50 pt-10">
+                <a href="privacy.html" class="hover:text-slate-400 transition">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-slate-400 transition">Terms of Service</a>
+            </div>
+
+            <p class="mt-8 text-[8px] text-slate-800 font-bold uppercase tracking-widest">© 2026 SuperTap Morocco. All
+                Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
