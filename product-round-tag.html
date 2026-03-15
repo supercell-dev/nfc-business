@@ -32,8 +32,9 @@
         .coin-scene {
             width: 300px;
             height: 300px;
-            perspective: 1000px;
+            perspective: 1200px;
             margin: 0 auto;
+            position: relative;
         }
 
         .coin-3d-wrapper {
@@ -54,40 +55,43 @@
 
         .coin-front, .coin-back {
             position: absolute;
-            width: 250px;
-            height: 250px;
-            left: 25px;
-            top: 25px;
+            width: 240px;
+            height: 240px;
+            left: 30px;
+            top: 30px;
             background: #1e293b;
             border-radius: 50%;
             backface-visibility: hidden;
-            border: 2px solid rgba(59, 130, 246, 0.2);
+            border: 2px solid rgba(59, 130, 246, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
         }
 
         .coin-front {
-            transform: translateZ(10px);
+            transform: translateZ(5px);
         }
 
         .coin-back {
-            transform: rotateY(180deg) translateZ(10px);
+            transform: rotateY(180deg) translateZ(5px);
             background: #0f172a;
         }
 
-        /* Rim for thickness */
+        /* Sides for thickness - multiple rings to simulate a rim */
         .coin-rim {
             position: absolute;
-            width: 250px;
-            height: 250px;
-            left: 25px;
-            top: 25px;
+            width: 240px;
+            height: 240px;
+            left: 30px;
+            top: 30px;
             border-radius: 50%;
             background: #334155;
-            transform: translateZ(0);
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
+
+        .rim-1 { transform: translateZ(2px); }
+        .rim-2 { transform: translateZ(-2px); }
 
         [data-i18n] { min-height: 1em; }
     </style>
@@ -125,7 +129,8 @@
             <div class="coin-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
                 <div class="coin-3d-wrapper">
                     <div class="coin-inner">
-                        <div class="coin-rim"></div>
+                        <div class="coin-rim rim-1"></div>
+                        <div class="coin-rim rim-2"></div>
                         <div class="coin-front">
                             <span class="text-xl font-black italic opacity-20 uppercase">SuperTap</span>
                         </div>
@@ -147,15 +152,15 @@
                 <ul class="space-y-4 text-slate-300">
                     <li class="flex items-start gap-4">
                         <span class="text-green-500 font-bold">✓</span>
+                        <p class="text-sm"><strong class="text-white block" data-i18n="adhesive-backing">Adhesive Backing</strong> Peel and stick to any device.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-green-500 font-bold">✓</span>
                         <p class="text-sm"><strong class="text-white block" data-i18n="minimalist-footprint">Minimalist footprint</strong> Sleek round design for any surface.</p>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-green-500 font-bold">✓</span>
                         <p class="text-sm"><strong class="text-white block" data-i18n="one-tap">One Tap Sharing</strong> Share your profile instantly with any phone.</p>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <span class="text-green-500 font-bold">✓</span>
-                        <p class="text-sm"><strong class="text-white block" data-i18n="waterproof">Waterproof Epoxy</strong> Durable enough for keys or phones.</p>
                     </li>
                 </ul>
             </div>
