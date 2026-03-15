@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperTap Elite | 3D Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+
+        .supertap-logo {
+            font-weight: 900;
+            letter-spacing: -2px;
+            font-style: italic;
+            background: linear-gradient(to right, #60a5fa, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-right: 8px;
+            display: inline-block;
+        }
+
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* 3D Card Scene */
+        .card-scene {
+            perspective: 1200px;
+            width: 320px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .card-3d-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #0f172a;
+            color: #f8fafc;
+            border: 1px solid #1e293b;
+            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8), 0 20px 60px -10px rgba(0,0,0,0.5);
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        .shine {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card-3d-wrapper:hover .shine {
+            opacity: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transition: all 0.3s ease;
+        }
+
+        .elite-glow {
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: #1e293b; }
+            50% { border-color: #3b82f6; }
+            100% { border-color: #1e293b; }
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl supertap-logo uppercase">SuperTap</a>
+            <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="store.html" class="hover:text-blue-400 transition">Store</a>
+                <a href="services.html" class="hover:text-blue-400 transition">Services</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-20 w-full grid md:grid-cols-2 gap-16 items-center">
+        <!-- 3D Preview Column -->
+        <div class="text-center">
+            <div class="mb-12">
+                <h1 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter mb-4">Elite Edition</h1>
+                <p class="text-blue-500 uppercase tracking-[0.4em] text-xs font-black">Deep Matte Black • Custom Engraved</p>
+            </div>
+
+            <div class="card-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)" onclick="flip()">
+                <div class="card-3d-wrapper" id="card-wrapper">
+                    <div class="card-inner" id="card-inner">
+                        <div class="card-front elite-glow">
+                            <div class="shine"></div>
+                            <div class="w-14 h-14 border border-slate-700 rounded-full flex items-center justify-center mb-4">
+                                <span class="text-[7px] text-slate-500 font-bold uppercase text-center">Custom<br>Logo</span>
+                            </div>
+                            <span class="text-[11px] font-black tracking-[0.3em] uppercase">[Your Name]</span>
+                        </div>
+                        <div class="card-back">
+                            <div class="w-16 h-16 bg-slate-900 border border-slate-800 rounded-xl mb-4"></div>
+                            <span class="absolute bottom-6 left-6 text-[9px] text-slate-600 font-bold uppercase">[Custom Name]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-slate-500 text-[10px] mt-8 uppercase font-bold tracking-widest">Click to flip • Hover to rotate</p>
+            <div class="mt-12 text-5xl font-black italic">250 DH</div>
+            <a href="https://wa.me/212693000093?text=Order%20Elite" class="btn-primary inline-block mt-6 px-16 py-5 rounded-[24px] font-black uppercase tracking-widest text-lg shadow-2xl shadow-blue-500/40 text-white">Own the Elite</a>
+        </div>
+
+        <!-- Features Column -->
+        <div class="space-y-12">
+            <div class="feature-card-item">
+                <h2 class="text-3xl font-black uppercase italic mb-8 text-white border-b border-blue-600/30 pb-4">Ultimate Power</h2>
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
+                            <span class="text-blue-500 text-xl">🛡️</span>
+                        </div>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1">5 Quick Link Buttons</strong> Maximum networking efficiency. Link everything from WhatsApp to your Menu.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
+                            <span class="text-blue-500 text-xl">📊</span>
+                        </div>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1">Elite PDF & Professional Theme</strong> All Pro features included with the highest priority support.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
+                            <span class="text-blue-500 text-xl">✨</span>
+                        </div>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1">Animated Themes</strong> Access exclusive, high-impact animated backgrounds for your profile.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
+                            <span class="text-blue-500 text-xl">🎬</span>
+                        </div>
+                        <p class="text-slate-300 text-sm"><strong class="text-white block uppercase text-[10px] mb-1">12 Custom Animations</strong> Apply 12 unique entrance animations to your profile elements (works on all themes except Professional).</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="p-8 rounded-[32px] bg-blue-600/5 border border-blue-500/10">
+                <h2 class="text-sm font-black uppercase italic mb-4 text-blue-400 tracking-widest">Total Customization</h2>
+                <p class="text-slate-400 text-xs italic leading-relaxed">
+                    The Elite card is for those who accept no compromises. From the physical deep-matte finish to the 12 digital animations, every aspect is designed to leave an unforgettable impression.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-10 text-center border-t border-slate-900 mt-20">
+        <span class="text-xl supertap-logo uppercase opacity-50">SuperTap</span>
+    </footer>
+
+    <script>
+        function handleMove(e, container) {
+            const wrapper = container.querySelector('.card-3d-wrapper');
+            const rect = container.getBoundingClientRect();
+            const rotateX = ((rect.height / 2) - (e.clientY - rect.top)) / 12;
+            const rotateY = ((e.clientX - rect.left) - (rect.width / 2)) / 12;
+            wrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        }
+        function handleLeave(container) {
+            container.querySelector('.card-3d-wrapper').style.transform = `rotateX(0deg) rotateY(0deg)`;
+        }
+        function flip() {
+            document.getElementById('card-inner').classList.toggle('is-flipped');
+        }
+    </script>
+
+</body>
+
+</html>
