@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | SuperTap Casablanca</title>
+    <title data-i18n="privacy-title">Privacy Policy | SuperTap</title>
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
         rel="stylesheet">
@@ -99,10 +100,23 @@
         </div>
 
         <footer class="mt-20 text-center">
-            <span class="text-2xl supertap-logo uppercase">SuperTap</span>
+            <a href="index.html" class="text-2xl supertap-logo uppercase flex items-center gap-2">
+                <img src="icon.svg" class="w-8 h-8" alt="Logo">
+                SuperTap
+            </a>
             <p class="mt-8 text-[8px] text-slate-800 font-bold uppercase tracking-widest" data-i18n="footer-copy">© 2026 SuperTap Morocco. All Rights Reserved.</p>
         </footer>
     </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registered!', reg))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
 </body>
 
 </html>
