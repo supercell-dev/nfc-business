@@ -38,10 +38,15 @@
 
     <div class="max-w-3xl mx-auto">
         <header class="mb-16 text-center">
-            <div class="space-x-4 mb-4">
-                <a href="index.html" class="text-blue-500 text-[10px] font-black uppercase tracking-widest hover:text-white transition">Home</a>
-                <a href="store.html" class="text-blue-500 text-[10px] font-black uppercase tracking-widest hover:text-white transition">Store</a>
-                <a href="services.html" class="text-blue-500 text-[10px] font-black uppercase tracking-widest hover:text-white transition">Services</a>
+            <div class="space-x-4 mb-4 flex justify-center items-center">
+                <a href="index.html" class="text-blue-500 text-[10px] font-black uppercase tracking-widest hover:text-white transition" data-i18n="nav-home">Home</a>
+                <a href="store.html" class="text-blue-500 text-[10px] font-black uppercase tracking-widest hover:text-white transition" data-i18n="nav-store">Store</a>
+                <a href="services.html" class="text-blue-500 text-[10px] font-black uppercase tracking-widest hover:text-white transition" data-i18n="nav-services">Services</a>
+                <div class="flex items-center gap-3 ml-4 border-l border-white/10 pl-6">
+                    <button onclick="setLanguage('en')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇺🇸</button>
+                    <button onclick="setLanguage('fr')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇫🇷</button>
+                    <button onclick="setLanguage('ar')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇲🇦</button>
+                </div>
             </div>
             <h1 class="text-4xl font-black mt-8 uppercase italic tracking-tighter">Terms of Service</h1>
             <p class="text-slate-500 text-sm mt-2 uppercase tracking-widest">Effective Date: March 2026</p>
@@ -83,9 +88,11 @@
 
         <footer class="mt-20 text-center">
             <span class="text-2xl supertap-logo uppercase">SuperTap</span>
+            <p class="mt-8 text-[8px] text-slate-800 font-bold uppercase tracking-widest" data-i18n="footer-copy">© 2026 SuperTap Morocco. All Rights Reserved.</p>
         </footer>
     </div>
 
+    <script src="translations.js"></script>
 </body>
 
 </html>
