@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="small-tag-title">Small Tag | SuperTap</title>
+    <title>SuperTap Small Tag — NFC on Your Keychain</title>
+    <meta name="description" content="Tiny but powerful. Attach it to your keys and share your digital profile with a tap. Durable NFC hardware for just 50 DH.">
+    <meta property="og:site_name" content="SuperTap">
+    <meta property="og:title" content="SuperTap Small Tag — NFC on Your Keychain">
+    <meta property="og:description" content="Attach it to your keys and share your profile with a tap. Just 50 DH.">
+    <meta property="og:image" content="https://getsupertap.com/supertap_logo.png">
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
@@ -39,115 +44,94 @@
             padding-right: 8px;
             display: inline-block;
         }
-        /* 3D Tag Styles */
+        /* 3D Tag Scene */
         .tag-scene {
-            width: 300px;
-            height: 340px;
-            perspective: 900px;
+            perspective: 1200px;
+            width: 200px;
+            height: 300px;
             margin: 0 auto;
-            position: relative;
         }
 
-        /* The wrapper sits at the center of the scene and rotates */
         .tag-3d-wrapper {
-            width: 160px;
-            height: 260px;
-            position: absolute;
-            left: 70px;
-            top: 40px;
+            position: relative;
+            width: 100%;
+            height: 100%;
             transform-style: preserve-3d;
             transition: transform 0.1s ease-out;
-            cursor: grab;
-            transform: rotateX(10deg) rotateY(-20deg);
+            cursor: pointer;
         }
 
-        /* depth of the tag */
-        :root { --depth: 14px; }
+        .tag-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-        .tag-face {
+        .is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .tag-front,
+        .tag-back {
             position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-        }
-
-        /* Front face */
-        .tag-front {
-            width: 160px;
-            height: 260px;
-            background: linear-gradient(160deg, #1e3a5f 0%, #1e293b 60%);
-            border-radius: 18px;
-            border: 1.5px solid rgba(59, 130, 246, 0.35);
+            border-radius: 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            transform: translateZ(7px);
-            box-shadow: inset 0 0 40px rgba(59,130,246,0.08);
+            background: #1e293b;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 50px -10px rgba(37, 99, 235, 0.15);
         }
 
-        /* Back face */
         .tag-back {
-            width: 160px;
-            height: 260px;
+            transform: rotateY(180deg);
             background: #0f172a;
-            border-radius: 18px;
-            border: 1.5px solid rgba(59, 130, 246, 0.15);
-            transform: rotateY(180deg) translateZ(7px);
         }
 
-        /* Left side */
-        .tag-side-left {
-            width: var(--depth);
-            height: 260px;
-            background: linear-gradient(to right, #1e3a5f, #263c56);
-            top: 0;
-            left: -7px;
-            transform: rotateY(-90deg) translateZ(7px);
-            transform-origin: right center;
-        }
-
-        /* Right side */
-        .tag-side-right {
-            width: var(--depth);
-            height: 260px;
-            background: linear-gradient(to left, #0f1f33, #1e3a5f);
-            top: 0;
-            right: -7px;
-            transform: rotateY(90deg) translateZ(7px);
-            transform-origin: left center;
-        }
-
-        /* Top side */
-        .tag-side-top {
-            width: 160px;
-            height: var(--depth);
-            background: linear-gradient(to bottom, #263c56, #1e293b);
-            top: -7px;
-            left: 0;
-            transform: rotateX(90deg) translateZ(7px);
-            transform-origin: center bottom;
-        }
-
-        /* Bottom side */
-        .tag-side-bottom {
-            width: 160px;
-            height: var(--depth);
-            background: linear-gradient(to top, #0f1720, #1e293b);
-            bottom: -7px;
-            left: 0;
-            transform: rotateX(-90deg) translateZ(7px);
-            transform-origin: center top;
-        }
-
-        /* Subtle NFC chip mark on front */
-        .tag-chip {
-            width: 38px;
-            height: 28px;
-            border: 1.5px solid rgba(59,130,246,0.4);
-            border-radius: 5px;
-            background: rgba(59,130,246,0.07);
+        .tag-shine {
             position: absolute;
-            bottom: 36px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tag-3d-wrapper:hover .tag-shine {
+            opacity: 1;
+        }
+
+        /* NFC chip detail */
+        .tag-chip {
+            width: 36px;
+            height: 26px;
+            border: 1.5px solid rgba(59, 130, 246, 0.4);
+            border-radius: 5px;
+            background: rgba(59, 130, 246, 0.07);
+            position: absolute;
+            bottom: 40px;
+        }
+
+        /* Keychain hole */
+        .tag-hole {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            background: #020617;
         }
 
         [data-i18n] { min-height: 1em; }
@@ -159,7 +143,7 @@
     <nav class="sticky top-0 z-50 glass-nav">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="index.html" class="text-2xl supertap-logo uppercase flex items-center gap-2">
-                <img src="icon.svg" class="w-8 h-8" alt="Logo">
+                <img src="icon.svg" class="w-8 h-8" alt="SuperTap">
                 SuperTap
             </a>
             <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
@@ -183,21 +167,23 @@
                 <p class="text-slate-400 uppercase tracking-widest text-xs font-bold" data-i18n="small-tag-desc"></p>
             </div>
 
-            <div class="tag-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
-                <div class="tag-3d-wrapper">
-                    <div class="tag-face tag-front">
-                        <span class="text-base font-black italic opacity-20 uppercase tracking-widest">SuperTap</span>
-                        <div class="tag-chip"></div>
+            <div class="tag-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)" onclick="flip()">
+                <div class="tag-3d-wrapper" id="tag-wrapper">
+                    <div class="tag-inner" id="tag-inner">
+                        <div class="tag-front">
+                            <div class="tag-shine"></div>
+                            <div class="tag-hole"></div>
+                            <span class="text-base font-black italic opacity-30 uppercase tracking-widest text-blue-400">SuperTap</span>
+                            <div class="tag-chip"></div>
+                        </div>
+                        <div class="tag-back">
+                            <div class="w-12 h-12 border-2 border-dashed border-blue-500/20 rounded-xl"></div>
+                        </div>
                     </div>
-                    <div class="tag-face tag-back"></div>
-                    <div class="tag-face tag-side-left"></div>
-                    <div class="tag-face tag-side-right"></div>
-                    <div class="tag-face tag-side-top"></div>
-                    <div class="tag-face tag-side-bottom"></div>
                 </div>
             </div>
             
-            <p class="text-slate-500 text-[10px] mt-8 uppercase font-bold tracking-widest" data-i18n="hover-rotate">Hover to rotate</p>
+            <p class="text-slate-500 text-[10px] mt-8 uppercase font-bold tracking-widest">Click to flip • Hover to rotate</p>
             <div class="mt-12 text-3xl font-black italic"><span data-i18n="price-small">50</span> <span data-i18n="currency">DH</span></div>
             <a href="https://wa.me/212674745463?text=Order%20Small%20Tag" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl shadow-blue-500/20 text-white" data-i18n="buy-now"></a>
         </div>
@@ -240,7 +226,7 @@
 
     <footer class="py-10 text-center border-t border-slate-900 mt-20">
         <a href="index.html" class="text-xl supertap-logo uppercase opacity-50 flex items-center justify-center gap-2">
-            <img src="icon.svg" class="w-6 h-6" alt="Logo">
+            <img src="icon.svg" class="w-6 h-6" alt="SuperTap">
             <span data-i18n="supertap">SuperTap</span>
         </a>
     </footer>
@@ -251,12 +237,15 @@
             const rect = container.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            const rotateX = ((rect.height / 2) - y) / 5;
-            const rotateY = (x - (rect.width / 2)) / 5;
+            const rotateX = ((rect.height / 2) - y) / 10;
+            const rotateY = (x - (rect.width / 2)) / 10;
             wrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
         function handleLeave(container) {
             container.querySelector('.tag-3d-wrapper').style.transform = `rotateX(0deg) rotateY(0deg)`;
+        }
+        function flip() {
+            document.getElementById('tag-inner').classList.toggle('is-flipped');
         }
 
         if ('serviceWorker' in navigator) {
