@@ -80,7 +80,8 @@
     });
 
     function applyLanguage(lang) {
-        const t = window.translations && window.translations[lang];
+        const allTranslations = typeof translations !== 'undefined' ? translations : window.translations;
+        const t = allTranslations && allTranslations[lang];
         if (!t) return;
 
         // Direction & font
