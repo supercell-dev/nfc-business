@@ -83,7 +83,9 @@
             border: 1px solid rgba(37, 99, 235, 0.2);
         }
     </style>
-    <script src="translations.js" defer></script>
+    <link rel="stylesheet" href="lang/lang-picker.css">
+    <script src="lang/translations.js"></script>
+    <script src="lang/lang-engine.js" defer></script>
     <script>
         window.setLanguage = window.setLanguage || function(lang) {
             window._pendingLang = lang;
@@ -104,19 +106,13 @@
                 <a href="index.html" class="hover:text-blue-400 transition" data-i18n="nav-home">Home</a>
                 <a href="store.html" class="hover:text-blue-400 transition text-blue-400" data-i18n="nav-store">Store</a>
                 <a href="services.html" class="hover:text-blue-400 transition" data-i18n="nav-services">Services</a>
-                <div class="flex items-center gap-3 ml-4 border-l border-white/10 pl-6">
-                    <button onclick="setLanguage('en')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇺🇸</button>
-                    <button onclick="setLanguage('fr')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇫🇷</button>
-                    <button onclick="setLanguage('ar')" class="hover:scale-110 transition opacity-80 hover:opacity-100">🇲🇦</button>
-                </div>
+                <div class="lang-picker ml-4 border-l border-white/10 pl-6"></div>
                 <a href="https://wa.me/212674745463"
                     class="btn-primary text-white px-7 py-2.5 rounded-full shadow-lg font-bold" data-i18n="order-now">Order Now</a>
             </div>
 
             <div class="md:hidden flex gap-3 items-center">
-                <button onclick="setLanguage('en')" class="text-[14px]">🇺🇸</button>
-                <button onclick="setLanguage('fr')" class="text-[14px]">🇫🇷</button>
-                <button onclick="setLanguage('ar')" class="text-[14px]">🇲🇦</button>
+                <div class="lang-picker"></div>
                 <a href="store.html" class="text-[10px] font-black uppercase text-blue-400" data-i18n="nav-store">Store</a>
             </div>
         </div>
