@@ -136,7 +136,14 @@
 
         [data-i18n] { min-height: 1em; }
     </style>
-    <script src="translations.js" defer></script>
+    <link rel="stylesheet" href="lang/lang-picker.css">
+    <script src="lang/translations.js"></script>
+    <script src="lang/lang-engine.js" defer></script>
+    <script>
+        window.setLanguage = window.setLanguage || function(lang) {
+            window._pendingLang = lang;
+        };
+    </script>
 </head>
 
 <body class="flex flex-col min-h-screen">
@@ -150,11 +157,7 @@
                 <a href="index.html" class="hover:text-blue-400 transition" data-i18n="nav-home"></a>
                 <a href="store.html" class="hover:text-blue-400 transition text-blue-400" data-i18n="nav-store"></a>
                 <a href="services.html" class="hover:text-blue-400 transition" data-i18n="nav-services"></a>
-                <div class="flex items-center gap-3 ml-4 border-l border-white/10 pl-6">
-                    <button onclick="setLanguage('en')" class="text-[14px]">🇺🇸</button>
-                    <button onclick="setLanguage('fr')" class="text-[14px]">🇫🇷</button>
-                    <button onclick="setLanguage('ar')" class="text-[14px]">🇲🇦</button>
-                </div>
+                <div class="lang-picker ml-4 border-l border-white/10 pl-6"></div>
             </div>
         </div>
     </nav>
