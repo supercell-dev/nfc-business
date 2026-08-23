@@ -1,0 +1,179 @@
+/* Language Picker Dropdown — Premium Glassmorphic */
+.lang-picker {
+    position: relative;
+    z-index: 60;
+    font-family: 'Poppins', sans-serif;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 12px;
+    color: #cbd5e1;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.lang-btn:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    background: rgba(30, 41, 59, 0.85);
+    color: #ffffff;
+    box-shadow: 0 0 20px -3px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
+}
+
+.lang-btn .flag { 
+    font-size: 15px; 
+    line-height: 1;
+}
+
+.lang-btn .code {
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.lang-btn .arrow {
+    font-size: 9px;
+    opacity: 0.6;
+    transition: transform 0.25s ease;
+    margin-left: 2px;
+}
+
+.lang-picker.open .lang-btn .arrow { 
+    transform: rotate(180deg); 
+    opacity: 1;
+    color: #60a5fa;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: rgba(8, 14, 26, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 8px;
+    display: none;
+    min-width: 220px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 35px -5px rgba(37, 99, 235, 0.15);
+    animation: dropIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(59, 130, 246, 0.3) transparent;
+}
+
+.lang-dropdown::-webkit-scrollbar { width: 5px; }
+.lang-dropdown::-webkit-scrollbar-track { background: transparent; }
+.lang-dropdown::-webkit-scrollbar-thumb { 
+    background: rgba(59, 130, 246, 0.3); 
+    border-radius: 9999px; 
+}
+
+@keyframes dropIn {
+    from { opacity: 0; transform: translateY(-8px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.lang-picker.open .lang-dropdown { 
+    display: block; 
+}
+
+/* Search input */
+.lang-search {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.7);
+    color: #f1f5f9;
+    font-size: 12px;
+    font-weight: 500;
+    outline: none;
+    margin-bottom: 6px;
+    transition: all 0.2s;
+}
+
+.lang-search::placeholder { color: #64748b; }
+.lang-search:focus { 
+    border-color: rgba(59, 130, 246, 0.5); 
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 0 15px -3px rgba(37, 99, 235, 0.25);
+}
+
+/* Group labels */
+.lang-dropdown .lang-group-label {
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #64748b;
+    padding: 8px 10px 4px;
+}
+
+/* Language option */
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 500;
+    position: relative;
+}
+
+.lang-option:hover {
+    background: rgba(59, 130, 246, 0.12);
+    color: #ffffff;
+    transform: translateX(2px);
+}
+
+.lang-option.active {
+    background: rgba(59, 130, 246, 0.18);
+    color: #60a5fa;
+    font-weight: 700;
+}
+
+.lang-option.active::before {
+    content: '';
+    position: absolute;
+    right: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3b82f6;
+    box-shadow: 0 0 10px #3b82f6;
+}
+
+.lang-option .flag { font-size: 16px; line-height: 1; }
+.lang-option .label { flex: 1; }
+
+.lang-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin: 4px 8px;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+    .lang-dropdown {
+        min-width: 190px;
+        max-height: 340px;
+        right: 0;
+    }
+}

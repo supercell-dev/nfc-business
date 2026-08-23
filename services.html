@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperTap Services — Your Card for Life</title>
+    <meta name="description" content="One card, zero subscriptions. Update your profile anytime, share with a tap, and get 24h delivery across Morocco. 24/7 WhatsApp support included.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://getsupertap.com/services.html">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SuperTap">
+    <meta property="og:title" content="SuperTap Services — Your Card for Life">
+    <meta property="og:description" content="One card, zero subscriptions. Update your profile anytime and share with a tap.">
+    <meta property="og:image" content="https://getsupertap.com/supertap_logo.png">
+    <meta property="og:url" content="https://getsupertap.com/services.html">
+    
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #070a13;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .hero-mesh {
+            background-color: #070a13;
+            background-image:
+                radial-gradient(at 50% 0%, rgba(37, 99, 235, 0.22) 0%, transparent 60%),
+                radial-gradient(at 10% 40%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(at 90% 60%, rgba(99, 102, 241, 0.12) 0%, transparent 50%);
+        }
+
+        .glass-nav {
+            background: rgba(7, 10, 19, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.45);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.6);
+            filter: brightness(1.08);
+        }
+
+        .supertap-logo {
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            font-style: italic;
+            background: linear-gradient(to right, #93c5fd, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-right: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .supertap-logo:hover {
+            filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.5));
+        }
+
+        .feature-card {
+            background: rgba(13, 19, 33, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-card:hover {
+            border-color: rgba(59, 130, 246, 0.45);
+            background: rgba(18, 26, 45, 0.85);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px -5px rgba(37, 99, 235, 0.25);
+        }
+
+        .glow-blue {
+            box-shadow: 0 0 50px -10px rgba(37, 99, 235, 0.35);
+        }
+    </style>
+    <link rel="stylesheet" href="lang/lang-picker.css">
+    <script src="lang/translations.js"></script>
+    <script src="lang/lang-engine.js" defer></script>
+    <script>
+        window.setLanguage = window.setLanguage || function(lang) {
+            window._pendingLang = lang;
+        };
+    </script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-2xl supertap-logo uppercase flex items-center gap-2">
+                <img src="icon.svg" class="w-8 h-8" alt="SuperTap">
+                SuperTap
+            </a>
+
+            <div class="space-x-10 text-[11px] font-black uppercase tracking-[0.2em] hidden md:flex items-center">
+                <a href="index.html" class="hover:text-blue-400 transition text-slate-300" data-i18n="nav-home">Home</a>
+                <a href="store.html" class="hover:text-blue-400 transition text-slate-300" data-i18n="nav-store">Store</a>
+                <a href="services.html" class="hover:text-blue-400 transition text-blue-400" data-i18n="nav-services">Services</a>
+                <div class="lang-picker ml-4 border-l border-white/10 pl-6"></div>
+                <a href="https://wa.me/212674745463"
+                    class="btn-primary text-white px-7 py-2.5 rounded-full shadow-lg font-bold" data-i18n="order-now">Order Now</a>
+            </div>
+
+            <div class="md:hidden flex gap-3 items-center">
+                <div class="lang-picker"></div>
+                <a href="services.html" class="text-[10px] font-black uppercase text-blue-400" data-i18n="nav-services">Services</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-mesh pt-32 pb-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-none tracking-tighter uppercase italic text-white" data-i18n="header-services">Services</h1>
+            <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed" data-i18n="services-desc">We're not just selling cards; we're building a sustainable digital future for professionals in Morocco.</p>
+        </div>
+    </header>
+
+    <main class="flex-grow py-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+            
+            <!-- Card for Life -->
+            <div class="feature-card p-12 rounded-[40px] glow-blue">
+                <div class="text-4xl mb-8">💳</div>
+                <h2 class="text-3xl font-black mb-6 uppercase italic tracking-tighter text-white" data-i18n="card-for-life">Card for Life</h2>
+                <p class="text-slate-300 leading-relaxed mb-8" data-i18n="card-for-life-desc">
+                    Stop ordering business cards. Our premium NFC hardware is built to last a lifetime. Made from high-durability PVC, Matte Metal, or Epoxy, your SuperTap card is the last networking tool you'll ever need.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
+                        <span data-i18n="eco-sustainable">ECO-FRIENDLY & SUSTAINABLE</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
+                        <span data-i18n="industrial-hardware">INDUSTRIAL GRADE HARDWARE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile for Life -->
+            <div class="feature-card p-12 rounded-[40px]">
+                <div class="text-4xl mb-8">📱</div>
+                <h2 class="text-3xl font-black mb-6 uppercase italic tracking-tighter text-white" data-i18n="profile-for-life">Profile for Life</h2>
+                <p class="text-slate-300 leading-relaxed mb-8" data-i18n="profile-for-life-desc">
+                    Your digital identity evolves, and so should your card. Update your social links, phone number, or business offerings instantly through our dashboard. No reprinting, no waste, no hassle.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
+                        <span data-i18n="cloud-updates">INSTANT CLOUD UPDATES</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
+                        <span data-i18n="no-fees">NO SUBSCRIPTION FEES*</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elite Support -->
+            <div class="feature-card p-12 rounded-[40px]">
+                <div class="text-4xl mb-8">🇲🇦</div>
+                <h2 class="text-3xl font-black mb-6 uppercase italic tracking-tighter text-white" data-i18n="casablanca-support-title">Casablanca Support</h2>
+                <p class="text-slate-300 leading-relaxed mb-8" data-i18n="casablanca-support-p">
+                    We are local. Based in Casablanca, we provide 24/7 WhatsApp support to help you set up your profile, customize your design, or troubleshoot any issues. Local delivery, local people.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
+                        <span data-i18n="delivery-casablanca">24H MOROCCO DELIVERY</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
+                        <span data-i18n="whatsapp-assistance">PHONECALL & WHATSAPP ASSISTANCE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Mini Hardware -->
+            <div class="feature-card p-12 rounded-[40px] border-blue-600/30 bg-blue-600/10">
+                <div class="text-4xl mb-8">⚡</div>
+                <h2 class="text-3xl font-black mb-6 uppercase italic tracking-tighter text-blue-400" data-i18n="fast-connectivity">Fast Connectivity</h2>
+                <p class="text-slate-300 leading-relaxed mb-8" data-i18n="fast-connectivity-desc">
+                    Our Mini Series (Tags & Coins) offers the same lifetime connectivity in a smaller form factor. Perfect for attaching to your phone, laptop, or office desk.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
+                        <span data-i18n="attach-go">ATTACH-AND-GO CONVENIENCE</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-bold text-blue-400">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
+                        <span data-i18n="waterproof">WATERPROOF HARDWARE</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="py-24 px-6 border-t border-slate-800/80">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-black mb-8 uppercase italic tracking-tighter text-white" data-i18n="inspired-title">Inspired yet?</h2>
+            <p class="text-slate-300 mb-12" data-i18n="inspired-desc">Start your lifetime journey with SuperTap today.</p>
+            <a href="store.html" class="btn-primary text-white px-12 py-5 rounded-[24px] font-black uppercase tracking-widest text-lg inline-block" data-i18n="nav-store">Visit Store</a>
+        </div>
+    </section>
+
+    <footer class="py-20 px-6 border-t border-slate-800/80 bg-[#04060d] mt-auto">
+        <div class="max-w-6xl mx-auto text-center">
+            <span class="text-3xl supertap-logo uppercase mb-4 inline-block">SuperTap</span>
+            <p class="text-slate-500 text-xs font-black uppercase tracking-[0.4em] italic mb-12" data-i18n="casablanca-hub">Casablanca Digital Hub</p>
+
+            <div class="flex justify-center flex-wrap gap-8 md:gap-12 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-12">
+                <a href="store.html" class="hover:text-blue-400 transition" data-i18n="nav-store">Store</a>
+                <a href="services.html" class="hover:text-blue-400 transition text-blue-400" data-i18n="nav-services">Services</a>
+                <a href="https://wa.me/212674745463" class="hover:text-blue-400 transition" data-i18n="nav-whatsapp">WhatsApp</a>
+                <a href="https://www.tiktok.com/@supertap_officiel" target="_blank" class="hover:text-blue-400 transition">TikTok</a>
+                <a href="https://www.instagram.com/supertap_officiel" target="_blank" class="hover:text-blue-400 transition">Instagram</a>
+            </div>
+
+            <div class="flex justify-center gap-6 text-[9px] text-slate-500 font-bold uppercase tracking-widest border-t border-slate-800/50 pt-10">
+                <a href="privacy.html" class="hover:text-slate-300 transition" data-i18n="nav-privacy">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-slate-300 transition" data-i18n="nav-terms">Terms of Service</a>
+            </div>
+
+            <p class="mt-8 text-[9px] text-slate-600 font-bold uppercase tracking-widest" data-i18n="footer-copy">SuperTap © 2026 - Casablanca, Morocco</p>
+        </div>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registered!', reg))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+
+</html>
