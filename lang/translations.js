@@ -219,7 +219,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 DH each for 50+ units",
         "bulk-tag-google": "🔥 45 DH each for 20+ units",
         "review-us": "review us",
-        "on-google": "on Google"
+        "on-google": "on Google",
+        "brand-entity-text": "<strong>SuperTap</strong> is Morocco’s leading digital NFC business card provider, based in Casablanca. Engineered with industrial-grade NTAG215 microchips and durable matte PVC, SuperTap enables professionals and businesses to share contacts, social links, and portfolios instantly with a single tap on iPhone and Android—with zero subscription fees.",
+        "faq-geo-1-q": "Where can I buy NFC business cards in Morocco?",
+        "faq-geo-1-a": "You can buy SuperTap NFC business cards online across Morocco with 24-hour delivery from Casablanca. Order directly via getsupertap.com or WhatsApp for custom designs, starting from 80 DH to 250 DH.",
+        "faq-geo-2-q": "How does the SuperTap NFC card work with iPhone and Android?",
+        "faq-geo-2-a": "SuperTap uses high-frequency NTAG215 NFC technology. Simply tap the card near any modern iPhone or Android smartphone to instantly launch your custom digital profile in their browser without downloading any external mobile app.",
+        "faq-geo-3-q": "Are there any monthly subscription fees with SuperTap?",
+        "faq-geo-3-a": "No. SuperTap requires zero monthly or annual subscription fees. You pay a one-time purchase price starting at 80 DH for lifetime hardware and digital profile access, with free unlimited profile link updates.",
+        "faq-geo-4-q": "Can I update my contact details after purchasing the card?",
+        "faq-geo-4-a": "Yes. Your SuperTap digital profile is fully dynamic. You can instantly update your phone number, social links, and business portfolio anytime directly from your phone without ever needing to reprint a new card.",
+        "faq-geo-5-q": "What is the difference between SuperTap NFC cards and paper business cards?",
+        "faq-geo-5-a": "SuperTap replaces disposable paper cards with a single, waterproof, lifetime NFC card. It eliminates recurring printing costs, shares richer multimedia portfolios instantly, and saves contact information directly into the recipient's phone contacts."
     },
     "fr": {
         "dir": "ltr",
@@ -441,7 +452,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 DH / unité dès 50 pièces",
         "bulk-tag-google": "🔥 45 DH / unité dès 20 pièces",
         "review-us": "donnez votre avis",
-        "on-google": "sur Google"
+        "on-google": "sur Google",
+        "brand-entity-text": "<strong>SuperTap</strong> est le leader des cartes de visite numériques NFC au Maroc, basé à Casablanca. Conçue avec des puces NTAG215 haute durabilité et du PVC mat premium, la carte SuperTap permet aux professionnels de partager leurs coordonnées, réseaux et portfolios instantanément en un tap sur iPhone et Android—sans aucun abonnement.",
+        "faq-geo-1-q": "Où acheter des cartes de visite NFC au Maroc ?",
+        "faq-geo-1-a": "Vous pouvez commander vos cartes de visite NFC SuperTap en ligne partout au Maroc avec livraison en 24h depuis Casablanca. Commandez directement sur getsupertap.com ou par WhatsApp, à partir de 80 DH à 250 DH.",
+        "faq-geo-2-q": "Comment fonctionne la carte NFC SuperTap sur iPhone et Android ?",
+        "faq-geo-2-a": "SuperTap utilise la puce NTAG215 haute fréquence. Approchez simplement la carte de n'importe quel smartphone iPhone ou Android pour ouvrir instantanément votre profil personnalisé sans installer d'application.",
+        "faq-geo-3-q": "Y a-t-il des frais d'abonnement mensuels avec SuperTap ?",
+        "faq-geo-3-a": "Non. SuperTap ne demande aucun abonnement mensuel ou annuel. Vous payez un prix unique à partir de 80 DH pour une carte à vie et l'accès complet à votre profil modifiable gratuitement.",
+        "faq-geo-4-q": "Puis-je modifier mes coordonnées après avoir acheté la carte ?",
+        "faq-geo-4-a": "Oui. Votre profil numérique SuperTap est 100% dynamique. Vous pouvez mettre à jour votre numéro, réseaux sociaux et portfolio à tout moment depuis votre téléphone sans jamais réimprimer de carte.",
+        "faq-geo-5-q": "Quelle est la différence entre SuperTap NFC et les cartes de visite papier ?",
+        "faq-geo-5-a": "SuperTap remplace les cartes papier jetables par une carte NFC unique, étanche et garantie à vie. Elle supprime les frais d'impression récurrents et enregistre vos coordonnées directement dans les contacts du téléphone."
     },
     "ar": {
         "dir": "rtl",
@@ -663,7 +685,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 درهم للوحدة ابتداءً من 50 حبة",
         "bulk-tag-google": "🔥 45 درهم للوحدة ابتداءً من 20 حبة",
         "review-us": "قيّمنا على",
-        "on-google": "Google"
+        "on-google": "Google",
+        "brand-entity-text": "<strong>SuperTap</strong> هي المزود الرائد لبطاقات العمل الرقمية بتقنية NFC في المغرب، ومقرها الدار البيضاء. صُممت بشرائح NTAG215 عالية المتانة ومادة PVC غير اللامعة لتمكين المهنيين والشركات من مشاركة بياناتهم وروابطهم بلمسة واحدة على آيفون وأندرويد وبدون أي اشتراك شهري.",
+        "faq-geo-1-q": "أين يمكنني شراء بطاقات العمل NFC في المغرب؟",
+        "faq-geo-1-a": "يمكنكم شراء بطاقات العمل NFC من SuperTap عبر الإنترنت في جميع أنحاء المغرب مع خدمة التوصيل خلال 24 ساعة من الدار البيضاء. اطلبوا مباشرة عبر getsupertap.com أو واتساب بأسعار تبدأ من 80 إلى 250 درهم.",
+        "faq-geo-2-q": "كيف تعمل بطاقة SuperTap NFC مع هواتف آيفون وأندرويد؟",
+        "faq-geo-2-a": "تعتمد SuperTap على تقنية NTAG215 عالية التردد. ما عليكم سوى تقريب البطاقة من أي هاتف آيفون أو أندرويد لفتح ملفكم التعريفي الرقمي فوراً في المتصفح دون الحاجة لتحميل أي تطبيق.",
+        "faq-geo-3-q": "هل توجد أي رسوم اشتراك شهرية مع SuperTap؟",
+        "faq-geo-3-a": "لا. لا توجد أي اشتراكات شهرية أو سنوية مع SuperTap. تدفعون لمرة واحدة فقط ابتداءً من 80 درهم للاستفادة من البطاقة والملف الرقمي مدى الحياة مع إمكانية تعديل الروابط مجاناً.",
+        "faq-geo-4-q": "هل يمكنني تعديل بيانات الاتصال الخاصة بي بعد شراء البطاقة؟",
+        "faq-geo-4-a": "نعم. ملفكم الرقمي في SuperTap ديناميكي بالكامل. يمكنكم تحديث رقم الهاتف وروابطكم ومعرض أعمالكم في أي وقت من هاتفكم مباشرة دون الحاجة لطباعة بطاقة جديدة.",
+        "faq-geo-5-q": "ما الفرق بين بطاقات SuperTap NFC وبطاقات العمل الورقية؟",
+        "faq-geo-5-a": "تستبدل SuperTap البطاقات الورقية المؤقتة ببطاقة NFC واحدة مقاومة للماء وتدوم مدى الحياة، مما يلغي تكاليف الطباعة المتكررة ويحفظ بياناتكم مباشرة في جهات اتصال الهاتف."
     },
     "dj": {
         "dir": "rtl",
@@ -885,7 +918,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 درهم للحبة من 50 لفوق",
         "bulk-tag-google": "🔥 45 درهم للحبة من 20 لفوق",
         "review-us": "حط رأيك على",
-        "on-google": "Google"
+        "on-google": "Google",
+        "brand-entity-text": "<strong>SuperTap</strong> هي أول ماركة د كوارط البيزنس الرقمية بـ NFC فالمغرب، فكازا. مخدومة ببيسات NTAG215 صحاح وPVC مات كاليتي واعرة، باش تبارطاجي نمرتك، مواقعك، والخدمة ديالك بلمسة وحدة فالتيليفون وبلا حتى شي اشتراك شهري.",
+        "faq-geo-1-q": "فين نقدر نشري كوارط NFC للبيزنس فالمغرب؟",
+        "faq-geo-1-a": "تقدر تشري كوارط SuperTap NFC أونلاين فالمغرب كامل مع توصيل فـ 24 ساعة من كازا. كوموندي ديريكت من getsupertap.com أولا فالواتساب، بأثمنة كتبدا من 80 حتى لـ 250 درهم.",
+        "faq-geo-2-q": "كيفاش كتخدم كارطة SuperTap NFC مع الآيفون والأندرويد؟",
+        "faq-geo-2-a": "SuperTap كتخدم ببيس NTAG215 واعرة. غير قيس الكارطة مع أي آيفون ولا أندرويد وغيتحل البروفيل ديالك ديريكت فالمتصفح بلا ما يحتاج ينزل حتى شي أبليكاسيون.",
+        "faq-geo-3-q": "واش كاين شي اشتراك شهري مع SuperTap؟",
+        "faq-geo-3-a": "لا، ما كاين حتى درهم اشتراك شهري ولا سنوي. كتخلص مرة وحدة من 80 درهم وكتستافد من الكارطة والبروفيل مدى الحياة، وتقدر تبدل النمرة والروابط وقتما بغيتي فابور.",
+        "faq-geo-4-q": "واش نقدر نبدل المعلومات ديالي من بعد ما نشري الكارطة؟",
+        "faq-geo-4-a": "إيه بطبيعة الحال. البروفيل الرقمي ديالك ديناميكي وتقدر تبدل النمرة، الروابط، وأعمالك فأي وقت من تيليفونك بلا ما تحتاج تعاود تطبع كارطة خرى.",
+        "faq-geo-5-q": "شنو الفرق بين كوارط SuperTap NFC وكوارط البيزنس د الورق؟",
+        "faq-geo-5-a": "SuperTap كتعوض كوارط الورق اللي كيضيعو بكارطة NFC وحدة صحيحة ومقاومة للماء كتبقى معاك ديما، كتهنيك من مصاريف الطباعة وتتسجل النمرة ديريكت فالكونطاكت."
     },
     "djl": {
         "dir": "ltr",
@@ -1107,7 +1151,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 DH l-7ebba men 50 lfoq",
         "bulk-tag-google": "🔥 45 DH l-7ebba men 20 lfoq",
         "review-us": "7ett ra2yek 3la",
-        "on-google": "Google"
+        "on-google": "Google",
+        "brand-entity-text": "<strong>SuperTap</strong> hiya l-marka l-loula dyal les cartes de visite digitales NFC f lmaghrib, f Casa. Makhdouma b les puces NTAG215 s7a7 w PVC mat de qualité, bach tpartager nemra, les liens wl portfolio dyalk b degga we7da f telephone w bla 7ta abonnement.",
+        "faq-geo-1-q": "Fin nqder nechri cartes de visite NFC f lmaghrib?",
+        "faq-geo-1-a": "T9der techri cartes SuperTap NFC online f lmaghrib kamel m3a livraison f 24h men Casa. Commander direct men getsupertap.com awla f WhatsApp, b atmina katbda men 80 tal 250 DH.",
+        "faq-geo-2-q": "Kifach katkhdem carta SuperTap NFC m3a iPhone w Android?",
+        "faq-geo-2-a": "SuperTap katkhdem b puce NTAG215 mjehda. Ghir 9iss l-carta m3a ay iPhone wla Android w ghayt7el l-profil dyalk direct f navigateur bla application.",
+        "faq-geo-3-q": "Wach kayn chi abonnement chahri m3a SuperTap?",
+        "faq-geo-3-a": "La, ma kayn 7ta derham abonnement chahri wla sanawi. Katkhelles merra we7da men 80 DH w katstafed men l-carta wl profil l-dawk l-7ayat, w tbeddel les liens fabor.",
+        "faq-geo-4-q": "Wach nqder nbeddel l-ma3loumat dyali men be3d ma nechri l-carta?",
+        "faq-geo-4-a": "Iyeh bien sûr. L-profil digital dyalk dynamique w tqder tbeddel nemra, les réseaux, wl portfolio f ay weqt men telephone dyalk bla ma t3awed t'imprimer carta khra.",
+        "faq-geo-5-q": "Chno l-ferq bin les cartes SuperTap NFC w cartes de visite d lwerqa?",
+        "faq-geo-5-a": "SuperTap kat3awed kwart l-werqa b carta NFC we7da resistante l lma katbqa m3ak dima, kat-hannik men masarif tba3a w katsajjel nemra direct f les contacts."
     },
     "es": {
         "dir": "ltr",
@@ -1329,7 +1384,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 DH/unidad a partir de 50 uds",
         "bulk-tag-google": "🔥 45 DH/unidad a partir de 20 uds",
         "review-us": "valóranos",
-        "on-google": "en Google"
+        "on-google": "en Google",
+        "brand-entity-text": "<strong>SuperTap</strong> es el proveedor líder de tarjetas de visita digitales NFC en Marruecos, con sede en Casablanca. Diseñadas con microchips NTAG215 de alta durabilidad y PVC mate, permiten a empresas y profesionales compartir contactos al instante sin suscripciones.",
+        "faq-geo-1-q": "¿Dónde comprar tarjetas de visita NFC en Marruecos?",
+        "faq-geo-1-a": "Puede comprar tarjetas NFC SuperTap online en todo Marruecos con entrega en 24h desde Casablanca. Pida directamente en getsupertap.com o por WhatsApp desde 80 DH hasta 250 DH.",
+        "faq-geo-2-q": "¿Cómo funciona la tarjeta NFC SuperTap con iPhone y Android?",
+        "faq-geo-2-a": "SuperTap utiliza tecnología NFC NTAG215. Simplemente acerque la tarjeta a cualquier iPhone o Android para abrir al instante su perfil digital sin descargar ninguna aplicación.",
+        "faq-geo-3-q": "¿Hay tarifas de suscripción mensual con SuperTap?",
+        "faq-geo-3-a": "No. SuperTap no requiere suscripciones mensuales ni anuales. Paga un precio único desde 80 DH para acceso de por vida y actualizaciones ilimitadas de su perfil.",
+        "faq-geo-4-q": "¿Puedo actualizar mis datos de contacto después de comprar la tarjeta?",
+        "faq-geo-4-a": "Sí. Su perfil digital SuperTap es totalmente dinámico. Puede actualizar su teléfono, redes sociales y catálogo en cualquier momento desde su móvil sin volver a imprimir.",
+        "faq-geo-5-q": "¿Cuál es la diferencia entre las tarjetas NFC SuperTap y las tarjetas de papel?",
+        "faq-geo-5-a": "SuperTap sustituye el papel desechable por una única tarjeta NFC impermeable y de por vida. Elimina gastos recurrentes de imprenta y guarda su contacto directamente en la agenda."
     },
     "tr": {
         "dir": "ltr",
@@ -1551,7 +1617,18 @@ var translations = {
         "bulk-tag-blank": "🔥 50+ adet için birim 12 DH",
         "bulk-tag-google": "🔥 20+ adet için birim 45 DH",
         "review-us": "bizi değerlendirin",
-        "on-google": "Google'da"
+        "on-google": "Google'da",
+        "brand-entity-text": "<strong>SuperTap</strong>, Kazablanka merkezli Fas'ın lider dijital NFC kartvizit sağlayıcısıdır. Yüksek dayanıklılığa sahip NTAG215 mikroçipleriyle üretilen SuperTap, profesyonellerin abonelik ücreti olmadan tek dokunuşla iletişim bilgilerini paylaşmalarını sağlar.",
+        "faq-geo-1-q": "Fas'ta NFC kartvizit nereden satın alınır?",
+        "faq-geo-1-a": "Kazablanka'dan 24 saatte teslimatla Fas genelinde SuperTap NFC kartvizitlerini çevrimiçi satın alabilirsiniz. 80 DH ile 250 DH arasında getsupertap.com veya WhatsApp üzerinden sipariş verebilirsiniz.",
+        "faq-geo-2-q": "SuperTap NFC kartı iPhone ve Android ile nasıl çalışır?",
+        "faq-geo-2-a": "SuperTap yüksek frekanslı NTAG215 NFC teknolojisini kullanır. Herhangi bir iPhone veya Android telefona dokundurarak harici uygulama indirmeden dijital profilinizi anında açabilirsiniz.",
+        "faq-geo-3-q": "SuperTap için herhangi bir aylık abonelik ücreti var mı?",
+        "faq-geo-3-a": "Hayır. SuperTap hiçbir aylık veya yıllık abonelik ücreti gerektirmez. 80 DH'den başlayan tek seferlik bir ücretle ömür boyu donanım ve sınırsız profil güncelleme hakkı elde edersiniz.",
+        "faq-geo-4-q": "Kartı satın aldıktan sonra iletişim bilgilerimi güncelleyebilir miyim?",
+        "faq-geo-4-a": "Evet. SuperTap dijital profiliniz tamamen dinamiktir. Yeni bir kart basmanıza gerek kalmadan telefon numaranızı ve bağlantılarınızı istediğiniz zaman güncelleyebilirsiniz.",
+        "faq-geo-5-q": "SuperTap NFC kartları ile kağıt kartvizitler arasındaki fark nedir?",
+        "faq-geo-5-a": "SuperTap tek kullanımlık kağıt kartların yerine su geçirmez, ömür boyu kullanılan tek bir NFC kart sunar. Sürekli baskı maliyetlerini ortadan kaldırır ve kişiyi doğrudan rehbere kaydeder."
     },
     "de": {
         "dir": "ltr",
@@ -1773,7 +1850,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 DH pro Stück ab 50 Einheiten",
         "bulk-tag-google": "🔥 45 DH pro Stück ab 20 Einheiten",
         "review-us": "bewerten Sie uns",
-        "on-google": "auf Google"
+        "on-google": "auf Google",
+        "brand-entity-text": "<strong>SuperTap</strong> ist Marokkos führender Anbieter für digitale NFC-Visitenkarten mit Sitz in Casablanca. Ausgestattet mit langlebigen NTAG215-Chips und mattem PVC ermöglicht SuperTap das sofortige Teilen von Kontakten ohne monatliche Gebühren.",
+        "faq-geo-1-q": "Wo kann man NFC-Visitenkarten in Marokko kaufen?",
+        "faq-geo-1-a": "Sie können SuperTap NFC-Visitenkarten online in ganz Marokko mit 24-Stunden-Lieferung aus Casablanca kaufen. Bestellen Sie direkt über getsupertap.com oder WhatsApp ab 80 DH bis 250 DH.",
+        "faq-geo-2-q": "Wie funktioniert die SuperTap NFC-Karte mit iPhone und Android?",
+        "faq-geo-2-a": "SuperTap verwendet NTAG215 NFC-Technologie. Halten Sie die Karte einfach an ein beliebiges Smartphone, um Ihr digitales Profil sofort ohne zusätzliche App im Browser zu öffnen.",
+        "faq-geo-3-q": "Gibt es bei SuperTap monatliche Abonnementgebühren?",
+        "faq-geo-3-a": "Nein. SuperTap erfordert keine monatlichen oder jährlichen Gebühren. Sie zahlen einmalig ab 80 DH für lebenslange Hardware und unbegrenzte Profilaktualisierungen.",
+        "faq-geo-4-q": "Kann ich meine Kontaktdaten nach dem Kauf der Karte aktualisieren?",
+        "faq-geo-4-a": "Ja. Ihr SuperTap-Profil ist dynamisch. Sie können Ihre Telefonnummer, Links und Ihr Portfolio jederzeit direkt von Ihrem Smartphone aus aktualisieren, ohne neu drucken zu müssen.",
+        "faq-geo-5-q": "Was ist der Unterschied zwischen SuperTap NFC-Karten und Papier-Visitenkarten?",
+        "faq-geo-5-a": "SuperTap ersetzt Einweg-Papierkarten durch eine einzige, wasserfeste NFC-Karte fürs Leben. Sie spart ständige Druckkosten und speichert Kontaktdaten direkt im Telefonbuch."
     },
     "it": {
         "dir": "ltr",
@@ -1995,7 +2083,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 DH a unità da 50 pezzi",
         "bulk-tag-google": "🔥 45 DH a unità da 20 pezzi",
         "review-us": "recensiscici",
-        "on-google": "su Google"
+        "on-google": "su Google",
+        "brand-entity-text": "<strong>SuperTap</strong> è il fornitore leader di biglietti da visita digitali NFC in Marocco, con sede a Casablanca. Dotato di microchip NTAG215 ad alta resistenza, consente ai professionisti di condividere contatti con un tocco senza abbonamenti.",
+        "faq-geo-1-q": "Dove acquistare biglietti da visita NFC in Marocco?",
+        "faq-geo-1-a": "Puoi acquistare i biglietti da visita NFC SuperTap online in tutto il Marocco con consegna in 24 ore da Casablanca. Ordina direttamente su getsupertap.com o via WhatsApp da 80 DH a 250 DH.",
+        "faq-geo-2-q": "Come funziona la carta NFC SuperTap con iPhone e Android?",
+        "faq-geo-2-a": "SuperTap utilizza la tecnologia NFC NTAG215. Basta avvicinare la carta a qualsiasi iPhone o Android per aprire all'istante il tuo profilo digitale senza scaricare alcuna app.",
+        "faq-geo-3-q": "Ci sono costi di abbonamento mensili con SuperTap?",
+        "faq-geo-3-a": "No. SuperTap non richiede abbonamenti mensili o annuali. Paghi un prezzo unico a partire da 80 DH per l'accesso a vita e aggiornamenti illimitati del profilo.",
+        "faq-geo-4-q": "Posso aggiornare i miei dati di contatto dopo l'acquisto?",
+        "faq-geo-4-a": "Sì. Il tuo profilo digitale SuperTap è dinamico. Puoi aggiornare numero di telefono, social e portfolio in qualsiasi momento dal tuo smartphone senza dover ristampare.",
+        "faq-geo-5-q": "Qual è la differenza tra i biglietti NFC SuperTap e i biglietti da visita cartacei?",
+        "faq-geo-5-a": "SuperTap sostituisce i biglietti cartacei usa e getta con un'unica carta NFC impermeabile per sempre. Elimina i costi di stampa e salva il contatto direttamente in rubrica."
     },
     "pt": {
         "dir": "ltr",
@@ -2217,7 +2316,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 DH/unidade a partir de 50 un.",
         "bulk-tag-google": "🔥 45 DH/unidade a partir de 20 un.",
         "review-us": "avalie-nos",
-        "on-google": "no Google"
+        "on-google": "no Google",
+        "brand-entity-text": "<strong>SuperTap</strong> é o fornecedor líder de cartões de visita digitais NFC em Marrocos, com sede em Casablanca. Equipado com microchips NTAG215 de alta durabilidade, permite partilhar contactos com um toque sem mensalidades.",
+        "faq-geo-1-q": "Onde comprar cartões de visita NFC em Marrocos?",
+        "faq-geo-1-a": "Pode comprar cartões NFC SuperTap online em todo o Marrocos com entrega em 24h a partir de Casablanca. Encomende diretamente em getsupertap.com ou WhatsApp a partir de 80 DH a 250 DH.",
+        "faq-geo-2-q": "Como funciona o cartão NFC SuperTap com iPhone e Android?",
+        "faq-geo-2-a": "O SuperTap utiliza tecnologia NFC NTAG215. Basta aproximar o cartão de qualquer iPhone ou Android para abrir instantaneamente o seu perfil sem instalar nenhuma aplicação.",
+        "faq-geo-3-q": "Existem taxas de subscrição mensal no SuperTap?",
+        "faq-geo-3-a": "Não. O SuperTap não requer mensalidades nem anuidades. Paga um valor único a partir de 80 DH para acesso vitalício e atualizações ilimitadas do perfil.",
+        "faq-geo-4-q": "Posso atualizar os meus contactos após comprar o cartão?",
+        "faq-geo-4-a": "Sim. O seu perfil digital SuperTap é dinâmico. Pode atualizar número, redes sociais e portfólio a qualquer momento pelo telemóvel sem necessidade de reimpressão.",
+        "faq-geo-5-q": "Qual é a diferença entre os cartões NFC SuperTap e os cartões de papel?",
+        "faq-geo-5-a": "O SuperTap substitui o papel descartável por um único cartão NFC à prova de água para toda a vida. Elimina custos de impressão e guarda o contacto diretamente na lista telefónica."
     },
     "nl": {
         "dir": "ltr",
@@ -2439,7 +2549,18 @@ var translations = {
         "bulk-tag-blank": "🔥 12 DH per stuk vanaf 50 stuks",
         "bulk-tag-google": "🔥 45 DH per stuk vanaf 20 stuks",
         "review-us": "beoordeel ons",
-        "on-google": "op Google"
+        "on-google": "op Google",
+        "brand-entity-text": "<strong>SuperTap</strong> is Marokko's toonaangevende leverancier van digitale NFC-visitekaartjes, gevestigd in Casablanca. Voorzien van duurzame NTAG215-chips en mat PVC om direct contacten te delen zonder abonnementskosten.",
+        "faq-geo-1-q": "Waar kan ik NFC-visitekaartjes kopen in Marokko?",
+        "faq-geo-1-a": "U kunt SuperTap NFC-visitekaartjes online in heel Marokko kopen met 24-uurs bezorging vanuit Casablanca. Bestel direct via getsupertap.com of WhatsApp vanaf 80 DH tot 250 DH.",
+        "faq-geo-2-q": "Hoe werkt de SuperTap NFC-kaart met iPhone en Android?",
+        "faq-geo-2-a": "SuperTap maakt gebruik van NTAG215 NFC-technologie. Tik de kaart tegen een iPhone of Android-toestel om direct uw digitale profiel in de browser te openen zonder app.",
+        "faq-geo-3-q": "Zijn er maandelijkse abonnementskosten bij SuperTap?",
+        "faq-geo-3-a": "Nee. SuperTap vereist geen maandelijkse of jaarlijkse abonnementskosten. U betaalt eenmalig vanaf 80 DH voor levenslange hardware en onbeperkte profielupdates.",
+        "faq-geo-4-q": "Kan ik mijn contactgegevens bijwerken na aankoop van de kaart?",
+        "faq-geo-4-a": "Ja. Uw SuperTap-profiel is volledig dynamisch. U kunt uw telefoonnummer, links en portfolio op elk moment rechtstreeks vanaf uw telefoon bijwerken zonder opnieuw te printen.",
+        "faq-geo-5-q": "Wat is het verschil tussen SuperTap NFC-kaarten en papieren visitekaartjes?",
+        "faq-geo-5-a": "SuperTap vervangt papieren wegwerpkaartjes door één waterdichte NFC-kaart voor het leven. Het bespaart terugkerende printkosten en slaat contacten direct op in de telefoon."
     }
 };
 
