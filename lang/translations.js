@@ -215,7 +215,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ Delivery fees are not included. Contact us for delivery rates across Morocco.",
         "front-view": "Front",
         "back-view": "Back",
-        "tap-to-review": "Tap or Scan to Review"
+        "tap-to-review": "Tap or Scan to Review",
+        "bulk-tag-blank": "🔥 12 DH each for 50+ units",
+        "bulk-tag-google": "🔥 45 DH each for 20+ units",
+        "review-us": "review us",
+        "on-google": "on Google"
     },
     "fr": {
         "dir": "ltr",
@@ -433,7 +437,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ Les frais de livraison ne sont pas inclus. Contactez-nous pour les tarifs de livraison au Maroc.",
         "front-view": "Face Avant",
         "back-view": "Face Arrière",
-        "tap-to-review": "Touchez ou Scannez pour Donner votre Avis"
+        "tap-to-review": "Touchez ou Scannez pour Donner votre Avis",
+        "bulk-tag-blank": "🔥 12 DH / unité dès 50 pièces",
+        "bulk-tag-google": "🔥 45 DH / unité dès 20 pièces",
+        "review-us": "donnez votre avis",
+        "on-google": "sur Google"
     },
     "ar": {
         "dir": "rtl",
@@ -651,7 +659,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ مصاريف التوصيل غير متضمنة. تواصلوا معنا لمعرفة أسعار التوصيل في جميع مدن المغرب.",
         "front-view": "الواجهة الأمامية",
         "back-view": "الواجهة الخلفية",
-        "tap-to-review": "المس أو امسح لترك تقييمك"
+        "tap-to-review": "المس أو امسح لترك تقييمك",
+        "bulk-tag-blank": "🔥 12 درهم للوحدة ابتداءً من 50 حبة",
+        "bulk-tag-google": "🔥 45 درهم للوحدة ابتداءً من 20 حبة",
+        "review-us": "قيّمنا على",
+        "on-google": "Google"
     },
     "dj": {
         "dir": "rtl",
@@ -869,7 +881,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ مصاريف التوصيل ما داخلاش. تواصل معنا على قبل أثمنة التوصيل فالمغرب كامل.",
         "front-view": "الوجه القدامي",
         "back-view": "الوجه اللوراني",
-        "tap-to-review": "قيس أو سكاني باش تحط رأيك"
+        "tap-to-review": "قيس أو سكاني باش تحط رأيك",
+        "bulk-tag-blank": "🔥 12 درهم للحبة من 50 لفوق",
+        "bulk-tag-google": "🔥 45 درهم للحبة من 20 لفوق",
+        "review-us": "حط رأيك على",
+        "on-google": "Google"
     },
     "djl": {
         "dir": "ltr",
@@ -1087,7 +1103,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ Masarif l-livraison ma dakhlach. Twasel m3ana 3la qbel taman dyal livraison f lmaghrib kamel.",
         "front-view": "Lwejh lgeddami",
         "back-view": "Lwejh llourani",
-        "tap-to-review": "Qiss awla scani bach t7ett ra2y dyalk"
+        "tap-to-review": "Qiss awla scani bach t7ett ra2y dyalk",
+        "bulk-tag-blank": "🔥 12 DH l-7ebba men 50 lfoq",
+        "bulk-tag-google": "🔥 45 DH l-7ebba men 20 lfoq",
+        "review-us": "7ett ra2yek 3la",
+        "on-google": "Google"
     },
     "es": {
         "dir": "ltr",
@@ -1305,7 +1325,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ Los gastos de envío no están incluidos. Contáctenos para conocer las tarifas de entrega en Marruecos.",
         "front-view": "Frente",
         "back-view": "Dorso",
-        "tap-to-review": "Toca o Escanea para Dejar tu Opinión"
+        "tap-to-review": "Toca o Escanea para Dejar tu Opinión",
+        "bulk-tag-blank": "🔥 12 DH/unidad a partir de 50 uds",
+        "bulk-tag-google": "🔥 45 DH/unidad a partir de 20 uds",
+        "review-us": "valóranos",
+        "on-google": "en Google"
     },
     "tr": {
         "dir": "ltr",
@@ -1523,7 +1547,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ Teslimat ücreti fiyatlara dahil değildir. Fas genelindeki kargo ücretleri için bizimle iletişime geçin.",
         "front-view": "Ön Yüz",
         "back-view": "Arka Yüz",
-        "tap-to-review": "Yorum Yapmak İçin Dokunun veya Taratın"
+        "tap-to-review": "Yorum Yapmak İçin Dokunun veya Taratın",
+        "bulk-tag-blank": "🔥 50+ adet için birim 12 DH",
+        "bulk-tag-google": "🔥 20+ adet için birim 45 DH",
+        "review-us": "bizi değerlendirin",
+        "on-google": "Google'da"
     },
     "de": {
         "dir": "ltr",
@@ -1741,7 +1769,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ Liefergebühren sind nicht inbegriffen. Kontaktieren Sie uns für Liefertarife in ganz Marokko.",
         "front-view": "Vorderseite",
         "back-view": "Rückseite",
-        "tap-to-review": "Tippen oder scannen, um zu bewerten"
+        "tap-to-review": "Tippen oder scannen, um zu bewerten",
+        "bulk-tag-blank": "🔥 12 DH pro Stück ab 50 Einheiten",
+        "bulk-tag-google": "🔥 45 DH pro Stück ab 20 Einheiten",
+        "review-us": "bewerten Sie uns",
+        "on-google": "auf Google"
     },
     "it": {
         "dir": "ltr",
@@ -1959,7 +1991,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ Le spese di spedizione non sono incluse. Contattaci per le tariffe di consegna in Marocco.",
         "front-view": "Fronte",
         "back-view": "Retro",
-        "tap-to-review": "Tocca o scansiona per recensire"
+        "tap-to-review": "Tocca o scansiona per recensire",
+        "bulk-tag-blank": "🔥 12 DH a unità da 50 pezzi",
+        "bulk-tag-google": "🔥 45 DH a unità da 20 pezzi",
+        "review-us": "recensiscici",
+        "on-google": "su Google"
     },
     "pt": {
         "dir": "ltr",
@@ -2177,7 +2213,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ As taxas de envio não estão incluídas. Contacte-nos para saber os custos de entrega em Marrocos.",
         "front-view": "Frente",
         "back-view": "Verso",
-        "tap-to-review": "Aproxime ou leia para avaliar"
+        "tap-to-review": "Aproxime ou leia para avaliar",
+        "bulk-tag-blank": "🔥 12 DH/unidade a partir de 50 un.",
+        "bulk-tag-google": "🔥 45 DH/unidade a partir de 20 un.",
+        "review-us": "avalie-nos",
+        "on-google": "no Google"
     },
     "nl": {
         "dir": "ltr",
@@ -2395,7 +2435,11 @@ var translations = {
         "delivery-disclaimer": "⚠️ Verzendkosten zijn niet inbegrepen. Neem contact met ons op voor de bezorgtarieven in Marokko.",
         "front-view": "Voorkant",
         "back-view": "Achterkant",
-        "tap-to-review": "Tik of scan om te beoordelen"
+        "tap-to-review": "Tik of scan om te beoordelen",
+        "bulk-tag-blank": "🔥 12 DH per stuk vanaf 50 stuks",
+        "bulk-tag-google": "🔥 45 DH per stuk vanaf 20 stuks",
+        "review-us": "beoordeel ons",
+        "on-google": "op Google"
     }
 };
 
