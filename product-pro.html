@@ -97,14 +97,19 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            transform-style: preserve-3d;
             background: #ffffff;
             color: #070a13;
             border: 1px solid rgba(37, 99, 235, 0.35);
             box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.4), 0 0 25px -5px rgba(37, 99, 235, 0.2);
         }
 
+        .card-front {
+            transform: rotateY(0deg) translateZ(1px);
+        }
+
         .card-back {
-            transform: rotateY(180deg);
+            transform: rotateY(180deg) translateZ(1px);
         }
 
         .shine {
@@ -189,23 +194,23 @@
             <div class="card-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)" onclick="flip()">
                 <div class="card-3d-wrapper" id="card-wrapper">
                     <div class="card-inner" id="card-inner">
-                        <div class="card-front relative p-6 flex flex-col justify-between items-start text-left overflow-hidden">
+                        <div class="card-front relative p-6 flex flex-col justify-between items-start text-left">
                             <div class="shine"></div>
                             <!-- Top Row: Company Name -->
                             <div class="w-full flex justify-between items-start z-10">
-                                <span id="pro-card-company" class="text-[9px] uppercase tracking-wider font-bold text-slate-500 truncate max-w-[200px]" data-i18n="placeholder-company">Nom d'entreprise</span>
+                                <span id="pro-card-company" class="text-[9px] tracking-wider font-bold text-slate-500 truncate max-w-[200px]" data-i18n="placeholder-company">Nom d'entreprise</span>
                             </div>
                             
                             <!-- Center: SuperTap PRO Branding -->
                             <div class="w-full flex flex-col items-center justify-center my-auto z-10">
-                                <span class="text-3xl font-black italic text-slate-900 uppercase tracking-tighter">SuperTap</span>
-                                <span class="text-[9px] uppercase tracking-widest text-blue-600 font-extrabold mt-1 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-200 shadow-sm">PRO</span>
+                                <span class="text-3xl font-black italic tracking-tight text-[#0f172a]" style="letter-spacing: -1px;">SuperTap</span>
+                                <span class="text-[8px] uppercase tracking-widest font-black text-blue-600 mt-1 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-200 shadow-sm">PRO</span>
                             </div>
 
                             <!-- Bottom Row: Personal Name + Contactless Wave Icon -->
                             <div class="w-full flex justify-between items-end z-10">
-                                <span id="pro-card-name" class="text-[10px] uppercase tracking-widest font-extrabold text-slate-800 truncate max-w-[200px]" data-i18n="placeholder-name">Nom & Prénom</span>
-                                <svg class="w-5 h-5 text-slate-700 opacity-80 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M8.5 16.5a5 5 0 0 1 0-9M12 19a8.5 8.5 0 0 0 0-14M15.5 21.5a12 12 0 0 0 0-19"/></svg>
+                                <span id="pro-card-name" class="text-xs font-bold text-[#0f172a] tracking-wide truncate max-w-[170px]" data-i18n="placeholder-name">Nom & Prénom</span>
+                                <svg class="w-5 h-5 text-slate-600 opacity-80 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 10a2.5 2.5 0 0 1 0 4M9.5 7.5a6 6 0 0 1 0 9M13 5a9.5 9.5 0 0 1 0 14M16.5 2.5a13 13 0 0 1 0 19"/></svg>
                             </div>
                         </div>
                         <div class="card-back">
@@ -364,13 +369,15 @@
         const proCompanyInput = document.getElementById('pro-input-company');
         const proCardName = document.getElementById('pro-card-name');
         const proCardCompany = document.getElementById('pro-card-company');
+        const proDefaultName = proCardName.textContent;
+        const proDefaultCompany = proCardCompany.textContent;
 
         proNameInput.addEventListener('input', (e) => {
-            proCardName.textContent = e.target.value.trim() || 'Nom & Prénom';
+            proCardName.textContent = e.target.value.length > 0 ? e.target.value : proDefaultName;
         });
 
         proCompanyInput.addEventListener('input', (e) => {
-            proCardCompany.textContent = e.target.value.trim() || 'Nom d\'entreprise';
+            proCardCompany.textContent = e.target.value.length > 0 ? e.target.value : proDefaultCompany;
         });
 
         function submitProOrder(e) {
@@ -393,20 +400,36 @@ Je souhaite commander la Carte Pro Personnalisée (200 DH + 1er Mois Offert) :
             window.open(`https://wa.me/212674745463?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        let isFlipped = false;
+        let isFlipping = false;
+
+        function flip() {
+            isFlipped = !isFlipped;
+            isFlipping = true;
+            const cardInner = document.getElementById('card-inner');
+            const wrapper = document.getElementById('card-wrapper');
+            wrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            cardInner.classList.toggle('is-flipped', isFlipped);
+            setTimeout(() => {
+                isFlipping = false;
+            }, 600);
+        }
+
         function handleMove(e, container) {
+            if (isFlipping) return;
             const wrapper = container.querySelector('.card-3d-wrapper');
             const rect = container.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            const rotateX = ((rect.height / 2) - y) / 10;
-            const rotateY = (x - (rect.width / 2)) / 10;
+            const rotateX = ((rect.height / 2) - y) / 12;
+            const factor = isFlipped ? -1 : 1;
+            const rotateY = factor * ((x - (rect.width / 2)) / 12);
             wrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
+
         function handleLeave(container) {
-            container.querySelector('.card-3d-wrapper').style.transform = `rotateX(0deg) rotateY(0deg)`;
-        }
-        function flip() {
-            document.getElementById('card-inner').classList.toggle('is-flipped');
+            const wrapper = container.querySelector('.card-3d-wrapper');
+            wrapper.style.transform = `rotateX(0deg) rotateY(0deg)`;
         }
     </script>
 

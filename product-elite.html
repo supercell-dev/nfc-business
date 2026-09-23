@@ -97,14 +97,19 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            transform-style: preserve-3d;
             background: #0b0f19;
             color: #f8fafc;
             border: 1px solid rgba(59, 130, 246, 0.5);
             box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9), 0 20px 60px -10px rgba(0,0,0,0.7), 0 0 30px -5px rgba(37, 99, 235, 0.3);
         }
 
+        .card-front {
+            transform: rotateY(0deg) translateZ(1px);
+        }
+
         .card-back {
-            transform: rotateY(180deg);
+            transform: rotateY(180deg) translateZ(1px);
         }
 
         .shine {
@@ -189,12 +194,12 @@
             <div class="card-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)" onclick="flip()">
                 <div class="card-3d-wrapper" id="card-wrapper">
                     <div class="card-inner" id="card-inner">
-                        <div class="card-front relative p-6 flex flex-col justify-between items-start text-left overflow-hidden" id="card-front-face">
+                        <div class="card-front relative p-6 flex flex-col justify-between items-start text-left" id="card-front-face">
                             <div class="shine"></div>
                             
                             <!-- Top Row: Company Name -->
                             <div class="w-full flex justify-between items-start z-10">
-                                <span id="elite-card-company" class="text-[9px] uppercase tracking-wider font-bold transition-colors duration-300 text-amber-300/80 truncate max-w-[200px]" data-i18n="placeholder-company">Nom d'entreprise</span>
+                                <span id="elite-card-company" class="text-[9px] tracking-wider font-bold transition-colors duration-300 text-amber-300/80 truncate max-w-[200px]" data-i18n="placeholder-company">Nom d'entreprise</span>
                             </div>
                             
                             <!-- Center: Client's Custom Logo / YOUR LOGO -->
@@ -208,8 +213,8 @@
 
                             <!-- Bottom Row: Personal Name + Contactless Wave Icon -->
                             <div class="w-full flex justify-between items-end z-10">
-                                <span id="elite-card-name" class="text-[10px] uppercase tracking-widest font-extrabold transition-colors duration-300 text-amber-300 truncate max-w-[200px]" data-i18n="placeholder-name">Nom & Prénom</span>
-                                <svg id="elite-card-nfc-icon" class="w-5 h-5 text-amber-400 opacity-90 flex-shrink-0 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M8.5 16.5a5 5 0 0 1 0-9M12 19a8.5 8.5 0 0 0 0-14M15.5 21.5a12 12 0 0 0 0-19"/></svg>
+                                <span id="elite-card-name" class="text-[10px] tracking-widest font-extrabold transition-colors duration-300 text-amber-300 truncate max-w-[200px]" data-i18n="placeholder-name">Nom & Prénom</span>
+                                <svg id="elite-card-nfc-icon" class="w-5 h-5 text-amber-400 opacity-90 flex-shrink-0 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 10a2.5 2.5 0 0 1 0 4M9.5 7.5a6 6 0 0 1 0 9M13 5a9.5 9.5 0 0 1 0 14M16.5 2.5a13 13 0 0 1 0 19"/></svg>
                             </div>
                         </div>
                         <div class="card-back" id="card-back-face">
@@ -418,38 +423,49 @@
                 brand.style.textShadow = '0 0 12px rgba(251,191,36,0.45)';
                 subBadge.className = 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-amber-400/40 text-amber-300 bg-amber-500/10';
                 name.style.color = '#fcd34d';
+                name.style.textShadow = 'none';
                 company.style.color = '#fcd34d';
+                company.style.textShadow = 'none';
                 nfcIcon.style.color = '#fbbf24';
+                nfcIcon.style.filter = 'drop-shadow(0 0 4px rgba(251,191,36,0.4))';
             } else if (type === 'silver') {
                 btnSilver.className = 'px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-slate-300 bg-slate-400/20 text-white shadow-[0_0_15px_rgba(203,213,225,0.3)]';
                 brand.style.color = '#e2e8f0';
-                brand.style.textShadow = '0 0 12px rgba(226,232,240,0.45)';
-                subBadge.className = 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-slate-400/40 text-slate-200 bg-slate-400/10';
+                brand.style.textShadow = '0 0 10px rgba(226,232,240,0.5), 0 0 2px #ffffff';
+                subBadge.className = 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-slate-300/50 text-slate-200 bg-slate-400/10';
                 name.style.color = '#cbd5e1';
-                company.style.color = '#cbd5e1';
+                name.style.textShadow = 'none';
+                company.style.color = '#94a3b8';
+                company.style.textShadow = 'none';
                 nfcIcon.style.color = '#cbd5e1';
+                nfcIcon.style.filter = 'drop-shadow(0 0 3px rgba(203,213,225,0.4))';
             } else if (type === 'white') {
-                btnWhite.className = 'px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-white bg-white/20 text-white shadow-[0_0_15px_rgba(255,255,255,0.35)]';
+                btnWhite.className = 'px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-white/80 bg-white/10 text-white';
                 brand.style.color = '#ffffff';
-                brand.style.textShadow = '0 0 12px rgba(255,255,255,0.4)';
-                subBadge.className = 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-white/40 text-white bg-white/10';
-                name.style.color = '#f8fafc';
-                company.style.color = '#f8fafc';
+                brand.style.textShadow = 'none';
+                subBadge.className = 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-white/40 text-white bg-white/5';
+                name.style.color = '#ffffff';
+                name.style.textShadow = 'none';
+                company.style.color = '#ffffff';
+                company.style.textShadow = 'none';
                 nfcIcon.style.color = '#ffffff';
+                nfcIcon.style.filter = 'none';
             }
         }
 
-        // Live text sync
+        // Live text sync with natural casing
         const eliteNameInput = document.getElementById('elite-input-name');
         const eliteCompanyInput = document.getElementById('elite-input-company');
         const eliteCardName = document.getElementById('elite-card-name');
         const eliteCardCompany = document.getElementById('elite-card-company');
+        const eliteDefaultName = eliteCardName.textContent;
+        const eliteDefaultCompany = eliteCardCompany.textContent;
 
         eliteNameInput.addEventListener('input', (e) => {
-            eliteCardName.textContent = e.target.value.trim() || 'Nom & Prénom';
+            eliteCardName.textContent = e.target.value.length > 0 ? e.target.value : eliteDefaultName;
         });
         eliteCompanyInput.addEventListener('input', (e) => {
-            eliteCardCompany.textContent = e.target.value.trim() || 'Nom d\'entreprise';
+            eliteCardCompany.textContent = e.target.value.length > 0 ? e.target.value : eliteDefaultCompany;
         });
 
         // Logo upload handler
@@ -502,20 +518,36 @@ Je souhaite commander la Carte Elite Personnalisée (250 DH + 1er Mois Offert) :
             window.open(`https://wa.me/212674745463?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        let isFlipped = false;
+        let isFlipping = false;
+
+        function flip() {
+            isFlipped = !isFlipped;
+            isFlipping = true;
+            const cardInner = document.getElementById('card-inner');
+            const wrapper = document.getElementById('card-wrapper');
+            wrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            cardInner.classList.toggle('is-flipped', isFlipped);
+            setTimeout(() => {
+                isFlipping = false;
+            }, 600);
+        }
+
         function handleMove(e, container) {
+            if (isFlipping) return;
             const wrapper = container.querySelector('.card-3d-wrapper');
             const rect = container.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            const rotateX = ((rect.height / 2) - y) / 10;
-            const rotateY = (x - (rect.width / 2)) / 10;
+            const rotateX = ((rect.height / 2) - y) / 12;
+            const factor = isFlipped ? -1 : 1;
+            const rotateY = factor * ((x - (rect.width / 2)) / 12);
             wrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
+
         function handleLeave(container) {
-            container.querySelector('.card-3d-wrapper').style.transform = `rotateX(0deg) rotateY(0deg)`;
-        }
-        function flip() {
-            document.getElementById('card-inner').classList.toggle('is-flipped');
+            const wrapper = container.querySelector('.card-3d-wrapper');
+            wrapper.style.transform = `rotateX(0deg) rotateY(0deg)`;
         }
     </script>
 
