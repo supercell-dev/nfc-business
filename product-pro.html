@@ -249,7 +249,7 @@
                 <div class="flex items-center gap-2 mt-2">
                     <span class="px-3 py-1 rounded-full text-xs font-bold text-blue-400 bg-blue-500/10 border border-blue-500/20" data-i18n="sub-pro">50 DH / month · 500 DH / year</span>
                 </div>
-                <span class="inline-block mt-2 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30" data-i18n="promo-1st-month-free">🎉 1st Month Free Included!</span>
+                <span class="inline-block mt-2 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30" data-i18n="promo-pro-free">🎉 2 Weeks Free Included!</span>
             </div>
 
             <!-- Customization & Order Form (Popcard Style) -->
@@ -259,7 +259,7 @@
                         <span class="text-[10px] font-black uppercase tracking-widest text-blue-400 block" data-i18n="custom-partial">Personnalisation Partielle</span>
                         <h3 class="text-lg font-black uppercase italic text-white" data-i18n="form-order-title">Détails de la Carte</h3>
                     </div>
-                    <span class="text-xs font-black text-amber-400 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">1er Mois Offert</span>
+                    <span class="text-xs font-black text-amber-400 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30" data-i18n="promo-pro-badge">2 Semaines Offertes</span>
                 </div>
 
                 <form id="pro-order-form" onsubmit="submitProOrder(event)" class="space-y-4">
@@ -295,7 +295,7 @@
 
                     <div class="pt-2">
                         <button type="submit" class="btn-primary w-full py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white flex items-center justify-center gap-2" data-i18n="cta-buy-pro">
-                            <span>Commander — 200 DH (1er Mo Free)</span>
+                            <span>Commander — 200 DH (2 Sem Free)</span>
                         </button>
                         <p class="text-[10px] text-slate-400 text-center mt-2.5" data-i18n="order-whatsapp-note">✓ Confirmation instantanée via WhatsApp avec nos équipes</p>
                     </div>
@@ -408,7 +408,7 @@
             const address = document.getElementById('pro-input-address').value.trim();
 
             const msg = `Salam SuperTap,
-Je souhaite commander la Carte Pro Personnalisée (200 DH + 1er Mois Offert) :
+Je souhaite commander la Carte Pro Personnalisée (200 DH + 2 Semaines Offertes) :
 • Personnalisation : Partielle (Nom & Entreprise)
 • Nom & Prénom : ${name}
 • Entreprise / Métier : ${company}

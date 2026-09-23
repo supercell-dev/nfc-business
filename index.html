@@ -234,7 +234,7 @@
                         "name": "How do SuperTap subscriptions and pricing work?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Lite Edition (150 DH) has a lifetime Free plan (0 DH/month). Pro Edition (200 DH) is 50 DH/month (or 500 DH/year) with 7-day analytics and lead capture (up to 10 leads/day). Elite (250 DH) is 100 DH/month with living animations, unlimited leads, and full analytics. Both Pro and Elite include your 1st Month FREE! Google Review cards are 200 DH with zero subscription."
+                            "text": "Lite Edition (150 DH) has a lifetime Free plan (0 DH/month). Pro Edition (200 DH) is 50 DH/month (or 500 DH/year) with 7-day analytics and lead capture (up to 10 leads/day). Elite (250 DH) is 100 DH/month with living animations, unlimited leads, and full analytics. Pro includes 2 Weeks Free, and Elite includes 1 Week Free! Google Review cards are 200 DH with zero subscription."
                         }
                     },
                     {
@@ -324,7 +324,7 @@
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10 text-xs font-bold uppercase tracking-widest text-slate-400">
                 <span class="flex items-center gap-2.5">
                     <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
-                    <span data-i18n="stat-no-fees">Free Plan Available • 1st Month Free on Pro/Elite</span>
+                    <span data-i18n="stat-no-fees">Free Plan Available • Free Trials on Pro (2 Wks) & Elite (1 Wk)</span>
                 </span>
                 <span class="flex items-center gap-2.5">
                     <span class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
@@ -339,7 +339,7 @@
             <!-- Brand Entity Definition for GEO / AI Search Grounding -->
             <div class="mt-14 max-w-2xl mx-auto px-6 py-4 rounded-2xl bg-blue-950/20 border border-blue-500/15 backdrop-blur-sm" itemscope itemtype="https://schema.org/Brand">
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed text-center font-normal" data-i18n="brand-entity-text" itemprop="description">
-                    <strong class="text-white font-bold" itemprop="name">SuperTap</strong> is Morocco’s leading smart digital business card provider, based in Casablanca. Engineered with instant tap-to-share contactless technology and premium durable matte PVC, SuperTap offers tiered networking solutions—from the 150 DH Lite card with a free lifetime plan, to Pro (50 DH/mo) and Elite (100 DH/mo) with 1st month free, and 200 DH Google Review cards with zero subscription.
+                    <strong class="text-white font-bold" itemprop="name">SuperTap</strong> is Morocco’s leading smart digital business card provider, based in Casablanca. Engineered with instant tap-to-share contactless technology and premium durable matte PVC, SuperTap offers tiered networking solutions—from the 150 DH Lite card with a free lifetime plan, to Pro (50 DH/mo with 2 weeks free) and Elite (100 DH/mo with 1 week free), and 200 DH Google Review cards with zero subscription.
                 </p>
             </div>
         </div>
@@ -435,8 +435,8 @@
                         <tr class="hover:bg-white/[0.02] transition">
                             <td class="p-4 sm:p-5 font-bold text-white" data-i18n="matrix-row-sub">Monthly Subscription</td>
                             <td class="p-4 sm:p-5 text-center text-slate-300 font-semibold" data-i18n="sub-lite">Free (0 DH/mo)</td>
-                            <td class="p-4 sm:p-5 text-center text-blue-400 font-semibold bg-blue-600/5 border-x border-blue-500/20" data-i18n="matrix-val-pro-sub">50 DH / mo <span class="block text-[10px] text-amber-400">🎉 1st Mo Free</span></td>
-                            <td class="p-4 sm:p-5 text-center text-purple-400 font-semibold bg-purple-600/5" data-i18n="matrix-val-elite-sub">100 DH / mo <span class="block text-[10px] text-amber-400">🎉 1st Mo Free</span></td>
+                            <td class="p-4 sm:p-5 text-center text-blue-400 font-semibold bg-blue-600/5 border-x border-blue-500/20" data-i18n="matrix-val-pro-sub">50 DH / mo <span class="block text-[10px] text-amber-400">🎉 2 Wks Free</span></td>
+                            <td class="p-4 sm:p-5 text-center text-purple-400 font-semibold bg-purple-600/5" data-i18n="matrix-val-elite-sub">100 DH / mo <span class="block text-[10px] text-amber-400">🎉 1 Wk Free</span></td>
                         </tr>
                         <tr class="hover:bg-white/[0.02] transition">
                             <td class="p-4 sm:p-5 font-bold text-white" data-i18n="matrix-row-themes">Available Themes</td>
@@ -494,87 +494,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-
-            <!-- Why Customers Upgrade Section (Sales Conversion Angles) -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Upgrade to Pro Card -->
-                <div class="card-feature p-8 md:p-10 rounded-[32px] border-blue-500/30 bg-blue-950/20">
-                    <span class="text-xs font-black uppercase tracking-widest text-blue-400 block mb-2" data-i18n="sales-pro-subtitle">The Business & Lead Generation Workhorse</span>
-                    <h3 class="text-2xl font-black uppercase italic text-white mb-6" data-i18n="sales-pro-title">Why Upgrade from Lite to Pro?</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2 mb-1">
-                                <span class="text-blue-400">⚡</span>
-                                <span data-i18n="sales-pro-point1-title">Turn Your Card into an Automated Lead Machine</span>
-                            </h4>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="sales-pro-point1-desc">
-                                Lite only shares your contact one-way. Pro captures the other person's name, phone, and notes on the spot (up to 10 leads/day) and exports everything to CSV in 1 click.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2 mb-1">
-                                <span class="text-blue-400">📊</span>
-                                <span data-i18n="sales-pro-point2-title">Measure Your Real-World ROI</span>
-                            </h4>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="sales-pro-point2-desc">
-                                See how many people tap your card with an interactive 7-day scan volume chart and daily engagement breakdowns.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2 mb-1">
-                                <span class="text-blue-400">📄</span>
-                                <span data-i18n="sales-pro-point3-title">Share Your Actual Work</span>
-                            </h4>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="sales-pro-point3-desc">
-                                Upload a digital PDF portfolio, resume, or restaurant menu directly into your profile—ideal for freelancers, restaurants, and executives.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-8 pt-6 border-t border-white/10 flex justify-between items-center">
-                        <span class="text-sm font-bold text-white">200 DH + 50 DH/mo <span class="text-[10px] text-amber-400 block">1st Month Free</span></span>
-                        <a href="product-pro.html" class="btn-primary text-white text-xs px-6 py-2.5 rounded-full font-bold uppercase tracking-wider" data-i18n="cta-buy-pro">Buy Pro</a>
-                    </div>
-                </div>
-
-                <!-- Upgrade to Elite Card -->
-                <div class="card-feature p-8 md:p-10 rounded-[32px] border-purple-500/30 bg-purple-950/20">
-                    <span class="text-xs font-black uppercase tracking-widest text-purple-400 block mb-2" data-i18n="sales-elite-subtitle">The Luxury & High-Impact VIP Experience</span>
-                    <h3 class="text-2xl font-black uppercase italic text-white mb-6" data-i18n="sales-elite-title">Why Upgrade from Pro to Elite?</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2 mb-1">
-                                <span class="text-purple-400">✨</span>
-                                <span data-i18n="sales-elite-point1-title">Unforgettable First Impression</span>
-                            </h4>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="sales-elite-point1-desc">
-                                When tapping an Elite card, their screen comes alive with 12 living background animations, interactive Matrix Rain, and a 30 FPS hacker canvas effect.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2 mb-1">
-                                <span class="text-purple-400">🚀</span>
-                                <span data-i18n="sales-elite-point2-title">Unlimited Lead Generation & Analytics</span>
-                            </h4>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="sales-elite-point2-desc">
-                                No daily limits. Capture unlimited contacts per day and access unlimited historical scan analytics.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2 mb-1">
-                                <span class="text-purple-400">🎨</span>
-                                <span data-i18n="sales-elite-point3-title">100% Brand Hex Consistency</span>
-                            </h4>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="sales-elite-point3-desc">
-                                Complete control over every button color (Website, TikTok, Instagram, PDF) and up to 5 priority quick action links.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-8 pt-6 border-t border-white/10 flex justify-between items-center">
-                        <span class="text-sm font-bold text-white">250 DH + 100 DH/mo <span class="text-[10px] text-amber-400 block">1st Month Free</span></span>
-                        <a href="product-elite.html" class="btn-primary text-white text-xs px-6 py-2.5 rounded-full font-bold uppercase tracking-wider" data-i18n="cta-buy-elite">Buy Elite</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -640,7 +559,7 @@
                     Choose Your <span class="text-blue-500">Edition.</span>
                 </h2>
                 <p class="text-slate-300 text-base md:text-lg max-w-xl mx-auto font-light" data-i18n="pricing-section-desc">
-                    Every edition includes premium smart contactless hardware. Choose between the Free plan or unlock full business power with your 1st month free.
+                    Every edition includes premium smart contactless hardware. Choose between the Free plan or unlock full business power with free trials on Pro (2 weeks) and Elite (1 week).
                 </p>
             </div>
 
@@ -685,7 +604,7 @@
                         <h3 class="text-xl font-bold uppercase group-hover:text-blue-400 transition text-white" data-i18n="pro-title">Pro Edition</h3>
                         <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded-full text-blue-400 bg-blue-500/10 border border-blue-500/30" data-i18n="custom-partial">Personnalisation Partielle</span>
                     </div>
-                    <p class="text-slate-300 text-sm mb-4 flex-grow" data-i18n="pro-desc">200 DH · Midnight Blue finish. Partial customization (Name & Company). 50 DH/mo (1st Month Free included).</p>
+                    <p class="text-slate-300 text-sm mb-4 flex-grow" data-i18n="pro-desc">200 DH · Midnight Blue finish. Partial customization (Name & Company). 50 DH/mo (2 Weeks Free included).</p>
                     <ul class="text-slate-400 text-xs space-y-2 mb-6">
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span data-i18n="pro-bullet-custom">Personnalisation partielle : Votre nom et entreprise</span></li>
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span data-i18n="tier-pro-bullet-1">Lead capture CRM (up to 10 leads/day) + CSV export</span></li>
@@ -720,7 +639,7 @@
                         <h3 class="text-xl font-bold uppercase group-hover:text-blue-400 transition text-white" data-i18n="elite-title">Elite Matte</h3>
                         <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded-full text-purple-400 bg-purple-500/10 border border-purple-500/30" data-i18n="custom-full">Personnalisation Complète</span>
                     </div>
-                    <p class="text-slate-300 text-sm mb-4 flex-grow" data-i18n="elite-desc">250 DH · Custom Matte Black (Your Logo) with Gold, Silver, or White impression. 100 DH/mo (1st Month Free).</p>
+                    <p class="text-slate-300 text-sm mb-4 flex-grow" data-i18n="elite-desc">250 DH · Custom Matte Black (Your Logo) with Gold, Silver, or White impression. 100 DH/mo (1 Week Free).</p>
                     <ul class="text-slate-300 text-xs space-y-2 mb-6">
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span data-i18n="elite-bullet-custom">Personnalisation complète : Votre propre logo imprimé</span></li>
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span data-i18n="tier-elite-bullet-1">Custom Gold, Silver, or White foil impression</span></li>
@@ -785,7 +704,7 @@
                     </button>
                     <div class="faq-answer px-6">
                         <p class="text-slate-300 text-sm leading-relaxed pb-6" data-i18n="faq-geo-3-a">
-                            Lite Edition (150 DH) has a lifetime Free plan (0 DH/month). Pro Edition (200 DH) is 50 DH/month (or 500 DH/year) with 7-day analytics and lead capture (up to 10 leads/day). Elite (250 DH) is 100 DH/month with living animations, unlimited leads, and full analytics. Both Pro and Elite include your 1st Month FREE! Google Review cards are 200 DH with zero subscription.
+                            Lite Edition (150 DH) has a lifetime Free plan (0 DH/month). Pro Edition (200 DH) is 50 DH/month (or 500 DH/year) with 7-day analytics and lead capture (up to 10 leads/day). Elite (250 DH) is 100 DH/month with living animations, unlimited leads, and full analytics. Pro includes 2 Weeks Free, and Elite includes 1 Week Free! Google Review cards are 200 DH with zero subscription.
                         </p>
                     </div>
                 </div>
