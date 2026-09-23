@@ -166,7 +166,6 @@
                 <a href="index.html" class="hover:text-blue-400 transition text-slate-300" data-i18n="nav-home">Home</a>
                 <a href="store.html" class="hover:text-blue-400 transition text-slate-300" data-i18n="nav-store">Store</a>
                 <a href="services.html" class="hover:text-blue-400 transition text-slate-300" data-i18n="nav-services">Services</a>
-                <a href="blank-cards.html" class="hover:text-blue-400 transition text-slate-300" data-i18n="nav-blank-cards">Blank Cards</a>
                 <div class="lang-picker ml-4 border-l border-white/10 pl-6"></div>
                 <a href="https://wa.me/212674745463"
                     class="btn-primary text-white px-7 py-2.5 rounded-full shadow-lg font-bold" data-i18n="order-now">Order Now</a>
@@ -174,7 +173,6 @@
 
             <div class="md:hidden flex gap-3 items-center">
                 <div class="lang-picker"></div>
-                <a href="blank-cards.html" class="text-[10px] font-black uppercase text-slate-300" data-i18n="nav-blank-cards">Blank Cards</a>
                 <a href="store.html" class="text-[10px] font-black uppercase text-blue-400" data-i18n="nav-store">Store</a>
             </div>
         </div>
@@ -203,8 +201,11 @@
             </div>
             
             <p class="text-slate-500 text-[11px] mt-8 uppercase font-bold tracking-widest" data-i18n="flip-hint">Click to flip • Hover to rotate</p>
-            <div class="mt-8 text-4xl font-black italic text-white font-mono">80 DH</div>
-            <a href="https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Lite%20Edition%20(80%20DH)" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white" data-i18n="buy-lite">Buy Lite — 80 DH</a>
+            <div class="mt-8 flex flex-col items-center">
+                <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-lite">150 DH</div>
+                <span class="inline-block mt-2 px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20" data-i18n="sub-lite">Free Plan (0 DH/mo)</span>
+            </div>
+            <a href="https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Lite%20Edition%20(150%20DH)" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white" data-i18n="cta-buy-lite">Buy Lite — 150 DH</a>
         </div>
 
         <!-- Features Column -->
@@ -216,21 +217,28 @@
                         <span class="text-emerald-400 font-bold text-lg">✓</span>
                         <div>
                             <strong class="text-white block text-sm" data-i18n="one-tap">One Tap Sharing</strong>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="hero-desc">Share your social world instantly without any apps.</p>
+                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="hero-desc">Share your social world instantly without any apps on iPhone & Android.</p>
                         </div>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-emerald-400 font-bold text-lg">✓</span>
                         <div>
-                            <strong class="text-white block text-sm" data-i18n="pvc-finish">Professional PVC Finish</strong>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="pvc-finish-desc">High-quality white finish that looks clean in any wallet.</p>
+                            <strong class="text-white block text-sm">10 Standard Lite Themes</strong>
+                            <p class="text-slate-300 text-xs leading-relaxed">Access clean aesthetic styles: Midnight, Sunset, Emerald, Noir, Cyber, Ocean, and more.</p>
                         </div>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-emerald-400 font-bold text-lg">✓</span>
                         <div>
-                            <strong class="text-white block text-sm" data-i18n="cloud-profile">Cloud-Base Profile</strong>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="cloud-profile-desc">Update your basic info through your digital profile.</p>
+                            <strong class="text-white block text-sm" data-i18n="cloud-profile">Cloud-Base Profile (0 DH/mo)</strong>
+                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="cloud-profile-desc">Update your basic info anytime through your digital dashboard with zero monthly subscription.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-emerald-400 font-bold text-lg">✓</span>
+                        <div>
+                            <strong class="text-white block text-sm">1 Priority Quick Link</strong>
+                            <p class="text-slate-300 text-xs leading-relaxed">Pin your most important action button (Call, WhatsApp, or Website) at the top.</p>
                         </div>
                     </li>
                 </ul>
@@ -242,22 +250,29 @@
                     <li class="flex items-start gap-4">
                         <span class="text-red-400 font-bold text-lg">✕</span>
                         <div>
-                            <strong class="text-slate-200 block text-sm" data-i18n="pdf-support">No PDF Files</strong>
-                            <p class="text-slate-400 text-xs leading-relaxed" data-i18n="pdf-support-desc">Lite users cannot host or share PDF documents on their profile.</p>
+                            <strong class="text-slate-200 block text-sm" data-i18n="pdf-support">No PDF Uploads</strong>
+                            <p class="text-slate-400 text-xs leading-relaxed">Cannot host or share PDF resumes, company brochures, or food/drink menus.</p>
                         </div>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-red-400 font-bold text-lg">✕</span>
                         <div>
-                            <strong class="text-slate-200 block text-sm" data-i18n="pro-theme">No Professional Theme</strong>
-                            <p class="text-slate-400 text-xs leading-relaxed" data-i18n="pro-theme-desc">Access to the exclusive business-designed theme is locked on Lite.</p>
+                            <strong class="text-slate-200 block text-sm">No Scan Analytics & Charts</strong>
+                            <p class="text-slate-400 text-xs leading-relaxed">Dashboard scan counters and interactive SVG charts are locked on Lite.</p>
                         </div>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-red-400 font-bold text-lg">✕</span>
                         <div>
-                            <strong class="text-slate-200 block text-sm" data-i18n="quick-links">1 Quick Link Button</strong>
-                            <p class="text-slate-400 text-xs leading-relaxed" data-i18n="quick-links-desc">You are limited to only one featured quick action button on Lite.</p>
+                            <strong class="text-slate-200 block text-sm">No Lead Capture CRM</strong>
+                            <p class="text-slate-400 text-xs leading-relaxed">One-way contact sharing only. Cannot collect client names, phones, or export CSV leads.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-red-400 font-bold text-lg">✕</span>
+                        <div>
+                            <strong class="text-slate-200 block text-sm">Static Themes Only</strong>
+                            <p class="text-slate-400 text-xs leading-relaxed">No cinematic background animations, no hacker matrix rain, and no custom brand hex color overrides.</p>
                         </div>
                     </li>
                 </ul>
