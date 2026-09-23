@@ -194,10 +194,7 @@
                             <span class="text-3xl font-black italic opacity-20 uppercase">SuperTap</span>
                         </div>
                         <div class="card-back">
-                            <div class="flex flex-col items-center justify-center">
-                                <svg class="w-10 h-10 opacity-30 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                                <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold mt-2">Tap to Connect</span>
-                            </div>
+                            <div class="shine"></div>
                         </div>
                     </div>
                 </div>
@@ -226,8 +223,8 @@
                     <li class="flex items-start gap-4">
                         <span class="text-emerald-400 font-bold text-lg">✓</span>
                         <div>
-                            <strong class="text-white block text-sm">10 Standard Lite Themes</strong>
-                            <p class="text-slate-300 text-xs leading-relaxed">Access clean aesthetic styles: Midnight, Sunset, Emerald, Noir, Cyber, Ocean, and more.</p>
+                            <strong class="text-white block text-sm" data-i18n="lite-feat-themes">10 Standard Lite Themes</strong>
+                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="lite-feat-themes-desc">Access clean aesthetic styles: Midnight, Sunset, Emerald, Noir, Cyber, Ocean, and more.</p>
                         </div>
                     </li>
                     <li class="flex items-start gap-4">
@@ -240,8 +237,8 @@
                     <li class="flex items-start gap-4">
                         <span class="text-emerald-400 font-bold text-lg">✓</span>
                         <div>
-                            <strong class="text-white block text-sm">1 Priority Quick Link</strong>
-                            <p class="text-slate-300 text-xs leading-relaxed">Pin your most important action button (Call, WhatsApp, or Website) at the top.</p>
+                            <strong class="text-white block text-sm" data-i18n="lite-feat-link">1 Priority Quick Link</strong>
+                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="lite-feat-link-desc">Pin your most important action button (Call, WhatsApp, or Website) at the top.</p>
                         </div>
                     </li>
                 </ul>
@@ -254,28 +251,28 @@
                         <span class="text-red-400 font-bold text-lg">✕</span>
                         <div>
                             <strong class="text-slate-200 block text-sm" data-i18n="pdf-support">No PDF Uploads</strong>
-                            <p class="text-slate-400 text-xs leading-relaxed">Cannot host or share PDF resumes, company brochures, or food/drink menus.</p>
+                            <p class="text-slate-400 text-xs leading-relaxed" data-i18n="lite-lim-pdf-desc">Cannot host or share PDF resumes, company brochures, or food/drink menus.</p>
                         </div>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-red-400 font-bold text-lg">✕</span>
                         <div>
-                            <strong class="text-slate-200 block text-sm">No Scan Analytics & Charts</strong>
-                            <p class="text-slate-400 text-xs leading-relaxed">Dashboard scan counters and interactive SVG charts are locked on Lite.</p>
+                            <strong class="text-slate-200 block text-sm" data-i18n="lite-lim-analytics">No Scan Analytics & Charts</strong>
+                            <p class="text-slate-400 text-xs leading-relaxed" data-i18n="lite-lim-analytics-desc">Dashboard scan counters and interactive SVG charts are locked on Lite.</p>
                         </div>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-red-400 font-bold text-lg">✕</span>
                         <div>
-                            <strong class="text-slate-200 block text-sm">No Lead Capture CRM</strong>
-                            <p class="text-slate-400 text-xs leading-relaxed">One-way contact sharing only. Cannot collect client names, phones, or export CSV leads.</p>
+                            <strong class="text-slate-200 block text-sm" data-i18n="lite-lim-crm">No Lead Capture CRM</strong>
+                            <p class="text-slate-400 text-xs leading-relaxed" data-i18n="lite-lim-crm-desc">One-way contact sharing only. Cannot collect client names, phones, or export CSV leads.</p>
                         </div>
                     </li>
                     <li class="flex items-start gap-4">
                         <span class="text-red-400 font-bold text-lg">✕</span>
                         <div>
-                            <strong class="text-slate-200 block text-sm">Static Themes Only</strong>
-                            <p class="text-slate-400 text-xs leading-relaxed">No cinematic background animations, no hacker matrix rain, and no custom brand hex color overrides.</p>
+                            <strong class="text-slate-200 block text-sm" data-i18n="lite-lim-themes">Static Themes Only</strong>
+                            <p class="text-slate-400 text-xs leading-relaxed" data-i18n="lite-lim-themes-desc">No cinematic background animations, no hacker matrix rain, and no custom brand hex color overrides.</p>
                         </div>
                     </li>
                 </ul>
@@ -303,20 +300,39 @@
                     .catch(err => console.log('SW registration failed:', err));
             });
         }
+        let isFlipped = false;
+        let isFlipping = false;
+
+        function flip() {
+            if (isFlipping) return;
+            isFlipped = !isFlipped;
+            isFlipping = true;
+            const cardInner = document.getElementById('card-inner');
+            cardInner.classList.toggle('is-flipped', isFlipped);
+            setTimeout(() => {
+                isFlipping = false;
+                const scene = document.querySelector('.card-scene');
+                if (!scene.matches(':hover')) {
+                    document.getElementById('card-wrapper').style.transform = 'rotateX(0deg) rotateY(0deg)';
+                }
+            }, 750);
+        }
+
         function handleMove(e, container) {
+            if (isFlipping) return;
             const wrapper = container.querySelector('.card-3d-wrapper');
             const rect = container.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             const rotateX = ((rect.height / 2) - y) / 10;
-            const rotateY = (x - (rect.width / 2)) / 10;
+            const factor = isFlipped ? -1 : 1;
+            const rotateY = factor * ((x - (rect.width / 2)) / 10);
             wrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
+
         function handleLeave(container) {
-            container.querySelector('.card-3d-wrapper').style.transform = `rotateX(0deg) rotateY(0deg)`;
-        }
-        function flip() {
-            document.getElementById('card-inner').classList.toggle('is-flipped');
+            if (isFlipping) return;
+            container.querySelector('.card-3d-wrapper').style.transform = 'rotateX(0deg) rotateY(0deg)';
         }
     </script>
 
