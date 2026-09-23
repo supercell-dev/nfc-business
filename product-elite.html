@@ -543,8 +543,6 @@ Je souhaite commander la Carte Elite Personnalisée (250 DH + 1er Mois Offert) :
             isFlipped = !isFlipped;
             isFlipping = true;
             const cardInner = document.getElementById('card-inner');
-            const wrapper = document.getElementById('card-wrapper');
-            wrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
             cardInner.classList.toggle('is-flipped', isFlipped);
             setTimeout(() => {
                 isFlipping = false;
