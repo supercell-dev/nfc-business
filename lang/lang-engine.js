@@ -146,6 +146,14 @@
             }
         });
 
+        // Update all data-i18n-ph (placeholders)
+        document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+            const key = el.getAttribute('data-i18n-ph');
+            if (t[key] !== undefined) {
+                el.placeholder = t[key];
+            }
+        });
+
         // Update picker buttons & active states
         const currentLang = LANGS.find(l => l.code === lang) || LANGS[0];
         document.querySelectorAll('.lang-picker').forEach(picker => {

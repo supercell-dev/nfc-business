@@ -189,15 +189,33 @@
             <div class="card-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)" onclick="flip()">
                 <div class="card-3d-wrapper" id="card-wrapper">
                     <div class="card-inner" id="card-inner">
-                        <div class="card-front" id="card-front-face">
+                        <div class="card-front relative p-6 flex flex-col justify-between items-start text-left overflow-hidden" id="card-front-face">
                             <div class="shine"></div>
-                            <span id="elite-card-brand" class="text-3xl font-black italic uppercase transition-colors duration-300 text-amber-400" style="text-shadow: 0 0 12px rgba(251,191,36,0.35);">SuperTap</span>
-                            <span id="elite-card-name" class="text-[9px] uppercase tracking-widest font-bold mt-1 transition-colors duration-300 text-amber-300" data-i18n="custom-name">[Your Name / Logo]</span>
+                            
+                            <!-- Top Row: Company Name -->
+                            <div class="w-full flex justify-between items-start z-10">
+                                <span id="elite-card-company" class="text-[9px] uppercase tracking-wider font-bold transition-colors duration-300 text-amber-300/80 truncate max-w-[200px]" data-i18n="placeholder-company">Nom d'entreprise</span>
+                            </div>
+                            
+                            <!-- Center: Client's Custom Logo / YOUR LOGO -->
+                            <div class="w-full flex flex-col items-center justify-center my-auto z-10 text-center">
+                                <div id="elite-logo-container" class="flex flex-col items-center justify-center">
+                                    <span id="elite-card-brand" class="text-2xl sm:text-3xl font-black italic uppercase tracking-tighter transition-colors duration-300 text-amber-400" style="text-shadow: 0 0 12px rgba(251,191,36,0.45);">VOTRE LOGO</span>
+                                    <span id="elite-sub-badge" class="text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-amber-400/40 text-amber-300 bg-amber-500/10">SUR-MESURE</span>
+                                </div>
+                                <img id="elite-uploaded-logo" class="max-h-12 max-w-[150px] object-contain hidden my-1 filter drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]" alt="Custom Logo Preview">
+                            </div>
+
+                            <!-- Bottom Row: Personal Name + Contactless Wave Icon -->
+                            <div class="w-full flex justify-between items-end z-10">
+                                <span id="elite-card-name" class="text-[10px] uppercase tracking-widest font-extrabold transition-colors duration-300 text-amber-300 truncate max-w-[200px]" data-i18n="placeholder-name">Nom & Prénom</span>
+                                <svg id="elite-card-nfc-icon" class="w-5 h-5 text-amber-400 opacity-90 flex-shrink-0 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M8.5 16.5a5 5 0 0 1 0-9M12 19a8.5 8.5 0 0 0 0-14M15.5 21.5a12 12 0 0 0 0-19"/></svg>
+                            </div>
                         </div>
                         <div class="card-back" id="card-back-face">
                             <div class="flex flex-col items-center justify-center">
                                 <svg class="w-10 h-10 opacity-30 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                                <span id="elite-card-title" class="text-[9px] uppercase tracking-widest font-bold mt-2 transition-colors duration-300 text-amber-300" data-i18n="custom-title">[Your Title / Company]</span>
+                                <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold mt-2">Tap to Connect</span>
                             </div>
                         </div>
                     </div>
@@ -206,33 +224,95 @@
             
             <p class="text-slate-500 text-[11px] mt-8 uppercase font-bold tracking-widest" data-i18n="flip-hint">Click to flip • Hover to rotate</p>
 
-            <!-- Impression Finish Selector -->
-            <div class="mt-6 mb-4 max-w-sm mx-auto">
-                <span class="text-[11px] uppercase font-black tracking-widest text-slate-400 block mb-3">Impression Foil Finish:</span>
-                <div class="flex justify-center items-center gap-2">
-                    <button type="button" onclick="setImpression('gold')" id="btn-gold" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-amber-400/80 bg-amber-500/20 text-amber-300 shadow-[0_0_15px_rgba(251,191,36,0.25)]">
-                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_#fbbf24]"></span>
-                        <span>Gold Foil</span>
-                    </button>
-                    <button type="button" onclick="setImpression('silver')" id="btn-silver" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-slate-700 bg-slate-800/80 text-slate-300 hover:border-slate-500">
-                        <span class="w-2.5 h-2.5 rounded-full bg-slate-300 shadow-[0_0_8px_#cbd5e1]"></span>
-                        <span>Silver Foil</span>
-                    </button>
-                    <button type="button" onclick="setImpression('white')" id="btn-white" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-slate-700 bg-slate-800/80 text-slate-300 hover:border-slate-500">
-                        <span class="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_8px_#ffffff]"></span>
-                        <span>Crisp White</span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="mt-4 flex flex-col items-center">
+            <div class="mt-8 flex flex-col items-center">
                 <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-elite">250 DH</div>
                 <div class="flex items-center gap-2 mt-2">
                     <span class="px-3 py-1 rounded-full text-xs font-bold text-purple-400 bg-purple-500/10 border border-purple-500/20" data-i18n="sub-elite">100 DH / month</span>
                 </div>
                 <span class="inline-block mt-2 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30" data-i18n="promo-1st-month-free">🎉 1st Month Free Included!</span>
             </div>
-            <a id="elite-cta-btn" href="https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Elite%20Matte%20(250%20DH%20%2B%201st%20Month%20Free)%20with%20Gold%20Foil%20Impression" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white" data-i18n="cta-buy-elite">Buy Elite — 250 DH (1st Mo Free)</a>
+
+            <!-- Customization & Order Form (Popcard Style) -->
+            <div class="mt-8 text-left bg-slate-900/90 border border-purple-500/20 rounded-3xl p-6 md:p-8 backdrop-blur-xl shadow-2xl">
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-purple-400 block" data-i18n="custom-full">Personnalisation Complète</span>
+                        <h3 class="text-lg font-black uppercase italic text-white" data-i18n="form-order-title">Détails de la Carte</h3>
+                    </div>
+                    <span class="text-xs font-black text-amber-400 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">1er Mois Offert</span>
+                </div>
+
+                <!-- Impression Finish Swatches -->
+                <div class="mb-5">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2.5" data-i18n="form-impression-color">Couleur de l'impression :</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button type="button" onclick="setImpression('white')" id="btn-white" class="px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-slate-700 bg-slate-800/80 text-slate-300 hover:border-slate-500">
+                            <span class="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_#ffffff]"></span>
+                            <span data-i18n="form-white">Blanche</span>
+                        </button>
+                        <button type="button" onclick="setImpression('silver')" id="btn-silver" class="px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-slate-700 bg-slate-800/80 text-slate-300 hover:border-slate-500">
+                            <span class="w-3.5 h-3.5 rounded-full bg-slate-300 shadow-[0_0_8px_#cbd5e1]"></span>
+                            <span data-i18n="form-silver">Argent</span>
+                        </button>
+                        <button type="button" onclick="setImpression('gold')" id="btn-gold" class="px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-amber-400/80 bg-amber-500/20 text-amber-300 shadow-[0_0_15px_rgba(251,191,36,0.25)]">
+                            <span class="w-3.5 h-3.5 rounded-full bg-amber-400 shadow-[0_0_8px_#fbbf24]"></span>
+                            <span data-i18n="form-gold">Dorée</span>
+                        </button>
+                    </div>
+                </div>
+
+                <form id="elite-order-form" onsubmit="submitEliteOrder(event)" class="space-y-4">
+                    <!-- Logo Upload / Prompt -->
+                    <div>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="form-logo-upload">Votre Logo (Optionnel)</label>
+                            <span class="text-[10px] text-slate-400 font-medium">(ou envoyez sur WhatsApp)</span>
+                        </div>
+                        <label class="flex items-center justify-center gap-3 w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-dashed border-slate-600 hover:border-purple-400 text-slate-300 text-xs font-medium cursor-pointer transition">
+                            <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span id="logo-file-label" class="truncate">Importer votre logo (PNG, JPG, SVG)</span>
+                            <input type="file" id="elite-logo-input" accept="image/*" class="hidden" onchange="handleLogoUpload(this)">
+                        </label>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-fullname">Nom et Prénom *</label>
+                        <input type="text" id="elite-input-name" required placeholder="Votre nom et prénom" data-i18n-ph="placeholder-name" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-purple-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-company">Entreprise ou Métier *</label>
+                        <input type="text" id="elite-input-company" required placeholder="Entreprise ou Métier" data-i18n-ph="placeholder-company" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-purple-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-email">Adresse Email *</label>
+                        <input type="email" id="elite-input-email" required placeholder="Votre email" data-i18n-ph="placeholder-email" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-purple-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-phone">Téléphone *</label>
+                        <div class="flex rounded-xl overflow-hidden border border-slate-700 focus-within:border-purple-500 transition">
+                            <span class="px-3.5 py-3 bg-slate-800 text-slate-300 text-sm font-bold border-r border-slate-700 flex items-center gap-1.5">
+                                <span>🇲🇦</span> +212
+                            </span>
+                            <input type="tel" id="elite-input-phone" required placeholder="6XX XXX XXX" data-i18n-ph="placeholder-phone" class="w-full px-4 py-3 bg-slate-800/80 text-white placeholder-slate-500 text-sm focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-address">Adresse Exacte *</label>
+                        <input type="text" id="elite-input-address" required placeholder="Votre adresse exacte" data-i18n-ph="placeholder-address" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-purple-500 transition">
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" class="btn-primary w-full py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white flex items-center justify-center gap-2" data-i18n="cta-buy-elite">
+                            <span>Commander — 250 DH (1er Mo Free)</span>
+                        </button>
+                        <p class="text-[10px] text-slate-400 text-center mt-2.5" data-i18n="order-whatsapp-note">✓ Confirmation instantanée via WhatsApp avec nos équipes</p>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <!-- Features Column -->
@@ -314,43 +394,114 @@
                     .catch(err => console.log('SW registration failed:', err));
             });
         }
+        let currentImpression = 'gold';
+
         function setImpression(type) {
+            currentImpression = type;
             const brand = document.getElementById('elite-card-brand');
+            const subBadge = document.getElementById('elite-sub-badge');
             const name = document.getElementById('elite-card-name');
-            const title = document.getElementById('elite-card-title');
-            const ctaBtn = document.getElementById('elite-cta-btn');
+            const company = document.getElementById('elite-card-company');
+            const nfcIcon = document.getElementById('elite-card-nfc-icon');
             const btnGold = document.getElementById('btn-gold');
             const btnSilver = document.getElementById('btn-silver');
             const btnWhite = document.getElementById('btn-white');
 
             // Reset buttons
             [btnGold, btnSilver, btnWhite].forEach(btn => {
-                btn.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-slate-700 bg-slate-800/80 text-slate-300 hover:border-slate-500';
+                btn.className = 'px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-slate-700 bg-slate-800/80 text-slate-300 hover:border-slate-500';
             });
 
             if (type === 'gold') {
-                btnGold.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-amber-400/80 bg-amber-500/20 text-amber-300 shadow-[0_0_15px_rgba(251,191,36,0.25)]';
+                btnGold.className = 'px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-amber-400/80 bg-amber-500/20 text-amber-300 shadow-[0_0_15px_rgba(251,191,36,0.25)]';
                 brand.style.color = '#fbbf24';
                 brand.style.textShadow = '0 0 12px rgba(251,191,36,0.45)';
+                subBadge.className = 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-amber-400/40 text-amber-300 bg-amber-500/10';
                 name.style.color = '#fcd34d';
-                title.style.color = '#fcd34d';
-                ctaBtn.href = 'https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Elite%20Matte%20(250%20DH%20%2B%201st%20Month%20Free)%20with%20Gold%20Foil%20Impression';
+                company.style.color = '#fcd34d';
+                nfcIcon.style.color = '#fbbf24';
             } else if (type === 'silver') {
-                btnSilver.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-slate-300 bg-slate-400/20 text-white shadow-[0_0_15px_rgba(203,213,225,0.3)]';
+                btnSilver.className = 'px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-slate-300 bg-slate-400/20 text-white shadow-[0_0_15px_rgba(203,213,225,0.3)]';
                 brand.style.color = '#e2e8f0';
                 brand.style.textShadow = '0 0 12px rgba(226,232,240,0.45)';
+                subBadge.className = 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-slate-400/40 text-slate-200 bg-slate-400/10';
                 name.style.color = '#cbd5e1';
-                title.style.color = '#cbd5e1';
-                ctaBtn.href = 'https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Elite%20Matte%20(250%20DH%20%2B%201st%20Month%20Free)%20with%20Silver%20Foil%20Impression';
+                company.style.color = '#cbd5e1';
+                nfcIcon.style.color = '#cbd5e1';
             } else if (type === 'white') {
-                btnWhite.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-white bg-white/20 text-white shadow-[0_0_15px_rgba(255,255,255,0.35)]';
+                btnWhite.className = 'px-3 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 border border-white bg-white/20 text-white shadow-[0_0_15px_rgba(255,255,255,0.35)]';
                 brand.style.color = '#ffffff';
                 brand.style.textShadow = '0 0 12px rgba(255,255,255,0.4)';
+                subBadge.className = 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-white/40 text-white bg-white/10';
                 name.style.color = '#f8fafc';
-                title.style.color = '#f8fafc';
-                ctaBtn.href = 'https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Elite%20Matte%20(250%20DH%20%2B%201st%20Month%20Free)%20with%20Crisp%20White%20Impression';
+                company.style.color = '#f8fafc';
+                nfcIcon.style.color = '#ffffff';
             }
         }
+
+        // Live text sync
+        const eliteNameInput = document.getElementById('elite-input-name');
+        const eliteCompanyInput = document.getElementById('elite-input-company');
+        const eliteCardName = document.getElementById('elite-card-name');
+        const eliteCardCompany = document.getElementById('elite-card-company');
+
+        eliteNameInput.addEventListener('input', (e) => {
+            eliteCardName.textContent = e.target.value.trim() || 'Nom & Prénom';
+        });
+        eliteCompanyInput.addEventListener('input', (e) => {
+            eliteCardCompany.textContent = e.target.value.trim() || 'Nom d\'entreprise';
+        });
+
+        // Logo upload handler
+        let uploadedLogoName = '';
+        function handleLogoUpload(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                uploadedLogoName = file.name;
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const logoImg = document.getElementById('elite-uploaded-logo');
+                    const logoContainer = document.getElementById('elite-logo-container');
+                    const label = document.getElementById('logo-file-label');
+                    logoImg.src = e.target.result;
+                    logoImg.classList.remove('hidden');
+                    logoContainer.classList.add('hidden');
+                    label.textContent = `✓ Logo: ${file.name}`;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function submitEliteOrder(e) {
+            e.preventDefault();
+            const name = eliteNameInput.value.trim();
+            const company = eliteCompanyInput.value.trim();
+            const email = document.getElementById('elite-input-email').value.trim();
+            const phone = document.getElementById('elite-input-phone').value.trim();
+            const address = document.getElementById('elite-input-address').value.trim();
+
+            const finishMap = {
+                'gold': 'Dorée (Gold Foil)',
+                'silver': 'Argent (Silver Foil)',
+                'white': 'Blanche (Crisp White)'
+            };
+            const finishName = finishMap[currentImpression] || currentImpression;
+            const logoInfo = uploadedLogoName ? `Fichier "${uploadedLogoName}" (je l'envoie ici)` : 'À envoyer sur WhatsApp';
+
+            const msg = `Salam SuperTap,
+Je souhaite commander la Carte Elite Personnalisée (250 DH + 1er Mois Offert) :
+• Personnalisation : Complète (Sur-Mesure)
+• Couleur d'impression : ${finishName}
+• Logo : ${logoInfo}
+• Nom & Prénom : ${name}
+• Entreprise / Métier : ${company}
+• Email : ${email}
+• Téléphone : +212 ${phone}
+• Adresse de livraison : ${address}`;
+
+            window.open(`https://wa.me/212674745463?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
         function handleMove(e, container) {
             const wrapper = container.querySelector('.card-3d-wrapper');
             const rect = container.getBoundingClientRect();

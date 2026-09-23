@@ -189,10 +189,24 @@
             <div class="card-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)" onclick="flip()">
                 <div class="card-3d-wrapper" id="card-wrapper">
                     <div class="card-inner" id="card-inner">
-                        <div class="card-front">
+                        <div class="card-front relative p-6 flex flex-col justify-between items-start text-left overflow-hidden">
                             <div class="shine"></div>
-                            <span class="text-3xl font-black italic text-slate-900 uppercase">SuperTap</span>
-                            <span class="text-[9px] uppercase tracking-widest text-blue-600 font-extrabold mt-1 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-200 shadow-sm">PRO</span>
+                            <!-- Top Row: Company Name -->
+                            <div class="w-full flex justify-between items-start z-10">
+                                <span id="pro-card-company" class="text-[9px] uppercase tracking-wider font-bold text-slate-500 truncate max-w-[200px]" data-i18n="placeholder-company">Nom d'entreprise</span>
+                            </div>
+                            
+                            <!-- Center: SuperTap PRO Branding -->
+                            <div class="w-full flex flex-col items-center justify-center my-auto z-10">
+                                <span class="text-3xl font-black italic text-slate-900 uppercase tracking-tighter">SuperTap</span>
+                                <span class="text-[9px] uppercase tracking-widest text-blue-600 font-extrabold mt-1 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-200 shadow-sm">PRO</span>
+                            </div>
+
+                            <!-- Bottom Row: Personal Name + Contactless Wave Icon -->
+                            <div class="w-full flex justify-between items-end z-10">
+                                <span id="pro-card-name" class="text-[10px] uppercase tracking-widest font-extrabold text-slate-800 truncate max-w-[200px]" data-i18n="placeholder-name">Nom & Prénom</span>
+                                <svg class="w-5 h-5 text-slate-700 opacity-80 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M8.5 16.5a5 5 0 0 1 0-9M12 19a8.5 8.5 0 0 0 0-14M15.5 21.5a12 12 0 0 0 0-19"/></svg>
+                            </div>
                         </div>
                         <div class="card-back">
                             <div class="flex flex-col items-center justify-center">
@@ -205,6 +219,7 @@
             </div>
             
             <p class="text-slate-500 text-[11px] mt-8 uppercase font-bold tracking-widest" data-i18n="flip-hint">Click to flip • Hover to rotate</p>
+            
             <div class="mt-8 flex flex-col items-center">
                 <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-pro">200 DH</div>
                 <div class="flex items-center gap-2 mt-2">
@@ -212,7 +227,56 @@
                 </div>
                 <span class="inline-block mt-2 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30" data-i18n="promo-1st-month-free">🎉 1st Month Free Included!</span>
             </div>
-            <a href="https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Pro%20Edition%20(200%20DH%20%2B%201st%20Month%20Free)" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white" data-i18n="cta-buy-pro">Buy Pro — 200 DH (1st Mo Free)</a>
+
+            <!-- Customization & Order Form (Popcard Style) -->
+            <div class="mt-8 text-left bg-slate-900/90 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl shadow-2xl">
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-blue-400 block" data-i18n="custom-partial">Personnalisation Partielle</span>
+                        <h3 class="text-lg font-black uppercase italic text-white" data-i18n="form-order-title">Détails de la Carte</h3>
+                    </div>
+                    <span class="text-xs font-black text-amber-400 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">1er Mois Offert</span>
+                </div>
+
+                <form id="pro-order-form" onsubmit="submitProOrder(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-fullname">Nom et Prénom *</label>
+                        <input type="text" id="pro-input-name" required placeholder="Votre nom et prénom" data-i18n-ph="placeholder-name" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-company">Entreprise ou Métier *</label>
+                        <input type="text" id="pro-input-company" required placeholder="Entreprise ou Métier" data-i18n-ph="placeholder-company" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-email">Adresse Email *</label>
+                        <input type="email" id="pro-input-email" required placeholder="Votre email" data-i18n-ph="placeholder-email" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-phone">Téléphone *</label>
+                        <div class="flex rounded-xl overflow-hidden border border-slate-700 focus-within:border-blue-500 transition">
+                            <span class="px-3.5 py-3 bg-slate-800 text-slate-300 text-sm font-bold border-r border-slate-700 flex items-center gap-1.5">
+                                <span>🇲🇦</span> +212
+                            </span>
+                            <input type="tel" id="pro-input-phone" required placeholder="6XX XXX XXX" data-i18n-ph="placeholder-phone" class="w-full px-4 py-3 bg-slate-800/80 text-white placeholder-slate-500 text-sm focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5" data-i18n="form-address">Adresse Exacte *</label>
+                        <input type="text" id="pro-input-address" required placeholder="Votre adresse exacte" data-i18n-ph="placeholder-address" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition">
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" class="btn-primary w-full py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white flex items-center justify-center gap-2" data-i18n="cta-buy-pro">
+                            <span>Commander — 200 DH (1er Mo Free)</span>
+                        </button>
+                        <p class="text-[10px] text-slate-400 text-center mt-2.5" data-i18n="order-whatsapp-note">✓ Confirmation instantanée via WhatsApp avec nos équipes</p>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <!-- Features Column -->
@@ -220,6 +284,13 @@
             <div class="feature-box">
                 <h2 class="text-2xl font-black uppercase italic mb-6 text-blue-400" data-i18n="advantages">The Advantages</h2>
                 <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <span class="text-emerald-400 font-bold text-lg">✓</span>
+                        <div>
+                            <strong class="text-white block text-sm" data-i18n="custom-partial">Personnalisation Partielle de la Carte</strong>
+                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="pro-custom-feat-desc">Impression de votre Nom & Prénom et Nom d'entreprise directement sur votre carte exécutive blanche avec le logo officiel SuperTap Pro.</p>
+                        </div>
+                    </li>
                     <li class="flex items-start gap-4">
                         <span class="text-emerald-400 font-bold text-lg">✓</span>
                         <div>
@@ -261,7 +332,7 @@
             <div class="feature-box border-blue-500/20">
                 <h2 class="text-2xl font-black uppercase italic mb-6 text-blue-400" data-i18n="comparison">Tier Comparison</h2>
                 <p class="text-slate-300 text-sm leading-relaxed">
-                    The Pro edition is the ultimate business workhorse for consultants, freelancers, and businesses. For unlimited daily leads, unlimited analytics retention, and 12 living cinematic background animations, consider upgrading to <strong>Elite</strong>.
+                    The Pro edition is the ultimate business workhorse for consultants, freelancers, and businesses with partial custom print. For complete logo customization (your own logo), full unlimited lead generation, and 12 living animations, choose <strong>Elite</strong>.
                 </p>
             </div>
         </div>
@@ -287,6 +358,41 @@
                     .catch(err => console.log('SW registration failed:', err));
             });
         }
+
+        // Live 3D card text sync
+        const proNameInput = document.getElementById('pro-input-name');
+        const proCompanyInput = document.getElementById('pro-input-company');
+        const proCardName = document.getElementById('pro-card-name');
+        const proCardCompany = document.getElementById('pro-card-company');
+
+        proNameInput.addEventListener('input', (e) => {
+            proCardName.textContent = e.target.value.trim() || 'Nom & Prénom';
+        });
+
+        proCompanyInput.addEventListener('input', (e) => {
+            proCardCompany.textContent = e.target.value.trim() || 'Nom d\'entreprise';
+        });
+
+        function submitProOrder(e) {
+            e.preventDefault();
+            const name = proNameInput.value.trim();
+            const company = proCompanyInput.value.trim();
+            const email = document.getElementById('pro-input-email').value.trim();
+            const phone = document.getElementById('pro-input-phone').value.trim();
+            const address = document.getElementById('pro-input-address').value.trim();
+
+            const msg = `Salam SuperTap,
+Je souhaite commander la Carte Pro Personnalisée (200 DH + 1er Mois Offert) :
+• Personnalisation : Partielle (Nom & Entreprise)
+• Nom & Prénom : ${name}
+• Entreprise / Métier : ${company}
+• Email : ${email}
+• Téléphone : +212 ${phone}
+• Adresse de livraison : ${address}`;
+
+            window.open(`https://wa.me/212674745463?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
         function handleMove(e, container) {
             const wrapper = container.querySelector('.card-3d-wrapper');
             const rect = container.getBoundingClientRect();

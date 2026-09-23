@@ -427,10 +427,16 @@
                             <td class="p-4 sm:p-5 text-center text-emerald-400 font-bold bg-purple-600/5">✅ 250 DH</td>
                         </tr>
                         <tr class="hover:bg-white/[0.02] transition">
-                            <td class="p-4 sm:p-5 font-bold text-white">Monthly Subscription</td>
+                            <td class="p-4 sm:p-5 font-bold text-white" data-i18n="matrix-row-customization">Card Customization</td>
+                            <td class="p-4 sm:p-5 text-center text-slate-400" data-i18n="custom-none">Standard SuperTap</td>
+                            <td class="p-4 sm:p-5 text-center text-blue-300 font-bold bg-blue-600/5 border-x border-blue-500/20" data-i18n="custom-partial">Personnalisation Partielle (Nom & Entreprise)</td>
+                            <td class="p-4 sm:p-5 text-center text-purple-300 font-bold bg-purple-600/5" data-i18n="custom-full">Personnalisation Complète (Votre Logo + 3 Couleurs)</td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02] transition">
+                            <td class="p-4 sm:p-5 font-bold text-white" data-i18n="matrix-row-sub">Monthly Subscription</td>
                             <td class="p-4 sm:p-5 text-center text-slate-300 font-semibold" data-i18n="sub-lite">Free (0 DH/mo)</td>
-                            <td class="p-4 sm:p-5 text-center text-blue-400 font-semibold bg-blue-600/5 border-x border-blue-500/20">50 DH / mo <span class="block text-[10px] text-amber-400">🎉 1st Mo Free</span></td>
-                            <td class="p-4 sm:p-5 text-center text-purple-400 font-semibold bg-purple-600/5">100 DH / mo <span class="block text-[10px] text-amber-400">🎉 1st Mo Free</span></td>
+                            <td class="p-4 sm:p-5 text-center text-blue-400 font-semibold bg-blue-600/5 border-x border-blue-500/20" data-i18n="matrix-val-pro-sub">50 DH / mo <span class="block text-[10px] text-amber-400">🎉 1st Mo Free</span></td>
+                            <td class="p-4 sm:p-5 text-center text-purple-400 font-semibold bg-purple-600/5" data-i18n="matrix-val-elite-sub">100 DH / mo <span class="block text-[10px] text-amber-400">🎉 1st Mo Free</span></td>
                         </tr>
                         <tr class="hover:bg-white/[0.02] transition">
                             <td class="p-4 sm:p-5 font-bold text-white" data-i18n="matrix-row-themes">Available Themes</td>
@@ -664,17 +670,24 @@
 
                 <!-- Pro -->
                 <a href="product-pro.html" class="card-product p-8 rounded-[32px] flex flex-col border-blue-500/20 group">
-                    <div class="w-full aspect-[1.6/1] bg-slate-100 rounded-2xl mb-6 flex flex-col items-center justify-center relative overflow-hidden transition-transform group-hover:scale-95 border border-blue-400/40">
-                        <span class="text-3xl font-black italic uppercase text-slate-900">SuperTap</span>
-                        <span class="text-[9px] uppercase tracking-widest text-blue-600 font-extrabold mt-1 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-200 shadow-sm">PRO</span>
-                        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent"></div>
+                    <div class="w-full aspect-[1.6/1] bg-slate-100 rounded-2xl mb-6 p-4 flex flex-col justify-between relative overflow-hidden transition-transform group-hover:scale-95 border border-blue-400/40 text-left">
+                        <span class="text-[7px] uppercase tracking-wider font-bold text-slate-500 truncate" data-i18n="placeholder-company">Nom d'entreprise</span>
+                        <div class="flex flex-col items-center justify-center my-auto">
+                            <span class="text-2xl font-black italic uppercase text-slate-900 tracking-tighter">SuperTap</span>
+                            <span class="text-[8px] uppercase tracking-widest text-blue-600 font-extrabold px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200">PRO</span>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <span class="text-[8px] uppercase tracking-wider font-extrabold text-slate-800" data-i18n="placeholder-name">Nom & Prénom</span>
+                            <svg class="w-3.5 h-3.5 text-slate-700" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M8.5 16.5a5 5 0 0 1 0-9M12 19a8.5 8.5 0 0 0 0-14M15.5 21.5a12 12 0 0 0 0-19"/></svg>
+                        </div>
                     </div>
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-xl font-bold uppercase group-hover:text-blue-400 transition text-white" data-i18n="pro-title">Pro Edition</h3>
-                        <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded-full text-amber-400 bg-amber-500/10 border border-amber-500/30">1st Mo Free</span>
+                        <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded-full text-blue-400 bg-blue-500/10 border border-blue-500/30" data-i18n="custom-partial">Personnalisation Partielle</span>
                     </div>
-                    <p class="text-slate-300 text-sm mb-4 flex-grow" data-i18n="pro-desc">200 DH · Executive White finish. 50 DH/mo (1st Month Free included).</p>
+                    <p class="text-slate-300 text-sm mb-4 flex-grow" data-i18n="pro-desc">200 DH · Executive White finish. Partial customization (Name & Company). 50 DH/mo (1st Month Free included).</p>
                     <ul class="text-slate-400 text-xs space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span data-i18n="pro-bullet-custom">Personnalisation partielle : Votre nom et entreprise</span></li>
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span>Lead capture CRM (up to 10 leads/day) + CSV export</span></li>
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span>Interactive 7-day scan volume chart</span></li>
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span>PDF document hosting (CV, brochure, menu)</span></li>
@@ -692,17 +705,24 @@
                     <div class="absolute top-5 right-5 popular-badge text-white text-[10px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full z-10" data-i18n="most-popular">
                         Most Popular
                     </div>
-                    <div class="w-full aspect-[1.6/1] bg-slate-900 rounded-2xl mb-6 flex flex-col items-center justify-center relative overflow-hidden transition-transform group-hover:scale-95 border border-blue-500/30">
-                        <span class="text-3xl font-black italic uppercase text-amber-400 tracking-tight" style="text-shadow: 0 0 12px rgba(251,191,36,0.45);">SuperTap</span>
-                        <span class="text-[9px] uppercase tracking-widest text-amber-300/80 font-bold mt-1">ELITE • GOLD / SILVER / WHITE</span>
-                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-transparent to-transparent"></div>
+                    <div class="w-full aspect-[1.6/1] bg-slate-900 rounded-2xl mb-6 p-4 flex flex-col justify-between relative overflow-hidden border border-blue-500/30 transition-transform group-hover:scale-95 text-left">
+                        <span class="text-[7px] uppercase tracking-wider font-bold text-amber-300/80 truncate" data-i18n="placeholder-company">Nom d'entreprise</span>
+                        <div class="flex flex-col items-center justify-center my-auto">
+                            <span class="text-xl font-black italic uppercase text-amber-400 tracking-tighter" style="text-shadow: 0 0 10px rgba(251,191,36,0.45);">VOTRE LOGO</span>
+                            <span class="text-[7px] uppercase tracking-widest font-extrabold px-2 py-0.5 rounded-full border border-amber-400/40 text-amber-300 bg-amber-500/10">SUR-MESURE</span>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <span class="text-[8px] uppercase tracking-wider font-extrabold text-amber-300" data-i18n="placeholder-name">Nom & Prénom</span>
+                            <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M8.5 16.5a5 5 0 0 1 0-9M12 19a8.5 8.5 0 0 0 0-14M15.5 21.5a12 12 0 0 0 0-19"/></svg>
+                        </div>
                     </div>
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-xl font-bold uppercase group-hover:text-blue-400 transition text-white" data-i18n="elite-title">Elite Matte</h3>
-                        <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded-full text-amber-400 bg-amber-500/10 border border-amber-500/30">1st Mo Free</span>
+                        <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded-full text-purple-400 bg-purple-500/10 border border-purple-500/30" data-i18n="custom-full">Personnalisation Complète</span>
                     </div>
-                    <p class="text-slate-300 text-sm mb-4 flex-grow" data-i18n="elite-desc">250 DH · Custom Matte Black with Gold, Silver, or White impression. 100 DH/mo (1st Month Free).</p>
+                    <p class="text-slate-300 text-sm mb-4 flex-grow" data-i18n="elite-desc">250 DH · Custom Matte Black (Your Logo) with Gold, Silver, or White impression. 100 DH/mo (1st Month Free).</p>
                     <ul class="text-slate-300 text-xs space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span data-i18n="elite-bullet-custom">Personnalisation complète : Votre propre logo imprimé</span></li>
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span>Custom Gold, Silver, or White foil impression</span></li>
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span>12 living background animations (Matrix Rain)</span></li>
                         <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> <span>Bespoke per-button brand hex color overrides</span></li>
