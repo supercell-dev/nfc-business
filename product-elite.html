@@ -546,6 +546,10 @@ Je souhaite commander la Carte Elite Personnalisée (250 DH + 1er Mois Offert) :
             cardInner.classList.toggle('is-flipped', isFlipped);
             setTimeout(() => {
                 isFlipping = false;
+                const scene = document.querySelector('.card-scene');
+                if (!scene.matches(':hover')) {
+                    document.getElementById('card-wrapper').style.transform = 'rotateX(0deg) rotateY(0deg)';
+                }
             }, 750);
         }
 
@@ -562,6 +566,7 @@ Je souhaite commander la Carte Elite Personnalisée (250 DH + 1er Mois Offert) :
         }
 
         function handleLeave(container) {
+            if (isFlipping) return;
             const wrapper = container.querySelector('.card-3d-wrapper');
             wrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
         }
