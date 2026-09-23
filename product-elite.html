@@ -189,28 +189,50 @@
             <div class="card-scene" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)" onclick="flip()">
                 <div class="card-3d-wrapper" id="card-wrapper">
                     <div class="card-inner" id="card-inner">
-                        <div class="card-front">
+                        <div class="card-front" id="card-front-face">
                             <div class="shine"></div>
-                            <span class="text-3xl font-black italic text-blue-400 uppercase">SuperTap</span>
-                            <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold mt-1" data-i18n="custom-name">[Your Name]</span>
+                            <span id="elite-card-brand" class="text-3xl font-black italic uppercase transition-colors duration-300 text-amber-400" style="text-shadow: 0 0 12px rgba(251,191,36,0.35);">SuperTap</span>
+                            <span id="elite-card-name" class="text-[9px] uppercase tracking-widest font-bold mt-1 transition-colors duration-300 text-amber-300" data-i18n="custom-name">[Your Name / Logo]</span>
                         </div>
-                        <div class="card-back">
-                            <div class="w-16 h-16 border-2 border-dashed border-blue-500/40 rounded-xl flex items-center justify-center text-xs font-bold text-blue-400">NFC 216</div>
-                            <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold mt-2" data-i18n="custom-title">[Your Title / Company]</span>
+                        <div class="card-back" id="card-back-face">
+                            <div class="flex flex-col items-center justify-center">
+                                <svg class="w-10 h-10 opacity-30 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                <span id="elite-card-title" class="text-[9px] uppercase tracking-widest font-bold mt-2 transition-colors duration-300 text-amber-300" data-i18n="custom-title">[Your Title / Company]</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
             <p class="text-slate-500 text-[11px] mt-8 uppercase font-bold tracking-widest" data-i18n="flip-hint">Click to flip • Hover to rotate</p>
-            <div class="mt-8 flex flex-col items-center">
+
+            <!-- Impression Finish Selector -->
+            <div class="mt-6 mb-4 max-w-sm mx-auto">
+                <span class="text-[11px] uppercase font-black tracking-widest text-slate-400 block mb-3">Impression Foil Finish:</span>
+                <div class="flex justify-center items-center gap-2">
+                    <button type="button" onclick="setImpression('gold')" id="btn-gold" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-amber-400/80 bg-amber-500/20 text-amber-300 shadow-[0_0_15px_rgba(251,191,36,0.25)]">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_#fbbf24]"></span>
+                        <span>Gold Foil</span>
+                    </button>
+                    <button type="button" onclick="setImpression('silver')" id="btn-silver" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-slate-700 bg-slate-800/80 text-slate-300 hover:border-slate-500">
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-300 shadow-[0_0_8px_#cbd5e1]"></span>
+                        <span>Silver Foil</span>
+                    </button>
+                    <button type="button" onclick="setImpression('white')" id="btn-white" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-slate-700 bg-slate-800/80 text-slate-300 hover:border-slate-500">
+                        <span class="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_8px_#ffffff]"></span>
+                        <span>Crisp White</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-4 flex flex-col items-center">
                 <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-elite">250 DH</div>
                 <div class="flex items-center gap-2 mt-2">
                     <span class="px-3 py-1 rounded-full text-xs font-bold text-purple-400 bg-purple-500/10 border border-purple-500/20" data-i18n="sub-elite">100 DH / month</span>
                 </div>
                 <span class="inline-block mt-2 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30" data-i18n="promo-1st-month-free">🎉 1st Month Free Included!</span>
             </div>
-            <a href="https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Elite%20Matte%20(250%20DH%20%2B%201st%20Month%20Free)" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white" data-i18n="cta-buy-elite">Buy Elite — 250 DH (1st Mo Free)</a>
+            <a id="elite-cta-btn" href="https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Elite%20Matte%20(250%20DH%20%2B%201st%20Month%20Free)%20with%20Gold%20Foil%20Impression" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white" data-i18n="cta-buy-elite">Buy Elite — 250 DH (1st Mo Free)</a>
         </div>
 
         <!-- Features Column -->
@@ -218,6 +240,13 @@
             <div class="feature-box">
                 <h2 class="text-2xl font-black uppercase italic mb-6 text-purple-400" data-i18n="advantages">The Elite Advantages</h2>
                 <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <span class="text-emerald-400 font-bold text-lg">✓</span>
+                        <div>
+                            <strong class="text-white block text-sm">Bespoke Impression Finish (Gold, Silver, or White)</strong>
+                            <p class="text-slate-300 text-xs leading-relaxed">Fully customizable luxury finish. Have your name and brand impressed in luminous Metallic Gold Foil, sleek Silver Foil, or crisp White on deep matte black.</p>
+                        </div>
+                    </li>
                     <li class="flex items-start gap-4">
                         <span class="text-emerald-400 font-bold text-lg">✓</span>
                         <div>
@@ -284,6 +313,43 @@
                     .then(reg => console.log('SW registered!', reg))
                     .catch(err => console.log('SW registration failed:', err));
             });
+        }
+        function setImpression(type) {
+            const brand = document.getElementById('elite-card-brand');
+            const name = document.getElementById('elite-card-name');
+            const title = document.getElementById('elite-card-title');
+            const ctaBtn = document.getElementById('elite-cta-btn');
+            const btnGold = document.getElementById('btn-gold');
+            const btnSilver = document.getElementById('btn-silver');
+            const btnWhite = document.getElementById('btn-white');
+
+            // Reset buttons
+            [btnGold, btnSilver, btnWhite].forEach(btn => {
+                btn.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-slate-700 bg-slate-800/80 text-slate-300 hover:border-slate-500';
+            });
+
+            if (type === 'gold') {
+                btnGold.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-amber-400/80 bg-amber-500/20 text-amber-300 shadow-[0_0_15px_rgba(251,191,36,0.25)]';
+                brand.style.color = '#fbbf24';
+                brand.style.textShadow = '0 0 12px rgba(251,191,36,0.45)';
+                name.style.color = '#fcd34d';
+                title.style.color = '#fcd34d';
+                ctaBtn.href = 'https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Elite%20Matte%20(250%20DH%20%2B%201st%20Month%20Free)%20with%20Gold%20Foil%20Impression';
+            } else if (type === 'silver') {
+                btnSilver.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-slate-300 bg-slate-400/20 text-white shadow-[0_0_15px_rgba(203,213,225,0.3)]';
+                brand.style.color = '#e2e8f0';
+                brand.style.textShadow = '0 0 12px rgba(226,232,240,0.45)';
+                name.style.color = '#cbd5e1';
+                title.style.color = '#cbd5e1';
+                ctaBtn.href = 'https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Elite%20Matte%20(250%20DH%20%2B%201st%20Month%20Free)%20with%20Silver%20Foil%20Impression';
+            } else if (type === 'white') {
+                btnWhite.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-2 border border-white bg-white/20 text-white shadow-[0_0_15px_rgba(255,255,255,0.35)]';
+                brand.style.color = '#ffffff';
+                brand.style.textShadow = '0 0 12px rgba(255,255,255,0.4)';
+                name.style.color = '#f8fafc';
+                title.style.color = '#f8fafc';
+                ctaBtn.href = 'https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Elite%20Matte%20(250%20DH%20%2B%201st%20Month%20Free)%20with%20Crisp%20White%20Impression';
+            }
         }
         function handleMove(e, container) {
             const wrapper = container.querySelector('.card-3d-wrapper');
