@@ -62,6 +62,8 @@
             width: 320px;
             height: 200px;
             margin: 0 auto;
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .card-3d-wrapper {
@@ -69,7 +71,7 @@
             width: 100%;
             height: 100%;
             transform-style: preserve-3d;
-            transition: transform 0.1s ease-out;
+            transition: transform 0.15s ease-out;
             cursor: pointer;
         }
 
@@ -78,26 +80,25 @@
             width: 100%;
             height: 100%;
             transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .is-flipped {
+        .card-inner.is-flipped {
             transform: rotateY(180deg);
         }
 
         .card-front,
         .card-back {
             position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transform-style: preserve-3d;
+            overflow: hidden;
+            -webkit-transform-style: flat;
+            transform-style: flat;
             background: #0b0f19;
             color: #f8fafc;
             border: 1px solid rgba(59, 130, 246, 0.5);
@@ -105,11 +106,21 @@
         }
 
         .card-front {
-            transform: rotateY(0deg) translateZ(1px);
+            transform: rotateY(0deg);
+            z-index: 2;
         }
 
         .card-back {
-            transform: rotateY(180deg) translateZ(1px);
+            transform: rotateY(180deg);
+            z-index: 1;
+        }
+
+        .card-inner.is-flipped .card-front {
+            z-index: 1;
+        }
+
+        .card-inner.is-flipped .card-back {
+            z-index: 2;
         }
 
         .shine {
@@ -198,12 +209,12 @@
                             <div class="shine"></div>
                             
                             <!-- Top Row: Company Name -->
-                            <div class="w-full flex justify-between items-start z-10">
+                            <div class="w-full flex justify-between items-start z-10 pointer-events-none">
                                 <span id="elite-card-company" class="text-[9px] tracking-wider font-bold transition-colors duration-300 text-amber-300/80 truncate max-w-[200px]" data-i18n="placeholder-company">Nom d'entreprise</span>
                             </div>
                             
                             <!-- Center: Client's Custom Logo / YOUR LOGO -->
-                            <div class="w-full flex flex-col items-center justify-center my-auto z-10 text-center">
+                            <div class="w-full flex flex-col items-center justify-center my-auto z-10 text-center pointer-events-none">
                                 <div id="elite-logo-container" class="flex flex-col items-center justify-center">
                                     <span id="elite-card-brand" class="text-2xl sm:text-3xl font-black italic uppercase tracking-tighter transition-colors duration-300 text-amber-400" style="text-shadow: 0 0 12px rgba(251,191,36,0.45);">VOTRE LOGO</span>
                                     <span id="elite-sub-badge" class="text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-amber-400/40 text-amber-300 bg-amber-500/10">SUR-MESURE</span>
@@ -212,14 +223,15 @@
                             </div>
 
                             <!-- Bottom Row: Personal Name + Contactless Wave Icon -->
-                            <div class="w-full flex justify-between items-end z-10">
+                            <div class="w-full flex justify-between items-end z-10 pointer-events-none">
                                 <span id="elite-card-name" class="text-[10px] tracking-widest font-extrabold transition-colors duration-300 text-amber-300 truncate max-w-[200px]" data-i18n="placeholder-name">Nom & Prénom</span>
                                 <svg id="elite-card-nfc-icon" class="w-5 h-5 text-amber-400 opacity-90 flex-shrink-0 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 10a2.5 2.5 0 0 1 0 4M9.5 7.5a6 6 0 0 1 0 9M13 5a9.5 9.5 0 0 1 0 14M16.5 2.5a13 13 0 0 1 0 19"/></svg>
                             </div>
                         </div>
-                        <div class="card-back" id="card-back-face">
-                            <div class="flex items-center justify-center w-full h-full">
-                                <div id="elite-card-back-qr" class="w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center transition-colors duration-300 text-amber-400">
+                        <div class="card-back relative p-6 flex items-center justify-center" id="card-back-face">
+                            <div class="shine"></div>
+                            <div class="flex items-center justify-center w-full h-full z-10 pointer-events-none">
+                                <div id="elite-card-back-qr" class="w-20 h-20 flex items-center justify-center transition-colors duration-300 text-amber-400 flex-shrink-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" fill="currentColor"> <rect x="3" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="111" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="121" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="3" y="111" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="121" width="16" height="16" rx="4" fill="currentColor" /> <g> <circle cx="63" cy="3" r="2.5" /> <circle cx="75" cy="3" r="2.5" /> <circle cx="99" cy="3" r="2.5" /> <circle cx="51" cy="9" r="2.5" /> <circle cx="63" cy="9" r="2.5" /> <circle cx="93" cy="9" r="2.5" /> <circle cx="75" cy="15" r="2.5" /> <circle cx="87" cy="15" r="2.5" /> <circle cx="93" cy="15" r="2.5" /> <circle cx="99" cy="15" r="2.5" /> <circle cx="51" cy="21" r="2.5" /> <circle cx="57" cy="21" r="2.5" /> <circle cx="63" cy="21" r="2.5" /> <circle cx="75" cy="21" r="2.5" /> <circle cx="81" cy="21" r="2.5" /> <circle cx="87" cy="21" r="2.5" /> <circle cx="93" cy="21" r="2.5" /> <circle cx="99" cy="21" r="2.5" /> <circle cx="57" cy="27" r="2.5" /> <circle cx="87" cy="27" r="2.5" /> <circle cx="99" cy="27" r="2.5" /> <circle cx="51" cy="33" r="2.5" /> <circle cx="57" cy="33" r="2.5" /> <circle cx="69" cy="33" r="2.5" /> <circle cx="75" cy="33" r="2.5" /> <circle cx="93" cy="33" r="2.5" /> <circle cx="51" cy="39" r="2.5" /> <circle cx="63" cy="39" r="2.5" /> <circle cx="75" cy="39" r="2.5" /> <circle cx="87" cy="39" r="2.5" /> <circle cx="99" cy="39" r="2.5" /> <circle cx="57" cy="45" r="2.5" /> <circle cx="63" cy="45" r="2.5" /> <circle cx="69" cy="45" r="2.5" /> <circle cx="3" cy="51" r="2.5" /> <circle cx="9" cy="51" r="2.5" /> <circle cx="15" cy="51" r="2.5" /> <circle cx="21" cy="51" r="2.5" /> <circle cx="27" cy="51" r="2.5" /> <circle cx="39" cy="51" r="2.5" /> <circle cx="45" cy="51" r="2.5" /> <circle cx="51" cy="51" r="2.5" /> <circle cx="57" cy="51" r="2.5" /> <circle cx="69" cy="51" r="2.5" /> <circle cx="81" cy="51" r="2.5" /> <circle cx="93" cy="51" r="2.5" /> <circle cx="99" cy="51" r="2.5" /> <circle cx="105" cy="51" r="2.5" /> <circle cx="117" cy="51" r="2.5" /> <circle cx="129" cy="51" r="2.5" /> <circle cx="141" cy="51" r="2.5" /> <circle cx="3" cy="57" r="2.5" /> <circle cx="15" cy="57" r="2.5" /> <circle cx="21" cy="57" r="2.5" /> <circle cx="27" cy="57" r="2.5" /> <circle cx="33" cy="57" r="2.5" /> <circle cx="45" cy="57" r="2.5" /> <circle cx="63" cy="57" r="2.5" /> <circle cx="75" cy="57" r="2.5" /> <circle cx="81" cy="57" r="2.5" /> <circle cx="99" cy="57" r="2.5" /> <circle cx="117" cy="57" r="2.5" /> <circle cx="141" cy="57" r="2.5" /> <circle cx="3" cy="63" r="2.5" /> <circle cx="9" cy="63" r="2.5" /> <circle cx="27" cy="63" r="2.5" /> <circle cx="33" cy="63" r="2.5" /> <circle cx="39" cy="63" r="2.5" /> <circle cx="51" cy="63" r="2.5" /> <circle cx="63" cy="63" r="2.5" /> <circle cx="81" cy="63" r="2.5" /> <circle cx="87" cy="63" r="2.5" /> <circle cx="93" cy="63" r="2.5" /> <circle cx="99" cy="63" r="2.5" /> <circle cx="105" cy="63" r="2.5" /> <circle cx="111" cy="63" r="2.5" /> <circle cx="117" cy="63" r="2.5" /> <circle cx="123" cy="63" r="2.5" /> <circle cx="129" cy="63" r="2.5" /> <circle cx="141" cy="63" r="2.5" /> <circle cx="147" cy="63" r="2.5" /> <circle cx="9" cy="69" r="2.5" /> <circle cx="15" cy="69" r="2.5" /> <circle cx="21" cy="69" r="2.5" /> <circle cx="27" cy="69" r="2.5" /> <circle cx="75" cy="69" r="2.5" /> <circle cx="93" cy="69" r="2.5" /> <circle cx="99" cy="69" r="2.5" /> <circle cx="105" cy="69" r="2.5" /> <circle cx="111" cy="69" r="2.5" /> <circle cx="117" cy="69" r="2.5" /> <circle cx="147" cy="69" r="2.5" /> <circle cx="3" cy="75" r="2.5" /> <circle cx="9" cy="75" r="2.5" /> <circle cx="21" cy="75" r="2.5" /> <circle cx="27" cy="75" r="2.5" /> <circle cx="39" cy="75" r="2.5" /> <circle cx="57" cy="75" r="2.5" /> <circle cx="63" cy="75" r="2.5" /> <circle cx="75" cy="75" r="2.5" /> <circle cx="81" cy="75" r="2.5" /> <circle cx="87" cy="75" r="2.5" /> <circle cx="93" cy="75" r="2.5" /> <circle cx="105" cy="75" r="2.5" /> <circle cx="111" cy="75" r="2.5" /> <circle cx="123" cy="75" r="2.5" /> <circle cx="135" cy="75" r="2.5" /> <circle cx="141" cy="75" r="2.5" /> <circle cx="147" cy="75" r="2.5" /> <circle cx="3" cy="81" r="2.5" /> <circle cx="9" cy="81" r="2.5" /> <circle cx="51" cy="81" r="2.5" /> <circle cx="99" cy="81" r="2.5" /> <circle cx="105" cy="81" r="2.5" /> <circle cx="117" cy="81" r="2.5" /> <circle cx="129" cy="81" r="2.5" /> <circle cx="141" cy="81" r="2.5" /> <circle cx="3" cy="87" r="2.5" /> <circle cx="21" cy="87" r="2.5" /> <circle cx="27" cy="87" r="2.5" /> <circle cx="39" cy="87" r="2.5" /> <circle cx="45" cy="87" r="2.5" /> <circle cx="69" cy="87" r="2.5" /> <circle cx="75" cy="87" r="2.5" /> <circle cx="81" cy="87" r="2.5" /> <circle cx="93" cy="87" r="2.5" /> <circle cx="105" cy="87" r="2.5" /> <circle cx="111" cy="87" r="2.5" /> <circle cx="117" cy="87" r="2.5" /> <circle cx="123" cy="87" r="2.5" /> <circle cx="129" cy="87" r="2.5" /> <circle cx="141" cy="87" r="2.5" /> <circle cx="147" cy="87" r="2.5" /> <circle cx="3" cy="93" r="2.5" /> <circle cx="27" cy="93" r="2.5" /> <circle cx="33" cy="93" r="2.5" /> <circle cx="45" cy="93" r="2.5" /> <circle cx="51" cy="93" r="2.5" /> <circle cx="63" cy="93" r="2.5" /> <circle cx="69" cy="93" r="2.5" /> <circle cx="87" cy="93" r="2.5" /> <circle cx="93" cy="93" r="2.5" /> <circle cx="111" cy="93" r="2.5" /> <circle cx="117" cy="93" r="2.5" /> <circle cx="123" cy="93" r="2.5" /> <circle cx="147" cy="93" r="2.5" /> <circle cx="3" cy="99" r="2.5" /> <circle cx="27" cy="99" r="2.5" /> <circle cx="33" cy="99" r="2.5" /> <circle cx="39" cy="99" r="2.5" /> <circle cx="57" cy="99" r="2.5" /> <circle cx="69" cy="99" r="2.5" /> <circle cx="81" cy="99" r="2.5" /> <circle cx="87" cy="99" r="2.5" /> <circle cx="93" cy="99" r="2.5" /> <circle cx="99" cy="99" r="2.5" /> <circle cx="105" cy="99" r="2.5" /> <circle cx="111" cy="99" r="2.5" /> <circle cx="117" cy="99" r="2.5" /> <circle cx="123" cy="99" r="2.5" /> <circle cx="135" cy="99" r="2.5" /> <circle cx="51" cy="105" r="2.5" /> <circle cx="75" cy="105" r="2.5" /> <circle cx="81" cy="105" r="2.5" /> <circle cx="99" cy="105" r="2.5" /> <circle cx="123" cy="105" r="2.5" /> <circle cx="129" cy="105" r="2.5" /> <circle cx="51" cy="111" r="2.5" /> <circle cx="63" cy="111" r="2.5" /> <circle cx="81" cy="111" r="2.5" /> <circle cx="87" cy="111" r="2.5" /> <circle cx="99" cy="111" r="2.5" /> <circle cx="111" cy="111" r="2.5" /> <circle cx="123" cy="111" r="2.5" /> <circle cx="135" cy="111" r="2.5" /> <circle cx="141" cy="111" r="2.5" /> <circle cx="147" cy="111" r="2.5" /> <circle cx="63" cy="117" r="2.5" /> <circle cx="75" cy="117" r="2.5" /> <circle cx="87" cy="117" r="2.5" /> <circle cx="99" cy="117" r="2.5" /> <circle cx="123" cy="117" r="2.5" /> <circle cx="129" cy="117" r="2.5" /> <circle cx="141" cy="117" r="2.5" /> <circle cx="51" cy="123" r="2.5" /> <circle cx="63" cy="123" r="2.5" /> <circle cx="75" cy="123" r="2.5" /> <circle cx="81" cy="123" r="2.5" /> <circle cx="87" cy="123" r="2.5" /> <circle cx="93" cy="123" r="2.5" /> <circle cx="99" cy="123" r="2.5" /> <circle cx="105" cy="123" r="2.5" /> <circle cx="111" cy="123" r="2.5" /> <circle cx="117" cy="123" r="2.5" /> <circle cx="123" cy="123" r="2.5" /> <circle cx="135" cy="123" r="2.5" /> <circle cx="141" cy="123" r="2.5" /> <circle cx="147" cy="123" r="2.5" /> <circle cx="51" cy="129" r="2.5" /> <circle cx="81" cy="129" r="2.5" /> <circle cx="105" cy="129" r="2.5" /> <circle cx="111" cy="129" r="2.5" /> <circle cx="123" cy="129" r="2.5" /> <circle cx="129" cy="129" r="2.5" /> <circle cx="135" cy="129" r="2.5" /> <circle cx="141" cy="129" r="2.5" /> <circle cx="147" cy="129" r="2.5" /> <circle cx="51" cy="135" r="2.5" /> <circle cx="57" cy="135" r="2.5" /> <circle cx="63" cy="135" r="2.5" /> <circle cx="69" cy="135" r="2.5" /> <circle cx="75" cy="135" r="2.5" /> <circle cx="87" cy="135" r="2.5" /> <circle cx="105" cy="135" r="2.5" /> <circle cx="129" cy="135" r="2.5" /> <circle cx="135" cy="135" r="2.5" /> <circle cx="147" cy="135" r="2.5" /> <circle cx="51" cy="141" r="2.5" /> <circle cx="63" cy="141" r="2.5" /> <circle cx="69" cy="141" r="2.5" /> <circle cx="87" cy="141" r="2.5" /> <circle cx="99" cy="141" r="2.5" /> <circle cx="111" cy="141" r="2.5" /> <circle cx="117" cy="141" r="2.5" /> <circle cx="123" cy="141" r="2.5" /> <circle cx="129" cy="141" r="2.5" /> <circle cx="147" cy="141" r="2.5" /> <circle cx="51" cy="147" r="2.5" /> <circle cx="57" cy="147" r="2.5" /> <circle cx="63" cy="147" r="2.5" /> <circle cx="69" cy="147" r="2.5" /> <circle cx="75" cy="147" r="2.5" /> <circle cx="105" cy="147" r="2.5" /> <circle cx="117" cy="147" r="2.5" /> <circle cx="123" cy="147" r="2.5" /> <circle cx="129" cy="147" r="2.5" /> <circle cx="135" cy="147" r="2.5" /> <circle cx="141" cy="147" r="2.5" /> <circle cx="147" cy="147" r="2.5" /> </g> </svg>
                                 </div>
                             </div>
@@ -527,6 +539,7 @@ Je souhaite commander la Carte Elite Personnalisée (250 DH + 1er Mois Offert) :
         let isFlipping = false;
 
         function flip() {
+            if (isFlipping) return;
             isFlipped = !isFlipped;
             isFlipping = true;
             const cardInner = document.getElementById('card-inner');
@@ -535,7 +548,7 @@ Je souhaite commander la Carte Elite Personnalisée (250 DH + 1er Mois Offert) :
             cardInner.classList.toggle('is-flipped', isFlipped);
             setTimeout(() => {
                 isFlipping = false;
-            }, 600);
+            }, 750);
         }
 
         function handleMove(e, container) {
@@ -552,7 +565,7 @@ Je souhaite commander la Carte Elite Personnalisée (250 DH + 1er Mois Offert) :
 
         function handleLeave(container) {
             const wrapper = container.querySelector('.card-3d-wrapper');
-            wrapper.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            wrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
         }
     </script>
 
