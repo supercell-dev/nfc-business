@@ -156,6 +156,30 @@
         .card-3d-wrapper:hover .shine {
             opacity: 0.6;
         }
+
+        .price-slashed {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            color: #94a3b8;
+            opacity: 0.85;
+        }
+        .price-slashed::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            right: -4px;
+            top: 50%;
+            height: 2.5px;
+            background: linear-gradient(90deg, #ef4444, #f43f5e);
+            transform: rotate(-10deg);
+            border-radius: 9999px;
+            box-shadow: 0 0 6px rgba(239, 68, 68, 0.45);
+            pointer-events: none;
+        }
+        [dir="rtl"] .price-slashed::after {
+            transform: rotate(10deg);
+        }
     </style>
     <link rel="stylesheet" href="lang/lang-picker.css">
     <script src="lang/translations.js"></script>
@@ -196,7 +220,7 @@
         <!-- Card Visual Column -->
         <div class="text-center flex flex-col items-center">
             <div class="mb-8">
-                <span class="inline-block px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30 mb-3" data-i18n="google-card-badge">No Subscription · 200 DH</span>
+                <span class="inline-block px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30 mb-3" data-i18n="google-card-badge">No Subscription · 250 DH</span>
                 <h1 class="text-4xl md:text-5xl font-black italic uppercase tracking-tighter text-white mb-2" data-i18n="google-card-title">Google Review Card</h1>
                 <p class="text-blue-400 text-xs font-bold uppercase tracking-widest" data-i18n="google-hero-sub">Boost your Google Maps ranking and customer trust with 1 contactless tap.</p>
             </div>
@@ -220,11 +244,15 @@
             <p class="text-slate-500 text-[11px] mt-6 uppercase font-bold tracking-widest" data-i18n="flip-hint">Click to flip • Hover to rotate</p>
 
             <div class="mt-8 flex flex-col items-center">
-                <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-google">200 DH</div>
+                <div class="flex items-center gap-3">
+                    <span class="price-slashed text-2xl font-bold font-mono" data-i18n="old-price-google">350 DH</span>
+                    <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-google">250 DH</div>
+                    <span class="text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full text-rose-400 bg-rose-500/10 border border-rose-500/20" data-i18n="discount-google">-29%</span>
+                </div>
                 <span class="inline-block mt-2 px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20" data-i18n="sub-google">No Subscription (0 DH)</span>
             </div>
 
-            <a href="https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Google%20Review%20Card%20(200%20DH%20-%20No%20Subscription)" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white" data-i18n="cta-buy-google">Order Review Card — 200 DH</a>
+            <a href="https://wa.me/212674745463?text=Salam%20SuperTap,%20I%20want%20to%20order%20the%20Google%20Review%20Card%20(250%20DH%20-%20No%20Subscription)" class="btn-primary inline-block mt-6 px-12 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white" data-i18n="cta-buy-google">Order Review Card — 250 DH</a>
         </div>
 
         <!-- Features Column -->
@@ -257,7 +285,7 @@
                         <span class="text-emerald-400 font-bold text-lg">✓</span>
                         <div>
                             <strong class="text-white block text-sm" data-i18n="google-feat-4">Lifetime Hardware · Zero Subscription</strong>
-                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="google-why-p3-desc">No subscription fees. Pay 200 DH once for your durable card with unlimited taps forever.</p>
+                            <p class="text-slate-300 text-xs leading-relaxed" data-i18n="google-why-p3-desc">No subscription fees. Pay 250 DH once for your durable card with unlimited taps forever.</p>
                         </div>
                     </li>
                 </ul>
@@ -311,7 +339,7 @@
                 <div class="feature-box">
                     <div class="text-3xl mb-4">💎</div>
                     <h3 class="text-lg font-bold text-white mb-2" data-i18n="google-why-p3-title">100% Lifetime Hardware · Zero Fees</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed" data-i18n="google-why-p3-desc">No subscription fees. Pay 200 DH once for your durable card with unlimited taps forever.</p>
+                    <p class="text-slate-300 text-xs leading-relaxed" data-i18n="google-why-p3-desc">No subscription fees. Pay 250 DH once for your durable card with unlimited taps forever.</p>
                 </div>
             </div>
         </div>

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperTap Elite — The Ultimate NFC Card</title>
-    <meta name="description" content="No compromises. Custom design, 5 quick links, animated themes & 12 animations on deep matte black. The card that turns heads. 250 DH.">
+    <meta name="description" content="No compromises. Custom design, 5 quick links, animated themes & 12 animations on deep matte black. The card that turns heads. 300 DH.">
     <meta property="og:site_name" content="SuperTap">
     <meta property="og:title" content="SuperTap Elite — The Ultimate NFC Card">
-    <meta property="og:description" content="Custom design, animated themes & 12 animations on deep matte black. 250 DH.">
+    <meta property="og:description" content="Custom design, animated themes & 12 animations on deep matte black. 300 DH.">
     <meta property="og:image" content="https://getsupertap.com/supertap_logo.png">
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -159,6 +159,30 @@
             border-radius: 28px;
             padding: 32px;
         }
+
+        .price-slashed {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            color: #94a3b8;
+            opacity: 0.85;
+        }
+        .price-slashed::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            right: -4px;
+            top: 50%;
+            height: 2.5px;
+            background: linear-gradient(90deg, #ef4444, #f43f5e);
+            transform: rotate(-10deg);
+            border-radius: 9999px;
+            box-shadow: 0 0 6px rgba(239, 68, 68, 0.45);
+            pointer-events: none;
+        }
+        [dir="rtl"] .price-slashed::after {
+            transform: rotate(10deg);
+        }
     </style>
     <link rel="stylesheet" href="lang/lang-picker.css">
     <script src="lang/translations.js"></script>
@@ -243,7 +267,11 @@
             <p class="text-slate-500 text-[11px] mt-8 uppercase font-bold tracking-widest" data-i18n="flip-hint">Click to flip • Hover to rotate</p>
 
             <div class="mt-8 flex flex-col items-center">
-                <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-elite">250 DH</div>
+                <div class="flex items-center gap-3">
+                    <span class="price-slashed text-2xl font-bold font-mono" data-i18n="old-price-elite">450 DH</span>
+                    <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-elite">300 DH</div>
+                    <span class="text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full text-rose-400 bg-rose-500/10 border border-rose-500/20" data-i18n="discount-elite">-33%</span>
+                </div>
                 <div class="flex items-center gap-2 mt-2">
                     <span class="px-3 py-1 rounded-full text-xs font-bold text-purple-400 bg-purple-500/10 border border-purple-500/20" data-i18n="sub-elite">100 DH / month</span>
                 </div>
@@ -325,7 +353,7 @@
 
                     <div class="pt-2">
                         <button type="submit" class="btn-primary w-full py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white flex items-center justify-center gap-2" data-i18n="cta-buy-elite">
-                            <span>Commander — 250 DH (1 Sem Free)</span>
+                            <span>Commander — 300 DH (1 Sem Free)</span>
                         </button>
                         <p class="text-[10px] text-slate-400 text-center mt-2.5" data-i18n="order-whatsapp-note">✓ Confirmation instantanée via WhatsApp avec nos équipes</p>
                     </div>
@@ -522,7 +550,7 @@
             const logoInfo = uploadedLogoName ? `Fichier "${uploadedLogoName}" (je l'envoie ici)` : 'À envoyer sur WhatsApp';
 
             const msg = `Salam SuperTap,
-Je souhaite commander la Carte Elite Personnalisée (250 DH + 1 Semaine Offerte) :
+Je souhaite commander la Carte Elite Personnalisée (300 DH + 1 Semaine Offerte) :
 • Personnalisation : Complète (Sur-Mesure)
 • Couleur d'impression : ${finishName}
 • Logo : ${logoInfo}

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperTap Pro — The Smart Business Card</title>
-    <meta name="description" content="Go beyond basic. PDF uploads, 3 quick links & premium themes — all in a midnight blue NFC card. Just 199 DH.">
+    <meta name="description" content="Go beyond basic. PDF uploads, 3 quick links & premium themes — all in a midnight blue NFC card. Just 250 DH.">
     <meta property="og:site_name" content="SuperTap">
     <meta property="og:title" content="SuperTap Pro — The Smart Business Card">
-    <meta property="og:description" content="PDF uploads, 3 quick links & premium themes in a midnight blue NFC card. 199 DH.">
+    <meta property="og:description" content="PDF uploads, 3 quick links & premium themes in a midnight blue NFC card. 250 DH.">
     <meta property="og:image" content="https://getsupertap.com/supertap_logo.png">
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -159,6 +159,30 @@
             border-radius: 28px;
             padding: 32px;
         }
+
+        .price-slashed {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            color: #94a3b8;
+            opacity: 0.85;
+        }
+        .price-slashed::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            right: -4px;
+            top: 50%;
+            height: 2.5px;
+            background: linear-gradient(90deg, #ef4444, #f43f5e);
+            transform: rotate(-10deg);
+            border-radius: 9999px;
+            box-shadow: 0 0 6px rgba(239, 68, 68, 0.45);
+            pointer-events: none;
+        }
+        [dir="rtl"] .price-slashed::after {
+            transform: rotate(10deg);
+        }
     </style>
     <link rel="stylesheet" href="lang/lang-picker.css">
     <script src="lang/translations.js"></script>
@@ -245,7 +269,11 @@
             <p class="text-slate-500 text-[11px] mt-8 uppercase font-bold tracking-widest" data-i18n="flip-hint">Click to flip • Hover to rotate</p>
             
             <div class="mt-8 flex flex-col items-center">
-                <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-pro">200 DH</div>
+                <div class="flex items-center gap-3">
+                    <span class="price-slashed text-2xl font-bold font-mono" data-i18n="old-price-pro">350 DH</span>
+                    <div class="text-4xl font-black italic text-white font-mono" data-i18n="price-pro">250 DH</div>
+                    <span class="text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full text-rose-400 bg-rose-500/10 border border-rose-500/20" data-i18n="discount-pro">-29%</span>
+                </div>
                 <div class="flex items-center gap-2 mt-2">
                     <span class="px-3 py-1 rounded-full text-xs font-bold text-blue-400 bg-blue-500/10 border border-blue-500/20" data-i18n="sub-pro">50 DH / month · 500 DH / year</span>
                 </div>
@@ -295,7 +323,7 @@
 
                     <div class="pt-2">
                         <button type="submit" class="btn-primary w-full py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl text-white flex items-center justify-center gap-2" data-i18n="cta-buy-pro">
-                            <span>Commander — 200 DH (2 Sem Free)</span>
+                            <span>Commander — 250 DH (2 Sem Free)</span>
                         </button>
                         <p class="text-[10px] text-slate-400 text-center mt-2.5" data-i18n="order-whatsapp-note">✓ Confirmation instantanée via WhatsApp avec nos équipes</p>
                     </div>
@@ -408,7 +436,7 @@
             const address = document.getElementById('pro-input-address').value.trim();
 
             const msg = `Salam SuperTap,
-Je souhaite commander la Carte Pro Personnalisée (200 DH + 2 Semaines Offertes) :
+Je souhaite commander la Carte Pro Personnalisée (250 DH + 2 Semaines Offertes) :
 • Personnalisation : Partielle (Nom & Entreprise)
 • Nom & Prénom : ${name}
 • Entreprise / Métier : ${company}
