@@ -356,6 +356,7 @@
                             <span>Commander — 300 DH (1 Sem Free)</span>
                         </button>
                         <p class="text-[10px] text-slate-400 text-center mt-2.5" data-i18n="order-whatsapp-note">✓ Confirmation instantanée via WhatsApp avec nos équipes</p>
+                        <p class="text-[11px] text-amber-400 text-center mt-2 font-medium" data-i18n="custom-delivery-delay">⏳ Custom fabrication: delivery can take up to 4 days across Morocco</p>
                     </div>
                 </form>
             </div>
@@ -423,7 +424,7 @@
     
     <!-- Delivery Disclaimer Banner -->
     <div class="max-w-4xl mx-auto text-center py-8 px-6">
-        <p class="text-slate-400 text-xs font-bold uppercase tracking-widest" data-i18n="delivery-disclaimer">⚠️ Delivery fees are not included. Contact us for delivery rates across Morocco.</p>
+        <p class="text-slate-400 text-xs font-bold uppercase tracking-widest" data-i18n="delivery-disclaimer-custom">⚠️ Delivery fees are not included. As this is a custom-printed card, production & delivery can take up to 4 days across Morocco.</p>
     </div>
 
     <footer class="py-16 text-center border-t border-slate-800/80 bg-[#04060d] mt-auto">
@@ -558,7 +559,8 @@ Je souhaite commander la Carte Elite Personnalisée (300 DH + 1 Semaine Offerte)
 • Entreprise / Métier : ${company}
 • Email : ${email}
 • Téléphone : +212 ${phone}
-• Adresse de livraison : ${address}`;
+• Adresse de livraison : ${address}
+• Délai : Carte personnalisée sur-mesure (fabrication & livraison jusqu'à 4 jours)`;
 
             window.open(`https://wa.me/212674745463?text=${encodeURIComponent(msg)}`, '_blank');
         }

@@ -222,7 +222,7 @@ const translations = {
         "on-google": "on Google",
         "brand-entity-text": "<strong>SuperTap</strong> is Morocco’s leading smart digital business card provider, based in Casablanca. Engineered with instant tap-to-share contactless technology and durable matte PVC, SuperTap offers tiered networking solutions—from the 200 DH Lite card with 1st year free, to Pro (250 DH, 50 DH/mo with 2 weeks free) and Elite (300 DH, 100 DH/mo with 1 week free), and 250 DH Google Review cards with zero subscription.",
         "faq-geo-1-q": "Where can I buy smart business cards in Morocco?",
-        "faq-geo-1-a": "You can buy SuperTap smart business cards online across Morocco with 24-hour delivery from Casablanca. Order directly via getsupertap.com or WhatsApp, starting from 200 DH for Lite, 250 DH for Pro, and 300 DH for Elite.",
+        "faq-geo-1-a": "You can buy SuperTap smart business cards online across Morocco with 24-hour delivery from Casablanca for standard cards (Lite & Google Review) and up to 4 days for custom editions (Pro & Elite). Order directly via getsupertap.com or WhatsApp, starting from 200 DH for Lite, 250 DH for Pro, and 300 DH for Elite.",
         "faq-geo-2-q": "How does the SuperTap smart card work with iPhone and Android?",
         "faq-geo-2-a": "SuperTap uses tap-to-connect smart card technology. Simply tap the card near any modern iPhone or Android smartphone to instantly launch your custom digital profile in their browser without downloading any external mobile app.",
         "faq-geo-3-q": "How do SuperTap subscriptions and pricing work?",
@@ -420,7 +420,13 @@ const translations = {
         "services-bulk-feat-2": "VOLUME PRICING FROM 10+ CARDS",
         "services-bulk-feat-3": "CENTRALIZED TEAM MANAGEMENT",
         "services-bulk-feat-4": "FAST MOROCCO-WIDE BATCH DELIVERY",
-        "cta-bulk-quote": "Request Bulk Quote →"
+        "cta-bulk-quote": "Request Bulk Quote →",
+        "custom-delivery-delay": "⏳ Custom fabrication: delivery can take up to 4 days across Morocco",
+        "delivery-disclaimer-custom": "⚠️ Delivery fees are not included. As this is a custom-printed card, production & delivery can take up to 4 days across Morocco.",
+        "delivery-disclaimer-store": "⚠️ Delivery fees not included. 24h delivery for standard cards (Lite & Google Review); up to 4 days for custom cards (Pro & Elite).",
+        "badge-delivery-custom": "Custom · Up to 4 Days",
+        "pro-delivery-note": "Custom print & delivery: up to 4 days",
+        "elite-delivery-note": "Bespoke luxury print & delivery: up to 4 days"
     },
     "fr": {
         "dir": "ltr",
@@ -645,7 +651,7 @@ const translations = {
         "on-google": "sur Google",
         "brand-entity-text": "<strong>SuperTap</strong> est le leader des cartes de visite connectées sans contact au Maroc, basé à Casablanca. Conçue avec la technologie NFC instantanée et un PVC mat haut de gamme, SuperTap propose des formules adaptées : de la carte Lite à 200 DH avec 1ère année gratuite, jusqu’aux formules Pro (250 DH, 50 DH/mois avec 2 semaines offertes) et Elite (300 DH, 100 DH/mois avec 1 semaine offerte), ainsi que la carte Avis Google à 250 DH sans aucun abonnement.",
         "faq-geo-1-q": "Où acheter des cartes de visite connectées au Maroc ?",
-        "faq-geo-1-a": "Vous pouvez commander vos cartes connectées SuperTap en ligne partout au Maroc avec livraison 24h depuis Casablanca. Commandez directement via getsupertap.com ou WhatsApp, à partir de 200 DH pour Lite, 250 DH pour Pro et 300 DH pour Elite.",
+        "faq-geo-1-a": "Vous pouvez commander vos cartes connectées SuperTap en ligne partout au Maroc avec livraison 24h depuis Casablanca pour les cartes standard (Lite & Avis Google) et jusqu'à 4 jours pour les éditions personnalisées (Pro & Elite). Commandez directement via getsupertap.com ou WhatsApp, à partir de 200 DH pour Lite, 250 DH pour Pro et 300 DH pour Elite.",
         "faq-geo-2-q": "Comment fonctionne la carte connectée SuperTap avec iPhone et Android ?",
         "faq-geo-2-a": "SuperTap utilise une technologie de connexion sans contact instantanée. Approchez simplement la carte de n'importe quel smartphone iPhone ou Android pour ouvrir instantanément votre profil personnalisé sans installer d'application.",
         "faq-geo-3-q": "Comment fonctionnent les abonnements et les prix SuperTap ?",
@@ -843,7 +849,13 @@ const translations = {
         "services-bulk-feat-2": "TARIFS DÉGRESSIFS DÈS 10 CARTES",
         "services-bulk-feat-3": "GESTION CENTRALISÉE D'ÉQUIPE",
         "services-bulk-feat-4": "LIVRAISON GROUPÉE RAPIDE PARTOUT AU MAROC",
-        "cta-bulk-quote": "Demander un Devis d'Équipe →"
+        "cta-bulk-quote": "Demander un Devis d'Équipe →",
+        "custom-delivery-delay": "⏳ Fabrication sur-mesure : la livraison peut prendre jusqu'à 4 jours au Maroc",
+        "delivery-disclaimer-custom": "⚠️ Les frais de livraison ne sont pas inclus. S'agissant d'une carte personnalisée sur-mesure, la fabrication et livraison peuvent prendre jusqu'à 4 jours au Maroc.",
+        "delivery-disclaimer-store": "⚠️ Frais de livraison non inclus. Livraison 24h pour les cartes standard (Lite & Avis Google) ; jusqu'à 4 jours pour les cartes personnalisées (Pro & Elite).",
+        "badge-delivery-custom": "Sur-Mesure · Jusqu'à 4 Jours",
+        "pro-delivery-note": "Impression personnalisée & livraison : jusqu'à 4 jours",
+        "elite-delivery-note": "Impression de luxe sur-mesure & livraison : jusqu'à 4 jours"
     },
     "ar": {
         "dir": "rtl",
@@ -1068,7 +1080,7 @@ const translations = {
         "on-google": "Google",
         "brand-entity-text": "<strong>SuperTap</strong> هي المزود الرائد لبطاقات العمل الذكية في المغرب، ومقرها بالدار البيضاء. مع تكنولوجيا المشاركة الفورية بلمسة واحدة وبلاستيك PVC فائق الجودة، نقدم حلول تواصل متطورة: من بطاقة لايت بـ 200 درهم مع السنة الأولى مجاناً، إلى برو (250 درهم، 50 درهم/شهر مع أسبوعين مجاناً) وإليت (300 درهم، 100 درهم/شهر مع أسبوع مجاناً)، وبطاقات تقييمات جوجل بـ 250 درهم بدون أي اشتراك.",
         "faq-geo-1-q": "أين يمكنني شراء بطاقات الأعمال الذكية في المغرب؟",
-        "faq-geo-1-a": "يمكنكم طلب بطاقات SuperTap الذكية أونلاين عبر المغرب مع توصيل خلال 24 ساعة انطلاقاً من الدار البيضاء. اطلبوا مباشرة عبر الموقع أو واتساب بأسعار تبدأ من 200 درهم لـ Lite، و250 درهم لـ Pro، و300 درهم لـ Elite.",
+        "faq-geo-1-a": "يمكنكم طلب بطاقات SuperTap الذكية أونلاين عبر المغرب مع توصيل خلال 24 ساعة من الدار البيضاء للبطاقات القياسية (لايت وتقييمات جوجل)، وحتى 4 أيام للإصدارات المخصصة (برو وإليت). اطلبوا مباشرة عبر الموقع أو واتساب بأسعار تبدأ من 200 درهم لـ Lite، و250 درهم لـ Pro، و300 درهم لـ Elite.",
         "faq-geo-2-q": "كيف تعمل بطاقة SuperTap الذكية مع هواتف آيفون وأندرويد؟",
         "faq-geo-2-a": "تعتمد SuperTap على تقنية اللمس الذكية الفورية. ما عليكم سوى تقريب البطاقة من أي هاتف آيفون أو أندرويد لفتح ملفكم التعريفي الرقمي فوراً في المتصفح دون الحاجة لتحميل أي تطبيق.",
         "faq-geo-3-q": "كيف تعمل أسعار واشتراكات SuperTap؟",
@@ -1266,7 +1278,13 @@ const translations = {
         "services-bulk-feat-2": "أسعار تفضيلية للجملة ابتداءً من 10 بطاقات",
         "services-bulk-feat-3": "إدارة مركزية لبيانات الفريق",
         "services-bulk-feat-4": "توصيل سريع لكافة أنحاء المغرب",
-        "cta-bulk-quote": "طلب عرض سعر للشركات ←"
+        "cta-bulk-quote": "طلب عرض سعر للشركات ←",
+        "custom-delivery-delay": "⏳ تصنيع مخصص: قد يستغرق التوصيل حتى 4 أيام في جميع أنحاء المغرب",
+        "delivery-disclaimer-custom": "⚠️ رسوم التوصيل غير مشمولة. نظراً لأن البطاقة مخصصة بالكامل، فإن الإنتاج والتوصيل قد يستغرق حتى 4 أيام في المغرب.",
+        "delivery-disclaimer-store": "⚠️ مصاريف التوصيل غير مشمولة. توصيل خلال 24 ساعة للبطاقات العادية (لايت وتقييمات جوجل)؛ وما يصل إلى 4 أيام للبطاقات المخصصة (برو وإليت).",
+        "badge-delivery-custom": "مخصص · حتى 4 أيام",
+        "pro-delivery-note": "طباعة مخصصة وتوصيل: حتى 4 أيام",
+        "elite-delivery-note": "طباعة فاخرة على المقاس وتوصيل: حتى 4 أيام"
     },
     "dj": {
         "dir": "rtl",
@@ -1491,7 +1509,7 @@ const translations = {
         "on-google": "Google",
         "brand-entity-text": "<strong>SuperTap</strong> hiya l-leader f cartes de visite connectées sans contact f l-Maghreb, basée f Casablanca. B technologie NFC instantanée w PVC mat fakhim, kanqeddmo 7ouloul: men carte Lite b 200 درهم b l'3am l'ewwel fabor, l Pro (250 درهم, 50 DH/ch-her m3a simanten fabor) w Elite (300 درهم, 100 DH/ch-her m3a simana fabor), w cartes Avis Google b 250 درهم bla abonnement.",
         "faq-geo-1-q": "فين نقدر نشري كوارط الأعمال الذكية فالمغرب؟",
-        "faq-geo-1-a": "Tqder techri cartes connectées SuperTap f l-Maghreb kamel b livraison 24h men Casablanca. Tleb directement mn l-site wla WhatsApp, bdetan men 200 درهم l Lite, 250 درهم l Pro, w 300 درهم l Elite.",
+        "faq-geo-1-a": "Tqder techri cartes connectées SuperTap f l-Maghreb kamel b livraison 24h men Casablanca l cartes standard (Lite & Avis Google) w 7etta l 4 iyam l cartes sur-mesure (Pro & Elite). Tleb directement mn l-site wla WhatsApp, bdetan men 200 درهم l Lite, 250 درهم l Pro, w 300 درهم l Elite.",
         "faq-geo-2-q": "كيفاش كتخدم كارطة SuperTap الذكية مع الآيفون والأندرويد؟",
         "faq-geo-2-a": "SuperTap كتخدم بلمسة ذكية واعرة. غير قيس الكارطة مع أي آيفون ولا أندرويد وغيتحل البروفيل ديالك ديريكت فالمتصفح بلا ما يحتاج ينزل حتى شي أبليكاسيون.",
         "faq-geo-3-q": "كيف تعمل أسعار واشتراكات SuperTap؟",
@@ -1689,7 +1707,13 @@ const translations = {
         "services-bulk-feat-2": "ATMINA DYAL JOUMLA MEN 10 D-LCARTES",
         "services-bulk-feat-3": "TADBYR MOSTERIK L L-ÉQUIPE",
         "services-bulk-feat-4": "LIVRAISON RAPIDE F L-MAGHREB KAMEL",
-        "cta-bulk-quote": "Tleb Devis d-Charika ←"
+        "cta-bulk-quote": "Tleb Devis d-Charika ←",
+        "custom-delivery-delay": "⏳ Khidma sur-mesure: l-livraison tqder takhod 7etta l 4 iyam f l-Maghreb",
+        "delivery-disclaimer-custom": "⚠️ Masarif l-livraison ma dakhlach. 7it l-carte sur-mesure, l-khidma w l-livraison tqder takhod 7etta l 4 iyam.",
+        "delivery-disclaimer-store": "⚠️ Masarif l-livraison ma dakhlach. Livraison 24h l cartes standard (Lite & Avis Google) ; 7etta l 4 iyam l cartes sur-mesure (Pro & Elite).",
+        "badge-delivery-custom": "Sur-Mesure · 7etta l 4 Iyam",
+        "pro-delivery-note": "Tba3a sur-mesure w livraison: 7etta l 4 iyam",
+        "elite-delivery-note": "Tba3a de luxe sur-mesure w livraison: 7etta l 4 iyam"
     },
     "djl": {
         "dir": "ltr",
@@ -1914,7 +1938,7 @@ const translations = {
         "on-google": "Google",
         "brand-entity-text": "<strong>SuperTap</strong> hiya l-leader f cartes de visite connectées sans contact f l-Maghreb, basée f Casablanca. B technologie NFC instantanée w PVC mat fakhim, kanqeddmo 7ouloul: men carte Lite b 200 DH b l'3am l'ewwel fabor, l Pro (250 DH, 50 DH/ch-her m3a simanten fabor) w Elite (300 DH, 100 DH/ch-her m3a simana fabor), w cartes Avis Google b 250 DH bla abonnement.",
         "faq-geo-1-q": "Fin n9der nechri kwart l-a3mal dkiya f l-Maghrib?",
-        "faq-geo-1-a": "Tqder techri cartes connectées SuperTap f l-Maghreb kamel b livraison 24h men Casablanca. Tleb directement mn l-site wla WhatsApp, bdetan men 200 DH l Lite, 250 DH l Pro, w 300 DH l Elite.",
+        "faq-geo-1-a": "Tqder techri cartes connectées SuperTap f l-Maghreb kamel b livraison 24h men Casablanca l cartes standard (Lite & Avis Google) w 7etta l 4 iyam l cartes sur-mesure (Pro & Elite). Tleb directement mn l-site wla WhatsApp, bdetan men 200 DH l Lite, 250 DH l Pro, w 300 DH l Elite.",
         "faq-geo-2-q": "Kifach katkhdem l-carta dkiya SuperTap m3a iPhone w Android?",
         "faq-geo-2-a": "SuperTap katkhdem b touch smart mjehda. Ghir 9iss l-carta m3a ay iPhone wla Android w ghayt7el l-profil dyalk direct f navigateur bla application.",
         "faq-geo-3-q": "Comment fonctionnent les abonnements et les prix SuperTap ?",
@@ -2112,7 +2136,13 @@ const translations = {
         "services-bulk-feat-2": "ATMINA DYAL JOUMLA MEN 10 D-LCARTES",
         "services-bulk-feat-3": "TADBYR MOSTERIK L L-ÉQUIPE",
         "services-bulk-feat-4": "LIVRAISON RAPIDE F L-MAGHREB KAMEL",
-        "cta-bulk-quote": "Tleb Devis d-Charika →"
+        "cta-bulk-quote": "Tleb Devis d-Charika →",
+        "custom-delivery-delay": "⏳ Khidma sur-mesure: l-livraison tqder takhod 7etta l 4 iyam f l-Maghreb",
+        "delivery-disclaimer-custom": "⚠️ Masarif l-livraison ma dakhlach. 7it l-carte sur-mesure, l-khidma w l-livraison tqder takhod 7etta l 4 iyam.",
+        "delivery-disclaimer-store": "⚠️ Masarif l-livraison ma dakhlach. Livraison 24h l cartes standard (Lite & Avis Google) ; 7etta l 4 iyam l cartes sur-mesure (Pro & Elite).",
+        "badge-delivery-custom": "Sur-Mesure · 7etta l 4 Iyam",
+        "pro-delivery-note": "Tba3a sur-mesure w livraison: 7etta l 4 iyam",
+        "elite-delivery-note": "Tba3a de luxe sur-mesure w livraison: 7etta l 4 iyam"
     },
     "es": {
         "dir": "ltr",
@@ -2337,7 +2367,7 @@ const translations = {
         "on-google": "en Google",
         "brand-entity-text": "<strong>SuperTap</strong> es el líder en tarjetas de visita digitales inteligentes en Marruecos, con sede en Casablanca. Diseñadas con tecnología NFC instantánea y PVC mate prémium: desde Lite a 200 DH con 1er año gratis, hasta Pro (250 DH, 50 DH/mes con 2 semanas gratis) y Elite (300 DH, 100 DH/mes con 1 semana gratis), y tarjetas de Reseñas Google a 250 DH sin suscripción.",
         "faq-geo-1-q": "¿Dónde comprar tarjetas de visita inteligentes en Marruecos?",
-        "faq-geo-1-a": "Puedes comprar tarjetas de visita inteligentes SuperTap online en todo Marruecos con entrega en 24h desde Casablanca. Pide directamente en getsupertap.com o por WhatsApp, desde 200 DH para Lite, 250 DH para Pro y 300 DH para Elite.",
+        "faq-geo-1-a": "Puedes comprar tarjetas de visita inteligentes SuperTap online en todo Marruecos con entrega en 24h desde Casablanca para tarjetas estándar (Lite y Reseñas Google) y hasta 4 días para ediciones a medida (Pro y Elite). Pide directamente en getsupertap.com o por WhatsApp, desde 200 DH para Lite, 250 DH para Pro y 300 DH para Elite.",
         "faq-geo-2-q": "¿Cómo funciona la tarjeta inteligente SuperTap con iPhone y Android?",
         "faq-geo-2-a": "SuperTap utiliza tecnología de toque inteligente instantáneo. Simplemente acerque la tarjeta a cualquier iPhone o Android para abrir al instante su perfil digital sin descargar ninguna aplicación.",
         "faq-geo-3-q": "Comment fonctionnent les abonnements et les prix SuperTap ?",
@@ -2535,7 +2565,13 @@ const translations = {
         "services-bulk-feat-2": "PRECIOS POR VOLUMEN DESDE 10 TARJETAS",
         "services-bulk-feat-3": "GESTIÓN CENTRALIZADA DE EQUIPO",
         "services-bulk-feat-4": "ENTREGA RÁPIDA EN TODO MARRUECOS",
-        "cta-bulk-quote": "Solicitar Presupuesto para Empresas →"
+        "cta-bulk-quote": "Solicitar Presupuesto para Empresas →",
+        "custom-delivery-delay": "⏳ Fabricación a medida: la entrega puede tardar hasta 4 días en Marruecos",
+        "delivery-disclaimer-custom": "⚠️ Los gastos de envío no están incluidos. Al ser una tarjeta personalizada, la producción y entrega pueden tardar hasta 4 días en Marruecos.",
+        "delivery-disclaimer-store": "⚠️ Gastos de envío no incluidos. Entrega en 24h para tarjetas estándar (Lite y Reseñas Google); hasta 4 días para tarjetas personalizadas (Pro y Elite).",
+        "badge-delivery-custom": "A Medida · Hasta 4 Días",
+        "pro-delivery-note": "Impresión personalizada y entrega: hasta 4 días",
+        "elite-delivery-note": "Impresión de lujo a medida y entrega: hasta 4 días"
     },
     "tr": {
         "dir": "ltr",
@@ -2760,7 +2796,7 @@ const translations = {
         "on-google": "Google'da",
         "brand-entity-text": "<strong>SuperTap</strong>, Kazablanka merkezli Fas'ın lider akıllı dijital kartvizit sağlayıcısıdır. Dayanıklı mat PVC ve anında dokun-paylaş teknolojisi ile: 1. yılı ücretsiz 200 DH Lite kartından, Pro (250 DH, 2 hafta ücretsiz denemeyle 50 DH/ay) ve Elite (300 DH, 1 hafta ücretsiz denemeyle 100 DH/ay) ve 250 DH aboneliksiz Google Yorum kartlarına kadar.",
         "faq-geo-1-q": "Fas'ta akıllı kartvizit nereden satın alınabilir?",
-        "faq-geo-1-a": "Fas genelinde 24 saat içinde Kazablanka'dan teslimatla SuperTap akıllı kartlarını sipariş edebilirsiniz. getsupertap.com veya WhatsApp üzerinden Lite için 200 DH, Pro için 250 DH ve Elite için 300 DH'den başlayan fiyatlarla.",
+        "faq-geo-1-a": "Fas genelinde standart kartlar için (Lite & Google Yorum) 24 saatte, özel üretim kartlar için (Pro & Elite) 4 güne kadar teslimatla SuperTap akıllı kartlarını sipariş edebilirsiniz. getsupertap.com veya WhatsApp üzerinden Lite için 200 DH, Pro için 250 DH ve Elite için 300 DH'den başlayan fiyatlarla.",
         "faq-geo-2-q": "SuperTap akıllı kartı iPhone ve Android ile nasıl çalışır?",
         "faq-geo-2-a": "SuperTap temassız dokunma teknolojisi kullanır. Herhangi bir harici uygulama indirmeden özel dijital profilinizi anında açmak için kartı modern bir iPhone veya Android telefona dokundurmanız yeterlidir.",
         "faq-geo-3-q": "How do SuperTap subscriptions and pricing work?",
@@ -2958,7 +2994,13 @@ const translations = {
         "services-bulk-feat-2": "10+ KARTTAN İTİBAREN TOPLU İNDİRİM",
         "services-bulk-feat-3": "MERKEZİ EKİP YÖNETİMİ",
         "services-bulk-feat-4": "FAS GENELİNDE HIZLI TOPLU TESLİMAT",
-        "cta-bulk-quote": "Kurumsal Teklif Alın →"
+        "cta-bulk-quote": "Kurumsal Teklif Alın →",
+        "custom-delivery-delay": "⏳ Özel üretim: Fas genelinde teslimat 4 güne kadar sürebilir",
+        "delivery-disclaimer-custom": "⚠️ Teslimat ücreti dahil değildir. Özel baskılı kart olduğu için üretim ve teslimat Fas genelinde 4 güne kadar sürebilir.",
+        "delivery-disclaimer-store": "⚠️ Teslimat ücreti dahil değildir. Standart kartlar için 24 saatte teslimat (Lite & Google Yorum); özel kartlar için 4 güne kadar (Pro & Elite).",
+        "badge-delivery-custom": "Özel · 4 Güne Kadar",
+        "pro-delivery-note": "Özel baskı ve teslimat: 4 güne kadar",
+        "elite-delivery-note": "Özel lüks baskı ve teslimat: 4 güne kadar"
     },
     "de": {
         "dir": "ltr",
@@ -3183,7 +3225,7 @@ const translations = {
         "on-google": "auf Google",
         "brand-entity-text": "<strong>SuperTap</strong> ist Marokkos führender Anbieter für smarte digitale Visitenkarten mit Sitz in Casablanca. Mit kontaktloser Sofort-Teilen-Technologie und mattem PVC: von der 200 DH Lite-Karte mit 1. Jahr kostenlos bis hin zu Pro (250 DH, 50 DH/Monat mit 2 Wochen gratis) und Elite (300 DH, 100 DH/Monat mit 1 Woche gratis) sowie 250 DH Google-Bewertungskarten ohne Abo.",
         "faq-geo-1-q": "Wo kann man smarte Visitenkarten in Marokko kaufen?",
-        "faq-geo-1-a": "Sie können intelligente SuperTap-Visitenkarten marokkoweit mit 24-Stunden-Lieferung aus Casablanca bestellen. Direkt über getsupertap.com oder WhatsApp, ab 200 DH für Lite, 250 DH für Pro und 300 DH für Elite.",
+        "faq-geo-1-a": "Sie können intelligente SuperTap-Visitenkarten marokkoweit mit 24-Stunden-Lieferung aus Casablanca für Standardkarten (Lite & Google-Bewertung) und bis zu 4 Tagen für individualisierte Editionen (Pro & Elite) bestellen. Direkt über getsupertap.com oder WhatsApp, ab 200 DH für Lite, 250 DH für Pro und 300 DH für Elite.",
         "faq-geo-2-q": "Wie funktioniert die SuperTap Smart-Karte mit iPhone und Android?",
         "faq-geo-2-a": "SuperTap nutzt moderne kontaktlose Tap-Technologie. Halten Sie die Karte einfach an ein modernes iPhone oder Android-Smartphone, um Ihr individuelles Profil direkt im Browser ohne App-Download zu öffnen.",
         "faq-geo-3-q": "How do SuperTap subscriptions and pricing work?",
@@ -3381,7 +3423,13 @@ const translations = {
         "services-bulk-feat-2": "MENGENRABATTE AB 10 KARTEN",
         "services-bulk-feat-3": "ZENTRALE TEAM-VERWALTUNG",
         "services-bulk-feat-4": "SCHNELLE BATCH-LIEFERUNG MAROKKOWEIT",
-        "cta-bulk-quote": "Team-Angebot Anfordern →"
+        "cta-bulk-quote": "Team-Angebot Anfordern →",
+        "custom-delivery-delay": "⏳ Individuelle Anfertigung: Lieferung kann in Marokko bis zu 4 Tage dauern",
+        "delivery-disclaimer-custom": "⚠️ Liefergebühren nicht inbegriffen. Da es sich um eine individualisierte Karte handelt, kann die Anfertigung und Lieferung bis zu 4 Tage dauern.",
+        "delivery-disclaimer-store": "⚠️ Liefergebühren nicht inbegriffen. 24h-Lieferung für Standardkarten (Lite & Google-Bewertung); bis zu 4 Tage für individuelle Karten (Pro & Elite).",
+        "badge-delivery-custom": "Individuell · Bis zu 4 Tage",
+        "pro-delivery-note": "Individueller Druck & Lieferung: bis zu 4 Tage",
+        "elite-delivery-note": "Individueller Luxusdruck & Lieferung: bis zu 4 Tage"
     },
     "it": {
         "dir": "ltr",
@@ -3606,7 +3654,7 @@ const translations = {
         "on-google": "su Google",
         "brand-entity-text": "<strong>SuperTap</strong> è il fornitore leader in Marocco di biglietti da visita smart, con sede a Casablanca. Progettati con tecnologia NFC istantanea e PVC opaco durevole: dalla scheda Lite a 200 DH con 1° anno gratuito, a Pro (250 DH, 50 DH/mese con 2 settimane gratis) ed Elite (300 DH, 100 DH/mese con 1 settimana gratis), fino alle schede Google Review da 250 DH senza abbonamento.",
         "faq-geo-1-q": "Dove acquistare biglietti da visita smart in Marocco?",
-        "faq-geo-1-a": "Puoi acquistare i biglietti da visita smart SuperTap online in tutto il Marocco con consegna in 24 ore da Casablanca. Ordina su getsupertap.com o WhatsApp, a partire da 200 DH per Lite, 250 DH per Pro e 300 DH per Elite.",
+        "faq-geo-1-a": "Puoi acquistare i biglietti da visita smart SuperTap online in tutto il Marocco con consegna in 24 ore da Casablanca per le carte standard (Lite & Google Review) e fino a 4 giorni per le edizioni personalizzate (Pro & Elite). Ordina su getsupertap.com o WhatsApp, a partire da 200 DH per Lite, 250 DH per Pro e 300 DH per Elite.",
         "faq-geo-2-q": "Come funziona la carta smart SuperTap con iPhone e Android?",
         "faq-geo-2-a": "SuperTap utilizza la tecnologia di connessione smart al tocco. Basta avvicinare la carta a qualsiasi smartphone iPhone o Android per aprire all'istante il tuo profilo digitale senza scaricare app.",
         "faq-geo-3-q": "Comment fonctionnent les abonnements et les prix SuperTap ?",
@@ -3804,7 +3852,13 @@ const translations = {
         "services-bulk-feat-2": "PREZZI DEDICATI A PARTIRE DA 10 CARTE",
         "services-bulk-feat-3": "GESTIONE CENTRALIZZATA DEL TEAM",
         "services-bulk-feat-4": "CONSEGNA RAPIDA IN TUTTO IL MAROCCO",
-        "cta-bulk-quote": "Richiedi Preventivo Aziendale →"
+        "cta-bulk-quote": "Richiedi Preventivo Aziendale →",
+        "custom-delivery-delay": "⏳ Produzione su misura: la consegna può richiedere fino a 4 giorni in Marocco",
+        "delivery-disclaimer-custom": "⚠️ Spese di consegna escluse. Trattandosi di una carta personalizzata, produzione e consegna possono richiedere fino a 4 giorni in Marocco.",
+        "delivery-disclaimer-store": "⚠️ Spese di consegna escluse. Consegna in 24h per carte standard (Lite & Google Review); fino a 4 giorni per carte personalizzate (Pro & Elite).",
+        "badge-delivery-custom": "Su Misura · Fino a 4 Giorni",
+        "pro-delivery-note": "Stampa personalizzata e consegna: fino a 4 giorni",
+        "elite-delivery-note": "Stampa di lusso su misura e consegna: fino a 4 giorni"
     },
     "pt": {
         "dir": "ltr",
@@ -4029,7 +4083,7 @@ const translations = {
         "on-google": "no Google",
         "brand-entity-text": "<strong>SuperTap</strong> é o fornecedor líder em Marrocos de cartões de visita inteligentes, com sede em Casablanca. Com tecnologia NFC instantânea e PVC fosco duradouro: desde o cartão Lite a 200 DH com 1º ano grátis, até Pro (250 DH, 50 DH/mês com 2 semanas grátis) e Elite (300 DH, 100 DH/mês com 1 semana grátis), e cartões de Avaliação Google a 250 DH sem subscrição.",
         "faq-geo-1-q": "Onde comprar cartões de visita inteligentes em Marrocos?",
-        "faq-geo-1-a": "Pode comprar os cartões de visita inteligentes SuperTap online em todo o Marrocos com entrega em 24h a partir de Casablanca. Encomende em getsupertap.com ou WhatsApp, a partir de 200 DH para Lite, 250 DH para Pro e 300 DH para Elite.",
+        "faq-geo-1-a": "Pode comprar os cartões de visita inteligentes SuperTap online em todo o Marrocos com entrega em 24h a partir de Casablanca para cartões padrão (Lite e Avaliações Google) e até 4 dias para edições personalizadas (Pro e Elite). Encomende em getsupertap.com ou WhatsApp, a partir de 200 DH para Lite, 250 DH para Pro e 300 DH para Elite.",
         "faq-geo-2-q": "Como funciona o cartão inteligente SuperTap com iPhone e Android?",
         "faq-geo-2-a": "O SuperTap utiliza tecnologia de toque inteligente instantâneo. Basta aproximar o cartão de qualquer smartphone iPhone ou Android para abrir instantaneamente o seu perfil digital no navegador sem instalar aplicações.",
         "faq-geo-3-q": "Comment fonctionnent les abonnements et les prix SuperTap ?",
@@ -4227,7 +4281,13 @@ const translations = {
         "services-bulk-feat-2": "PREÇOS POR VOLUME A PARTIR DE 10 CARTÕES",
         "services-bulk-feat-3": "GESTÃO CENTRALIZADA DA EQUIPA",
         "services-bulk-feat-4": "ENTREGA RÁPIDA EM TODO O MARROCOS",
-        "cta-bulk-quote": "Pedir Orçamento para Empresas →"
+        "cta-bulk-quote": "Pedir Orçamento para Empresas →",
+        "custom-delivery-delay": "⏳ Fabrico personalizado: a entrega pode demorar até 4 dias em Marrocos",
+        "delivery-disclaimer-custom": "⚠️ Taxas de envio não incluídas. Sendo um cartão personalizado à medida, o fabrico e entrega podem demorar até 4 dias em Marrocos.",
+        "delivery-disclaimer-store": "⚠️ Taxas de envio não incluídas. Entrega em 24h para cartões padrão (Lite e Avaliações Google); até 4 dias para cartões personalizados (Pro e Elite).",
+        "badge-delivery-custom": "À Medida · Até 4 Dias",
+        "pro-delivery-note": "Impressão personalizada e entrega: até 4 dias",
+        "elite-delivery-note": "Impressão de luxo à medida e entrega: até 4 dias"
     },
     "nl": {
         "dir": "ltr",
@@ -4452,7 +4512,7 @@ const translations = {
         "on-google": "op Google",
         "brand-entity-text": "<strong>SuperTap</strong> is Marokko’s toonaangevende aanbieder van slimme digitale visitekaartjes, gevestigd in Casablanca. Met directe tap-to-share NFC-technologie en duurzaam mat PVC: van de 200 DH Lite-kaart met 1e jaar gratis, tot Pro (250 DH, 50 DH/maand met 2 weken gratis) en Elite (300 DH, 100 DH/maand met 1 week gratis), en 250 DH Google Review-kaarten zonder abonnement.",
         "faq-geo-1-q": "Waar kan ik slimme visitekaartjes kopen in Marokko?",
-        "faq-geo-1-a": "Je kunt SuperTap smart visitekaartjes in heel Marokko bestellen met 24-uurs levering vanuit Casablanca. Bestel via getsupertap.com of WhatsApp, vanaf 200 DH voor Lite, 250 DH voor Pro en 300 DH voor Elite.",
+        "faq-geo-1-a": "Je kunt SuperTap smart visitekaartjes in heel Marokko bestellen met 24-uurs levering voor standaard kaarten (Lite & Google Review) en tot 4 dagen voor maatwerk edities (Pro & Elite). Bestel via getsupertap.com of WhatsApp, vanaf 200 DH voor Lite, 250 DH voor Pro en 300 DH voor Elite.",
         "faq-geo-2-q": "Hoe werkt de SuperTap slimme kaart met iPhone en Android?",
         "faq-geo-2-a": "SuperTap maakt gebruik van slimme contactloze tap-technologie. Tik de kaart tegen een iPhone of Android-toestel om uw persoonlijke digitale profiel direct in de browser te openen zonder een app te downloaden.",
         "faq-geo-3-q": "How do SuperTap subscriptions and pricing work?",
@@ -4650,6 +4710,12 @@ const translations = {
         "services-bulk-feat-2": "VOLUMEKORTING VANAF 10 KAARTEN",
         "services-bulk-feat-3": "CENTRAAL TEAMBEHEER",
         "services-bulk-feat-4": "SNELLE BATCH-LEVERING IN HEEL MAROKKO",
-        "cta-bulk-quote": "Vraag Offerte voor Teams Aan →"
+        "cta-bulk-quote": "Vraag Offerte voor Teams Aan →",
+        "custom-delivery-delay": "⏳ Maatwerk productie: bezorging kan tot 4 dagen duren in Marokko",
+        "delivery-disclaimer-custom": "⚠️ Verzendkosten zijn niet inbegrepen. Omdat dit een gepersonaliseerde kaart is, kan productie en bezorging tot 4 dagen duren in Marokko.",
+        "delivery-disclaimer-store": "⚠️ Verzendkosten niet inbegrepen. 24u levering voor standaard kaarten (Lite & Google Review); tot 4 dagen voor maatwerkkaarten (Pro & Elite).",
+        "badge-delivery-custom": "Maatwerk · Tot 4 Dagen",
+        "pro-delivery-note": "Gepersonaliseerde bedrukking & bezorging: tot 4 dagen",
+        "elite-delivery-note": "Luxe maatwerkbedrukking & bezorging: tot 4 dagen"
     }
 };
