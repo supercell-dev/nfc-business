@@ -412,7 +412,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "Teams & Enterprises",
+        "services-bulk-title": "Custom Bulk Branding",
+        "services-bulk-desc": "Equip your entire company or team with custom-branded smart cards. Bespoke corporate design, unified brand guidelines, volume pricing, and dedicated onboarding for Moroccan businesses.",
+        "services-bulk-feat-1": "BESPOKE CORPORATE IDENTITY & LOGO",
+        "services-bulk-feat-2": "VOLUME PRICING FROM 10+ CARDS",
+        "services-bulk-feat-3": "CENTRALIZED TEAM MANAGEMENT",
+        "services-bulk-feat-4": "FAST MOROCCO-WIDE BATCH DELIVERY",
+        "cta-bulk-quote": "Request Bulk Quote →"
     },
     "fr": {
         "dir": "ltr",
@@ -827,7 +835,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "Équipes & Entreprises",
+        "services-bulk-title": "Branding & Commandes de Gros",
+        "services-bulk-desc": "Équipez toute votre entreprise avec des cartes connectées sur-mesure. Design corporate personnalisé, charte graphique unifiée, tarifs dégressifs et accompagnement dédié pour les entreprises au Maroc.",
+        "services-bulk-feat-1": "IDENTITÉ VISUELLE & LOGO SUR-MESURE",
+        "services-bulk-feat-2": "TARIFS DÉGRESSIFS DÈS 10 CARTES",
+        "services-bulk-feat-3": "GESTION CENTRALISÉE D'ÉQUIPE",
+        "services-bulk-feat-4": "LIVRAISON GROUPÉE RAPIDE PARTOUT AU MAROC",
+        "cta-bulk-quote": "Demander un Devis d'Équipe →"
     },
     "ar": {
         "dir": "rtl",
@@ -1242,7 +1258,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "للشركات وفِرق العمل",
+        "services-bulk-title": "تصميم مخصص وطلبيات الجملة",
+        "services-bulk-desc": "جهّز كامل فريقك أو شركتك ببطاقات ذكية بهوية بصرية مخصصة. تصاميم احترافية للشركات، هوية موحدة، أسعار تفضيلية للكميات، ودعم مخصص للشركات في جميع أنحاء المغرب.",
+        "services-bulk-feat-1": "هوية بصرية مخصصة وشعار الشركة",
+        "services-bulk-feat-2": "أسعار تفضيلية للجملة ابتداءً من 10 بطاقات",
+        "services-bulk-feat-3": "إدارة مركزية لبيانات الفريق",
+        "services-bulk-feat-4": "توصيل سريع لكافة أنحاء المغرب",
+        "cta-bulk-quote": "طلب عرض سعر للشركات ←"
     },
     "dj": {
         "dir": "rtl",
@@ -1657,7 +1681,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "L-Charikat w l-Firaq",
+        "services-bulk-title": "Branding Sur-Mesure w l-Joumla",
+        "services-bulk-desc": "Qad l-équipe dyalek kamla b cartes connectées sur-mesure b logo d-charika. Design pro, tamanat d-joumla mzyanin men 10 d-lcartes, w livraison f l-Maghreb kamel.",
+        "services-bulk-feat-1": "DESIGN W LOGO DYAL CHARIKA SUR-MESURE",
+        "services-bulk-feat-2": "ATMINA DYAL JOUMLA MEN 10 D-LCARTES",
+        "services-bulk-feat-3": "TADBYR MOSTERIK L L-ÉQUIPE",
+        "services-bulk-feat-4": "LIVRAISON RAPIDE F L-MAGHREB KAMEL",
+        "cta-bulk-quote": "Tleb Devis d-Charika ←"
     },
     "djl": {
         "dir": "ltr",
@@ -2072,7 +2104,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "L-Charikat w l-Firaq",
+        "services-bulk-title": "Branding Sur-Mesure w l-Joumla",
+        "services-bulk-desc": "Qad l-équipe dyalek kamla b cartes connectées sur-mesure b logo d-charika. Design pro, tamanat d-joumla mzyanin men 10 d-lcartes, w livraison f l-Maghreb kamel.",
+        "services-bulk-feat-1": "DESIGN W LOGO DYAL CHARIKA SUR-MESURE",
+        "services-bulk-feat-2": "ATMINA DYAL JOUMLA MEN 10 D-LCARTES",
+        "services-bulk-feat-3": "TADBYR MOSTERIK L L-ÉQUIPE",
+        "services-bulk-feat-4": "LIVRAISON RAPIDE F L-MAGHREB KAMEL",
+        "cta-bulk-quote": "Tleb Devis d-Charika →"
     },
     "es": {
         "dir": "ltr",
@@ -2487,7 +2527,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "Equipos y Empresas",
+        "services-bulk-title": "Branding Corporativo y Pedidos por Lote",
+        "services-bulk-desc": "Equipa a todo tu equipo o empresa con tarjetas inteligentes personalizadas. Diseño corporativo exclusivo, identidad unificada, precios por volumen y soporte dedicado para empresas en Marruecos.",
+        "services-bulk-feat-1": "IDENTIDAD CORPORATIVA Y LOGO A MEDIDA",
+        "services-bulk-feat-2": "PRECIOS POR VOLUMEN DESDE 10 TARJETAS",
+        "services-bulk-feat-3": "GESTIÓN CENTRALIZADA DE EQUIPO",
+        "services-bulk-feat-4": "ENTREGA RÁPIDA EN TODO MARRUECOS",
+        "cta-bulk-quote": "Solicitar Presupuesto para Empresas →"
     },
     "tr": {
         "dir": "ltr",
@@ -2902,7 +2950,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "Ekipler ve Kurumsal",
+        "services-bulk-title": "Özel Toplu Kurumsal Markalama",
+        "services-bulk-desc": "Tüm ekibinizi veya şirketinizi özel markalı akıllı kartlarla donatın. Özel kurumsal tasarım, birleşik marka kimliği, avantajlı toplu fiyatlandırma ve Fas genelinde kurumsal destek.",
+        "services-bulk-feat-1": "ÖZEL KURUMSAL KİMLİK VE LOGO",
+        "services-bulk-feat-2": "10+ KARTTAN İTİBAREN TOPLU İNDİRİM",
+        "services-bulk-feat-3": "MERKEZİ EKİP YÖNETİMİ",
+        "services-bulk-feat-4": "FAS GENELİNDE HIZLI TOPLU TESLİMAT",
+        "cta-bulk-quote": "Kurumsal Teklif Alın →"
     },
     "de": {
         "dir": "ltr",
@@ -3317,7 +3373,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "Teams & Unternehmen",
+        "services-bulk-title": "Individuelles Großmengen-Branding",
+        "services-bulk-desc": "Statten Sie Ihr gesamtes Team oder Unternehmen mit maßgeschneiderten Smartcards aus. Individuelles Firmendesign, einheitliche CI, Mengenrabatte und persönliche Betreuung für marokkanische Unternehmen.",
+        "services-bulk-feat-1": "INDIVIDUELLES CORPORATE DESIGN & LOGO",
+        "services-bulk-feat-2": "MENGENRABATTE AB 10 KARTEN",
+        "services-bulk-feat-3": "ZENTRALE TEAM-VERWALTUNG",
+        "services-bulk-feat-4": "SCHNELLE BATCH-LIEFERUNG MAROKKOWEIT",
+        "cta-bulk-quote": "Team-Angebot Anfordern →"
     },
     "it": {
         "dir": "ltr",
@@ -3732,7 +3796,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "Team & Aziende",
+        "services-bulk-title": "Branding Aziendale e Ordini all'Ingrosso",
+        "services-bulk-desc": "Equipaggia l'intero team o azienda con smart card personalizzate. Design aziendale su misura, linee guida del brand unificate, prezzi vantaggiosi per quantità e supporto dedicato per le imprese in Marocco.",
+        "services-bulk-feat-1": "IDENTITÀ AZIENDALE E LOGO SU MISURA",
+        "services-bulk-feat-2": "PREZZI DEDICATI A PARTIRE DA 10 CARTE",
+        "services-bulk-feat-3": "GESTIONE CENTRALIZZATA DEL TEAM",
+        "services-bulk-feat-4": "CONSEGNA RAPIDA IN TUTTO IL MAROCCO",
+        "cta-bulk-quote": "Richiedi Preventivo Aziendale →"
     },
     "pt": {
         "dir": "ltr",
@@ -4147,7 +4219,15 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "Equipas e Empresas",
+        "services-bulk-title": "Branding Corporativo e Encomendas em Lote",
+        "services-bulk-desc": "Equipe toda a sua empresa com cartões inteligentes personalizados. Design corporativo exclusivo, identidade unificada, preços por volume e apoio dedicado para empresas em Marrocos.",
+        "services-bulk-feat-1": "IDENTIDADE CORPORATIVA E LOGÓTIPO À MEDIDA",
+        "services-bulk-feat-2": "PREÇOS POR VOLUME A PARTIR DE 10 CARTÕES",
+        "services-bulk-feat-3": "GESTÃO CENTRALIZADA DA EQUIPA",
+        "services-bulk-feat-4": "ENTREGA RÁPIDA EM TODO O MARROCOS",
+        "cta-bulk-quote": "Pedir Orçamento para Empresas →"
     },
     "nl": {
         "dir": "ltr",
@@ -4562,6 +4642,14 @@ const translations = {
         "discount-lite": "-33%",
         "discount-pro": "-29%",
         "discount-elite": "-33%",
-        "discount-google": "-29%"
+        "discount-google": "-29%",
+        "services-bulk-badge": "Teams & Bedrijven",
+        "services-bulk-title": "Aangepaste Zakelijke Bulkbranding",
+        "services-bulk-desc": "Rust je hele team of bedrijf uit met gepersonaliseerde smartcards. Maatwerk corporate design, uniforme huisstijl, volumekortingen en toegewijde ondersteuning voor Marokkaanse bedrijven.",
+        "services-bulk-feat-1": "MAATWERK HUISSTIJL EN BEDRIJFSLOGO",
+        "services-bulk-feat-2": "VOLUMEKORTING VANAF 10 KAARTEN",
+        "services-bulk-feat-3": "CENTRAAL TEAMBEHEER",
+        "services-bulk-feat-4": "SNELLE BATCH-LEVERING IN HEEL MAROKKO",
+        "cta-bulk-quote": "Vraag Offerte voor Teams Aan →"
     }
 };
