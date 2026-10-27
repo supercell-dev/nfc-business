@@ -653,15 +653,15 @@ Je souhaite commander la Carte Elite Personnalisée (300 DH + 1 Semaine Offerte)
 
         function loadSvgImage(svgStr) {
             return new Promise((resolve) => {
-                if (!svgStr.includes('xmlns=')) {
-                    svgStr = svgStr.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+                if (!svgStr) return resolve(null);
+                let clean = svgStr.replace(/class="[^"]*"/g, '');
+                if (!clean.includes('xmlns=')) {
+                    clean = clean.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
                 }
-                const blob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
-                const url = URL.createObjectURL(blob);
                 const img = new Image();
-                img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
-                img.onerror = () => { URL.revokeObjectURL(url); resolve(null); };
-                img.src = url;
+                img.onload = () => resolve(img);
+                img.onerror = () => resolve(null);
+                img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(clean);
             });
         }
 
@@ -772,7 +772,16 @@ Je souhaite commander la Carte Elite Personnalisée (300 DH + 1 Semaine Offerte)
             } else {
                 // Back Face: Center QR Code in Chosen Foil Color
                 const qrSvgEl = document.querySelector('#card-back-face svg');
-                let qrSvgStr = qrSvgEl ? qrSvgEl.outerHTML.replace(/currentColor/g, palette.accent) : '';
+                let qrSvgStr = '';
+                if (qrSvgEl) {
+                    let clean = qrSvgEl.outerHTML
+                        .replace(/class="[^"]*"/g, '')
+                        .replace(/currentColor/g, palette.accent);
+                    if (!clean.includes('width=')) {
+                        clean = clean.replace('<svg', '<svg width="230" height="230"');
+                    }
+                    qrSvgStr = clean;
+                }
                 const qrImg = await loadSvgImage(qrSvgStr);
                 if (qrImg) {
                     ctx.drawImage(qrImg, 525 - 115, 331 - 130, 230, 230);
@@ -875,26 +884,26 @@ Je souhaite commander la Carte Elite Personnalisée (300 DH + 1 Semaine Offerte)
             </div>
             <div style="text-align: right;">
                 <div style="font-weight: 900; color: #9333ea; font-size: 18px;">SuperTap</div>
-                <div class="sub">\${new Date().toLocaleDateString('fr-FR')}</div>
+                <div class="sub">${new Date().toLocaleDateString('fr-FR')}</div>
             </div>
         </div>
 
         <table class="info-table">
-            <tr><td>Client / Porteur :</td><td><strong>\${name}</strong></td></tr>
-            <tr><td>Entreprise / Métier :</td><td>\${company}</td></tr>
-            <tr><td>Finition d'impression :</td><td><strong>\${palette.nameLabel}</strong></td></tr>
-            <tr><td>Logo personnalisé :</td><td>\${uploadedLogoName ? uploadedLogoName : 'Logo textuel / Sur-mesure'}</td></tr>
+            <tr><td>Client / Porteur :</td><td><strong>${name}</strong></td></tr>
+            <tr><td>Entreprise / Métier :</td><td>${company}</td></tr>
+            <tr><td>Finition d'impression :</td><td><strong>${palette.nameLabel}</strong></td></tr>
+            <tr><td>Logo personnalisé :</td><td>${uploadedLogoName ? uploadedLogoName : 'Logo textuel / Sur-mesure'}</td></tr>
             <tr><td>Format & Puce :</td><td>CR80 PVC Mat Luxury · Puce NFC NTAG215 / NTAG216 Intégrée</td></tr>
         </table>
 
         <div class="cards-grid">
             <div class="card-box">
                 <div class="card-label">Recto (Front) — 85.60 × 53.98 mm</div>
-                <img src="\${frontUrl}" class="card-img" alt="Recto">
+                <img src="${frontUrl}" class="card-img" alt="Recto">
             </div>
             <div class="card-box">
                 <div class="card-label">Verso (Back) — 85.60 × 53.98 mm</div>
-                <img src="\${backUrl}" class="card-img" alt="Verso">
+                <img src="${backUrl}" class="card-img" alt="Verso">
             </div>
         </div>
 
