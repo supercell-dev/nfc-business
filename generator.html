@@ -46,23 +46,6 @@
             -webkit-user-select: none;
             transition: all 0.3s ease;
         }
-
-        .shine {
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.16) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        /* QR Canvas styling inside card back */
-        #pro-qr-box canvas, #pro-qr-box img,
-        #elite-qr-box canvas, #elite-qr-box img {
-            width: 100% !important;
-            height: 100% !important;
-            border-radius: 6px;
-            display: block;
-        }
     </style>
 </head>
 <body class="flex flex-col">
@@ -161,7 +144,7 @@
                             <span class="text-[10px] text-slate-400 font-mono">Encodé dans le QR code</span>
                         </div>
                         <input type="url" id="input-url" value="https://supertap.ma/p/mohammed-alami" placeholder="https://supertap.ma/p/nom-du-client" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-emerald-500/50 text-emerald-300 text-sm font-mono focus:outline-none focus:border-emerald-400 transition" oninput="syncLivePreviews()">
-                        <p class="text-[11px] text-slate-400 mt-1">Le QR code au verso est régénéré en temps réel avec ce lien exact.</p>
+                        <p class="text-[11px] text-slate-400 mt-1">QR code dynamique style Designer (points ronds + coins arrondis), scannable par tout smartphone.</p>
                     </div>
                 </div>
 
@@ -184,7 +167,7 @@
         <div class="lg:col-span-7 space-y-8 flex flex-col items-center">
             <div class="w-full text-left">
                 <h3 class="text-lg font-black uppercase italic tracking-tight text-white mb-1">Aperçu Réel Avant Impression</h3>
-                <p class="text-xs text-slate-400">Design 100% conforme au site public. Le QR code au verso est scannable directement avec l'appareil photo de votre smartphone.</p>
+                <p class="text-xs text-slate-400">Design 100% conforme au site public, avec les points ronds et coins adoucis sur le QR code verso.</p>
             </div>
 
             <!-- Recto Box (Exact Card Front) -->
@@ -200,7 +183,6 @@
 
                 <!-- Pro Front Card (Active by default, exact markup from product-pro.html) -->
                 <div id="preview-card-pro-front" class="card-box-pro p-6 flex flex-col justify-between items-start text-left">
-                    <div class="shine"></div>
                     <!-- Top Row: Company Name -->
                     <div class="w-full flex justify-between items-start z-10 pointer-events-none">
                         <span id="pro-display-company" class="text-[9px] tracking-wider font-bold text-blue-300/80 truncate max-w-[200px]">NEXUS DIGITAL SARL</span>
@@ -221,7 +203,6 @@
 
                 <!-- Elite Front Card (Shown when Elite selected, exact markup from product-elite.html) -->
                 <div id="preview-card-elite-front" class="card-box-elite p-6 flex flex-col justify-between items-start text-left hidden">
-                    <div class="shine"></div>
                     <!-- Top Row: Company Name -->
                     <div class="w-full flex justify-between items-start z-10 pointer-events-none">
                         <span id="elite-display-company" class="text-[9px] tracking-wider font-bold transition-colors duration-300 text-amber-300/80 truncate max-w-[200px]">NEXUS DIGITAL SARL</span>
@@ -251,7 +232,7 @@
                         <span class="text-xs font-black uppercase tracking-wider text-slate-300 flex items-center gap-2">
                             <span class="w-2 h-2 rounded-full bg-purple-400"></span> Verso (Face Arrière)
                         </span>
-                        <span class="text-[10px] text-emerald-400 font-mono mt-0.5 block">✓ QR Code dynamique encodé</span>
+                        <span class="text-[10px] text-emerald-400 font-mono mt-0.5 block">✓ QR Code dynamique (Points Ronds)</span>
                     </div>
                     <button type="button" onclick="downloadSingleCard('back')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-purple-300 border border-purple-500/30 flex items-center gap-1.5 transition">
                         <span>↓</span> Télécharger Verso HD
@@ -260,15 +241,14 @@
 
                 <!-- Pro Back Card (Active by default, exact markup from product-pro.html) -->
                 <div id="preview-card-pro-back" class="card-box-pro p-6 flex items-center justify-center">
-                    <div class="shine"></div>
                     <div class="grid grid-cols-2 w-full h-full items-center z-10 pointer-events-none">
                         <div class="flex flex-col items-center justify-center text-center pr-2">
                             <span class="text-2xl font-black italic tracking-tight text-blue-400 uppercase" style="letter-spacing: -0.5px; text-shadow: 0 0 16px rgba(59, 130, 246, 0.45);">SuperTap</span>
                             <span class="text-[8px] uppercase tracking-widest font-black text-blue-300 mt-1 px-2.5 py-0.5 rounded-full bg-blue-500/15 border border-blue-500/30 shadow-sm">PRO</span>
                         </div>
                         <div class="flex items-center justify-center pl-2">
-                            <div id="pro-qr-box" class="w-[68px] h-[68px] flex items-center justify-center flex-shrink-0 drop-shadow-[0_0_8px_rgba(59,130,246,0.35)]">
-                                <!-- QR code rendered here -->
+                            <div id="pro-qr-box" class="w-[68px] h-[68px] flex items-center justify-center flex-shrink-0">
+                                <!-- Designer Rounded-Dot QR code rendered here -->
                             </div>
                         </div>
                     </div>
@@ -276,10 +256,9 @@
 
                 <!-- Elite Back Card (Shown when Elite selected, exact markup from product-elite.html) -->
                 <div id="preview-card-elite-back" class="card-box-elite p-6 flex items-center justify-center hidden">
-                    <div class="shine"></div>
                     <div class="flex items-center justify-center w-full h-full z-10 pointer-events-none">
-                        <div id="elite-qr-box" class="w-20 h-20 flex items-center justify-center flex-shrink-0 drop-shadow-[0_0_8px_rgba(251,191,36,0.45)]">
-                            <!-- QR code rendered here in foil color -->
+                        <div id="elite-qr-box" class="w-20 h-20 flex items-center justify-center flex-shrink-0">
+                            <!-- Designer Rounded-Dot QR code rendered here in foil color -->
                         </div>
                     </div>
                 </div>
@@ -293,6 +272,7 @@
         let currentFinish = 'gold'; // 'gold', 'silver', 'white'
         let clientUploadedLogo = null;
         let clientLogoFileName = '';
+        let currentQrModel = null;
 
         const finishPalettes = {
             gold: {
@@ -301,7 +281,7 @@
                 subText: 'rgba(252, 211, 77, 0.8)',
                 qrColor: '#fbbf24',
                 qrBg: '#0b0f19',
-                qrFilter: 'drop-shadow(0 0 8px rgba(251, 191, 36, 0.45))',
+                qrFilterClass: 'drop-shadow-[0_0_8px_rgba(251,191,36,0.45)]',
                 nfcFilter: 'drop-shadow(0 0 4px rgba(251, 191, 36, 0.4))',
                 brandShadow: '0 0 12px rgba(251, 191, 36, 0.45)',
                 subbadgeClass: 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-amber-400/40 text-amber-300 bg-amber-500/10',
@@ -313,7 +293,7 @@
                 subText: 'rgba(203, 213, 225, 0.8)',
                 qrColor: '#e2e8f0',
                 qrBg: '#0b0f19',
-                qrFilter: 'drop-shadow(0 0 6px rgba(226, 232, 240, 0.4))',
+                qrFilterClass: 'drop-shadow-[0_0_6px_rgba(226,232,240,0.4)]',
                 nfcFilter: 'drop-shadow(0 0 3px rgba(203, 213, 225, 0.4))',
                 brandShadow: '0 0 10px rgba(226, 232, 240, 0.5), 0 0 2px #ffffff',
                 subbadgeClass: 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-slate-300/50 text-slate-200 bg-slate-400/10',
@@ -325,7 +305,7 @@
                 subText: '#ffffff',
                 qrColor: '#ffffff',
                 qrBg: '#0b0f19',
-                qrFilter: 'none',
+                qrFilterClass: '',
                 nfcFilter: 'none',
                 brandShadow: 'none',
                 subbadgeClass: 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-white/40 text-white bg-white/5',
@@ -384,7 +364,6 @@
             const name = document.getElementById('elite-display-name');
             const company = document.getElementById('elite-display-company');
             const nfc = document.getElementById('elite-display-nfc');
-            const qrBox = document.getElementById('elite-qr-box');
 
             brand.style.color = palette.accent;
             brand.style.textShadow = palette.brandShadow;
@@ -393,7 +372,6 @@
             company.style.color = palette.subText;
             nfc.style.color = palette.accent;
             nfc.style.filter = palette.nfcFilter;
-            qrBox.style.filter = palette.qrFilter;
 
             syncLivePreviews();
         }
@@ -446,35 +424,75 @@
             document.getElementById('elite-display-name').textContent = nameVal;
             document.getElementById('elite-display-company').textContent = companyVal;
 
-            // Regenerate live QR code for the current URL
-            generateLiveQrCodes(urlVal);
+            // Regenerate live Designer QR code for the current URL
+            generateLiveDesignerQr(urlVal);
         }
 
-        function generateLiveQrCodes(url) {
-            // Pro QR Box (Color: #60a5fa, Bg: #0f172a)
-            const proQrBox = document.getElementById('pro-qr-box');
-            proQrBox.innerHTML = '';
-            new QRCode(proQrBox, {
+        // ==================== DESIGNER ROUNDED-DOT QR CODE GENERATOR ====================
+        // Produces the exact same rounded eyes (rx="9", rx="4") and circular data dots (r="2.5")
+        // as featured on the public product pages, but 100% dynamic and scannable!
+        function generateDesignerQrSvg(url, color, filterClass) {
+            const dummy = document.createElement('div');
+            const qr = new QRCode(dummy, {
                 text: url,
-                width: 140,
-                height: 140,
-                colorDark: '#60a5fa',
-                colorLight: '#0f172a',
-                correctLevel: QRCode.CorrectLevel.H
+                correctLevel: QRCode.CorrectLevel.M
             });
+            const model = qr._oQRCode;
+            currentQrModel = model;
+            const n = model.getModuleCount();
+            const cellSize = 6;
+            const totalSize = n * cellSize;
 
-            // Elite QR Box (Color: chosen finish, Bg: #0b0f19)
+            function isFinderZone(r, c) {
+                if (r < 8 && c < 8) return true; // Top-Left
+                if (r < 8 && c >= n - 8) return true; // Top-Right
+                if (r >= n - 8 && c < 8) return true; // Bottom-Left
+                return false;
+            }
+
+            function renderFinder(startCol, startRow) {
+                const ox = startCol * cellSize + 3;
+                const oy = startRow * cellSize + 3;
+                const ix = startCol * cellSize + 13;
+                const iy = startRow * cellSize + 13;
+                return `
+                    <rect x="${ox}" y="${oy}" width="36" height="36" rx="9" fill="none" stroke="${color}" stroke-width="5.5" />
+                    <rect x="${ix}" y="${iy}" width="16" height="16" rx="4" fill="${color}" />
+                `;
+            }
+
+            let dotsSvg = '';
+            for (let r = 0; r < n; r++) {
+                for (let c = 0; c < n; c++) {
+                    if (!isFinderZone(r, c) && model.isDark(r, c)) {
+                        const cx = c * cellSize + cellSize / 2;
+                        const cy = r * cellSize + cellSize / 2;
+                        dotsSvg += `<circle cx="${cx}" cy="${cy}" r="2.5" fill="${color}" />`;
+                    }
+                }
+            }
+
+            return `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${totalSize} ${totalSize}" class="w-full h-full ${filterClass || ''}">
+                    ${renderFinder(0, 0)}
+                    ${renderFinder(n - 7, 0)}
+                    ${renderFinder(0, n - 7)}
+                    <g>
+                        ${dotsSvg}
+                    </g>
+                </svg>
+            `;
+        }
+
+        function generateLiveDesignerQr(url) {
+            // Pro QR Box
+            const proQrBox = document.getElementById('pro-qr-box');
+            proQrBox.innerHTML = generateDesignerQrSvg(url, '#60a5fa', 'drop-shadow-[0_0_8px_rgba(59,130,246,0.35)]');
+
+            // Elite QR Box
             const palette = finishPalettes[currentFinish] || finishPalettes.gold;
             const eliteQrBox = document.getElementById('elite-qr-box');
-            eliteQrBox.innerHTML = '';
-            new QRCode(eliteQrBox, {
-                text: url,
-                width: 160,
-                height: 160,
-                colorDark: palette.qrColor,
-                colorLight: '#0b0f19',
-                correctLevel: QRCode.CorrectLevel.H
-            });
+            eliteQrBox.innerHTML = generateDesignerQrSvg(url, palette.qrColor, palette.qrFilterClass);
         }
 
         // ==================== HIGH-RES PRINT CANVAS ENGINE ====================
@@ -494,6 +512,71 @@
                 ctx.arcTo(x, y, x + r, y, r);
             }
             ctx.closePath();
+        }
+
+        function drawDesignerQrOnCanvas(ctx, model, ox, oy, targetSize, color) {
+            if (!model) return;
+            const n = model.getModuleCount();
+            const cellSize = targetSize / n;
+
+            function isFinderZone(r, c) {
+                if (r < 8 && c < 8) return true;
+                if (r < 8 && c >= n - 8) return true;
+                if (r >= n - 8 && c < 8) return true;
+                return false;
+            }
+
+            // 1. Draw 3 Rounded Corner Finder Eyes
+            const finders = [
+                { col: 0, row: 0 },
+                { col: n - 7, row: 0 },
+                { col: 0, row: n - 7 }
+            ];
+
+            finders.forEach(f => {
+                const fx = ox + f.col * cellSize;
+                const fy = oy + f.row * cellSize;
+                
+                // Outer rounded rectangle (scaled from 36x36, rx=9, stroke=5.5)
+                const outerX = fx + (3 / 6) * cellSize;
+                const outerY = fy + (3 / 6) * cellSize;
+                const outerW = (36 / 6) * cellSize;
+                const outerH = (36 / 6) * cellSize;
+                const outerR = (9 / 6) * cellSize;
+                const strokeW = (5.5 / 6) * cellSize;
+
+                drawCanvasRoundRect(ctx, outerX, outerY, outerW, outerH, outerR);
+                ctx.lineWidth = strokeW;
+                ctx.strokeStyle = color;
+                ctx.stroke();
+
+                // Inner solid rounded rectangle (scaled from 16x16, rx=4)
+                const innerX = fx + (13 / 6) * cellSize;
+                const innerY = fy + (13 / 6) * cellSize;
+                const innerW = (16 / 6) * cellSize;
+                const innerH = (16 / 6) * cellSize;
+                const innerR = (4 / 6) * cellSize;
+
+                drawCanvasRoundRect(ctx, innerX, innerY, innerW, innerH, innerR);
+                ctx.fillStyle = color;
+                ctx.fill();
+            });
+
+            // 2. Draw all data dots as round circles (scaled from r=2.5)
+            ctx.fillStyle = color;
+            const dotRadius = (2.5 / 6) * cellSize;
+
+            for (let r = 0; r < n; r++) {
+                for (let c = 0; c < n; c++) {
+                    if (!isFinderZone(r, c) && model.isDark(r, c)) {
+                        const cx = ox + c * cellSize + cellSize / 2;
+                        const cy = oy + r * cellSize + cellSize / 2;
+                        ctx.beginPath();
+                        ctx.arc(cx, cy, dotRadius, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+            }
         }
 
         function loadSvgImage(svgStr) {
@@ -521,6 +604,11 @@
             const name = document.getElementById('input-name').value.trim() || 'MOHAMMED ALAMI';
             const company = document.getElementById('input-company').value.trim() || 'NEXUS DIGITAL SARL';
             const url = document.getElementById('input-url').value.trim() || 'https://supertap.ma';
+
+            // Ensure QR model is generated for this URL
+            if (!currentQrModel) {
+                generateLiveDesignerQr(url);
+            }
 
             if (currentModel === 'pro') {
                 // Background matching public page (Midnight Blue)
@@ -573,7 +661,7 @@
                         ctx.drawImage(nfcImg, 980 - 46, 590 - 40, 46, 46);
                     }
                 } else {
-                    // Back Face: Left SuperTap PRO, Right QR Code
+                    // Back Face: Left SuperTap PRO, Right Designer QR Code
                     ctx.font = '900 italic 58px "Poppins", sans-serif';
                     ctx.textAlign = 'center';
                     ctx.fillStyle = '#60a5fa';
@@ -594,10 +682,9 @@
                     ctx.textAlign = 'center';
                     ctx.fillText('PRO', 320, 358);
 
-                    // Grab the live generated QR canvas
-                    const qrCanvas = document.querySelector('#pro-qr-box canvas');
-                    if (qrCanvas) {
-                        ctx.drawImage(qrCanvas, 740 - 110, 331 - 110, 220, 220);
+                    // Render designer rounded-dot QR code
+                    if (currentQrModel) {
+                        drawDesignerQrOnCanvas(ctx, currentQrModel, 740 - 110, 331 - 110, 220, '#60a5fa');
                     }
                 }
             } else {
@@ -665,10 +752,9 @@
                         ctx.drawImage(nfcImg, 980 - 46, 590 - 40, 46, 46);
                     }
                 } else {
-                    // Elite Back: Center Dynamic QR Code in matching finish color
-                    const qrCanvas = document.querySelector('#elite-qr-box canvas');
-                    if (qrCanvas) {
-                        ctx.drawImage(qrCanvas, 525 - 120, 331 - 120, 240, 240);
+                    // Elite Back: Center Dynamic Designer QR Code in matching finish color
+                    if (currentQrModel) {
+                        drawDesignerQrOnCanvas(ctx, currentQrModel, 525 - 120, 331 - 120, 240, palette.qrColor);
                     }
                 }
             }
@@ -790,7 +876,7 @@
             <strong>📐 Recommandations d'impression pour l'atelier :</strong><br>
             • Dimensions finies : <strong>85.60 mm × 53.98 mm</strong> (Épaisseur PVC : 0.76 mm - 30 mil standard)<br>
             • Rayon des coins : <strong>3.18 mm</strong><br>
-            • Le QR code au verso est fonctionnel et vérifié vers : <code>${url}</code><br>
+            • QR code au verso : Design à points ronds avec coins adoucis, vérifié scannable vers <code>${url}</code><br>
             • Encodage de la puce sans-contact : programmer avec cette même URL via NFC Tools
         </div>
     </div>
