@@ -7,7 +7,6 @@
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script src="js/qrcode.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -135,16 +134,16 @@
                         <input type="text" id="input-company" value="NEXUS DIGITAL SARL" placeholder="ex: Nexus Digital SARL" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500 transition" oninput="syncLivePreviews()">
                     </div>
 
-                    <!-- 4. Real Dynamic Profile URL for Live QR Code -->
+                    <!-- 4. Profile URL (Saved into BAT for printing workshop) -->
                     <div>
                         <div class="flex items-center justify-between mb-1.5">
                             <label class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
-                                <span>🔗</span> Lien Réel de la Carte (URL) *
+                                <span>🔗</span> Lien de la Carte (URL) *
                             </label>
-                            <span class="text-[10px] text-slate-400 font-mono">Encodé dans le QR code</span>
+                            <span class="text-[10px] text-slate-400 font-mono">Fiche BAT / Atelier</span>
                         </div>
                         <input type="url" id="input-url" value="https://supertap.ma/p/mohammed-alami" placeholder="https://supertap.ma/p/nom-du-client" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-emerald-500/50 text-emerald-300 text-sm font-mono focus:outline-none focus:border-emerald-400 transition" oninput="syncLivePreviews()">
-                        <p class="text-[11px] text-slate-400 mt-1">QR code dynamique style Designer (points ronds + coins arrondis), scannable par tout smartphone.</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Ce lien est inscrit dans la fiche technique BAT pour la programmation sans-contact de la puce.</p>
                     </div>
                 </div>
 
@@ -167,7 +166,7 @@
         <div class="lg:col-span-7 space-y-8 flex flex-col items-center">
             <div class="w-full text-left">
                 <h3 class="text-lg font-black uppercase italic tracking-tight text-white mb-1">Aperçu Réel Avant Impression</h3>
-                <p class="text-xs text-slate-400">Design 100% conforme au site public, avec les points ronds et coins adoucis sur le QR code verso.</p>
+                <p class="text-xs text-slate-400">Design 100% conforme au site public, dimensions exactes et QR code designer identique.</p>
             </div>
 
             <!-- Recto Box (Exact Card Front) -->
@@ -181,7 +180,7 @@
                     </button>
                 </div>
 
-                <!-- Pro Front Card (Active by default, exact markup from product-pro.html) -->
+                <!-- Pro Front Card (Exact markup from product-pro.html) -->
                 <div id="preview-card-pro-front" class="card-box-pro p-6 flex flex-col justify-between items-start text-left">
                     <!-- Top Row: Company Name -->
                     <div class="w-full flex justify-between items-start z-10 pointer-events-none">
@@ -225,21 +224,18 @@
                 </div>
             </div>
 
-            <!-- Verso Box (Exact Card Back + Dynamic Live QR Code) -->
+            <!-- Verso Box (Exact Card Back + Exact Public QR Code) -->
             <div class="w-full flex flex-col items-center bg-slate-900/60 border border-white/10 rounded-3xl p-6 backdrop-blur-xl">
                 <div class="w-full flex items-center justify-between mb-4">
-                    <div>
-                        <span class="text-xs font-black uppercase tracking-wider text-slate-300 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-purple-400"></span> Verso (Face Arrière)
-                        </span>
-                        <span class="text-[10px] text-emerald-400 font-mono mt-0.5 block">✓ QR Code dynamique (Points Ronds)</span>
-                    </div>
+                    <span class="text-xs font-black uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-purple-400"></span> Verso (Face Arrière)
+                    </span>
                     <button type="button" onclick="downloadSingleCard('back')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-purple-300 border border-purple-500/30 flex items-center gap-1.5 transition">
                         <span>↓</span> Télécharger Verso HD
                     </button>
                 </div>
 
-                <!-- Pro Back Card (Active by default, exact markup from product-pro.html) -->
+                <!-- Pro Back Card (EXACT SAME AS product-pro.html) -->
                 <div id="preview-card-pro-back" class="card-box-pro p-6 flex items-center justify-center">
                     <div class="grid grid-cols-2 w-full h-full items-center z-10 pointer-events-none">
                         <div class="flex flex-col items-center justify-center text-center pr-2">
@@ -247,18 +243,18 @@
                             <span class="text-[8px] uppercase tracking-widest font-black text-blue-300 mt-1 px-2.5 py-0.5 rounded-full bg-blue-500/15 border border-blue-500/30 shadow-sm">PRO</span>
                         </div>
                         <div class="flex items-center justify-center pl-2">
-                            <div id="pro-qr-box" class="w-[68px] h-[68px] flex items-center justify-center flex-shrink-0">
-                                <!-- Designer Rounded-Dot QR code rendered here -->
+                            <div class="w-[68px] h-[68px] flex items-center justify-center text-blue-400 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" fill="currentColor" class="w-full h-full drop-shadow-[0_0_8px_rgba(59,130,246,0.35)]"> <rect x="3" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="111" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="121" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="3" y="111" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="121" width="16" height="16" rx="4" fill="currentColor" /> <g> <circle cx="63" cy="3" r="2.5" /> <circle cx="75" cy="3" r="2.5" /> <circle cx="99" cy="3" r="2.5" /> <circle cx="51" cy="9" r="2.5" /> <circle cx="63" cy="9" r="2.5" /> <circle cx="93" cy="9" r="2.5" /> <circle cx="75" cy="15" r="2.5" /> <circle cx="87" cy="15" r="2.5" /> <circle cx="93" cy="15" r="2.5" /> <circle cx="99" cy="15" r="2.5" /> <circle cx="51" cy="21" r="2.5" /> <circle cx="57" cy="21" r="2.5" /> <circle cx="63" cy="21" r="2.5" /> <circle cx="75" cy="21" r="2.5" /> <circle cx="81" cy="21" r="2.5" /> <circle cx="87" cy="21" r="2.5" /> <circle cx="93" cy="21" r="2.5" /> <circle cx="99" cy="21" r="2.5" /> <circle cx="57" cy="27" r="2.5" /> <circle cx="87" cy="27" r="2.5" /> <circle cx="99" cy="27" r="2.5" /> <circle cx="51" cy="33" r="2.5" /> <circle cx="57" cy="33" r="2.5" /> <circle cx="69" cy="33" r="2.5" /> <circle cx="75" cy="33" r="2.5" /> <circle cx="93" cy="33" r="2.5" /> <circle cx="51" cy="39" r="2.5" /> <circle cx="63" cy="39" r="2.5" /> <circle cx="75" cy="39" r="2.5" /> <circle cx="87" cy="39" r="2.5" /> <circle cx="99" cy="39" r="2.5" /> <circle cx="57" cy="45" r="2.5" /> <circle cx="63" cy="45" r="2.5" /> <circle cx="69" cy="45" r="2.5" /> <circle cx="3" cy="51" r="2.5" /> <circle cx="9" cy="51" r="2.5" /> <circle cx="15" cy="51" r="2.5" /> <circle cx="21" cy="51" r="2.5" /> <circle cx="27" cy="51" r="2.5" /> <circle cx="39" cy="51" r="2.5" /> <circle cx="45" cy="51" r="2.5" /> <circle cx="51" cy="51" r="2.5" /> <circle cx="57" cy="51" r="2.5" /> <circle cx="69" cy="51" r="2.5" /> <circle cx="81" cy="51" r="2.5" /> <circle cx="93" cy="51" r="2.5" /> <circle cx="99" cy="51" r="2.5" /> <circle cx="105" cy="51" r="2.5" /> <circle cx="117" cy="51" r="2.5" /> <circle cx="129" cy="51" r="2.5" /> <circle cx="141" cy="51" r="2.5" /> <circle cx="3" cy="57" r="2.5" /> <circle cx="15" cy="57" r="2.5" /> <circle cx="21" cy="57" r="2.5" /> <circle cx="27" cy="57" r="2.5" /> <circle cx="33" cy="57" r="2.5" /> <circle cx="45" cy="57" r="2.5" /> <circle cx="63" cy="57" r="2.5" /> <circle cx="75" cy="57" r="2.5" /> <circle cx="81" cy="57" r="2.5" /> <circle cx="99" cy="57" r="2.5" /> <circle cx="117" cy="57" r="2.5" /> <circle cx="141" cy="57" r="2.5" /> <circle cx="3" cy="63" r="2.5" /> <circle cx="9" cy="63" r="2.5" /> <circle cx="27" cy="63" r="2.5" /> <circle cx="33" cy="63" r="2.5" /> <circle cx="39" cy="63" r="2.5" /> <circle cx="51" cy="63" r="2.5" /> <circle cx="63" cy="63" r="2.5" /> <circle cx="81" cy="63" r="2.5" /> <circle cx="87" cy="63" r="2.5" /> <circle cx="93" cy="63" r="2.5" /> <circle cx="99" cy="63" r="2.5" /> <circle cx="105" cy="63" r="2.5" /> <circle cx="111" cy="63" r="2.5" /> <circle cx="117" cy="63" r="2.5" /> <circle cx="123" cy="63" r="2.5" /> <circle cx="129" cy="63" r="2.5" /> <circle cx="141" cy="63" r="2.5" /> <circle cx="147" cy="63" r="2.5" /> <circle cx="9" cy="69" r="2.5" /> <circle cx="15" cy="69" r="2.5" /> <circle cx="21" cy="69" r="2.5" /> <circle cx="27" cy="69" r="2.5" /> <circle cx="75" cy="69" r="2.5" /> <circle cx="93" cy="69" r="2.5" /> <circle cx="99" cy="69" r="2.5" /> <circle cx="105" cy="69" r="2.5" /> <circle cx="111" cy="69" r="2.5" /> <circle cx="117" cy="69" r="2.5" /> <circle cx="147" cy="69" r="2.5" /> <circle cx="3" cy="75" r="2.5" /> <circle cx="9" cy="75" r="2.5" /> <circle cx="21" cy="75" r="2.5" /> <circle cx="27" cy="75" r="2.5" /> <circle cx="39" cy="75" r="2.5" /> <circle cx="57" cy="75" r="2.5" /> <circle cx="63" cy="75" r="2.5" /> <circle cx="75" cy="75" r="2.5" /> <circle cx="81" cy="75" r="2.5" /> <circle cx="87" cy="75" r="2.5" /> <circle cx="93" cy="75" r="2.5" /> <circle cx="105" cy="75" r="2.5" /> <circle cx="111" cy="75" r="2.5" /> <circle cx="123" cy="75" r="2.5" /> <circle cx="135" cy="75" r="2.5" /> <circle cx="141" cy="75" r="2.5" /> <circle cx="147" cy="75" r="2.5" /> <circle cx="3" cy="81" r="2.5" /> <circle cx="9" cy="81" r="2.5" /> <circle cx="51" cy="81" r="2.5" /> <circle cx="99" cy="81" r="2.5" /> <circle cx="105" cy="81" r="2.5" /> <circle cx="117" cy="81" r="2.5" /> <circle cx="129" cy="81" r="2.5" /> <circle cx="141" cy="81" r="2.5" /> <circle cx="3" cy="87" r="2.5" /> <circle cx="21" cy="87" r="2.5" /> <circle cx="27" cy="87" r="2.5" /> <circle cx="39" cy="87" r="2.5" /> <circle cx="45" cy="87" r="2.5" /> <circle cx="69" cy="87" r="2.5" /> <circle cx="75" cy="87" r="2.5" /> <circle cx="81" cy="87" r="2.5" /> <circle cx="93" cy="87" r="2.5" /> <circle cx="105" cy="87" r="2.5" /> <circle cx="111" cy="87" r="2.5" /> <circle cx="117" cy="87" r="2.5" /> <circle cx="123" cy="87" r="2.5" /> <circle cx="129" cy="87" r="2.5" /> <circle cx="141" cy="87" r="2.5" /> <circle cx="147" cy="87" r="2.5" /> <circle cx="3" cy="93" r="2.5" /> <circle cx="27" cy="93" r="2.5" /> <circle cx="33" cy="93" r="2.5" /> <circle cx="45" cy="93" r="2.5" /> <circle cx="51" cy="93" r="2.5" /> <circle cx="63" cy="93" r="2.5" /> <circle cx="69" cy="93" r="2.5" /> <circle cx="87" cy="93" r="2.5" /> <circle cx="93" cy="93" r="2.5" /> <circle cx="111" cy="93" r="2.5" /> <circle cx="117" cy="93" r="2.5" /> <circle cx="123" cy="93" r="2.5" /> <circle cx="147" cy="93" r="2.5" /> <circle cx="3" cy="99" r="2.5" /> <circle cx="27" cy="99" r="2.5" /> <circle cx="33" cy="99" r="2.5" /> <circle cx="39" cy="99" r="2.5" /> <circle cx="57" cy="99" r="2.5" /> <circle cx="69" cy="99" r="2.5" /> <circle cx="81" cy="99" r="2.5" /> <circle cx="87" cy="99" r="2.5" /> <circle cx="93" cy="99" r="2.5" /> <circle cx="99" cy="99" r="2.5" /> <circle cx="105" cy="99" r="2.5" /> <circle cx="111" cy="99" r="2.5" /> <circle cx="117" cy="99" r="2.5" /> <circle cx="123" cy="99" r="2.5" /> <circle cx="135" cy="99" r="2.5" /> <circle cx="51" cy="105" r="2.5" /> <circle cx="75" cy="105" r="2.5" /> <circle cx="81" cy="105" r="2.5" /> <circle cx="99" cy="105" r="2.5" /> <circle cx="123" cy="105" r="2.5" /> <circle cx="129" cy="105" r="2.5" /> <circle cx="51" cy="111" r="2.5" /> <circle cx="63" cy="111" r="2.5" /> <circle cx="81" cy="111" r="2.5" /> <circle cx="87" cy="111" r="2.5" /> <circle cx="99" cy="111" r="2.5" /> <circle cx="111" cy="111" r="2.5" /> <circle cx="123" cy="111" r="2.5" /> <circle cx="135" cy="111" r="2.5" /> <circle cx="141" cy="111" r="2.5" /> <circle cx="147" cy="111" r="2.5" /> <circle cx="63" cy="117" r="2.5" /> <circle cx="75" cy="117" r="2.5" /> <circle cx="87" cy="117" r="2.5" /> <circle cx="99" cy="117" r="2.5" /> <circle cx="123" cy="117" r="2.5" /> <circle cx="129" cy="117" r="2.5" /> <circle cx="141" cy="117" r="2.5" /> <circle cx="51" cy="123" r="2.5" /> <circle cx="63" cy="123" r="2.5" /> <circle cx="75" cy="123" r="2.5" /> <circle cx="81" cy="123" r="2.5" /> <circle cx="87" cy="123" r="2.5" /> <circle cx="93" cy="123" r="2.5" /> <circle cx="99" cy="123" r="2.5" /> <circle cx="105" cy="123" r="2.5" /> <circle cx="111" cy="123" r="2.5" /> <circle cx="117" cy="123" r="2.5" /> <circle cx="123" cy="123" r="2.5" /> <circle cx="135" cy="123" r="2.5" /> <circle cx="141" cy="123" r="2.5" /> <circle cx="147" cy="123" r="2.5" /> <circle cx="51" cy="129" r="2.5" /> <circle cx="81" cy="129" r="2.5" /> <circle cx="105" cy="129" r="2.5" /> <circle cx="111" cy="129" r="2.5" /> <circle cx="123" cy="129" r="2.5" /> <circle cx="129" cy="129" r="2.5" /> <circle cx="135" cy="129" r="2.5" /> <circle cx="141" cy="129" r="2.5" /> <circle cx="147" cy="129" r="2.5" /> <circle cx="51" cy="135" r="2.5" /> <circle cx="57" cy="135" r="2.5" /> <circle cx="63" cy="135" r="2.5" /> <circle cx="69" cy="135" r="2.5" /> <circle cx="75" cy="135" r="2.5" /> <circle cx="87" cy="135" r="2.5" /> <circle cx="105" cy="135" r="2.5" /> <circle cx="129" cy="135" r="2.5" /> <circle cx="135" cy="135" r="2.5" /> <circle cx="147" cy="135" r="2.5" /> <circle cx="51" cy="141" r="2.5" /> <circle cx="63" cy="141" r="2.5" /> <circle cx="69" cy="141" r="2.5" /> <circle cx="87" cy="141" r="2.5" /> <circle cx="99" cy="141" r="2.5" /> <circle cx="111" cy="141" r="2.5" /> <circle cx="117" cy="141" r="2.5" /> <circle cx="123" cy="141" r="2.5" /> <circle cx="129" cy="141" r="2.5" /> <circle cx="147" cy="141" r="2.5" /> <circle cx="51" cy="147" r="2.5" /> <circle cx="57" cy="147" r="2.5" /> <circle cx="63" cy="147" r="2.5" /> <circle cx="69" cy="147" r="2.5" /> <circle cx="75" cy="147" r="2.5" /> <circle cx="105" cy="147" r="2.5" /> <circle cx="117" cy="147" r="2.5" /> <circle cx="123" cy="147" r="2.5" /> <circle cx="129" cy="147" r="2.5" /> <circle cx="135" cy="147" r="2.5" /> <circle cx="141" cy="147" r="2.5" /> <circle cx="147" cy="147" r="2.5" /> </g> </svg>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Elite Back Card (Shown when Elite selected, exact markup from product-elite.html) -->
+                <!-- Elite Back Card (EXACT SAME AS product-elite.html) -->
                 <div id="preview-card-elite-back" class="card-box-elite p-6 flex items-center justify-center hidden">
                     <div class="flex items-center justify-center w-full h-full z-10 pointer-events-none">
-                        <div id="elite-qr-box" class="w-20 h-20 flex items-center justify-center flex-shrink-0">
-                            <!-- Designer Rounded-Dot QR code rendered here in foil color -->
+                        <div id="elite-card-back-qr" class="w-20 h-20 flex items-center justify-center transition-colors duration-300 text-amber-400 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" fill="currentColor"> <rect x="3" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="111" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="121" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="3" y="111" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="121" width="16" height="16" rx="4" fill="currentColor" /> <g> <circle cx="63" cy="3" r="2.5" /> <circle cx="75" cy="3" r="2.5" /> <circle cx="99" cy="3" r="2.5" /> <circle cx="51" cy="9" r="2.5" /> <circle cx="63" cy="9" r="2.5" /> <circle cx="93" cy="9" r="2.5" /> <circle cx="75" cy="15" r="2.5" /> <circle cx="87" cy="15" r="2.5" /> <circle cx="93" cy="15" r="2.5" /> <circle cx="99" cy="15" r="2.5" /> <circle cx="51" cy="21" r="2.5" /> <circle cx="57" cy="21" r="2.5" /> <circle cx="63" cy="21" r="2.5" /> <circle cx="75" cy="21" r="2.5" /> <circle cx="81" cy="21" r="2.5" /> <circle cx="87" cy="21" r="2.5" /> <circle cx="93" cy="21" r="2.5" /> <circle cx="99" cy="21" r="2.5" /> <circle cx="57" cy="27" r="2.5" /> <circle cx="87" cy="27" r="2.5" /> <circle cx="99" cy="27" r="2.5" /> <circle cx="51" cy="33" r="2.5" /> <circle cx="57" cy="33" r="2.5" /> <circle cx="69" cy="33" r="2.5" /> <circle cx="75" cy="33" r="2.5" /> <circle cx="93" cy="33" r="2.5" /> <circle cx="51" cy="39" r="2.5" /> <circle cx="63" cy="39" r="2.5" /> <circle cx="75" cy="39" r="2.5" /> <circle cx="87" cy="39" r="2.5" /> <circle cx="99" cy="39" r="2.5" /> <circle cx="57" cy="45" r="2.5" /> <circle cx="63" cy="45" r="2.5" /> <circle cx="69" cy="45" r="2.5" /> <circle cx="3" cy="51" r="2.5" /> <circle cx="9" cy="51" r="2.5" /> <circle cx="15" cy="51" r="2.5" /> <circle cx="21" cy="51" r="2.5" /> <circle cx="27" cy="51" r="2.5" /> <circle cx="39" cy="51" r="2.5" /> <circle cx="45" cy="51" r="2.5" /> <circle cx="51" cy="51" r="2.5" /> <circle cx="57" cy="51" r="2.5" /> <circle cx="69" cy="51" r="2.5" /> <circle cx="81" cy="51" r="2.5" /> <circle cx="93" cy="51" r="2.5" /> <circle cx="99" cy="51" r="2.5" /> <circle cx="105" cy="51" r="2.5" /> <circle cx="117" cy="51" r="2.5" /> <circle cx="129" cy="51" r="2.5" /> <circle cx="141" cy="51" r="2.5" /> <circle cx="3" cy="57" r="2.5" /> <circle cx="15" cy="57" r="2.5" /> <circle cx="21" cy="57" r="2.5" /> <circle cx="27" cy="57" r="2.5" /> <circle cx="33" cy="57" r="2.5" /> <circle cx="45" cy="57" r="2.5" /> <circle cx="63" cy="57" r="2.5" /> <circle cx="75" cy="57" r="2.5" /> <circle cx="81" cy="57" r="2.5" /> <circle cx="99" cy="57" r="2.5" /> <circle cx="117" cy="57" r="2.5" /> <circle cx="141" cy="57" r="2.5" /> <circle cx="3" cy="63" r="2.5" /> <circle cx="9" cy="63" r="2.5" /> <circle cx="27" cy="63" r="2.5" /> <circle cx="33" cy="63" r="2.5" /> <circle cx="39" cy="63" r="2.5" /> <circle cx="51" cy="63" r="2.5" /> <circle cx="63" cy="63" r="2.5" /> <circle cx="81" cy="63" r="2.5" /> <circle cx="87" cy="63" r="2.5" /> <circle cx="93" cy="63" r="2.5" /> <circle cx="99" cy="63" r="2.5" /> <circle cx="105" cy="63" r="2.5" /> <circle cx="111" cy="63" r="2.5" /> <circle cx="117" cy="63" r="2.5" /> <circle cx="123" cy="63" r="2.5" /> <circle cx="129" cy="63" r="2.5" /> <circle cx="141" cy="63" r="2.5" /> <circle cx="147" cy="63" r="2.5" /> <circle cx="9" cy="69" r="2.5" /> <circle cx="15" cy="69" r="2.5" /> <circle cx="21" cy="69" r="2.5" /> <circle cx="27" cy="69" r="2.5" /> <circle cx="75" cy="69" r="2.5" /> <circle cx="93" cy="69" r="2.5" /> <circle cx="99" cy="69" r="2.5" /> <circle cx="105" cy="69" r="2.5" /> <circle cx="111" cy="69" r="2.5" /> <circle cx="117" cy="69" r="2.5" /> <circle cx="147" cy="69" r="2.5" /> <circle cx="3" cy="75" r="2.5" /> <circle cx="9" cy="75" r="2.5" /> <circle cx="21" cy="75" r="2.5" /> <circle cx="27" cy="75" r="2.5" /> <circle cx="39" cy="75" r="2.5" /> <circle cx="57" cy="75" r="2.5" /> <circle cx="63" cy="75" r="2.5" /> <circle cx="75" cy="75" r="2.5" /> <circle cx="81" cy="75" r="2.5" /> <circle cx="87" cy="75" r="2.5" /> <circle cx="93" cy="75" r="2.5" /> <circle cx="105" cy="75" r="2.5" /> <circle cx="111" cy="75" r="2.5" /> <circle cx="123" cy="75" r="2.5" /> <circle cx="135" cy="75" r="2.5" /> <circle cx="141" cy="75" r="2.5" /> <circle cx="147" cy="75" r="2.5" /> <circle cx="3" cy="81" r="2.5" /> <circle cx="9" cy="81" r="2.5" /> <circle cx="51" cy="81" r="2.5" /> <circle cx="99" cy="81" r="2.5" /> <circle cx="105" cy="81" r="2.5" /> <circle cx="117" cy="81" r="2.5" /> <circle cx="129" cy="81" r="2.5" /> <circle cx="141" cy="81" r="2.5" /> <circle cx="3" cy="87" r="2.5" /> <circle cx="21" cy="87" r="2.5" /> <circle cx="27" cy="87" r="2.5" /> <circle cx="39" cy="87" r="2.5" /> <circle cx="45" cy="87" r="2.5" /> <circle cx="69" cy="87" r="2.5" /> <circle cx="75" cy="87" r="2.5" /> <circle cx="81" cy="87" r="2.5" /> <circle cx="93" cy="87" r="2.5" /> <circle cx="105" cy="87" r="2.5" /> <circle cx="111" cy="87" r="2.5" /> <circle cx="117" cy="87" r="2.5" /> <circle cx="123" cy="87" r="2.5" /> <circle cx="129" cy="87" r="2.5" /> <circle cx="141" cy="87" r="2.5" /> <circle cx="147" cy="87" r="2.5" /> <circle cx="3" cy="93" r="2.5" /> <circle cx="27" cy="93" r="2.5" /> <circle cx="33" cy="93" r="2.5" /> <circle cx="45" cy="93" r="2.5" /> <circle cx="51" cy="93" r="2.5" /> <circle cx="63" cy="93" r="2.5" /> <circle cx="69" cy="93" r="2.5" /> <circle cx="87" cy="93" r="2.5" /> <circle cx="93" cy="93" r="2.5" /> <circle cx="111" cy="93" r="2.5" /> <circle cx="117" cy="93" r="2.5" /> <circle cx="123" cy="93" r="2.5" /> <circle cx="147" cy="93" r="2.5" /> <circle cx="3" cy="99" r="2.5" /> <circle cx="27" cy="99" r="2.5" /> <circle cx="33" cy="99" r="2.5" /> <circle cx="39" cy="99" r="2.5" /> <circle cx="57" cy="99" r="2.5" /> <circle cx="69" cy="99" r="2.5" /> <circle cx="81" cy="99" r="2.5" /> <circle cx="87" cy="99" r="2.5" /> <circle cx="93" cy="99" r="2.5" /> <circle cx="99" cy="99" r="2.5" /> <circle cx="105" cy="99" r="2.5" /> <circle cx="111" cy="99" r="2.5" /> <circle cx="117" cy="99" r="2.5" /> <circle cx="123" cy="99" r="2.5" /> <circle cx="135" cy="99" r="2.5" /> <circle cx="51" cy="105" r="2.5" /> <circle cx="75" cy="105" r="2.5" /> <circle cx="81" cy="105" r="2.5" /> <circle cx="99" cy="105" r="2.5" /> <circle cx="123" cy="105" r="2.5" /> <circle cx="129" cy="105" r="2.5" /> <circle cx="51" cy="111" r="2.5" /> <circle cx="63" cy="111" r="2.5" /> <circle cx="81" cy="111" r="2.5" /> <circle cx="87" cy="111" r="2.5" /> <circle cx="99" cy="111" r="2.5" /> <circle cx="111" cy="111" r="2.5" /> <circle cx="123" cy="111" r="2.5" /> <circle cx="135" cy="111" r="2.5" /> <circle cx="141" cy="111" r="2.5" /> <circle cx="147" cy="111" r="2.5" /> <circle cx="63" cy="117" r="2.5" /> <circle cx="75" cy="117" r="2.5" /> <circle cx="87" cy="117" r="2.5" /> <circle cx="99" cy="117" r="2.5" /> <circle cx="123" cy="117" r="2.5" /> <circle cx="129" cy="117" r="2.5" /> <circle cx="141" cy="117" r="2.5" /> <circle cx="51" cy="123" r="2.5" /> <circle cx="63" cy="123" r="2.5" /> <circle cx="75" cy="123" r="2.5" /> <circle cx="81" cy="123" r="2.5" /> <circle cx="87" cy="123" r="2.5" /> <circle cx="93" cy="123" r="2.5" /> <circle cx="99" cy="123" r="2.5" /> <circle cx="105" cy="123" r="2.5" /> <circle cx="111" cy="123" r="2.5" /> <circle cx="117" cy="123" r="2.5" /> <circle cx="123" cy="123" r="2.5" /> <circle cx="135" cy="123" r="2.5" /> <circle cx="141" cy="123" r="2.5" /> <circle cx="147" cy="123" r="2.5" /> <circle cx="51" cy="129" r="2.5" /> <circle cx="81" cy="129" r="2.5" /> <circle cx="105" cy="129" r="2.5" /> <circle cx="111" cy="129" r="2.5" /> <circle cx="123" cy="129" r="2.5" /> <circle cx="129" cy="129" r="2.5" /> <circle cx="135" cy="129" r="2.5" /> <circle cx="141" cy="129" r="2.5" /> <circle cx="147" cy="129" r="2.5" /> <circle cx="51" cy="135" r="2.5" /> <circle cx="57" cy="135" r="2.5" /> <circle cx="63" cy="135" r="2.5" /> <circle cx="69" cy="135" r="2.5" /> <circle cx="75" cy="135" r="2.5" /> <circle cx="87" cy="135" r="2.5" /> <circle cx="105" cy="135" r="2.5" /> <circle cx="129" cy="135" r="2.5" /> <circle cx="135" cy="135" r="2.5" /> <circle cx="147" cy="135" r="2.5" /> <circle cx="51" cy="141" r="2.5" /> <circle cx="63" cy="141" r="2.5" /> <circle cx="69" cy="141" r="2.5" /> <circle cx="87" cy="141" r="2.5" /> <circle cx="99" cy="141" r="2.5" /> <circle cx="111" cy="141" r="2.5" /> <circle cx="117" cy="141" r="2.5" /> <circle cx="123" cy="141" r="2.5" /> <circle cx="129" cy="141" r="2.5" /> <circle cx="147" cy="141" r="2.5" /> <circle cx="51" cy="147" r="2.5" /> <circle cx="57" cy="147" r="2.5" /> <circle cx="63" cy="147" r="2.5" /> <circle cx="69" cy="147" r="2.5" /> <circle cx="75" cy="147" r="2.5" /> <circle cx="105" cy="147" r="2.5" /> <circle cx="117" cy="147" r="2.5" /> <circle cx="123" cy="147" r="2.5" /> <circle cx="129" cy="147" r="2.5" /> <circle cx="135" cy="147" r="2.5" /> <circle cx="141" cy="147" r="2.5" /> <circle cx="147" cy="147" r="2.5" /> </g> </svg>
                         </div>
                     </div>
                 </div>
@@ -272,17 +268,12 @@
         let currentFinish = 'gold'; // 'gold', 'silver', 'white'
         let clientUploadedLogo = null;
         let clientLogoFileName = '';
-        let currentQrModel = null;
 
         const finishPalettes = {
             gold: {
                 accent: '#fbbf24',
                 text: '#fcd34d',
                 subText: 'rgba(252, 211, 77, 0.8)',
-                qrColor: '#fbbf24',
-                qrBg: '#0b0f19',
-                qrFilterClass: 'drop-shadow-[0_0_8px_rgba(251,191,36,0.45)]',
-                nfcFilter: 'drop-shadow(0 0 4px rgba(251, 191, 36, 0.4))',
                 brandShadow: '0 0 12px rgba(251, 191, 36, 0.45)',
                 subbadgeClass: 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-amber-400/40 text-amber-300 bg-amber-500/10',
                 nameLabel: 'Dorée (Gold Foil)'
@@ -291,10 +282,6 @@
                 accent: '#e2e8f0',
                 text: '#cbd5e1',
                 subText: 'rgba(203, 213, 225, 0.8)',
-                qrColor: '#e2e8f0',
-                qrBg: '#0b0f19',
-                qrFilterClass: 'drop-shadow-[0_0_6px_rgba(226,232,240,0.4)]',
-                nfcFilter: 'drop-shadow(0 0 3px rgba(203, 213, 225, 0.4))',
                 brandShadow: '0 0 10px rgba(226, 232, 240, 0.5), 0 0 2px #ffffff',
                 subbadgeClass: 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-slate-300/50 text-slate-200 bg-slate-400/10',
                 nameLabel: 'Argent (Silver Foil)'
@@ -303,10 +290,6 @@
                 accent: '#ffffff',
                 text: '#ffffff',
                 subText: '#ffffff',
-                qrColor: '#ffffff',
-                qrBg: '#0b0f19',
-                qrFilterClass: '',
-                nfcFilter: 'none',
                 brandShadow: 'none',
                 subbadgeClass: 'text-[8px] uppercase tracking-widest font-extrabold mt-1 px-2.5 py-0.5 rounded-full border border-white/40 text-white bg-white/5',
                 nameLabel: 'Blanche (Crisp White)'
@@ -364,6 +347,7 @@
             const name = document.getElementById('elite-display-name');
             const company = document.getElementById('elite-display-company');
             const nfc = document.getElementById('elite-display-nfc');
+            const backQr = document.getElementById('elite-card-back-qr');
 
             brand.style.color = palette.accent;
             brand.style.textShadow = palette.brandShadow;
@@ -371,7 +355,20 @@
             name.style.color = palette.text;
             company.style.color = palette.subText;
             nfc.style.color = palette.accent;
-            nfc.style.filter = palette.nfcFilter;
+
+            if (finish === 'gold') {
+                nfc.style.filter = 'drop-shadow(0 0 4px rgba(251,191,36,0.4))';
+                backQr.style.color = '#fbbf24';
+                backQr.style.filter = 'drop-shadow(0 0 8px rgba(251,191,36,0.45))';
+            } else if (finish === 'silver') {
+                nfc.style.filter = 'drop-shadow(0 0 3px rgba(203,213,225,0.4))';
+                backQr.style.color = '#e2e8f0';
+                backQr.style.filter = 'drop-shadow(0 0 6px rgba(226,232,240,0.4))';
+            } else {
+                nfc.style.filter = 'none';
+                backQr.style.color = '#ffffff';
+                backQr.style.filter = 'none';
+            }
 
             syncLivePreviews();
         }
@@ -414,7 +411,6 @@
         function syncLivePreviews() {
             const nameVal = document.getElementById('input-name').value.trim() || "Nom & Prénom";
             const companyVal = document.getElementById('input-company').value.trim() || "Nom d'entreprise";
-            const urlVal = document.getElementById('input-url').value.trim() || "https://supertap.ma";
 
             // Update Pro
             document.getElementById('pro-display-name').textContent = nameVal;
@@ -423,76 +419,6 @@
             // Update Elite
             document.getElementById('elite-display-name').textContent = nameVal;
             document.getElementById('elite-display-company').textContent = companyVal;
-
-            // Regenerate live Designer QR code for the current URL
-            generateLiveDesignerQr(urlVal);
-        }
-
-        // ==================== DESIGNER ROUNDED-DOT QR CODE GENERATOR ====================
-        // Produces the exact same rounded eyes (rx="9", rx="4") and circular data dots (r="2.5")
-        // as featured on the public product pages, but 100% dynamic and scannable!
-        function generateDesignerQrSvg(url, color, filterClass) {
-            const dummy = document.createElement('div');
-            const qr = new QRCode(dummy, {
-                text: url,
-                correctLevel: QRCode.CorrectLevel.M
-            });
-            const model = qr._oQRCode;
-            currentQrModel = model;
-            const n = model.getModuleCount();
-            const cellSize = 6;
-            const totalSize = n * cellSize;
-
-            function isFinderZone(r, c) {
-                if (r < 8 && c < 8) return true; // Top-Left
-                if (r < 8 && c >= n - 8) return true; // Top-Right
-                if (r >= n - 8 && c < 8) return true; // Bottom-Left
-                return false;
-            }
-
-            function renderFinder(startCol, startRow) {
-                const ox = startCol * cellSize + 3;
-                const oy = startRow * cellSize + 3;
-                const ix = startCol * cellSize + 13;
-                const iy = startRow * cellSize + 13;
-                return `
-                    <rect x="${ox}" y="${oy}" width="36" height="36" rx="9" fill="none" stroke="${color}" stroke-width="5.5" />
-                    <rect x="${ix}" y="${iy}" width="16" height="16" rx="4" fill="${color}" />
-                `;
-            }
-
-            let dotsSvg = '';
-            for (let r = 0; r < n; r++) {
-                for (let c = 0; c < n; c++) {
-                    if (!isFinderZone(r, c) && model.isDark(r, c)) {
-                        const cx = c * cellSize + cellSize / 2;
-                        const cy = r * cellSize + cellSize / 2;
-                        dotsSvg += `<circle cx="${cx}" cy="${cy}" r="2.5" fill="${color}" />`;
-                    }
-                }
-            }
-
-            return `
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${totalSize} ${totalSize}" class="w-full h-full ${filterClass || ''}">
-                    ${renderFinder(0, 0)}
-                    ${renderFinder(n - 7, 0)}
-                    ${renderFinder(0, n - 7)}
-                    <g>
-                        ${dotsSvg}
-                    </g>
-                </svg>
-            `;
-        }
-
-        function generateLiveDesignerQr(url) {
-            // Pro QR Box
-            const proQrBox = document.getElementById('pro-qr-box');
-            proQrBox.innerHTML = generateDesignerQrSvg(url, '#60a5fa', 'drop-shadow-[0_0_8px_rgba(59,130,246,0.35)]');
-
-            // Elite QR Box
-            const palette = finishPalettes[currentFinish] || finishPalettes.gold;
-            const eliteQrBox = document.getElementById('elite-qr-box');
-            eliteQrBox.innerHTML = generateDesignerQrSvg(url, palette.qrColor, palette.qrFilterClass);
         }
 
         // ==================== HIGH-RES PRINT CANVAS ENGINE ====================
@@ -514,71 +440,6 @@
             ctx.closePath();
         }
 
-        function drawDesignerQrOnCanvas(ctx, model, ox, oy, targetSize, color) {
-            if (!model) return;
-            const n = model.getModuleCount();
-            const cellSize = targetSize / n;
-
-            function isFinderZone(r, c) {
-                if (r < 8 && c < 8) return true;
-                if (r < 8 && c >= n - 8) return true;
-                if (r >= n - 8 && c < 8) return true;
-                return false;
-            }
-
-            // 1. Draw 3 Rounded Corner Finder Eyes
-            const finders = [
-                { col: 0, row: 0 },
-                { col: n - 7, row: 0 },
-                { col: 0, row: n - 7 }
-            ];
-
-            finders.forEach(f => {
-                const fx = ox + f.col * cellSize;
-                const fy = oy + f.row * cellSize;
-                
-                // Outer rounded rectangle (scaled from 36x36, rx=9, stroke=5.5)
-                const outerX = fx + (3 / 6) * cellSize;
-                const outerY = fy + (3 / 6) * cellSize;
-                const outerW = (36 / 6) * cellSize;
-                const outerH = (36 / 6) * cellSize;
-                const outerR = (9 / 6) * cellSize;
-                const strokeW = (5.5 / 6) * cellSize;
-
-                drawCanvasRoundRect(ctx, outerX, outerY, outerW, outerH, outerR);
-                ctx.lineWidth = strokeW;
-                ctx.strokeStyle = color;
-                ctx.stroke();
-
-                // Inner solid rounded rectangle (scaled from 16x16, rx=4)
-                const innerX = fx + (13 / 6) * cellSize;
-                const innerY = fy + (13 / 6) * cellSize;
-                const innerW = (16 / 6) * cellSize;
-                const innerH = (16 / 6) * cellSize;
-                const innerR = (4 / 6) * cellSize;
-
-                drawCanvasRoundRect(ctx, innerX, innerY, innerW, innerH, innerR);
-                ctx.fillStyle = color;
-                ctx.fill();
-            });
-
-            // 2. Draw all data dots as round circles (scaled from r=2.5)
-            ctx.fillStyle = color;
-            const dotRadius = (2.5 / 6) * cellSize;
-
-            for (let r = 0; r < n; r++) {
-                for (let c = 0; c < n; c++) {
-                    if (!isFinderZone(r, c) && model.isDark(r, c)) {
-                        const cx = ox + c * cellSize + cellSize / 2;
-                        const cy = oy + r * cellSize + cellSize / 2;
-                        ctx.beginPath();
-                        ctx.arc(cx, cy, dotRadius, 0, Math.PI * 2);
-                        ctx.fill();
-                    }
-                }
-            }
-        }
-
         function loadSvgImage(svgStr) {
             return new Promise((resolve) => {
                 if (!svgStr) return resolve(null);
@@ -593,6 +454,13 @@
             });
         }
 
+        // Extract raw inner SVG for printing
+        const rawPublicQrSvgInner = `<rect x="3" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="111" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="121" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="3" y="111" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="121" width="16" height="16" rx="4" fill="currentColor" /> <g> <circle cx="63" cy="3" r="2.5" /> <circle cx="75" cy="3" r="2.5" /> <circle cx="99" cy="3" r="2.5" /> <circle cx="51" cy="9" r="2.5" /> <circle cx="63" cy="9" r="2.5" /> <circle cx="93" cy="9" r="2.5" /> <circle cx="75" cy="15" r="2.5" /> <circle cx="87" cy="15" r="2.5" /> <circle cx="93" cy="15" r="2.5" /> <circle cx="99" cy="15" r="2.5" /> <circle cx="51" cy="21" r="2.5" /> <circle cx="57" cy="21" r="2.5" /> <circle cx="63" cy="21" r="2.5" /> <circle cx="75" cy="21" r="2.5" /> <circle cx="81" cy="21" r="2.5" /> <circle cx="87" cy="21" r="2.5" /> <circle cx="93" cy="21" r="2.5" /> <circle cx="99" cy="21" r="2.5" /> <circle cx="57" cy="27" r="2.5" /> <circle cx="87" cy="27" r="2.5" /> <circle cx="99" cy="27" r="2.5" /> <circle cx="51" cy="33" r="2.5" /> <circle cx="57" cy="33" r="2.5" /> <circle cx="69" cy="33" r="2.5" /> <circle cx="75" cy="33" r="2.5" /> <circle cx="93" cy="33" r="2.5" /> <circle cx="51" cy="39" r="2.5" /> <circle cx="63" cy="39" r="2.5" /> <circle cx="75" cy="39" r="2.5" /> <circle cx="87" cy="39" r="2.5" /> <circle cx="99" cy="39" r="2.5" /> <circle cx="57" cy="45" r="2.5" /> <circle cx="63" cy="45" r="2.5" /> <circle cx="69" cy="45" r="2.5" /> <circle cx="3" cy="51" r="2.5" /> <circle cx="9" cy="51" r="2.5" /> <circle cx="15" cy="51" r="2.5" /> <circle cx="21" cy="51" r="2.5" /> <circle cx="27" cy="51" r="2.5" /> <circle cx="39" cy="51" r="2.5" /> <circle cx="45" cy="51" r="2.5" /> <circle cx="51" cy="51" r="2.5" /> <circle cx="57" cy="51" r="2.5" /> <circle cx="69" cy="51" r="2.5" /> <circle cx="81" cy="51" r="2.5" /> <circle cx="93" cy="51" r="2.5" /> <circle cx="99" cy="51" r="2.5" /> <circle cx="105" cy="51" r="2.5" /> <circle cx="117" cy="51" r="2.5" /> <circle cx="129" cy="51" r="2.5" /> <circle cx="141" cy="51" r="2.5" /> <circle cx="3" cy="57" r="2.5" /> <circle cx="15" cy="57" r="2.5" /> <circle cx="21" cy="57" r="2.5" /> <circle cx="27" cy="57" r="2.5" /> <circle cx="33" cy="57" r="2.5" /> <circle cx="45" cy="57" r="2.5" /> <circle cx="63" cy="57" r="2.5" /> <circle cx="75" cy="57" r="2.5" /> <circle cx="81" cy="57" r="2.5" /> <circle cx="99" cy="57" r="2.5" /> <circle cx="117" cy="57" r="2.5" /> <circle cx="141" cy="57" r="2.5" /> <circle cx="3" cy="63" r="2.5" /> <circle cx="9" cy="63" r="2.5" /> <circle cx="27" cy="63" r="2.5" /> <circle cx="33" cy="63" r="2.5" /> <circle cx="39" cy="63" r="2.5" /> <circle cx="51" cy="63" r="2.5" /> <circle cx="63" cy="63" r="2.5" /> <circle cx="81" cy="63" r="2.5" /> <circle cx="87" cy="63" r="2.5" /> <circle cx="93" cy="63" r="2.5" /> <circle cx="99" cy="63" r="2.5" /> <circle cx="105" cy="63" r="2.5" /> <circle cx="111" cy="63" r="2.5" /> <circle cx="117" cy="63" r="2.5" /> <circle cx="123" cy="63" r="2.5" /> <circle cx="129" cy="63" r="2.5" /> <circle cx="141" cy="63" r="2.5" /> <circle cx="147" cy="63" r="2.5" /> <circle cx="9" cy="69" r="2.5" /> <circle cx="15" cy="69" r="2.5" /> <circle cx="21" cy="69" r="2.5" /> <circle cx="27" cy="69" r="2.5" /> <circle cx="75" cy="69" r="2.5" /> <circle cx="93" cy="69" r="2.5" /> <circle cx="99" cy="69" r="2.5" /> <circle cx="105" cy="69" r="2.5" /> <circle cx="111" cy="69" r="2.5" /> <circle cx="117" cy="69" r="2.5" /> <circle cx="147" cy="69" r="2.5" /> <circle cx="3" cy="75" r="2.5" /> <circle cx="9" cy="75" r="2.5" /> <circle cx="21" cy="75" r="2.5" /> <circle cx="27" cy="75" r="2.5" /> <circle cx="39" cy="75" r="2.5" /> <circle cx="57" cy="75" r="2.5" /> <circle cx="63" cy="75" r="2.5" /> <circle cx="75" cy="75" r="2.5" /> <circle cx="81" cy="75" r="2.5" /> <circle cx="87" cy="75" r="2.5" /> <circle cx="93" cy="75" r="2.5" /> <circle cx="105" cy="75" r="2.5" /> <circle cx="111" cy="75" r="2.5" /> <circle cx="123" cy="75" r="2.5" /> <circle cx="135" cy="75" r="2.5" /> <circle cx="141" cy="75" r="2.5" /> <circle cx="147" cy="75" r="2.5" /> <circle cx="3" cy="81" r="2.5" /> <circle cx="9" cy="81" r="2.5" /> <circle cx="51" cy="81" r="2.5" /> <circle cx="99" cy="81" r="2.5" /> <circle cx="105" cy="81" r="2.5" /> <circle cx="117" cy="81" r="2.5" /> <circle cx="129" cy="81" r="2.5" /> <circle cx="141" cy="81" r="2.5" /> <circle cx="3" cy="87" r="2.5" /> <circle cx="21" cy="87" r="2.5" /> <circle cx="27" cy="87" r="2.5" /> <circle cx="39" cy="87" r="2.5" /> <circle cx="45" cy="87" r="2.5" /> <circle cx="69" cy="87" r="2.5" /> <circle cx="75" cy="87" r="2.5" /> <circle cx="81" cy="87" r="2.5" /> <circle cx="93" cy="87" r="2.5" /> <circle cx="105" cy="87" r="2.5" /> <circle cx="111" cy="87" r="2.5" /> <circle cx="117" cy="87" r="2.5" /> <circle cx="123" cy="87" r="2.5" /> <circle cx="129" cy="87" r="2.5" /> <circle cx="141" cy="87" r="2.5" /> <circle cx="147" cy="87" r="2.5" /> <circle cx="3" cy="93" r="2.5" /> <circle cx="27" cy="93" r="2.5" /> <circle cx="33" cy="93" r="2.5" /> <circle cx="45" cy="93" r="2.5" /> <circle cx="51" cy="93" r="2.5" /> <circle cx="63" cy="93" r="2.5" /> <circle cx="69" cy="93" r="2.5" /> <circle cx="87" cy="93" r="2.5" /> <circle cx="93" cy="93" r="2.5" /> <circle cx="111" cy="93" r="2.5" /> <circle cx="117" cy="93" r="2.5" /> <circle cx="123" cy="93" r="2.5" /> <circle cx="147" cy="93" r="2.5" /> <circle cx="3" cy="99" r="2.5" /> <circle cx="27" cy="99" r="2.5" /> <circle cx="33" cy="99" r="2.5" /> <circle cx="39" cy="99" r="2.5" /> <circle cx="57" cy="99" r="2.5" /> <circle cx="69" cy="99" r="2.5" /> <circle cx="81" cy="99" r="2.5" /> <circle cx="87" cy="99" r="2.5" /> <circle cx="93" cy="99" r="2.5" /> <circle cx="99" cy="99" r="2.5" /> <circle cx="105" cy="99" r="2.5" /> <circle cx="111" cy="99" r="2.5" /> <circle cx="117" cy="99" r="2.5" /> <circle cx="123" cy="99" r="2.5" /> <circle cx="135" cy="99" r="2.5" /> <circle cx="51" cy="105" r="2.5" /> <circle cx="75" cy="105" r="2.5" /> <circle cx="81" cy="105" r="2.5" /> <circle cx="99" cy="105" r="2.5" /> <circle cx="123" cy="105" r="2.5" /> <circle cx="129" cy="105" r="2.5" /> <circle cx="51" cy="111" r="2.5" /> <circle cx="63" cy="111" r="2.5" /> <circle cx="81" cy="111" r="2.5" /> <circle cx="87" cy="111" r="2.5" /> <circle cx="99" cy="111" r="2.5" /> <circle cx="111" cy="111" r="2.5" /> <circle cx="123" cy="111" r="2.5" /> <circle cx="135" cy="111" r="2.5" /> <circle cx="141" cy="111" r="2.5" /> <circle cx="147" cy="111" r="2.5" /> <circle cx="63" cy="117" r="2.5" /> <circle cx="75" cy="117" r="2.5" /> <circle cx="87" cy="117" r="2.5" /> <circle cx="99" cy="117" r="2.5" /> <circle cx="123" cy="117" r="2.5" /> <circle cx="129" cy="117" r="2.5" /> <circle cx="141" cy="117" r="2.5" /> <circle cx="51" cy="123" r="2.5" /> <circle cx="63" cy="123" r="2.5" /> <circle cx="75" cy="123" r="2.5" /> <circle cx="81" cy="123" r="2.5" /> <circle cx="87" cy="123" r="2.5" /> <circle cx="93" cy="123" r="2.5" /> <circle cx="99" cy="123" r="2.5" /> <circle cx="105" cy="123" r="2.5" /> <circle cx="111" cy="123" r="2.5" /> <circle cx="117" cy="123" r="2.5" /> <circle cx="123" cy="123" r="2.5" /> <circle cx="135" cy="123" r="2.5" /> <circle cx="141" cy="123" r="2.5" /> <circle cx="147" cy="123" r="2.5" /> <circle cx="51" cy="129" r="2.5" /> <circle cx="81" cy="129" r="2.5" /> <circle cx="105" cy="129" r="2.5" /> <circle cx="111" cy="129" r="2.5" /> <circle cx="123" cy="129" r="2.5" /> <circle cx="129" cy="129" r="2.5" /> <circle cx="135" cy="129" r="2.5" /> <circle cx="141" cy="129" r="2.5" /> <circle cx="147" cy="129" r="2.5" /> <circle cx="51" cy="135" r="2.5" /> <circle cx="57" cy="135" r="2.5" /> <circle cx="63" cy="135" r="2.5" /> <circle cx="69" cy="135" r="2.5" /> <circle cx="75" cy="135" r="2.5" /> <circle cx="87" cy="135" r="2.5" /> <circle cx="105" cy="135" r="2.5" /> <circle cx="129" cy="135" r="2.5" /> <circle cx="135" cy="135" r="2.5" /> <circle cx="147" cy="135" r="2.5" /> <circle cx="51" cy="141" r="2.5" /> <circle cx="63" cy="141" r="2.5" /> <circle cx="69" cy="141" r="2.5" /> <circle cx="87" cy="141" r="2.5" /> <circle cx="99" cy="141" r="2.5" /> <circle cx="111" cy="141" r="2.5" /> <circle cx="117" cy="141" r="2.5" /> <circle cx="123" cy="141" r="2.5" /> <circle cx="129" cy="141" r="2.5" /> <circle cx="147" cy="141" r="2.5" /> <circle cx="51" cy="147" r="2.5" /> <circle cx="57" cy="147" r="2.5" /> <circle cx="63" cy="147" r="2.5" /> <circle cx="69" cy="147" r="2.5" /> <circle cx="75" cy="147" r="2.5" /> <circle cx="105" cy="147" r="2.5" /> <circle cx="117" cy="147" r="2.5" /> <circle cx="123" cy="147" r="2.5" /> <circle cx="129" cy="147" r="2.5" /> <circle cx="135" cy="147" r="2.5" /> <circle cx="141" cy="147" r="2.5" /> <circle cx="147" cy="147" r="2.5" /> </g>`;
+
+        function getPublicQrSvgWithColor(color) {
+            return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" fill="${color}">${rawPublicQrSvgInner}</svg>`;
+        }
+
         // Render high-res print canvas matching the exact visual card layout
         async function createHighResPrintCanvas(side) {
             await document.fonts.ready;
@@ -604,11 +472,6 @@
             const name = document.getElementById('input-name').value.trim() || 'MOHAMMED ALAMI';
             const company = document.getElementById('input-company').value.trim() || 'NEXUS DIGITAL SARL';
             const url = document.getElementById('input-url').value.trim() || 'https://supertap.ma';
-
-            // Ensure QR model is generated for this URL
-            if (!currentQrModel) {
-                generateLiveDesignerQr(url);
-            }
 
             if (currentModel === 'pro') {
                 // Background matching public page (Midnight Blue)
@@ -661,7 +524,7 @@
                         ctx.drawImage(nfcImg, 980 - 46, 590 - 40, 46, 46);
                     }
                 } else {
-                    // Back Face: Left SuperTap PRO, Right Designer QR Code
+                    // Back Face: Left SuperTap PRO, Right Exact Designer QR Code
                     ctx.font = '900 italic 58px "Poppins", sans-serif';
                     ctx.textAlign = 'center';
                     ctx.fillStyle = '#60a5fa';
@@ -682,9 +545,10 @@
                     ctx.textAlign = 'center';
                     ctx.fillText('PRO', 320, 358);
 
-                    // Render designer rounded-dot QR code
-                    if (currentQrModel) {
-                        drawDesignerQrOnCanvas(ctx, currentQrModel, 740 - 110, 331 - 110, 220, '#60a5fa');
+                    // Render exact public page designer QR code
+                    const qrImg = await loadSvgImage(getPublicQrSvgWithColor('#60a5fa'));
+                    if (qrImg) {
+                        ctx.drawImage(qrImg, 740 - 110, 331 - 110, 220, 220);
                     }
                 }
             } else {
@@ -752,9 +616,10 @@
                         ctx.drawImage(nfcImg, 980 - 46, 590 - 40, 46, 46);
                     }
                 } else {
-                    // Elite Back: Center Dynamic Designer QR Code in matching finish color
-                    if (currentQrModel) {
-                        drawDesignerQrOnCanvas(ctx, currentQrModel, 525 - 120, 331 - 120, 240, palette.qrColor);
+                    // Elite Back: Center Exact Designer QR Code in matching finish color
+                    const qrImg = await loadSvgImage(getPublicQrSvgWithColor(palette.accent));
+                    if (qrImg) {
+                        ctx.drawImage(qrImg, 525 - 125, 331 - 125, 250, 250);
                     }
                 }
             }
@@ -876,8 +741,8 @@
             <strong>📐 Recommandations d'impression pour l'atelier :</strong><br>
             • Dimensions finies : <strong>85.60 mm × 53.98 mm</strong> (Épaisseur PVC : 0.76 mm - 30 mil standard)<br>
             • Rayon des coins : <strong>3.18 mm</strong><br>
-            • QR code au verso : Design à points ronds avec coins adoucis, vérifié scannable vers <code>${url}</code><br>
-            • Encodage de la puce sans-contact : programmer avec cette même URL via NFC Tools
+            • QR code au verso : Design Signature SuperTap (100% conforme au site public)<br>
+            • Encodage de la puce sans-contact : programmer avec l'URL : <code>${url}</code> via NFC Tools
         </div>
     </div>
 </body>
