@@ -39,5 +39,5 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running at:`);
     console.log(`- Local:   http://localhost:${PORT}/`);
-    console.log(`- Bulk:    http://localhost:${PORT}/bulk.html`);
+    console.log(`- Studio:  http://localhost:${PORT}/generator.html`);
 });

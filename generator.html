@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperTap Studio — Générateur Privé d'Impression & BAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="js/qrcode.min.js"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; background: #040711; color: #f8fafc; }
+        .canvas-card { width: 100%; max-width: 460px; height: auto; border-radius: 14px; box-shadow: 0 12px 36px rgba(0,0,0,0.6); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="border-b border-white/10 bg-slate-900/60 backdrop-blur-xl px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="text-2xl font-black italic tracking-tight text-white uppercase" style="letter-spacing: -1px;">Super<span class="text-blue-500">Tap</span></span>
+            <span class="text-[11px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400">Print Studio Privé</span>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-bold text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Outil Atelier / Production</span>
+            <a href="store.html" class="hover:text-white transition">← Retour Boutique</a>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-10 w-full grid lg:grid-cols-12 gap-10">
+
+        <!-- Left Column: Order & Card Settings (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+            <div class="bg-slate-900/80 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl shadow-2xl">
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-blue-400 block">Configuration de Fabrication</span>
+                        <h2 class="text-xl font-black uppercase italic text-white">Paramètres de la Carte</h2>
+                    </div>
+                    <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-bold">300+ DPI</span>
+                </div>
+
+                <!-- 1. Model Selector -->
+                <div class="mb-5">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">1. Modèle de Carte</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button" onclick="selectModel('pro')" id="btn-model-pro" class="p-3.5 rounded-2xl border-2 border-blue-500 bg-blue-500/15 text-left transition hover:border-blue-400">
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-400 block">SuperTap PRO</span>
+                            <span class="text-[11px] text-slate-400">Midnight Blue standard</span>
+                        </button>
+                        <button type="button" onclick="selectModel('elite')" id="btn-model-elite" class="p-3.5 rounded-2xl border-2 border-slate-700 bg-slate-800/60 text-left transition hover:border-purple-400">
+                            <span class="text-xs font-black uppercase tracking-wider text-purple-400 block">SuperTap ELITE</span>
+                            <span class="text-[11px] text-slate-400">Noir Mat Sur-Mesure</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. Elite-Only Finish Swatches -->
+                <div id="elite-options-block" class="hidden mb-5 p-4 rounded-2xl bg-purple-500/10 border border-purple-500/20">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-purple-300 mb-2">Couleur de Finition (Elite)</label>
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <button type="button" onclick="setFinish('gold')" id="btn-finish-gold" class="py-2 px-2.5 rounded-xl text-xs font-bold border border-amber-400 bg-amber-500/20 text-amber-300 flex items-center justify-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-amber-400"></span> Dorée
+                        </button>
+                        <button type="button" onclick="setFinish('silver')" id="btn-finish-silver" class="py-2 px-2.5 rounded-xl text-xs font-bold border border-slate-700 bg-slate-800 text-slate-300 flex items-center justify-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-slate-300"></span> Argent
+                        </button>
+                        <button type="button" onclick="setFinish('white')" id="btn-finish-white" class="py-2 px-2.5 rounded-xl text-xs font-bold border border-slate-700 bg-slate-800 text-slate-300 flex items-center justify-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-white"></span> Blanche
+                        </button>
+                    </div>
+
+                    <!-- Client Logo Upload -->
+                    <label class="block text-xs font-bold uppercase tracking-wider text-purple-300 mb-1.5">Logo Client (Optionnel)</label>
+                    <div class="flex items-center gap-3">
+                        <label class="flex-grow flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-slate-800 border border-dashed border-purple-500/40 text-purple-300 text-xs font-medium cursor-pointer hover:border-purple-400 transition truncate">
+                            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2v-4a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span id="logo-file-status" class="truncate">Importer Logo Client</span>
+                            <input type="file" id="client-logo-input" accept="image/*" class="hidden" onchange="handleLogoChange(this)">
+                        </label>
+                        <button type="button" onclick="clearLogo()" id="btn-clear-logo" class="hidden px-3 py-2.5 rounded-xl bg-red-500/20 text-red-300 border border-red-500/30 text-xs font-bold hover:bg-red-500/30">✕</button>
+                    </div>
+                </div>
+
+                <!-- 3. Client Identity Info -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Nom et Prénom du Porteur *</label>
+                        <input type="text" id="input-name" value="MOHAMMED ALAMI" placeholder="ex: Mohammed Alami" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500 transition" oninput="updateAllPreviews()">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Entreprise ou Métier *</label>
+                        <input type="text" id="input-company" value="NEXUS DIGITAL SARL" placeholder="ex: Cabinet Médical Alami" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500 transition" oninput="updateAllPreviews()">
+                    </div>
+
+                    <!-- 4. Real Dynamic Profile URL for QR Code -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <label class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                                <span>🔗</span> Lien Réel du Profil Digital (URL) *
+                            </label>
+                            <span class="text-[10px] text-slate-400 font-mono">Scannable en direct</span>
+                        </div>
+                        <input type="url" id="input-url" value="https://supertap.ma/p/mohammed-alami" placeholder="https://supertap.ma/p/nom-du-client" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-emerald-500/50 text-emerald-300 text-sm font-mono focus:outline-none focus:border-emerald-400 transition" oninput="updateAllPreviews()">
+                        <p class="text-[11px] text-slate-400 mt-1.5">Ce lien est encodé dans le QR code au verso et sera écrit sur la puce sans-contact.</p>
+                    </div>
+                </div>
+
+                <!-- Export Action Buttons -->
+                <div class="mt-8 pt-6 border-t border-white/10 space-y-3">
+                    <button type="button" onclick="exportBothPng()" class="w-full py-4 rounded-2xl font-black uppercase tracking-wider text-sm bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-90 text-white shadow-xl shadow-indigo-500/25 flex items-center justify-center gap-2.5 transition active:scale-[0.99]">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span>Télécharger Pack PNG HD (Recto + Verso)</span>
+                    </button>
+
+                    <button type="button" onclick="openBatWindow()" class="w-full py-3.5 rounded-2xl font-bold uppercase tracking-wider text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 flex items-center justify-center gap-2 transition">
+                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                        <span>Générer Fiche BAT Impression (PDF / Imprimer)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Visual Previews & Quick Downloads (7 cols) -->
+        <div class="lg:col-span-7 space-y-8">
+            <div>
+                <h3 class="text-lg font-black uppercase italic tracking-tight text-white mb-2">Aperçu Réel Avant Impression</h3>
+                <p class="text-xs text-slate-400">Rendu exact à l'échelle 1050 × 662 px (300+ DPI). Le QR code au verso est fonctionnel et pointe vers le lien saisi.</p>
+            </div>
+
+            <!-- Front Card Preview -->
+            <div class="bg-slate-900/60 border border-white/10 rounded-3xl p-6 backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-black uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-400"></span> Recto (Face Avant)
+                    </span>
+                    <button type="button" onclick="exportSingle('front')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-blue-300 border border-blue-500/30 flex items-center gap-1.5 transition">
+                        <span>↓</span> Télécharger Recto HD
+                    </button>
+                </div>
+                <div class="flex justify-center">
+                    <canvas id="canvas-front" width="1050" height="662" class="canvas-card"></canvas>
+                </div>
+            </div>
+
+            <!-- Back Card Preview with Live QR Code -->
+            <div class="bg-slate-900/60 border border-white/10 rounded-3xl p-6 backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <span class="text-xs font-black uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-purple-400"></span> Verso (Face Arrière)
+                        </span>
+                        <span class="text-[10px] text-emerald-400 font-mono mt-0.5 block">✓ QR Code dynamique encodé</span>
+                    </div>
+                    <button type="button" onclick="exportSingle('back')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-purple-300 border border-purple-500/30 flex items-center gap-1.5 transition">
+                        <span>↓</span> Télécharger Verso HD
+                    </button>
+                </div>
+                <div class="flex justify-center">
+                    <canvas id="canvas-back" width="1050" height="662" class="canvas-card"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Hidden Container for Dynamic QR Code Generation -->
+    <div id="hidden-qr-container" style="display:none;"></div>
+
+    <script>
+        let currentModel = 'pro'; // 'pro' or 'elite'
+        let currentFinish = 'gold'; // 'gold', 'silver', 'white'
+        let clientLogoImg = null;
+        let clientLogoName = '';
+
+        const palettes = {
+            pro: {
+                bgGradStart: '#070b18',
+                bgGradMid: '#0a1128',
+                bgGradEnd: '#0e1838',
+                accent: '#60a5fa',
+                subText: '#93c5fd',
+                qrColor: '#60a5fa',
+                qrBg: '#0a1128',
+                border: 'rgba(59, 130, 246, 0.35)',
+                pillBg: 'rgba(59, 130, 246, 0.15)',
+                pillBorder: 'rgba(59, 130, 246, 0.4)'
+            },
+            elite: {
+                gold: {
+                    accent: '#fbbf24',
+                    subText: '#fef08a',
+                    qrColor: '#fbbf24',
+                    qrBg: '#0d0f17',
+                    border: 'rgba(251, 191, 36, 0.4)',
+                    pillBg: 'rgba(251, 191, 36, 0.12)',
+                    pillBorder: 'rgba(251, 191, 36, 0.45)',
+                    nameLabel: 'Dorée (Gold Foil)'
+                },
+                silver: {
+                    accent: '#e2e8f0',
+                    subText: '#f8fafc',
+                    qrColor: '#e2e8f0',
+                    qrBg: '#0d0f17',
+                    border: 'rgba(226, 232, 240, 0.4)',
+                    pillBg: 'rgba(226, 232, 240, 0.12)',
+                    pillBorder: 'rgba(226, 232, 240, 0.45)',
+                    nameLabel: 'Argent (Silver Foil)'
+                },
+                white: {
+                    accent: '#ffffff',
+                    subText: '#ffffff',
+                    qrColor: '#ffffff',
+                    qrBg: '#0d0f17',
+                    border: 'rgba(255, 255, 255, 0.4)',
+                    pillBg: 'rgba(255, 255, 255, 0.12)',
+                    pillBorder: 'rgba(255, 255, 255, 0.45)',
+                    nameLabel: 'Blanche (Crisp White)'
+                }
+            }
+        };
+
+        function selectModel(model) {
+            currentModel = model;
+            const btnPro = document.getElementById('btn-model-pro');
+            const btnElite = document.getElementById('btn-model-elite');
+            const eliteBlock = document.getElementById('elite-options-block');
+
+            if (model === 'pro') {
+                btnPro.className = 'p-3.5 rounded-2xl border-2 border-blue-500 bg-blue-500/15 text-left transition';
+                btnElite.className = 'p-3.5 rounded-2xl border-2 border-slate-700 bg-slate-800/60 text-left transition hover:border-purple-400';
+                eliteBlock.classList.add('hidden');
+            } else {
+                btnPro.className = 'p-3.5 rounded-2xl border-2 border-slate-700 bg-slate-800/60 text-left transition hover:border-blue-400';
+                btnElite.className = 'p-3.5 rounded-2xl border-2 border-purple-500 bg-purple-500/15 text-left transition';
+                eliteBlock.classList.remove('hidden');
+            }
+            updateAllPreviews();
+        }
+
+        function setFinish(finish) {
+            currentFinish = finish;
+            ['gold', 'silver', 'white'].forEach(f => {
+                const btn = document.getElementById(`btn-finish-${f}`);
+                if (f === finish) {
+                    btn.className = 'py-2 px-2.5 rounded-xl text-xs font-bold border border-amber-400 bg-amber-500/20 text-amber-300 flex items-center justify-center gap-1.5';
+                } else {
+                    btn.className = 'py-2 px-2.5 rounded-xl text-xs font-bold border border-slate-700 bg-slate-800 text-slate-300 flex items-center justify-center gap-1.5';
+                }
+            });
+            updateAllPreviews();
+        }
+
+        function handleLogoChange(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                clientLogoName = file.name;
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        clientLogoImg = img;
+                        document.getElementById('logo-file-status').textContent = `✓ ${file.name}`;
+                        document.getElementById('btn-clear-logo').classList.remove('hidden');
+                        updateAllPreviews();
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function clearLogo() {
+            clientLogoImg = null;
+            clientLogoName = '';
+            document.getElementById('client-logo-input').value = '';
+            document.getElementById('logo-file-status').textContent = 'Importer Logo Client';
+            document.getElementById('btn-clear-logo').classList.add('hidden');
+            updateAllPreviews();
+        }
+
+        function drawCanvasRoundRect(ctx, x, y, w, h, r) {
+            ctx.beginPath();
+            if (ctx.roundRect) {
+                ctx.roundRect(x, y, w, h, r);
+            } else {
+                ctx.moveTo(x + r, y);
+                ctx.lineTo(x + w - r, y);
+                ctx.arcTo(x + w, y, x + w, y + r, r);
+                ctx.lineTo(x + w, y + h - r);
+                ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
+                ctx.lineTo(x + r, y + h);
+                ctx.arcTo(x, y + h, x, y + h - r, r);
+                ctx.lineTo(x, y + r);
+                ctx.arcTo(x, y, x + r, y, r);
+            }
+            ctx.closePath();
+        }
+
+        function loadSvgImage(svgStr) {
+            return new Promise((resolve) => {
+                if (!svgStr) return resolve(null);
+                let clean = svgStr.replace(/class="[^"]*"/g, '');
+                if (!clean.includes('xmlns=')) {
+                    clean = clean.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+                }
+                const img = new Image();
+                img.onload = () => resolve(img);
+                img.onerror = () => resolve(null);
+                img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(clean);
+            });
+        }
+
+        // Generate dynamic QR Code for the specific URL
+        function generateQrCodeCanvas(url, colorDark, colorLight) {
+            return new Promise((resolve) => {
+                const container = document.getElementById('hidden-qr-container');
+                container.innerHTML = '';
+                new QRCode(container, {
+                    text: url,
+                    width: 260,
+                    height: 260,
+                    colorDark: colorDark,
+                    colorLight: colorLight,
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+                setTimeout(() => {
+                    const canvas = container.querySelector('canvas');
+                    resolve(canvas);
+                }, 50);
+            });
+        }
+
+        async function renderCard(side, targetCanvas) {
+            const canvas = targetCanvas || document.createElement('canvas');
+            canvas.width = 1050;
+            canvas.height = 662;
+            const ctx = canvas.getContext('2d');
+
+            const name = (document.getElementById('input-name').value.trim() || 'MOHAMMED ALAMI');
+            const company = (document.getElementById('input-company').value.trim() || 'ENTREPRISE');
+            const url = (document.getElementById('input-url').value.trim() || 'https://supertap.ma');
+
+            let activePalette;
+            if (currentModel === 'pro') {
+                activePalette = palettes.pro;
+                // Pro Background Gradient
+                const grad = ctx.createLinearGradient(0, 0, 1050, 662);
+                grad.addColorStop(0, activePalette.bgGradStart);
+                grad.addColorStop(0.5, activePalette.bgGradMid);
+                grad.addColorStop(1, activePalette.bgGradEnd);
+                drawCanvasRoundRect(ctx, 0, 0, 1050, 662, 36);
+                ctx.fillStyle = grad;
+                ctx.fill();
+            } else {
+                activePalette = palettes.elite[currentFinish] || palettes.elite.gold;
+                // Elite Matte Charcoal
+                drawCanvasRoundRect(ctx, 0, 0, 1050, 662, 36);
+                ctx.fillStyle = '#0d0f17';
+                ctx.fill();
+            }
+
+            // Stroke Border
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = activePalette.border;
+            ctx.stroke();
+
+            if (side === 'front') {
+                // Top-Left: Company
+                ctx.font = '700 24px system-ui, -apple-system, sans-serif';
+                ctx.fillStyle = activePalette.subText;
+                ctx.textAlign = 'left';
+                ctx.fillText(company.toUpperCase(), 70, 85);
+
+                // Top-Right: Micro Label
+                ctx.font = '700 13px monospace';
+                ctx.fillStyle = activePalette.accent;
+                ctx.globalAlpha = 0.55;
+                ctx.textAlign = 'right';
+                ctx.fillText(currentModel === 'pro' ? 'SMART BUSINESS CARD' : 'ELITE CUSTOM SERIES', 980, 85);
+                ctx.globalAlpha = 1.0;
+
+                // Center Branding
+                if (currentModel === 'elite' && clientLogoImg) {
+                    const maxW = 380, maxH = 170;
+                    let w = clientLogoImg.naturalWidth;
+                    let h = clientLogoImg.naturalHeight;
+                    const ratio = Math.min(maxW / w, maxH / h);
+                    w = w * ratio;
+                    h = h * ratio;
+                    ctx.drawImage(clientLogoImg, 525 - w / 2, 331 - h / 2, w, h);
+                } else if (currentModel === 'elite') {
+                    ctx.font = '900 italic 58px system-ui, -apple-system, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillStyle = activePalette.accent;
+                    ctx.shadowColor = activePalette.accent;
+                    ctx.shadowBlur = 14;
+                    ctx.fillText('VOTRE LOGO', 525, 318);
+                    ctx.shadowBlur = 0;
+
+                    const pillW = 150, pillH = 34, pillX = 525 - pillW / 2, pillY = 344;
+                    drawCanvasRoundRect(ctx, pillX, pillY, pillW, pillH, 17);
+                    ctx.fillStyle = activePalette.pillBg;
+                    ctx.fill();
+                    ctx.lineWidth = 1.5;
+                    ctx.strokeStyle = activePalette.pillBorder;
+                    ctx.stroke();
+                    ctx.font = '900 13px system-ui, sans-serif';
+                    ctx.fillStyle = activePalette.accent;
+                    ctx.fillText('SUR-MESURE', 525, 365);
+                } else {
+                    // Pro Center Branding
+                    ctx.font = '900 italic 66px system-ui, -apple-system, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillStyle = activePalette.accent;
+                    ctx.shadowColor = 'rgba(59, 130, 246, 0.5)';
+                    ctx.shadowBlur = 18;
+                    ctx.fillText('SUPERTAP', 525, 315);
+                    ctx.shadowBlur = 0;
+
+                    const pillW = 110, pillH = 34, pillX = 525 - pillW / 2, pillY = 340;
+                    drawCanvasRoundRect(ctx, pillX, pillY, pillW, pillH, 17);
+                    ctx.fillStyle = activePalette.pillBg;
+                    ctx.fill();
+                    ctx.lineWidth = 1.5;
+                    ctx.strokeStyle = activePalette.pillBorder;
+                    ctx.stroke();
+                    ctx.font = '900 15px system-ui, sans-serif';
+                    ctx.fillStyle = activePalette.subText;
+                    ctx.textAlign = 'center';
+                    ctx.fillText('PRO', 525, 362);
+                }
+
+                // Bottom-Left: Name
+                ctx.textAlign = 'left';
+                ctx.font = '700 32px system-ui, -apple-system, sans-serif';
+                ctx.fillStyle = currentModel === 'pro' ? '#ffffff' : activePalette.subText;
+                ctx.fillText(name, 70, 590);
+
+                // Bottom-Right: NFC Wave Icon
+                const nfcSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="${activePalette.accent}" stroke-width="2.2" stroke-linecap="round"><path d="M6 10a2.5 2.5 0 0 1 0 4M9.5 7.5a6 6 0 0 1 0 9M13 5a9.5 9.5 0 0 1 0 14M16.5 2.5a13 13 0 0 1 0 19"/></svg>`;
+                const nfcImg = await loadSvgImage(nfcSvg);
+                if (nfcImg) {
+                    ctx.drawImage(nfcImg, 980 - 46, 590 - 40, 46, 46);
+                }
+            } else {
+                // Back Face: Generate the actual Dynamic QR Code
+                const qrCanvas = await generateQrCodeCanvas(url, activePalette.qrColor, activePalette.qrBg);
+
+                if (currentModel === 'pro') {
+                    // Left: SuperTap Pro Branding
+                    ctx.font = '900 italic 54px system-ui, -apple-system, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillStyle = activePalette.accent;
+                    ctx.fillText('SUPERTAP', 320, 315);
+
+                    const pW = 100, pH = 30, pX = 320 - pW / 2, pY = 338;
+                    drawCanvasRoundRect(ctx, pX, pY, pW, pH, 15);
+                    ctx.fillStyle = activePalette.pillBg;
+                    ctx.fill();
+                    ctx.lineWidth = 1.5;
+                    ctx.strokeStyle = activePalette.pillBorder;
+                    ctx.stroke();
+                    ctx.font = '900 14px system-ui, sans-serif';
+                    ctx.fillStyle = activePalette.subText;
+                    ctx.textAlign = 'center';
+                    ctx.fillText('PRO', 320, 358);
+
+                    // Divider line
+                    ctx.beginPath();
+                    ctx.moveTo(525, 140);
+                    ctx.lineTo(525, 522);
+                    ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
+                    ctx.lineWidth = 1.5;
+                    ctx.stroke();
+
+                    // Right: Scannable QR Code
+                    if (qrCanvas) {
+                        ctx.drawImage(qrCanvas, 740 - 110, 331 - 110, 220, 220);
+                    }
+                } else {
+                    // Elite Back: Center Dynamic QR Code in chosen foil color
+                    if (qrCanvas) {
+                        ctx.drawImage(qrCanvas, 525 - 115, 331 - 130, 230, 230);
+                    }
+                    ctx.font = '700 14px system-ui, -apple-system, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillStyle = activePalette.accent;
+                    ctx.fillText('SUPERTAP ELITE · SCAN TO CONNECT', 525, 515);
+                }
+            }
+
+            return canvas;
+        }
+
+        async function updateAllPreviews() {
+            const frontCanvas = document.getElementById('canvas-front');
+            const backCanvas = document.getElementById('canvas-back');
+            await renderCard('front', frontCanvas);
+            await renderCard('back', backCanvas);
+        }
+
+        function triggerDownload(dataUrl, filename) {
+            const a = document.createElement('a');
+            a.href = dataUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        async function exportSingle(side) {
+            const nameRaw = (document.getElementById('input-name').value.trim() || 'carte');
+            const slug = nameRaw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'carte';
+            const canvas = await renderCard(side);
+            triggerDownload(canvas.toDataURL('image/png'), `supertap-${currentModel}-${slug}-${side === 'front' ? 'recto' : 'verso'}.png`);
+        }
+
+        async function exportBothPng() {
+            const nameRaw = (document.getElementById('input-name').value.trim() || 'carte');
+            const slug = nameRaw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'carte';
+            const frontCanvas = await renderCard('front');
+            triggerDownload(frontCanvas.toDataURL('image/png'), `supertap-${currentModel}-${slug}-recto.png`);
+
+            setTimeout(async () => {
+                const backCanvas = await renderCard('back');
+                triggerDownload(backCanvas.toDataURL('image/png'), `supertap-${currentModel}-${slug}-verso.png`);
+            }, 300);
+        }
+
+        async function openBatWindow() {
+            const frontCanvas = await renderCard('front');
+            const backCanvas = await renderCard('back');
+            const frontUrl = frontCanvas.toDataURL('image/png');
+            const backUrl = backCanvas.toDataURL('image/png');
+
+            const name = (document.getElementById('input-name').value.trim() || 'Client');
+            const company = (document.getElementById('input-company').value.trim() || 'Entreprise');
+            const url = (document.getElementById('input-url').value.trim() || 'https://supertap.ma');
+            const modelName = currentModel === 'pro' ? 'SuperTap PRO (Midnight Blue)' : `SuperTap ELITE (Finition ${palettes.elite[currentFinish].nameLabel})`;
+
+            const win = window.open('', '_blank');
+            if (!win) {
+                alert('Veuillez autoriser les fenêtres pop-up.');
+                return;
+            }
+
+            win.document.write(`<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SuperTap — BAT Impression Officiel</title>
+    <style>
+        @page { size: A4 portrait; margin: 12mm; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #0f172a; padding: 24px; margin: 0; }
+        .container { max-width: 820px; margin: 0 auto; background: white; padding: 32px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px; }
+        .title { font-size: 22px; font-weight: 900; letter-spacing: -0.5px; }
+        .sub { font-size: 13px; color: #64748b; margin-top: 2px; }
+        .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 28px 0; }
+        .card-box { text-align: center; }
+        .card-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #475569; margin-bottom: 10px; }
+        .card-img { width: 85.6mm; height: 53.98mm; object-fit: cover; border-radius: 3.18mm; box-shadow: 0 6px 18px rgba(0,0,0,0.15); border: 1px dashed #cbd5e1; }
+        .info-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; }
+        .info-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9; }
+        .info-table td:first-child { font-weight: 700; color: #64748b; width: 180px; }
+        .specs { background: #f8fafc; border-left: 4px solid #2563eb; border-radius: 8px; padding: 16px 20px; font-size: 12px; line-height: 1.6; color: #334155; }
+        .print-bar { margin-bottom: 20px; display: flex; gap: 12px; justify-content: flex-end; }
+        .btn-print { background: #2563eb; color: white; border: none; padding: 10px 22px; font-weight: 800; border-radius: 10px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
+        @media print {
+            .print-bar { display: none !important; }
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-bar">
+        <button class="btn-print" onclick="window.print()">🖨️ Imprimer / Enregistrer en PDF (BAT)</button>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div>
+                <div class="title">SUPERTAP — BON À TIRER (BAT) ATELIER</div>
+                <div class="sub">Fiche de Fabrication & Contrôle Qualité</div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-weight: 900; color: #2563eb; font-size: 18px;">SuperTap</div>
+                <div class="sub">${new Date().toLocaleDateString('fr-FR')}</div>
+            </div>
+        </div>
+
+        <table class="info-table">
+            <tr><td>Client / Porteur :</td><td><strong>${name}</strong></td></tr>
+            <tr><td>Entreprise / Métier :</td><td>${company}</td></tr>
+            <tr><td>Modèle :</td><td><strong>${modelName}</strong></td></tr>
+            <tr><td>Lien Réel Encodé (QR) :</td><td><a href="${url}" target="_blank" style="color:#2563eb; text-decoration:none;"><strong>${url}</strong></a></td></tr>
+            <tr><td>Logo Fichier :</td><td>${clientLogoName ? clientLogoName : 'Logo textuel standard'}</td></tr>
+        </table>
+
+        <div class="cards-grid">
+            <div class="card-box">
+                <div class="card-label">Recto (Front) — 85.60 × 53.98 mm</div>
+                <img src="${frontUrl}" class="card-img" alt="Recto">
+            </div>
+            <div class="card-box">
+                <div class="card-label">Verso (Back) — 85.60 × 53.98 mm</div>
+                <img src="${backUrl}" class="card-img" alt="Verso">
+            </div>
+        </div>
+
+        <div class="specs">
+            <strong>📐 Recommandations d'impression pour l'atelier :</strong><br>
+            • Dimensions finies : <strong>85.60 mm × 53.98 mm</strong> (Épaisseur PVC : 0.76 mm - 30 mil standard)<br>
+            • Rayon des coins : <strong>3.18 mm</strong><br>
+            • Le QR code au verso est fonctionnel et vérifié vers : <code>${url}</code><br>
+            • Encodage de la puce sans-contact : programmer avec cette même URL via NFC Tools
+        </div>
+    </div>
+</body>
+</html>`);
+            win.document.close();
+        }
+
+        // Initial preview render on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateAllPreviews();
+        });
+    </script>
+</body>
+</html>
