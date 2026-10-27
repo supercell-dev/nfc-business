@@ -428,7 +428,14 @@ const translations = {
         "pro-delivery-note": "Custom print & delivery: up to 4 days",
         "elite-delivery-note": "Bespoke luxury print & delivery: up to 4 days",
         "promo-lite-free": "🎉 3 Weeks Free Included!",
-        "promo-lite-badge": "3 Weeks Free"
+        "promo-lite-badge": "3 Weeks Free",
+        "export-print-title": "Print & Proof Export",
+        "export-print-desc": "Generate CR80 print files (85.6 × 54 mm, 300 DPI)",
+        "export-btn-both": "Download PNG (Front + Back)",
+        "export-btn-pdf": "Print Sheet (PDF)",
+        "export-btn-front": "Front HD",
+        "export-btn-back": "Back HD",
+        "export-success-msg": "✓ HD print files generated successfully!"
     },
     "fr": {
         "dir": "ltr",
@@ -859,7 +866,14 @@ const translations = {
         "pro-delivery-note": "Impression personnalisée & livraison : jusqu'à 4 jours",
         "elite-delivery-note": "Impression de luxe sur-mesure & livraison : jusqu'à 4 jours",
         "promo-lite-free": "🎉 3 Semaines Gratuites Incluses !",
-        "promo-lite-badge": "3 Semaines Offertes"
+        "promo-lite-badge": "3 Semaines Offertes",
+        "export-print-title": "Export Impression & BAT",
+        "export-print-desc": "Fichiers d'impression HD conformes CR80 (85.6 × 54 mm, 300 DPI)",
+        "export-btn-both": "Télécharger PNG (Recto + Verso)",
+        "export-btn-pdf": "Fiche BAT (PDF / Impression)",
+        "export-btn-front": "Recto HD",
+        "export-btn-back": "Verso HD",
+        "export-success-msg": "✓ Fichiers d'impression HD générés avec succès !"
     },
     "ar": {
         "dir": "rtl",
@@ -1290,7 +1304,14 @@ const translations = {
         "pro-delivery-note": "طباعة مخصصة وتوصيل: حتى 4 أيام",
         "elite-delivery-note": "طباعة فاخرة على المقاس وتوصيل: حتى 4 أيام",
         "promo-lite-free": "🎉 3 أسابيع مجاناً متضمنة !",
-        "promo-lite-badge": "3 أسابيع مجاناً"
+        "promo-lite-badge": "3 أسابيع مجاناً",
+        "export-print-title": "تصدير ملفات الطباعة والنموذج",
+        "export-print-desc": "ملفات طباعة عالية الدقة متوافقة مع معيار CR80 (85.6 × 54 مم، 300 نقطة/بوصة)",
+        "export-btn-both": "تحميل PNG (الوجه + الظهر)",
+        "export-btn-pdf": "نموذج الطباعة (PDF)",
+        "export-btn-front": "الوجه HD",
+        "export-btn-back": "الظهر HD",
+        "export-success-msg": "✓ تم إنشاء ملفات الطباعة عالية الدقة بنجاح!"
     },
     "dj": {
         "dir": "rtl",
@@ -1721,7 +1742,14 @@ const translations = {
         "pro-delivery-note": "Tba3a sur-mesure w livraison: 7etta l 4 iyam",
         "elite-delivery-note": "Tba3a de luxe sur-mesure w livraison: 7etta l 4 iyam",
         "promo-lite-free": "🎉 3 د-سيمانات فابور داخلين فالكارطة !",
-        "promo-lite-badge": "3 د-سيمانات فابور"
+        "promo-lite-badge": "3 د-سيمانات فابور",
+        "export-print-title": "تيليشارجي فيشي د الطباعة (BAT)",
+        "export-print-desc": "ملفات طباعة HD بقياس CR80 ستاندار (85.6 × 54 ملم، 300 DPI)",
+        "export-btn-both": "تيليشارجي PNG (الوجه + الظهر)",
+        "export-btn-pdf": "ورقة BAT (PDF / طباعة)",
+        "export-btn-front": "الوجه HD",
+        "export-btn-back": "الظهر HD",
+        "export-success-msg": "✓ تم إنشاء ملفات الطباعة HD بنجاح!"
     },
     "djl": {
         "dir": "ltr",
@@ -2152,7 +2180,14 @@ const translations = {
         "pro-delivery-note": "Tba3a sur-mesure w livraison: 7etta l 4 iyam",
         "elite-delivery-note": "Tba3a de luxe sur-mesure w livraison: 7etta l 4 iyam",
         "promo-lite-free": "🎉 3 Simanat Fabour Dakhlin f l-Carte !",
-        "promo-lite-badge": "3 Simanat Fabour"
+        "promo-lite-badge": "3 Simanat Fabour",
+        "export-print-title": "Telecharger Fichier d Tba3a (BAT)",
+        "export-print-desc": "Fichiers d'impression HD CR80 standard (85.6 × 54 mm, 300 DPI)",
+        "export-btn-both": "Telecharger PNG (Wjeh + Dher)",
+        "export-btn-pdf": "Warka BAT (PDF / Tba3a)",
+        "export-btn-front": "Wjeh HD",
+        "export-btn-back": "Dher HD",
+        "export-success-msg": "✓ Fichiers HD tsaybo b naja7!"
     },
     "es": {
         "dir": "ltr",
@@ -2583,7 +2618,14 @@ const translations = {
         "pro-delivery-note": "Impresión personalizada y entrega: hasta 4 días",
         "elite-delivery-note": "Impresión de lujo a medida y entrega: hasta 4 días",
         "promo-lite-free": "🎉 ¡3 Semanas Gratis Incluidas!",
-        "promo-lite-badge": "3 Semanas Gratis"
+        "promo-lite-badge": "3 Semanas Gratis",
+        "export-print-title": "Exportar Impresión y Prueba (BAT)",
+        "export-print-desc": "Archivos de impresión HD estándar CR80 (85.6 × 54 mm, 300 DPI)",
+        "export-btn-both": "Descargar PNG (Frente + Dorso)",
+        "export-btn-pdf": "Hoja de Impresión (PDF)",
+        "export-btn-front": "Frente HD",
+        "export-btn-back": "Dorso HD",
+        "export-success-msg": "✓ ¡Archivos de impresión HD generados con éxito!"
     },
     "tr": {
         "dir": "ltr",
@@ -3014,7 +3056,14 @@ const translations = {
         "pro-delivery-note": "Özel baskı ve teslimat: 4 güne kadar",
         "elite-delivery-note": "Özel lüks baskı ve teslimat: 4 güne kadar",
         "promo-lite-free": "🎉 3 Hafta Ücretsiz Dahil!",
-        "promo-lite-badge": "3 Hafta Ücretsiz"
+        "promo-lite-badge": "3 Hafta Ücretsiz",
+        "export-print-title": "Baskı ve Prova Dışa Aktarma",
+        "export-print-desc": "CR80 standart HD baskı dosyaları (85.6 × 54 mm, 300 DPI)",
+        "export-btn-both": "PNG İndir (Ön + Arka)",
+        "export-btn-pdf": "Baskı Sayfası (PDF)",
+        "export-btn-front": "Ön Yüz HD",
+        "export-btn-back": "Arka Yüz HD",
+        "export-success-msg": "✓ HD baskı dosyaları başarıyla oluşturuldu!"
     },
     "de": {
         "dir": "ltr",
@@ -3445,7 +3494,14 @@ const translations = {
         "pro-delivery-note": "Individueller Druck & Lieferung: bis zu 4 Tage",
         "elite-delivery-note": "Individueller Luxusdruck & Lieferung: bis zu 4 Tage",
         "promo-lite-free": "🎉 3 Wochen Kostenlos Inbegriffen!",
-        "promo-lite-badge": "3 Wochen Kostenlos"
+        "promo-lite-badge": "3 Wochen Kostenlos",
+        "export-print-title": "Druck- & Korrekturabzug-Export",
+        "export-print-desc": "CR80 HD-Druckdateien (85.6 × 54 mm, 300 DPI)",
+        "export-btn-both": "PNG herunterladen (Vorder- + Rückseite)",
+        "export-btn-pdf": "Druckbogen (PDF)",
+        "export-btn-front": "Vorderseite HD",
+        "export-btn-back": "Rückseite HD",
+        "export-success-msg": "✓ HD-Druckdateien erfolgreich erstellt!"
     },
     "it": {
         "dir": "ltr",
@@ -3876,7 +3932,14 @@ const translations = {
         "pro-delivery-note": "Stampa personalizzata e consegna: fino a 4 giorni",
         "elite-delivery-note": "Stampa di lusso su misura e consegna: fino a 4 giorni",
         "promo-lite-free": "🎉 3 Settimane Gratuite Incluse!",
-        "promo-lite-badge": "3 Settimane Gratuite"
+        "promo-lite-badge": "3 Settimane Gratuite",
+        "export-print-title": "Esporta Stampa e Bozza (BAT)",
+        "export-print-desc": "File di stampa HD standard CR80 (85.6 × 54 mm, 300 DPI)",
+        "export-btn-both": "Scarica PNG (Fronte + Retro)",
+        "export-btn-pdf": "Scheda di Stampa (PDF)",
+        "export-btn-front": "Fronte HD",
+        "export-btn-back": "Retro HD",
+        "export-success-msg": "✓ File di stampa HD generati con successo!"
     },
     "pt": {
         "dir": "ltr",
@@ -4307,7 +4370,14 @@ const translations = {
         "pro-delivery-note": "Impressão personalizada e entrega: até 4 dias",
         "elite-delivery-note": "Impressão de luxo à medida e entrega: até 4 dias",
         "promo-lite-free": "🎉 3 Semanas Grátis Incluídas!",
-        "promo-lite-badge": "3 Semanas Grátis"
+        "promo-lite-badge": "3 Semanas Grátis",
+        "export-print-title": "Exportar Impressão e Prova (BAT)",
+        "export-print-desc": "Ficheiros de impressão HD padrão CR80 (85.6 × 54 mm, 300 DPI)",
+        "export-btn-both": "Descarregar PNG (Frente + Verso)",
+        "export-btn-pdf": "Folha de Impressão (PDF)",
+        "export-btn-front": "Frente HD",
+        "export-btn-back": "Verso HD",
+        "export-success-msg": "✓ Ficheiros de impressão HD gerados com sucesso!"
     },
     "nl": {
         "dir": "ltr",
@@ -4738,6 +4808,13 @@ const translations = {
         "pro-delivery-note": "Gepersonaliseerde bedrukking & bezorging: tot 4 dagen",
         "elite-delivery-note": "Luxe maatwerkbedrukking & bezorging: tot 4 dagen",
         "promo-lite-free": "🎉 3 Weken Gratis Inbegrepen!",
-        "promo-lite-badge": "3 Weken Gratis"
+        "promo-lite-badge": "3 Weken Gratis",
+        "export-print-title": "Drukwerk & Proefdruk Exporteren",
+        "export-print-desc": "CR80 HD-drukbestanden (85.6 × 54 mm, 300 DPI)",
+        "export-btn-both": "PNG downloaden (Voor- + Achterkant)",
+        "export-btn-pdf": "Drukwerkblad (PDF)",
+        "export-btn-front": "Voorkant HD",
+        "export-btn-back": "Achterkant HD",
+        "export-success-msg": "✓ HD-drukbestanden succesvol gegenereerd!"
     }
 };
