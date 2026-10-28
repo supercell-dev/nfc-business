@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperTap Studio — Atelier d'Impression & BAT</title>
+    <title>SuperTap Studio — Atelier d'Impression & Export Vectoriel SVG</title>
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -55,10 +55,10 @@
             <a href="index.html" class="flex items-center gap-2 text-2xl font-black italic tracking-tight text-white uppercase" style="letter-spacing: -1px;">
                 Super<span class="text-blue-500">Tap</span>
             </a>
-            <span class="text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400">Atelier Impression Privé</span>
+            <span class="text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">Atelier Vectoriel SVG & Print</span>
         </div>
         <div class="flex items-center gap-4 text-xs font-bold text-slate-400">
-            <span class="hidden sm:flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Design 100% Identique au Site Public</span>
+            <span class="hidden sm:flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 100% Vectoriel SVG Prêt pour Impression</span>
             <a href="store.html" class="hover:text-white transition">← Boutique</a>
         </div>
     </header>
@@ -74,7 +74,7 @@
                         <span class="text-[10px] font-black uppercase tracking-widest text-blue-400 block">Configuration de Fabrication</span>
                         <h2 class="text-xl font-black uppercase italic text-white">Détails de la Carte</h2>
                     </div>
-                    <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-bold">Studio</span>
+                    <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">SVG Vector</span>
                 </div>
 
                 <!-- 1. Model Selector -->
@@ -114,8 +114,8 @@
                         <div class="flex items-center gap-2">
                             <label class="flex-grow flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-slate-800/90 border border-dashed border-purple-500/40 text-purple-300 text-xs font-medium cursor-pointer hover:border-purple-400 transition truncate">
                                 <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                                <span id="logo-file-label" class="truncate">Importer Logo (PNG, SVG)</span>
-                                <input type="file" id="elite-logo-input" accept="image/*" class="hidden" onchange="handleLogoUpload(this)">
+                                <span id="logo-file-label" class="truncate">Importer Logo (SVG, PNG)</span>
+                                <input type="file" id="elite-logo-input" accept="image/*,.svg" class="hidden" onchange="handleLogoUpload(this)">
                             </label>
                             <button type="button" onclick="removeLogo()" id="btn-remove-logo" class="hidden px-3 py-2.5 rounded-xl bg-red-500/20 text-red-300 border border-red-500/30 text-xs font-bold hover:bg-red-500/30">✕</button>
                         </div>
@@ -143,21 +143,52 @@
                             <span class="text-[10px] text-slate-400 font-mono">Fiche BAT / Atelier</span>
                         </div>
                         <input type="url" id="input-url" value="https://supertap.ma/p/mohammed-alami" placeholder="https://supertap.ma/p/nom-du-client" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-emerald-500/50 text-emerald-300 text-sm font-mono focus:outline-none focus:border-emerald-400 transition" oninput="syncLivePreviews()">
-                        <p class="text-[11px] text-slate-400 mt-1">Ce lien est inscrit dans la fiche technique BAT pour la programmation sans-contact de la puce.</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Lien officiel reporté dans la fiche technique BAT pour la programmation sans-contact de la puce.</p>
                     </div>
                 </div>
 
-                <!-- Export Action Buttons -->
+                <!-- Vector SVG Export Action Buttons -->
                 <div class="mt-8 pt-6 border-t border-white/10 space-y-3">
-                    <button type="button" onclick="downloadBothCardsPng()" class="w-full py-4 rounded-2xl font-black uppercase tracking-wider text-sm bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-90 text-white shadow-xl shadow-indigo-500/25 flex items-center justify-center gap-2.5 transition active:scale-[0.99]">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                            <span>✨</span> Export Vectoriel SVG (Imprimeur)
+                        </span>
+                        <span class="text-[10px] text-slate-400 font-mono">Échelle 1:1 (85.6 × 54 mm)</span>
+                    </div>
+
+                    <!-- 1. Download Pack Vectoriel SVG -->
+                    <button type="button" onclick="downloadBothCardsSvg()" class="w-full py-4 rounded-2xl font-black uppercase tracking-wider text-sm bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-600 hover:opacity-95 text-white shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2.5 transition active:scale-[0.99]">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                        <span>Télécharger Pack PNG HD (Recto + Verso)</span>
+                        <span>Télécharger Pack SVG Vectoriel (Recto + Verso)</span>
                     </button>
 
-                    <button type="button" onclick="openPrintBAT()" class="w-full py-3.5 rounded-2xl font-bold uppercase tracking-wider text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 flex items-center justify-center gap-2 transition">
-                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-                        <span>Générer Fiche BAT Impression (PDF / Imprimer)</span>
+                    <!-- Individual SVG downloads for each side -->
+                    <div class="grid grid-cols-2 gap-2">
+                        <button type="button" onclick="downloadSingleCardSvg('front')" class="py-2.5 px-3 rounded-xl font-bold uppercase tracking-wider text-[11px] bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-emerald-500/30 flex items-center justify-center gap-1.5 transition">
+                            <span>↓ Recto (SVG Vectoriel)</span>
+                        </button>
+                        <button type="button" onclick="downloadSingleCardSvg('back')" class="py-2.5 px-3 rounded-xl font-bold uppercase tracking-wider text-[11px] bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-emerald-500/30 flex items-center justify-center gap-1.5 transition">
+                            <span>↓ Verso (SVG Vectoriel)</span>
+                        </button>
+                    </div>
+
+                    <!-- Individual Asset SVG: QR Code Only -->
+                    <button type="button" onclick="downloadQrSvgOnly()" class="w-full py-2.5 rounded-xl font-bold uppercase tracking-wider text-[11px] bg-slate-800/60 hover:bg-slate-700 text-slate-300 border border-slate-700 flex items-center justify-center gap-1.5 transition">
+                        <span>↓ Exporter le QR Code seul (SVG Vectoriel)</span>
                     </button>
+
+                    <!-- Secondary formats (PNG HD & BAT PDF) -->
+                    <div class="pt-3 border-t border-white/5 space-y-2">
+                        <button type="button" onclick="downloadBothCardsPng()" class="w-full py-3 rounded-xl font-bold uppercase tracking-wider text-xs bg-slate-800/80 hover:bg-slate-700 text-blue-300 border border-blue-500/30 flex items-center justify-center gap-2 transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            <span>Télécharger Pack PNG HD (300 DPI)</span>
+                        </button>
+
+                        <button type="button" onclick="openPrintBAT()" class="w-full py-3 rounded-xl font-bold uppercase tracking-wider text-xs bg-slate-800/80 hover:bg-slate-700 text-amber-300 border border-amber-500/30 flex items-center justify-center gap-2 transition">
+                            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                            <span>Fiche BAT Impression Atelier (PDF)</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -166,7 +197,7 @@
         <div class="lg:col-span-7 space-y-8 flex flex-col items-center">
             <div class="w-full text-left">
                 <h3 class="text-lg font-black uppercase italic tracking-tight text-white mb-1">Aperçu Réel Avant Impression</h3>
-                <p class="text-xs text-slate-400">Design 100% conforme au site public, dimensions exactes et QR code designer identique.</p>
+                <p class="text-xs text-slate-400">Design 100% conforme au site public, disponible en SVG vectoriel pur pour une netteté infinie en atelier.</p>
             </div>
 
             <!-- Recto Box (Exact Card Front) -->
@@ -175,9 +206,14 @@
                     <span class="text-xs font-black uppercase tracking-wider text-slate-300 flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-blue-400"></span> Recto (Face Avant)
                     </span>
-                    <button type="button" onclick="downloadSingleCard('front')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-blue-300 border border-blue-500/30 flex items-center gap-1.5 transition">
-                        <span>↓</span> Télécharger Recto HD
-                    </button>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="downloadSingleCardSvg('front')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 flex items-center gap-1 transition">
+                            <span>↓</span> SVG Vectoriel
+                        </button>
+                        <button type="button" onclick="downloadSingleCard('front')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-blue-300 border border-blue-500/30 flex items-center gap-1 transition">
+                            <span>↓</span> PNG HD
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Pro Front Card (Exact markup from product-pro.html) -->
@@ -230,9 +266,14 @@
                     <span class="text-xs font-black uppercase tracking-wider text-slate-300 flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-purple-400"></span> Verso (Face Arrière)
                     </span>
-                    <button type="button" onclick="downloadSingleCard('back')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-purple-300 border border-purple-500/30 flex items-center gap-1.5 transition">
-                        <span>↓</span> Télécharger Verso HD
-                    </button>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="downloadSingleCardSvg('back')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 flex items-center gap-1 transition">
+                            <span>↓</span> SVG Vectoriel
+                        </button>
+                        <button type="button" onclick="downloadSingleCard('back')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-purple-300 border border-purple-500/30 flex items-center gap-1 transition">
+                            <span>↓</span> PNG HD
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Pro Back Card (EXACT SAME AS product-pro.html) -->
@@ -401,7 +442,7 @@
             clientUploadedLogo = null;
             clientLogoFileName = '';
             document.getElementById('elite-logo-input').value = '';
-            document.getElementById('logo-file-label').textContent = 'Importer Logo (PNG, SVG)';
+            document.getElementById('logo-file-label').textContent = 'Importer Logo (SVG, PNG)';
             document.getElementById('btn-remove-logo').classList.add('hidden');
             document.getElementById('elite-display-logo-img').classList.add('hidden');
             document.getElementById('elite-display-logo-container').classList.remove('hidden');
@@ -419,6 +460,147 @@
             // Update Elite
             document.getElementById('elite-display-name').textContent = nameVal;
             document.getElementById('elite-display-company').textContent = companyVal;
+        }
+
+        // ==================== VECTOR SVG EXPORT ENGINE ====================
+        // Raw public designer QR SVG inner nodes
+        const rawPublicQrSvgInner = `<rect x="3" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="111" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="121" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="3" y="111" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="121" width="16" height="16" rx="4" fill="currentColor" /> <g> <circle cx="63" cy="3" r="2.5" /> <circle cx="75" cy="3" r="2.5" /> <circle cx="99" cy="3" r="2.5" /> <circle cx="51" cy="9" r="2.5" /> <circle cx="63" cy="9" r="2.5" /> <circle cx="93" cy="9" r="2.5" /> <circle cx="75" cy="15" r="2.5" /> <circle cx="87" cy="15" r="2.5" /> <circle cx="93" cy="15" r="2.5" /> <circle cx="99" cy="15" r="2.5" /> <circle cx="51" cy="21" r="2.5" /> <circle cx="57" cy="21" r="2.5" /> <circle cx="63" cy="21" r="2.5" /> <circle cx="75" cy="21" r="2.5" /> <circle cx="81" cy="21" r="2.5" /> <circle cx="87" cy="21" r="2.5" /> <circle cx="93" cy="21" r="2.5" /> <circle cx="99" cy="21" r="2.5" /> <circle cx="57" cy="27" r="2.5" /> <circle cx="87" cy="27" r="2.5" /> <circle cx="99" cy="27" r="2.5" /> <circle cx="51" cy="33" r="2.5" /> <circle cx="57" cy="33" r="2.5" /> <circle cx="69" cy="33" r="2.5" /> <circle cx="75" cy="33" r="2.5" /> <circle cx="93" cy="33" r="2.5" /> <circle cx="51" cy="39" r="2.5" /> <circle cx="63" cy="39" r="2.5" /> <circle cx="75" cy="39" r="2.5" /> <circle cx="87" cy="39" r="2.5" /> <circle cx="99" cy="39" r="2.5" /> <circle cx="57" cy="45" r="2.5" /> <circle cx="63" cy="45" r="2.5" /> <circle cx="69" cy="45" r="2.5" /> <circle cx="3" cy="51" r="2.5" /> <circle cx="9" cy="51" r="2.5" /> <circle cx="15" cy="51" r="2.5" /> <circle cx="21" cy="51" r="2.5" /> <circle cx="27" cy="51" r="2.5" /> <circle cx="39" cy="51" r="2.5" /> <circle cx="45" cy="51" r="2.5" /> <circle cx="51" cy="51" r="2.5" /> <circle cx="57" cy="51" r="2.5" /> <circle cx="69" cy="51" r="2.5" /> <circle cx="81" cy="51" r="2.5" /> <circle cx="93" cy="51" r="2.5" /> <circle cx="99" cy="51" r="2.5" /> <circle cx="105" cy="51" r="2.5" /> <circle cx="117" cy="51" r="2.5" /> <circle cx="129" cy="51" r="2.5" /> <circle cx="141" cy="51" r="2.5" /> <circle cx="3" cy="57" r="2.5" /> <circle cx="15" cy="57" r="2.5" /> <circle cx="21" cy="57" r="2.5" /> <circle cx="27" cy="57" r="2.5" /> <circle cx="33" cy="57" r="2.5" /> <circle cx="45" cy="57" r="2.5" /> <circle cx="63" cy="57" r="2.5" /> <circle cx="75" cy="57" r="2.5" /> <circle cx="81" cy="57" r="2.5" /> <circle cx="99" cy="57" r="2.5" /> <circle cx="117" cy="57" r="2.5" /> <circle cx="141" cy="57" r="2.5" /> <circle cx="3" cy="63" r="2.5" /> <circle cx="9" cy="63" r="2.5" /> <circle cx="27" cy="63" r="2.5" /> <circle cx="33" cy="63" r="2.5" /> <circle cx="39" cy="63" r="2.5" /> <circle cx="51" cy="63" r="2.5" /> <circle cx="63" cy="63" r="2.5" /> <circle cx="81" cy="63" r="2.5" /> <circle cx="87" cy="63" r="2.5" /> <circle cx="93" cy="63" r="2.5" /> <circle cx="99" cy="63" r="2.5" /> <circle cx="105" cy="63" r="2.5" /> <circle cx="111" cy="63" r="2.5" /> <circle cx="117" cy="63" r="2.5" /> <circle cx="123" cy="63" r="2.5" /> <circle cx="129" cy="63" r="2.5" /> <circle cx="141" cy="63" r="2.5" /> <circle cx="147" cy="63" r="2.5" /> <circle cx="9" cy="69" r="2.5" /> <circle cx="15" cy="69" r="2.5" /> <circle cx="21" cy="69" r="2.5" /> <circle cx="27" cy="69" r="2.5" /> <circle cx="75" cy="69" r="2.5" /> <circle cx="93" cy="69" r="2.5" /> <circle cx="99" cy="69" r="2.5" /> <circle cx="105" cy="69" r="2.5" /> <circle cx="111" cy="69" r="2.5" /> <circle cx="117" cy="69" r="2.5" /> <circle cx="147" cy="69" r="2.5" /> <circle cx="3" cy="75" r="2.5" /> <circle cx="9" cy="75" r="2.5" /> <circle cx="21" cy="75" r="2.5" /> <circle cx="27" cy="75" r="2.5" /> <circle cx="39" cy="75" r="2.5" /> <circle cx="57" cy="75" r="2.5" /> <circle cx="63" cy="75" r="2.5" /> <circle cx="75" cy="75" r="2.5" /> <circle cx="81" cy="75" r="2.5" /> <circle cx="87" cy="75" r="2.5" /> <circle cx="93" cy="75" r="2.5" /> <circle cx="105" cy="75" r="2.5" /> <circle cx="111" cy="75" r="2.5" /> <circle cx="123" cy="75" r="2.5" /> <circle cx="135" cy="75" r="2.5" /> <circle cx="141" cy="75" r="2.5" /> <circle cx="147" cy="75" r="2.5" /> <circle cx="3" cy="81" r="2.5" /> <circle cx="9" cy="81" r="2.5" /> <circle cx="51" cy="81" r="2.5" /> <circle cx="99" cy="81" r="2.5" /> <circle cx="105" cy="81" r="2.5" /> <circle cx="117" cy="81" r="2.5" /> <circle cx="129" cy="81" r="2.5" /> <circle cx="141" cy="81" r="2.5" /> <circle cx="3" cy="87" r="2.5" /> <circle cx="21" cy="87" r="2.5" /> <circle cx="27" cy="87" r="2.5" /> <circle cx="39" cy="87" r="2.5" /> <circle cx="45" cy="87" r="2.5" /> <circle cx="69" cy="87" r="2.5" /> <circle cx="75" cy="87" r="2.5" /> <circle cx="81" cy="87" r="2.5" /> <circle cx="93" cy="87" r="2.5" /> <circle cx="105" cy="87" r="2.5" /> <circle cx="111" cy="87" r="2.5" /> <circle cx="117" cy="87" r="2.5" /> <circle cx="123" cy="87" r="2.5" /> <circle cx="129" cy="87" r="2.5" /> <circle cx="141" cy="87" r="2.5" /> <circle cx="147" cy="87" r="2.5" /> <circle cx="3" cy="93" r="2.5" /> <circle cx="27" cy="93" r="2.5" /> <circle cx="33" cy="93" r="2.5" /> <circle cx="45" cy="93" r="2.5" /> <circle cx="51" cy="93" r="2.5" /> <circle cx="63" cy="93" r="2.5" /> <circle cx="69" cy="93" r="2.5" /> <circle cx="87" cy="93" r="2.5" /> <circle cx="93" cy="93" r="2.5" /> <circle cx="111" cy="93" r="2.5" /> <circle cx="117" cy="93" r="2.5" /> <circle cx="123" cy="93" r="2.5" /> <circle cx="147" cy="93" r="2.5" /> <circle cx="3" cy="99" r="2.5" /> <circle cx="27" cy="99" r="2.5" /> <circle cx="33" cy="99" r="2.5" /> <circle cx="39" cy="99" r="2.5" /> <circle cx="57" cy="99" r="2.5" /> <circle cx="69" cy="99" r="2.5" /> <circle cx="81" cy="99" r="2.5" /> <circle cx="87" cy="99" r="2.5" /> <circle cx="93" cy="99" r="2.5" /> <circle cx="99" cy="99" r="2.5" /> <circle cx="105" cy="99" r="2.5" /> <circle cx="111" cy="99" r="2.5" /> <circle cx="117" cy="99" r="2.5" /> <circle cx="123" cy="99" r="2.5" /> <circle cx="135" cy="99" r="2.5" /> <circle cx="51" cy="105" r="2.5" /> <circle cx="75" cy="105" r="2.5" /> <circle cx="81" cy="105" r="2.5" /> <circle cx="99" cy="105" r="2.5" /> <circle cx="123" cy="105" r="2.5" /> <circle cx="129" cy="105" r="2.5" /> <circle cx="51" cy="111" r="2.5" /> <circle cx="63" cy="111" r="2.5" /> <circle cx="81" cy="111" r="2.5" /> <circle cx="87" cy="111" r="2.5" /> <circle cx="99" cy="111" r="2.5" /> <circle cx="111" cy="111" r="2.5" /> <circle cx="123" cy="111" r="2.5" /> <circle cx="135" cy="111" r="2.5" /> <circle cx="141" cy="111" r="2.5" /> <circle cx="147" cy="111" r="2.5" /> <circle cx="63" cy="117" r="2.5" /> <circle cx="75" cy="117" r="2.5" /> <circle cx="87" cy="117" r="2.5" /> <circle cx="99" cy="117" r="2.5" /> <circle cx="123" cy="117" r="2.5" /> <circle cx="129" cy="117" r="2.5" /> <circle cx="141" cy="117" r="2.5" /> <circle cx="51" cy="123" r="2.5" /> <circle cx="63" cy="123" r="2.5" /> <circle cx="75" cy="123" r="2.5" /> <circle cx="81" cy="123" r="2.5" /> <circle cx="87" cy="123" r="2.5" /> <circle cx="93" cy="123" r="2.5" /> <circle cx="99" cy="123" r="2.5" /> <circle cx="105" cy="123" r="2.5" /> <circle cx="111" cy="123" r="2.5" /> <circle cx="117" cy="123" r="2.5" /> <circle cx="123" cy="123" r="2.5" /> <circle cx="135" cy="123" r="2.5" /> <circle cx="141" cy="123" r="2.5" /> <circle cx="147" cy="123" r="2.5" /> <circle cx="51" cy="129" r="2.5" /> <circle cx="81" cy="129" r="2.5" /> <circle cx="105" cy="129" r="2.5" /> <circle cx="111" cy="129" r="2.5" /> <circle cx="123" cy="129" r="2.5" /> <circle cx="129" cy="129" r="2.5" /> <circle cx="135" cy="129" r="2.5" /> <circle cx="141" cy="129" r="2.5" /> <circle cx="147" cy="129" r="2.5" /> <circle cx="51" cy="135" r="2.5" /> <circle cx="57" cy="135" r="2.5" /> <circle cx="63" cy="135" r="2.5" /> <circle cx="69" cy="135" r="2.5" /> <circle cx="75" cy="135" r="2.5" /> <circle cx="87" cy="135" r="2.5" /> <circle cx="105" cy="135" r="2.5" /> <circle cx="129" cy="135" r="2.5" /> <circle cx="135" cy="135" r="2.5" /> <circle cx="147" cy="135" r="2.5" /> <circle cx="51" cy="141" r="2.5" /> <circle cx="63" cy="141" r="2.5" /> <circle cx="69" cy="141" r="2.5" /> <circle cx="87" cy="141" r="2.5" /> <circle cx="99" cy="141" r="2.5" /> <circle cx="111" cy="141" r="2.5" /> <circle cx="117" cy="141" r="2.5" /> <circle cx="123" cy="141" r="2.5" /> <circle cx="129" cy="141" r="2.5" /> <circle cx="147" cy="141" r="2.5" /> <circle cx="51" cy="147" r="2.5" /> <circle cx="57" cy="147" r="2.5" /> <circle cx="63" cy="147" r="2.5" /> <circle cx="69" cy="147" r="2.5" /> <circle cx="75" cy="147" r="2.5" /> <circle cx="105" cy="147" r="2.5" /> <circle cx="117" cy="147" r="2.5" /> <circle cx="123" cy="147" r="2.5" /> <circle cx="129" cy="147" r="2.5" /> <circle cx="135" cy="147" r="2.5" /> <circle cx="141" cy="147" r="2.5" /> <circle cx="147" cy="147" r="2.5" /> </g>`;
+
+        function generateCardVectorSvg(side) {
+            const w = 856, h = 540; // Standard CR80 proportions
+            const name = document.getElementById('input-name').value.trim() || 'MOHAMMED ALAMI';
+            const company = document.getElementById('input-company').value.trim() || 'NEXUS DIGITAL SARL';
+            const isPro = currentModel === 'pro';
+            const finish = currentFinish;
+
+            const bgColor = isPro ? '#0f172a' : '#0b0f19';
+            const borderColor = isPro ? 'rgba(59, 130, 246, 0.45)' : 'rgba(59, 130, 246, 0.5)';
+            const accentColor = isPro ? '#60a5fa' : (finish === 'gold' ? '#fbbf24' : (finish === 'silver' ? '#e2e8f0' : '#ffffff'));
+            const companyColor = isPro ? '#93c5fd' : (finish === 'gold' ? 'rgba(252, 211, 77, 0.8)' : (finish === 'silver' ? 'rgba(203, 213, 225, 0.8)' : '#ffffff'));
+            const nameColor = isPro ? '#ffffff' : (finish === 'gold' ? '#fcd34d' : (finish === 'silver' ? '#cbd5e1' : '#ffffff'));
+
+            let bodyContent = '';
+
+            if (side === 'front') {
+                bodyContent = `
+    <!-- 1. Card Base (85.60 mm x 53.98 mm, radius 3.18 mm) -->
+    <rect width="${w}" height="${h}" rx="32" fill="${bgColor}" stroke="${borderColor}" stroke-width="3" />
+
+    <!-- 2. Top-Left: Company Name -->
+    <text x="60" y="70" font-family="'Poppins', -apple-system, sans-serif" font-weight="700" font-size="20" letter-spacing="1" fill="${companyColor}">${escapeXml(company)}</text>
+
+    <!-- 3. Center: Brand / Logo Vector -->
+    ${isPro ? `
+    <g id="pro-brand-center">
+        <text x="428" y="270" text-anchor="middle" font-family="'Poppins', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="64" letter-spacing="-1" fill="#60a5fa">SUPERTAP</text>
+        <rect x="380" y="295" width="96" height="28" rx="14" fill="rgba(59, 130, 246, 0.15)" stroke="rgba(59, 130, 246, 0.4)" stroke-width="1.5" />
+        <text x="428" y="314" text-anchor="middle" font-family="'Poppins', -apple-system, sans-serif" font-weight="900" font-size="13" letter-spacing="2" fill="#93c5fd">PRO</text>
+    </g>` : (clientUploadedLogo ? `
+    <g id="elite-client-logo">
+        <image href="${clientUploadedLogo.src}" x="228" y="190" width="400" height="150" preserveAspectRatio="xMidYMid meet" />
+    </g>` : `
+    <g id="elite-brand-center">
+        <text x="428" y="270" text-anchor="middle" font-family="'Poppins', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="58" letter-spacing="-1" fill="${accentColor}">VOTRE LOGO</text>
+        <rect x="358" y="295" width="140" height="28" rx="14" fill="${finish === 'gold' ? 'rgba(251, 191, 36, 0.1)' : (finish === 'silver' ? 'rgba(203, 213, 225, 0.1)' : 'rgba(255, 255, 255, 0.05)')}" stroke="${finish === 'gold' ? 'rgba(251, 191, 36, 0.4)' : (finish === 'silver' ? 'rgba(203, 213, 225, 0.4)' : 'rgba(255, 255, 255, 0.4)')}" stroke-width="1.5" />
+        <text x="428" y="314" text-anchor="middle" font-family="'Poppins', -apple-system, sans-serif" font-weight="800" font-size="12" letter-spacing="2" fill="${accentColor}">SUR-MESURE</text>
+    </g>`)}
+
+    <!-- 4. Bottom-Left: Cardholder Name -->
+    <text x="60" y="480" font-family="'Poppins', -apple-system, sans-serif" font-weight="700" font-size="26" letter-spacing="0.5" fill="${nameColor}">${escapeXml(name)}</text>
+
+    <!-- 5. Bottom-Right: NFC Contactless Wave Vector Path -->
+    <svg x="748" y="445" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="${accentColor}" stroke-width="2.2" stroke-linecap="round">
+        <path d="M6 10a2.5 2.5 0 0 1 0 4M9.5 7.5a6 6 0 0 1 0 9M13 5a9.5 9.5 0 0 1 0 14M16.5 2.5a13 13 0 0 1 0 19"/>
+    </svg>`;
+            } else {
+                bodyContent = `
+    <!-- 1. Card Base (85.60 mm x 53.98 mm, radius 3.18 mm) -->
+    <rect width="${w}" height="${h}" rx="32" fill="${bgColor}" stroke="${borderColor}" stroke-width="3" />
+
+    ${isPro ? `
+    <!-- 2. Left: SuperTap PRO Branding -->
+    <g id="pro-back-branding">
+        <text x="250" y="260" text-anchor="middle" font-family="'Poppins', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="52" letter-spacing="-0.5" fill="#60a5fa">SUPERTAP</text>
+        <rect x="207" y="285" width="86" height="26" rx="13" fill="rgba(59, 130, 246, 0.15)" stroke="rgba(59, 130, 246, 0.4)" stroke-width="1.5" />
+        <text x="250" y="303" text-anchor="middle" font-family="'Poppins', -apple-system, sans-serif" font-weight="900" font-size="13" letter-spacing="2" fill="#93c5fd">PRO</text>
+    </g>
+
+    <!-- 3. Right: Exact Designer QR Code Vector -->
+    <svg x="510" y="170" width="200" height="200" viewBox="0 0 150 150" fill="#60a5fa">
+        ${rawPublicQrSvgInner}
+    </svg>` : `
+    <!-- 2. Center: Exact Designer QR Code Vector in Foil Finish -->
+    <svg x="328" y="170" width="200" height="200" viewBox="0 0 150 150" fill="${accentColor}">
+        ${rawPublicQrSvgInner}
+    </svg>`}`;
+            }
+
+            return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="85.6mm" height="53.98mm">
+    <defs>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&amp;display=swap');
+            text { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        </style>
+    </defs>
+    ${bodyContent}
+</svg>`;
+        }
+
+        function escapeXml(unsafe) {
+            return (unsafe || '').replace(/[<>&'"]/g, c => {
+                switch (c) {
+                    case '<': return '&lt;';
+                    case '>': return '&gt;';
+                    case '&': return '&amp;';
+                    case '\'': return '&apos;';
+                    case '"': return '&quot;';
+                }
+            });
+        }
+
+        function downloadSvgFile(svgString, filename) {
+            const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => {
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 100);
+        }
+
+        function downloadSingleCardSvg(side) {
+            const nameRaw = document.getElementById('input-name').value.trim() || 'carte';
+            const slug = nameRaw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'carte';
+            const svgContent = generateCardVectorSvg(side);
+            downloadSvgFile(svgContent, `supertap-${currentModel}-${slug}-${side === 'front' ? 'recto' : 'verso'}.svg`);
+        }
+
+        function downloadBothCardsSvg() {
+            const nameRaw = document.getElementById('input-name').value.trim() || 'carte';
+            const slug = nameRaw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'carte';
+
+            const frontSvg = generateCardVectorSvg('front');
+            downloadSvgFile(frontSvg, `supertap-${currentModel}-${slug}-recto.svg`);
+
+            setTimeout(() => {
+                const backSvg = generateCardVectorSvg('back');
+                downloadSvgFile(backSvg, `supertap-${currentModel}-${slug}-verso.svg`);
+            }, 300);
+        }
+
+        function downloadQrSvgOnly() {
+            const isPro = currentModel === 'pro';
+            const color = isPro ? '#60a5fa' : finishPalettes[currentFinish].accent;
+            const fullQrSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="30mm" height="30mm" fill="${color}">
+    ${rawPublicQrSvgInner}
+</svg>`;
+            downloadSvgFile(fullQrSvg, `supertap-${currentModel}-qr-code.svg`);
         }
 
         // ==================== HIGH-RES PRINT CANVAS ENGINE ====================
@@ -454,9 +636,6 @@
             });
         }
 
-        // Extract raw inner SVG for printing
-        const rawPublicQrSvgInner = `<rect x="3" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="111" y="3" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="121" y="13" width="16" height="16" rx="4" fill="currentColor" /> <rect x="3" y="111" width="36" height="36" rx="9" fill="none" stroke="currentColor" stroke-width="5.5" /> <rect x="13" y="121" width="16" height="16" rx="4" fill="currentColor" /> <g> <circle cx="63" cy="3" r="2.5" /> <circle cx="75" cy="3" r="2.5" /> <circle cx="99" cy="3" r="2.5" /> <circle cx="51" cy="9" r="2.5" /> <circle cx="63" cy="9" r="2.5" /> <circle cx="93" cy="9" r="2.5" /> <circle cx="75" cy="15" r="2.5" /> <circle cx="87" cy="15" r="2.5" /> <circle cx="93" cy="15" r="2.5" /> <circle cx="99" cy="15" r="2.5" /> <circle cx="51" cy="21" r="2.5" /> <circle cx="57" cy="21" r="2.5" /> <circle cx="63" cy="21" r="2.5" /> <circle cx="75" cy="21" r="2.5" /> <circle cx="81" cy="21" r="2.5" /> <circle cx="87" cy="21" r="2.5" /> <circle cx="93" cy="21" r="2.5" /> <circle cx="99" cy="21" r="2.5" /> <circle cx="57" cy="27" r="2.5" /> <circle cx="87" cy="27" r="2.5" /> <circle cx="99" cy="27" r="2.5" /> <circle cx="51" cy="33" r="2.5" /> <circle cx="57" cy="33" r="2.5" /> <circle cx="69" cy="33" r="2.5" /> <circle cx="75" cy="33" r="2.5" /> <circle cx="93" cy="33" r="2.5" /> <circle cx="51" cy="39" r="2.5" /> <circle cx="63" cy="39" r="2.5" /> <circle cx="75" cy="39" r="2.5" /> <circle cx="87" cy="39" r="2.5" /> <circle cx="99" cy="39" r="2.5" /> <circle cx="57" cy="45" r="2.5" /> <circle cx="63" cy="45" r="2.5" /> <circle cx="69" cy="45" r="2.5" /> <circle cx="3" cy="51" r="2.5" /> <circle cx="9" cy="51" r="2.5" /> <circle cx="15" cy="51" r="2.5" /> <circle cx="21" cy="51" r="2.5" /> <circle cx="27" cy="51" r="2.5" /> <circle cx="39" cy="51" r="2.5" /> <circle cx="45" cy="51" r="2.5" /> <circle cx="51" cy="51" r="2.5" /> <circle cx="57" cy="51" r="2.5" /> <circle cx="69" cy="51" r="2.5" /> <circle cx="81" cy="51" r="2.5" /> <circle cx="93" cy="51" r="2.5" /> <circle cx="99" cy="51" r="2.5" /> <circle cx="105" cy="51" r="2.5" /> <circle cx="117" cy="51" r="2.5" /> <circle cx="129" cy="51" r="2.5" /> <circle cx="141" cy="51" r="2.5" /> <circle cx="3" cy="57" r="2.5" /> <circle cx="15" cy="57" r="2.5" /> <circle cx="21" cy="57" r="2.5" /> <circle cx="27" cy="57" r="2.5" /> <circle cx="33" cy="57" r="2.5" /> <circle cx="45" cy="57" r="2.5" /> <circle cx="63" cy="57" r="2.5" /> <circle cx="75" cy="57" r="2.5" /> <circle cx="81" cy="57" r="2.5" /> <circle cx="99" cy="57" r="2.5" /> <circle cx="117" cy="57" r="2.5" /> <circle cx="141" cy="57" r="2.5" /> <circle cx="3" cy="63" r="2.5" /> <circle cx="9" cy="63" r="2.5" /> <circle cx="27" cy="63" r="2.5" /> <circle cx="33" cy="63" r="2.5" /> <circle cx="39" cy="63" r="2.5" /> <circle cx="51" cy="63" r="2.5" /> <circle cx="63" cy="63" r="2.5" /> <circle cx="81" cy="63" r="2.5" /> <circle cx="87" cy="63" r="2.5" /> <circle cx="93" cy="63" r="2.5" /> <circle cx="99" cy="63" r="2.5" /> <circle cx="105" cy="63" r="2.5" /> <circle cx="111" cy="63" r="2.5" /> <circle cx="117" cy="63" r="2.5" /> <circle cx="123" cy="63" r="2.5" /> <circle cx="129" cy="63" r="2.5" /> <circle cx="141" cy="63" r="2.5" /> <circle cx="147" cy="63" r="2.5" /> <circle cx="9" cy="69" r="2.5" /> <circle cx="15" cy="69" r="2.5" /> <circle cx="21" cy="69" r="2.5" /> <circle cx="27" cy="69" r="2.5" /> <circle cx="75" cy="69" r="2.5" /> <circle cx="93" cy="69" r="2.5" /> <circle cx="99" cy="69" r="2.5" /> <circle cx="105" cy="69" r="2.5" /> <circle cx="111" cy="69" r="2.5" /> <circle cx="117" cy="69" r="2.5" /> <circle cx="147" cy="69" r="2.5" /> <circle cx="3" cy="75" r="2.5" /> <circle cx="9" cy="75" r="2.5" /> <circle cx="21" cy="75" r="2.5" /> <circle cx="27" cy="75" r="2.5" /> <circle cx="39" cy="75" r="2.5" /> <circle cx="57" cy="75" r="2.5" /> <circle cx="63" cy="75" r="2.5" /> <circle cx="75" cy="75" r="2.5" /> <circle cx="81" cy="75" r="2.5" /> <circle cx="87" cy="75" r="2.5" /> <circle cx="93" cy="75" r="2.5" /> <circle cx="105" cy="75" r="2.5" /> <circle cx="111" cy="75" r="2.5" /> <circle cx="123" cy="75" r="2.5" /> <circle cx="135" cy="75" r="2.5" /> <circle cx="141" cy="75" r="2.5" /> <circle cx="147" cy="75" r="2.5" /> <circle cx="3" cy="81" r="2.5" /> <circle cx="9" cy="81" r="2.5" /> <circle cx="51" cy="81" r="2.5" /> <circle cx="99" cy="81" r="2.5" /> <circle cx="105" cy="81" r="2.5" /> <circle cx="117" cy="81" r="2.5" /> <circle cx="129" cy="81" r="2.5" /> <circle cx="141" cy="81" r="2.5" /> <circle cx="3" cy="87" r="2.5" /> <circle cx="21" cy="87" r="2.5" /> <circle cx="27" cy="87" r="2.5" /> <circle cx="39" cy="87" r="2.5" /> <circle cx="45" cy="87" r="2.5" /> <circle cx="69" cy="87" r="2.5" /> <circle cx="75" cy="87" r="2.5" /> <circle cx="81" cy="87" r="2.5" /> <circle cx="93" cy="87" r="2.5" /> <circle cx="105" cy="87" r="2.5" /> <circle cx="111" cy="87" r="2.5" /> <circle cx="117" cy="87" r="2.5" /> <circle cx="123" cy="87" r="2.5" /> <circle cx="129" cy="87" r="2.5" /> <circle cx="141" cy="87" r="2.5" /> <circle cx="147" cy="87" r="2.5" /> <circle cx="3" cy="93" r="2.5" /> <circle cx="27" cy="93" r="2.5" /> <circle cx="33" cy="93" r="2.5" /> <circle cx="45" cy="93" r="2.5" /> <circle cx="51" cy="93" r="2.5" /> <circle cx="63" cy="93" r="2.5" /> <circle cx="69" cy="93" r="2.5" /> <circle cx="87" cy="93" r="2.5" /> <circle cx="93" cy="93" r="2.5" /> <circle cx="111" cy="93" r="2.5" /> <circle cx="117" cy="93" r="2.5" /> <circle cx="123" cy="93" r="2.5" /> <circle cx="147" cy="93" r="2.5" /> <circle cx="3" cy="99" r="2.5" /> <circle cx="27" cy="99" r="2.5" /> <circle cx="33" cy="99" r="2.5" /> <circle cx="39" cy="99" r="2.5" /> <circle cx="57" cy="99" r="2.5" /> <circle cx="69" cy="99" r="2.5" /> <circle cx="81" cy="99" r="2.5" /> <circle cx="87" cy="99" r="2.5" /> <circle cx="93" cy="99" r="2.5" /> <circle cx="99" cy="99" r="2.5" /> <circle cx="105" cy="99" r="2.5" /> <circle cx="111" cy="99" r="2.5" /> <circle cx="117" cy="99" r="2.5" /> <circle cx="123" cy="99" r="2.5" /> <circle cx="135" cy="99" r="2.5" /> <circle cx="51" cy="105" r="2.5" /> <circle cx="75" cy="105" r="2.5" /> <circle cx="81" cy="105" r="2.5" /> <circle cx="99" cy="105" r="2.5" /> <circle cx="123" cy="105" r="2.5" /> <circle cx="129" cy="105" r="2.5" /> <circle cx="51" cy="111" r="2.5" /> <circle cx="63" cy="111" r="2.5" /> <circle cx="81" cy="111" r="2.5" /> <circle cx="87" cy="111" r="2.5" /> <circle cx="99" cy="111" r="2.5" /> <circle cx="111" cy="111" r="2.5" /> <circle cx="123" cy="111" r="2.5" /> <circle cx="135" cy="111" r="2.5" /> <circle cx="141" cy="111" r="2.5" /> <circle cx="147" cy="111" r="2.5" /> <circle cx="63" cy="117" r="2.5" /> <circle cx="75" cy="117" r="2.5" /> <circle cx="87" cy="117" r="2.5" /> <circle cx="99" cy="117" r="2.5" /> <circle cx="123" cy="117" r="2.5" /> <circle cx="129" cy="117" r="2.5" /> <circle cx="141" cy="117" r="2.5" /> <circle cx="51" cy="123" r="2.5" /> <circle cx="63" cy="123" r="2.5" /> <circle cx="75" cy="123" r="2.5" /> <circle cx="81" cy="123" r="2.5" /> <circle cx="87" cy="123" r="2.5" /> <circle cx="93" cy="123" r="2.5" /> <circle cx="99" cy="123" r="2.5" /> <circle cx="105" cy="123" r="2.5" /> <circle cx="111" cy="123" r="2.5" /> <circle cx="117" cy="123" r="2.5" /> <circle cx="123" cy="123" r="2.5" /> <circle cx="135" cy="123" r="2.5" /> <circle cx="141" cy="123" r="2.5" /> <circle cx="147" cy="123" r="2.5" /> <circle cx="51" cy="129" r="2.5" /> <circle cx="81" cy="129" r="2.5" /> <circle cx="105" cy="129" r="2.5" /> <circle cx="111" cy="129" r="2.5" /> <circle cx="123" cy="129" r="2.5" /> <circle cx="129" cy="129" r="2.5" /> <circle cx="135" cy="129" r="2.5" /> <circle cx="141" cy="129" r="2.5" /> <circle cx="147" cy="129" r="2.5" /> <circle cx="51" cy="135" r="2.5" /> <circle cx="57" cy="135" r="2.5" /> <circle cx="63" cy="135" r="2.5" /> <circle cx="69" cy="135" r="2.5" /> <circle cx="75" cy="135" r="2.5" /> <circle cx="87" cy="135" r="2.5" /> <circle cx="105" cy="135" r="2.5" /> <circle cx="129" cy="135" r="2.5" /> <circle cx="135" cy="135" r="2.5" /> <circle cx="147" cy="135" r="2.5" /> <circle cx="51" cy="141" r="2.5" /> <circle cx="63" cy="141" r="2.5" /> <circle cx="69" cy="141" r="2.5" /> <circle cx="87" cy="141" r="2.5" /> <circle cx="99" cy="141" r="2.5" /> <circle cx="111" cy="141" r="2.5" /> <circle cx="117" cy="141" r="2.5" /> <circle cx="123" cy="141" r="2.5" /> <circle cx="129" cy="141" r="2.5" /> <circle cx="147" cy="141" r="2.5" /> <circle cx="51" cy="147" r="2.5" /> <circle cx="57" cy="147" r="2.5" /> <circle cx="63" cy="147" r="2.5" /> <circle cx="69" cy="147" r="2.5" /> <circle cx="75" cy="147" r="2.5" /> <circle cx="105" cy="147" r="2.5" /> <circle cx="117" cy="147" r="2.5" /> <circle cx="123" cy="147" r="2.5" /> <circle cx="129" cy="147" r="2.5" /> <circle cx="135" cy="147" r="2.5" /> <circle cx="141" cy="147" r="2.5" /> <circle cx="147" cy="147" r="2.5" /> </g>`;
-
         function getPublicQrSvgWithColor(color) {
             return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" fill="${color}">${rawPublicQrSvgInner}</svg>`;
         }
@@ -471,7 +650,6 @@
 
             const name = document.getElementById('input-name').value.trim() || 'MOHAMMED ALAMI';
             const company = document.getElementById('input-company').value.trim() || 'NEXUS DIGITAL SARL';
-            const url = document.getElementById('input-url').value.trim() || 'https://supertap.ma';
 
             if (currentModel === 'pro') {
                 // Background matching public page (Midnight Blue)
@@ -692,7 +870,7 @@
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; }
         .info-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9; }
         .info-table td:first-child { font-weight: 700; color: #64748b; width: 180px; }
-        .specs { background: #f8fafc; border-left: 4px solid #2563eb; border-radius: 8px; padding: 16px 20px; font-size: 12px; line-height: 1.6; color: #334155; }
+        .specs { background: #f8fafc; border-left: 4px solid #10b981; border-radius: 8px; padding: 16px 20px; font-size: 12px; line-height: 1.6; color: #334155; }
         .print-bar { margin-bottom: 20px; display: flex; gap: 12px; justify-content: flex-end; }
         .btn-print { background: #2563eb; color: white; border: none; padding: 10px 22px; font-weight: 800; border-radius: 10px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
         @media print {
@@ -710,7 +888,7 @@
         <div class="header">
             <div>
                 <div class="title">SUPERTAP — BON À TIRER (BAT) ATELIER</div>
-                <div class="sub">Fiche de Fabrication & Contrôle Qualité</div>
+                <div class="sub">Fiche de Fabrication & Contrôle Qualité — Fichiers Vectoriels SVG</div>
             </div>
             <div style="text-align: right;">
                 <div style="font-weight: 900; color: #2563eb; font-size: 18px;">SuperTap</div>
@@ -722,7 +900,7 @@
             <tr><td>Client / Porteur :</td><td><strong>${name}</strong></td></tr>
             <tr><td>Entreprise / Métier :</td><td>${company}</td></tr>
             <tr><td>Modèle :</td><td><strong>${modelName}</strong></td></tr>
-            <tr><td>Lien Réel Encodé (QR) :</td><td><a href="${url}" target="_blank" style="color:#2563eb; text-decoration:none;"><strong>${url}</strong></a></td></tr>
+            <tr><td>Lien Réel Encodé (Puce) :</td><td><a href="${url}" target="_blank" style="color:#2563eb; text-decoration:none;"><strong>${url}</strong></a></td></tr>
             <tr><td>Logo Fichier :</td><td>${clientLogoFileName ? clientLogoFileName : 'Logo textuel standard'}</td></tr>
         </table>
 
@@ -738,11 +916,11 @@
         </div>
 
         <div class="specs">
-            <strong>📐 Recommandations d'impression pour l'atelier :</strong><br>
-            • Dimensions finies : <strong>85.60 mm × 53.98 mm</strong> (Épaisseur PVC : 0.76 mm - 30 mil standard)<br>
-            • Rayon des coins : <strong>3.18 mm</strong><br>
-            • QR code au verso : Design Signature SuperTap (100% conforme au site public)<br>
-            • Encodage de la puce sans-contact : programmer avec l'URL : <code>${url}</code> via NFC Tools
+            <strong>📐 Recommandations d'impression pour l'atelier (Vectoriel SVG 1:1) :</strong><br>
+            • Format de fabrication : <strong>Vectoriel SVG natif (85.60 mm × 53.98 mm)</strong><br>
+            • Rayon des coins finis : <strong>3.18 mm</strong> (Épaisseur PVC : 0.76 mm - 30 mil standard)<br>
+            • Éléments vectoriels : Textes, Logos, Icônes et QR code sont en chemins vectoriels SVG purs (résolution infinie sans pixellisation)<br>
+            • Puce sans-contact : programmer avec l'URL <code>${url}</code> via NFC Tools
         </div>
     </div>
 </body>
